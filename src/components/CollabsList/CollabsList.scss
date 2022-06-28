@@ -1,0 +1,14 @@
+.collabs-list {
+  display: grid;
+  grid-template-columns: var(--item-icon-size) 40px var(--item-icon-size) 40px var(--item-icon-size);
+  row-gap: 15px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .operator {
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+  }
+}

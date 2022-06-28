@@ -1,0 +1,63 @@
+.idols-page {
+  gap: 10px;
+
+  .selected-idol {
+    flex: 1 1 200px;
+    width: 200px;
+
+    >main {
+      justify-content: center;
+      align-items: center;
+
+      img {
+        display: block;
+      }
+    }
+
+    .stats {
+      margin-top: 40px;
+    }
+  }
+
+  .generation {
+    margin-bottom: 20px;
+
+    .idols {
+      gap: 5px;
+
+      .idol {
+        border: 5px solid transparent;
+        cursor: pointer;
+
+        img {
+          display: block;
+        }
+
+        &.selected {
+          border-color: white;
+        }
+      }
+    }
+  }
+
+  .selected-idol-details {
+    flex: 1 1 200px;
+    width: 200px;
+
+    .name {
+      font-size: 20px;
+    }
+
+    .desc {
+      margin-bottom: 10px;
+    }
+
+    .box {
+      flex: 1 1 auto;
+
+      >main {
+        gap: 10px;
+      }
+    }
+  }
+}

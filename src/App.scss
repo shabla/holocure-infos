@@ -1,0 +1,60 @@
+.app {
+  $navbar-width: 300px;
+
+  display: flex;
+
+  .nav {
+    background-color: var(--color-dark-blue);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    width: $navbar-width;
+    flex: 0 0 $navbar-width;
+    position: fixed;
+    height: 100vh;
+
+    a {
+      display: block;
+      background-color: var(--color-blue);
+      color: white;
+      font-size: 20px;
+      border: 2px solid white;
+      text-decoration: none;
+      padding: 8px 16px;
+
+      &:hover,
+      &.active {
+        background-color: white;
+        color: var(--color-blue);
+      }
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      color: white;
+      text-align: center;
+
+      &.bottom {
+        margin-top: 60px;
+
+        a {
+          background-color: var(--color-pink);
+        }
+      }
+    }
+
+    img {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  >main {
+    padding: 10px;
+    margin-left: $navbar-width;
+    flex: 1 1 auto;
+  }
+}

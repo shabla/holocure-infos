@@ -1,0 +1,36 @@
+.item-icon {
+  $label-overflow-width: 12px;
+
+  height: var(--item-icon-size);
+  width: var(--item-icon-size);
+  position: relative;
+
+  &.show-label {
+    margin: 15px $label-overflow-width 0;
+  }
+
+  &.clickable:hover {
+    cursor: pointer;
+  }
+
+  .name {
+    position: absolute;
+    font-size: 11px;
+    top: 0;
+    left: -$label-overflow-width;
+    right: -$label-overflow-width;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.4);
+    text-align: center;
+    transform: translateY(-20px);
+    border-radius: 3px;
+    padding: 1px 0;
+    line-height: 10px;
+    height: 24px;
+  }
+
+  &.selected {
+    outline: 5px solid white;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}

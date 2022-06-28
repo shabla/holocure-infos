@@ -3,8 +3,8 @@ import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models/Item';
 import { ItemIcon, Box } from '@/components';
+import { useItemsStore } from "@/stores/itemsStore";
 import { CollabsList } from "./CollabsList/CollabsList";
-import { useItemsStore } from "./itemsStore";
 import { ItemDetails } from "./ItemDetails/ItemDetails";
 
 import "./ItemsPage.scss"

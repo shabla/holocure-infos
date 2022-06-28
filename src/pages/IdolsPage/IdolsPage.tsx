@@ -1,8 +1,10 @@
 import { Fragment, useEffect, useState } from "react";
 import classNames from "classnames";
+import { useSearchParams } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
 import { Heading, Box } from "@/components";
+import { useIdolsStore } from "@/stores/idolsStore";
 
 import "./IdolsPage.scss"
 
@@ -13,20 +15,29 @@ const gensOrder = [
 ];
 
 export const IdolsPage: React.FC = () => {
-  const [idols, setIdols] = useState<Idol[]>();
   const [selectedIdol, setSelectedIdol] = useState<Idol>();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, idols, loadIdols, getIdolsByGen] = useIdolsStore(state => [
+    state.loading,
+    state.idols,
+    state.loadIdols,
+    state.getIdolsByGen
+  ]);
 
   useEffect(() => {
-    fetch('/idols.json')
-      .then(data => data.json())
-      .then(idols => {
-        setIdols(idols);
-        setSelectedIdol(idols[0]);
-      });
+    loadIdols();
   }, [])
 
+  useEffect(() => {
+    const idolName = searchParams.get('i') || 'Amelia Watson';
+
+    if (idols) {
+      setSelectedIdol(idols.filter(i => i.name === idolName)[0] || idols[0]);
+    }
+  }, [searchParams, idols])
+
   const handleIdolClicked = (idol: Idol): void => {
-    setSelectedIdol(idol);
+    setSearchParams({ i: idol.name })
   }
 
   const getIdolImagePath = (idol?: Idol): string => {
@@ -37,7 +48,7 @@ export const IdolsPage: React.FC = () => {
     return `/idols/${idol.image}`;
   }
 
-  if (!idols) {
+  if (loading) {
     return null;
   }
 
@@ -58,8 +69,7 @@ export const IdolsPage: React.FC = () => {
               <Heading>{genName}</Heading>
 
               <div className="idols flex-row">
-                {idols
-                  .filter(idol => idol.gen === genName)
+                {getIdolsByGen(genName)
                   .map(idol => (
                     <div
                       className={classNames("idol", { selected: idol === selectedIdol })}

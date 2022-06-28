@@ -1,13 +1,11 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models/Item';
-import {
-  ItemIcon,
-  ItemDetails,
-  CollabsList,
-  Box
-} from '@/components';
+import { ItemIcon, Box } from '@/components';
+import { CollabsList } from "./CollabsList/CollabsList";
+import { useItemsStore } from "./itemsStore";
+import { ItemDetails } from "./ItemDetails/ItemDetails";
 
 import "./ItemsPage.scss"
 
@@ -23,28 +21,16 @@ const sections: ItemSection[] = [
 
 export const ItemsPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>();
-  const [items, setItems] = useState<Item[]>();
   const [searchParams, setSearchParams] = useSearchParams();
-
-  const itemsById = useMemo(() => {
-    if (!items) {
-      return {};
-    }
-
-    return items.reduce((acc, item) => {
-      acc[item.id] = item;
-
-      return acc;
-    }, {} as Record<string, Item>);
-  }, [items]);
+  const [loading, itemsById, loadItems, getItemByType] = useItemsStore(state => [
+    state.loading,
+    state.itemsById,
+    state.loadItems,
+    state.getItemByType
+  ])
 
   useEffect(() => {
-    fetch('/items.json')
-      .then(data => data.json())
-      .then(items => {
-        setItems(items);
-        setSelectedItem(items.find((i: Item) => i.name === "BL Fujoshi"));
-      })
+    loadItems()
   }, []);
 
   useEffect(() => {
@@ -61,7 +47,7 @@ export const ItemsPage: React.FC = () => {
     setSearchParams({ i: item.id });
   }
 
-  if (!items) {
+  if (loading) {
     return null;
   }
 
@@ -72,26 +58,22 @@ export const ItemsPage: React.FC = () => {
           <CollabsList
             onItemClicked={handleItemClicked}
             selectedItem={selectedItem}
-            items={items}
-            itemsById={itemsById}
+            items={getItemByType("collab")}
           />
         </Box>
 
         {sections.map(section => (
           <Box label={section.title} key={section.type}>
             <div className="items-list">
-              {items
-                .filter(i => i.type === section.type)
-                .map(item => {
-                  return (
-                    <ItemIcon
-                      key={item.id}
-                      item={item}
-                      selected={item === selectedItem}
-                      onSelected={handleItemClicked}
-                    />
-                  )
-                })
+              {getItemByType(section.type)
+                .map(item => (
+                  <ItemIcon
+                    key={item.id}
+                    item={item}
+                    selected={item === selectedItem}
+                    onSelected={handleItemClicked}
+                  />
+                ))
               }
             </div>
           </Box>
@@ -99,8 +81,6 @@ export const ItemsPage: React.FC = () => {
       </div>
 
       <ItemDetails
-        items={items}
-        itemsById={itemsById}
         item={selectedItem}
         onItemSelected={handleItemClicked}
       />

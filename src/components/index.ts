@@ -1,5 +1,3 @@
 export * from "./Box/Box"
-export * from "./CollabsList/CollabsList"
 export * from "./Heading/Heading"
-export * from "./ItemDetails/ItemDetails"
 export * from "./ItemIcon/ItemIcon"

@@ -2,28 +2,26 @@ import React from "react";
 
 import { ItemIcon, Box } from "@/components";
 import { Item } from "@/models/Item";
+import { useItemsStore } from "../itemsStore";
 
 import "./ItemDetails.scss"
 
 export interface ItemDetailsProps {
   item?: Item;
-  items: Item[];
-  itemsById: Record<string, Item>;
   onItemSelected: (item: Item) => void;
 }
 
 export const ItemDetails: React.FC<ItemDetailsProps> = ({
   item,
-  items,
-  itemsById,
   onItemSelected
 }) => {
-  const usedIn: Item[] = React.useMemo(() => {
-    if (!item) {
-      return [];
-    }
+  const [getItemById, getItemUsage] = useItemsStore(state => [state.getItemById, state.getItemUsage]);
 
-    return items?.filter(i => i.requires?.includes(item.name));
+  const usedIn: Item[] = React.useMemo(() => {
+    if (item) {
+      return getItemUsage(item.id);
+    }
+    return [];
   }, [item])
 
   return (
@@ -70,7 +68,7 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
               return (
                 <ItemIcon
                   key={itemId}
-                  item={itemsById[itemId]}
+                  item={getItemById(itemId)}
                   onSelected={onItemSelected}
                 />
               )

@@ -2,7 +2,7 @@ import React from "react";
 
 import { ItemIcon, Box } from "@/components";
 import { Item } from "@/models/Item";
-import { useItemsStore } from "../itemsStore";
+import { useItemsStore } from "@/stores/itemsStore";
 
 import "./ItemDetails.scss"
 

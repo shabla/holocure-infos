@@ -372,8 +372,8 @@
     "name": "BL Fujoshi",
     "desc": "A collaboration of BL Book and Psycho Axe. Endless BL, how shameless!",
     "requires": [
-      "BL Book",
-      "Psycho Axe"
+      "bl-book",
+      "psycho-axe"
     ]
   },
   {
@@ -386,8 +386,8 @@
     "name": "MiComet",
     "desc": "A collaboration of Elite Lava Bucket and Psycho Axe. Real business partners.",
     "requires": [
-      "Elite Lava Bucket",
-      "Psycho Axe"
+      "elite-lava-bucket",
+      "psycho-axe"
     ]
   },
   {
@@ -400,8 +400,8 @@
     "name": "Elite Cooking",
     "desc": "A collaboration of Elite Lava Bucket and Spider Cooking. May have severe unknown side effects if consumed.",
     "requires": [
-      "Elite Lava Bucket",
-      "Spider Cooking"
+      "elite-lava-bucket",
+      "spider-cooking"
     ]
   },
   {
@@ -414,8 +414,8 @@
     "name": "Idol Concert",
     "desc": "A collaboration of Idol Song and Glowstick. Throw glowstick in all directions that esxplode into song!",
     "requires": [
-      "Glowstick",
-      "Idol Song"
+      "glowstick",
+      "idol-song"
     ]
   },
   {
@@ -428,8 +428,8 @@
     "name": "Light Beam",
     "desc": "A collaboration of Glowstick and Fan Beam. Throw glowsticks that explode into targeted beams!",
     "requires": [
-      "Glowstick",
-      "Fan Beam"
+      "glowstick",
+      "fan-beam"
     ]
   },
   {
@@ -442,8 +442,8 @@
     "name": "Dragon Fire",
     "desc": "A collaboration of Fan Beam and Plug In Type Asacoco. The power of a once LEGENDARY Dragon. The OG.",
     "requires": [
-      "Plug Type Asacoco",
-      "Fan Beam"
+      "plug-type-asacoco",
+      "fan-beam"
     ]
   },
   {
@@ -456,8 +456,8 @@
     "name": "Breathe-In Type Asacoco",
     "desc": "A collaboration of PLug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!",
     "requires": [
-      "Plug Type Asacoco",
-      "Holo Bomb"
+      "plug-type-asacoco",
+      "holo-bomb"
     ]
   },
   {
@@ -470,8 +470,8 @@
     "name": "Flattening Board",
     "desc": "A collaboration of Cutting Board and Holo Bomb. Feel the wrath of cutting boards...!?.",
     "requires": [
-      "Cutting Board",
-      "Holo Bomb"
+      "cutting-board",
+      "holo-bomb"
     ]
   },
   {

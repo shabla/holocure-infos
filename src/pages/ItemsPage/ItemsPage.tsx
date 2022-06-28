@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models/Item';
 import {
@@ -23,18 +24,19 @@ const sections: ItemSection[] = [
 export const ItemsPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>();
   const [items, setItems] = useState<Item[]>();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  const itemsByName = useMemo(() => {
+  const itemsById = useMemo(() => {
     if (!items) {
       return {};
     }
 
     return items.reduce((acc, item) => {
-      acc[item.name] = item;
+      acc[item.id] = item;
 
       return acc;
     }, {} as Record<string, Item>);
-  }, [items])
+  }, [items]);
 
   useEffect(() => {
     fetch('/items.json')
@@ -45,8 +47,18 @@ export const ItemsPage: React.FC = () => {
       })
   }, []);
 
+  useEffect(() => {
+    let itemId = searchParams.get('i');
+
+    if (!itemId) {
+      itemId = 'spider-cooking';
+    }
+
+    setSelectedItem(itemsById[itemId]);
+  }, [searchParams, itemsById])
+
   const handleItemClicked = (item: Item) => {
-    setSelectedItem(item);
+    setSearchParams({ i: item.id });
   }
 
   if (!items) {
@@ -61,12 +73,12 @@ export const ItemsPage: React.FC = () => {
             onItemClicked={handleItemClicked}
             selectedItem={selectedItem}
             items={items}
-            itemsByName={itemsByName}
+            itemsById={itemsById}
           />
         </Box>
 
         {sections.map(section => (
-          <Box label={section.title} className="items" key={section.type}>
+          <Box label={section.title} key={section.type}>
             <div className="items-list">
               {items
                 .filter(i => i.type === section.type)
@@ -88,7 +100,7 @@ export const ItemsPage: React.FC = () => {
 
       <ItemDetails
         items={items}
-        itemsByName={itemsByName}
+        itemsById={itemsById}
         item={selectedItem}
         onItemSelected={handleItemClicked}
       />

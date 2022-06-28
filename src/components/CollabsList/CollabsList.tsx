@@ -7,7 +7,7 @@ import "./CollabsList.scss";
 
 export interface CollabsListProps {
   items: Item[];
-  itemsByName: Record<string, Item>;
+  itemsById: Record<string, Item>;
   selectedItem?: Item;
   onItemClicked: (item: Item) => void;
 }
@@ -15,7 +15,7 @@ export interface CollabsListProps {
 export const CollabsList: React.FC<CollabsListProps> = ({
   items,
   selectedItem,
-  itemsByName,
+  itemsById,
   onItemClicked
 }) => {
   return (
@@ -28,15 +28,15 @@ export const CollabsList: React.FC<CollabsListProps> = ({
             return null;
           }
 
-          const firstItem = itemsByName[item.requires[0]];
-          const secondItem = itemsByName[item.requires[1]];
+          const firstItem = itemsById[item.requires[0]];
+          const secondItem = itemsById[item.requires[1]];
 
           return (
             <React.Fragment key={item.name}>
               <ItemIcon
                 item={firstItem}
                 selected={firstItem === selectedItem}
-                onSelected={e => onItemClicked(firstItem!)}
+                onSelected={() => onItemClicked(firstItem!)}
               />
 
               <div className="operator">+</div>
@@ -44,7 +44,7 @@ export const CollabsList: React.FC<CollabsListProps> = ({
               <ItemIcon
                 item={secondItem}
                 selected={secondItem === selectedItem}
-                onSelected={e => onItemClicked(secondItem!)}
+                onSelected={() => onItemClicked(secondItem!)}
               />
 
               <div className="operator">=</div>
@@ -52,7 +52,7 @@ export const CollabsList: React.FC<CollabsListProps> = ({
               <ItemIcon
                 item={item}
                 selected={item === selectedItem}
-                onSelected={e => onItemClicked(item)}
+                onSelected={() => onItemClicked(item)}
               />
             </React.Fragment>
           )

@@ -8,14 +8,14 @@ import "./ItemDetails.scss"
 export interface ItemDetailsProps {
   item?: Item;
   items: Item[];
-  itemsByName: Record<string, Item>;
+  itemsById: Record<string, Item>;
   onItemSelected: (item: Item) => void;
 }
 
 export const ItemDetails: React.FC<ItemDetailsProps> = ({
   item,
   items,
-  itemsByName,
+  itemsById,
   onItemSelected
 }) => {
   const usedIn: Item[] = React.useMemo(() => {
@@ -66,11 +66,11 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
         <div className="entry">
           <div className="entry__name">Requires</div>
           <div className="entry__value">
-            {item.requires.map(itemName => {
+            {item.requires.map(itemId => {
               return (
                 <ItemIcon
-                  key={itemName}
-                  item={itemsByName[itemName]}
+                  key={itemId}
+                  item={itemsById[itemId]}
                   onSelected={onItemSelected}
                 />
               )

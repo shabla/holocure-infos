@@ -52,7 +52,7 @@ export const ItemsPage: React.FC = () => {
   }
 
   return (
-    <div className="items-page flex-row align-start">
+    <div className="items-page flex-row align-start content-container">
       <div className="sections">
         <Box label="Collabs">
           <CollabsList

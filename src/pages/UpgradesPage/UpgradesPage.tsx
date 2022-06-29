@@ -25,7 +25,7 @@ export const UpgradesPage: React.FC = () => {
   }
 
   return (
-    <div className="page-upgrades flex-column" style={{ gap: 10 }}>
+    <div className="page-upgrades flex-column content-container" style={{ gap: 10 }}>
       <Box label="Upgrades (WIP)">
         {upgrades.map(upgrade => (
           <div className="upgrade" onClick={() => setSelectedUpgrade(upgrade)} key={upgrade.name}>

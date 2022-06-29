@@ -40,25 +40,61 @@ export const IdolsPage: React.FC = () => {
     setSearchParams({ i: idol.name })
   }
 
-  const getIdolImagePath = (idol?: Idol): string => {
+  const getIdolIconPath = (idol?: Idol): string => {
     if (!idol) {
       return '';
     }
 
-    return `/idols/${idol.image}`;
+    return `/idol-icons/${idol.id}.jpg`;
+  }
+
+  const getIdolModelPath = (idol?: Idol): string => {
+    if (!idol) {
+      return '';
+    }
+
+    return `/idol-models/${idol.id}.png`;
   }
 
   if (loading) {
     return null;
   }
 
+  const stats: {
+    name: string;
+    key: "hp" | "atk" | "spd" | "crt",
+    icon: string;
+    format?: (value: any) => string;
+  }[] = [
+      { name: 'HP', key: 'hp', icon: '' },
+      { name: 'ATK', key: 'atk', icon: '', format: (val: number) => `${val.toFixed(2)}x` },
+      { name: 'SPD', key: 'spd', icon: '', format: (val: number) => `${val.toFixed(2)}x` },
+      { name: 'CRT', key: 'crt', icon: '', format: (val: number) => `${val * 100}%` },
+    ];
+
   return (
-    <div className="idols-page flex-row">
+    <div className="idols-page flex-row content-container">
       <Box label={selectedIdol?.name} className="selected-idol">
-        <img src={getIdolImagePath(selectedIdol)} alt={selectedIdol?.name} />
+        <div className="model flex-column justify-center align-center">
+          <img src={getIdolModelPath(selectedIdol)} alt={selectedIdol?.name} />
+        </div>
 
         <div className="stats">
-          here be stats
+          {stats.map(stat => {
+            const value = selectedIdol?.stats?.[stat.key];
+
+            return (
+              <div className="stat flex-row align-center">
+                <img src={stat.icon} alt={stat.name} />
+                <div className="text flex-row justify-space-between flex-fill">
+                  <div className="name">{stat.name}</div>
+                  <div className="value">
+                    {stat.format && value ? stat.format(value) : value}
+                  </div>
+                </div>
+              </div>
+            )
+          })}
         </div>
       </Box>
 
@@ -76,7 +112,7 @@ export const IdolsPage: React.FC = () => {
                       key={idol.name}
                       onClick={() => handleIdolClicked(idol)}
                     >
-                      <img src={getIdolImagePath(idol)} title={idol.name} />
+                      <img src={getIdolIconPath(idol)} title={idol.name} />
                     </div>
                   ))
                 }
@@ -86,7 +122,7 @@ export const IdolsPage: React.FC = () => {
         })}
       </div>
 
-      <div className="selected-idol-details flex-column">
+      <div className="selected-idol-details flex-column flex-fill">
         <Box label="Attack" className="attack">
           <div className="name">{selectedIdol?.attack.name}</div>
 

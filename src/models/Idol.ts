@@ -13,10 +13,13 @@ interface Special {
   desc: string;
 }
 
+type Stats = Record<"hp" | "atk" | "spd" | "crt", number>
+
 export interface Idol {
+  id: string;
   name: string;
-  image: string;
   gen: string;
+  stats: Stats;
   special: Special;
   attack: Skill;
   skills: Skill[];

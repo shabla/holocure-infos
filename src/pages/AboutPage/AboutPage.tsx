@@ -6,7 +6,7 @@ import "./AboutPage.scss"
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="about-page flex-column align-center">
+    <div className="about-page content-container">
       <Box label="Credits">
         <ul>
           <li>The Hololive talents for giving fans the inspiration to do cool stuff like this game</li>

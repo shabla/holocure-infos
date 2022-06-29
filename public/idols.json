@@ -1,8 +1,14 @@
 [
   {
+    "id": "ame",
     "name": "Amelia Watson",
-    "image": "ame.jpg",
     "gen": "Myth",
+    "stats": {
+      "hp": 75,
+      "atk": 1.25,
+      "spd": 1.35,
+      "crt": 0.1
+    },
     "special": {
       "name": "Slow Time",
       "desc": "Slows all target movement by 80% while Pistol shot shoots 50% faster for 15 seconds."
@@ -16,15 +22,15 @@
         },
         {
           "level": 2,
-          "desc": ""
+          "desc": "Shoot 1 additional shot, and each bullet can pierce +1 times."
         },
         {
           "level": 3,
-          "desc": ""
+          "desc": "Increase damage by 25%."
         },
         {
           "level": 4,
-          "desc": ""
+          "desc": "Bullets ricochet if hit limit is reached."
         },
         {
           "level": 5,
@@ -36,7 +42,7 @@
         },
         {
           "level": 7,
-          "desc": ""
+          "desc": "Shoot 2 additional shots, and postol becomes spread type."
         }
       ]
     },
@@ -95,9 +101,15 @@
     ]
   },
   {
+    "id": "gura",
     "name": "Gawr Gura",
-    "image": "gura.jpg",
     "gen": "Myth",
+    "stats": {
+      "hp": 65,
+      "atk": 1.1,
+      "spd": 1.4,
+      "crt": 0.5
+    },
     "special": {
       "name": "Shark Call",
       "desc": "Summon a shark that deals 500% damage to all targets around. Gura turns red, increasing ATK by 50% and SPD by 25% for 15 seconds."
@@ -111,7 +123,7 @@
         },
         {
           "level": 2,
-          "desc": ""
+          "desc": "Increase damage by 20%."
         },
         {
           "level": 3,
@@ -190,9 +202,15 @@
     ]
   },
   {
+    "id": "ina",
     "name": "Ninomae Inanis",
-    "image": "ina.jpg",
     "gen": "Myth",
+    "stats": {
+      "hp": 75,
+      "atk": 0.9,
+      "spd": 1.5,
+      "crt": 0.01
+    },
     "special": {
       "name": "Tako Spin",
       "desc": "Summons 8 tentacles around Ina, then spins rapidly around her, dealing 150% damage and knockback to all targets."
@@ -285,9 +303,15 @@
     ]
   },
   {
+    "id": "kiara",
     "name": "Takanashi Kiara",
-    "image": "kiara.jpg",
     "gen": "Myth",
+    "stats": {
+      "hp": 90,
+      "atk": 1,
+      "spd": 1.4,
+      "crt": 0.05
+    },
     "special": {
       "name": "Phoenix Fire",
       "desc": "Explode with a big burst of flames, dealing 200% damage and creating a ring of fire around her that deals 30% damage per hit."
@@ -380,9 +404,15 @@
     ]
   },
   {
+    "id": "calli",
     "name": "Mori Calliope",
-    "image": "calli.jpg",
     "gen": "Myth",
+    "stats": {
+      "hp": 70,
+      "atk": 1.1,
+      "spd": 1.3,
+      "crt": 0.1
+    },
     "special": {
       "name": "The Reaper",
       "desc": "Temporarily buff self to increase scythe damage by 300% and increase damage of all critical hits to 300% for 15 seconds."
@@ -475,9 +505,15 @@
     ]
   },
   {
+    "id": "bae",
     "name": "Hakos Baelz",
-    "image": "bae.jpg",
     "gen": "Council",
+    "stats": {
+      "hp": 60,
+      "atk": 1.1,
+      "spd": 1.6,
+      "crt": 0.1
+    },
     "special": {
       "name": "Absolute Chaos",
       "desc": "Launch all current weapons with zero delay for 5 seconds."
@@ -570,9 +606,15 @@
     ]
   },
   {
+    "id": "kronii",
     "name": "Ouro Kronii",
-    "image": "kronii.jpg",
     "gen": "Council",
+    "stats": {
+      "hp": 70,
+      "atk": 1.2,
+      "spd": 1.35,
+      "crt": 0.03
+    },
     "special": {
       "name": "Ruler of Time",
       "desc": "Every second, emit a time blast that deals damage. Each second, the emitted blast becomes stronger."
@@ -665,9 +707,15 @@
     ]
   },
   {
+    "id": "fauna",
     "name": "Ceres Fauna",
-    "image": "fauna.jpg",
     "gen": "Council",
+    "stats": {
+      "hp": 65,
+      "atk": 1,
+      "spd": 1.3,
+      "crt": 0.03
+    },
     "special": {
       "name": "Mother Nature",
       "desc": "Summon a giant tree that creates a healing zone. IN this zone, Fauna gains a 10 second invicibility buff."
@@ -760,9 +808,15 @@
     ]
   },
   {
+    "id": "mumei",
     "name": "Nanashi Mumei",
-    "image": "mumei.jpg",
     "gen": "Council",
+    "stats": {
+      "hp": 60,
+      "atk": 0.85,
+      "spd": 1.4,
+      "crt": 0.05
+    },
     "special": {
       "name": "True Horror",
       "desc": "Destroy everything in sight (except for bosses). There is a 30% that drops are not deleted."
@@ -855,9 +909,15 @@
     ]
   },
   {
+    "id": "sana",
     "name": "Tsukumo Sana",
-    "image": "sana.jpg",
     "gen": "Council",
+    "stats": {
+      "hp": 80,
+      "atk": 0.8,
+      "spd": 1.3,
+      "crt": 0.01
+    },
     "special": {
       "name": "Become Beeg",
       "desc": "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible to all attacks, and deal 200% damage to all targets that touch her."
@@ -950,9 +1010,15 @@
     ]
   },
   {
+    "id": "irys",
     "name": "Irys",
-    "image": "irys.jpg",
     "gen": "Hope",
+    "stats": {
+      "hp": 50,
+      "atk": 1.1,
+      "spd": 1.5,
+      "crt": 0.05
+    },
     "special": {
       "name": "Hope is Descending",
       "desc": "Hope descends from top of screen, and then explodes for 250% damage."

@@ -22,5 +22,10 @@ h6 {
   margin: 0;
 }
 
+.content-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
 @import "./flex.scss";
 @import "./spacing.scss";

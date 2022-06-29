@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ItemIcon } from "@/components";
+import { Sprite } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
 
@@ -33,24 +33,33 @@ export const CollabsList: React.FC<CollabsListProps> = ({
 
           return (
             <React.Fragment key={item.name}>
-              <ItemIcon
-                item={firstItem}
+              <Sprite
+                type="item"
+                offset={firstItem?.spritePos}
+                value={firstItem}
+                label={firstItem?.name}
                 selected={firstItem === selectedItem}
                 onSelected={() => onItemClicked(firstItem!)}
               />
 
               <div className="operator">+</div>
 
-              <ItemIcon
-                item={secondItem}
+              <Sprite
+                type="item"
+                offset={secondItem?.spritePos}
+                value={secondItem}
+                label={secondItem?.name}
                 selected={secondItem === selectedItem}
                 onSelected={() => onItemClicked(secondItem!)}
               />
 
               <div className="operator">=</div>
 
-              <ItemIcon
-                item={item}
+              <Sprite
+                type="item"
+                offset={item.spritePos}
+                value={item}
+                label={item.name}
                 selected={item === selectedItem}
                 onSelected={() => onItemClicked(item)}
               />

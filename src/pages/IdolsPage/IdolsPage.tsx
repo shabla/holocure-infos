@@ -3,8 +3,9 @@ import classNames from "classnames";
 import { useSearchParams } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
-import { Box, SkillIcon } from "@/components";
+import { Box, Sprite } from "@/components";
 import { useIdolsStore } from "@/stores/idolsStore";
+import skillsSprites from "@/assets/skills.png";
 
 import "./IdolsPage.scss"
 
@@ -125,7 +126,11 @@ export const IdolsPage: React.FC = () => {
         <Box label="Attack" className="attack">
           <div className="name flex-row align-center">
             {selectedIdol && (
-              <SkillIcon offset={selectedIdol.attack.spriteOffset} />
+              <Sprite
+                type="skill"
+                offset={selectedIdol.attack.spriteOffset}
+                showBackground={false}
+              />
             )}
             {selectedIdol?.attack.name}
           </div>
@@ -138,7 +143,11 @@ export const IdolsPage: React.FC = () => {
         <Box label="Special" className="special">
           <div className="name flex-row align-center">
             {selectedIdol && (
-              <SkillIcon offset={selectedIdol.special.spriteOffset} />
+              <Sprite
+                type="skill"
+                offset={selectedIdol.special.spriteOffset}
+                showBackground={false}
+              />
             )}
             {selectedIdol?.special.name}
           </div>

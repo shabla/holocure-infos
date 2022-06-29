@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import { Upgrade } from "@/models/Upgrade";
-import { Box } from "@/components";
+import { Box, Sprite } from "@/components";
 
 export const UpgradesPage: React.FC = () => {
   const [upgrades, setUpgrades] = useState<Upgrade[]>();
@@ -28,8 +28,13 @@ export const UpgradesPage: React.FC = () => {
     <div className="page-upgrades flex-column content-container" style={{ gap: 10 }}>
       <Box label="Upgrades (WIP)">
         {upgrades.map(upgrade => (
-          <div className="upgrade" onClick={() => setSelectedUpgrade(upgrade)} key={upgrade.name}>
-            <img src={`/upgradtes/${upgrade.image}`} alt={upgrade.name} />
+          <div className="upgrade flex-row align-center" onClick={() => setSelectedUpgrade(upgrade)} key={upgrade.name}>
+            <Sprite
+              type="upgrade"
+              offset={[0, 0]}
+              showBackground={false}
+            />
+            {upgrade.name}
           </div>
         ))}
       </Box>

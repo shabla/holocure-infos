@@ -1,3 +1,2 @@
 export * from "./Box/Box"
-export * from "./ItemIcon/ItemIcon"
-export * from "./SkillIcon/SkillIcon"
+export * from "./Sprite/Sprite"

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models/Item';
-import { ItemIcon, Box } from '@/components';
+import { Sprite, Box } from '@/components';
 import { useItemsStore } from "@/stores/itemsStore";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetails } from "./ItemDetails/ItemDetails";
+import itemsSpriteSheet from "@/assets/items.png";
 
 import "./ItemsPage.scss"
 
@@ -67,11 +68,14 @@ export const ItemsPage: React.FC = () => {
             <div className="items-list">
               {getItemByType(section.type)
                 .map(item => (
-                  <ItemIcon
-                    key={item.id}
-                    item={item}
+                  <Sprite
+                    type="item"
+                    offset={item.spritePos}
                     selected={item === selectedItem}
+                    label={item.name}
+                    value={item}
                     onSelected={handleItemClicked}
+                    key={item.id}
                   />
                 ))
               }

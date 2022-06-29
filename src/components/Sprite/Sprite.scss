@@ -1,8 +1,6 @@
-.item-icon {
+.sprite {
   $label-overflow-width: 12px;
 
-  height: var(--item-icon-size);
-  width: var(--item-icon-size);
   position: relative;
 
   &.show-label {
@@ -20,8 +18,8 @@
     left: -$label-overflow-width;
     right: -$label-overflow-width;
     color: white;
-    background-color: rgba(0, 0, 0, 0.4);
     text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
     transform: translateY(-20px);
     border-radius: 3px;
     padding: 1px 0;

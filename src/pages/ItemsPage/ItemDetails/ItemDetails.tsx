@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ItemIcon, Box } from "@/components";
+import { Sprite, Box } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
 
@@ -30,7 +30,12 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
       label={
         <>
           <div className="flex-row align-center">
-            <ItemIcon item={item} showLabel={false} />
+            <Sprite
+              type="item"
+              offset={item?.spritePos}
+              value={item}
+              onSelected={onItemSelected}
+            />
             <span className="item-name">{item?.name}</span>
           </div>
           <span className="item-type">{item?.type}</span>
@@ -65,11 +70,15 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
           <div className="entry__name">Requires</div>
           <div className="entry__value">
             {item.requires.map(itemId => {
+              const item = getItemById(itemId);
               return (
-                <ItemIcon
-                  key={itemId}
-                  item={getItemById(itemId)}
+                <Sprite
+                  type="item"
+                  offset={item?.spritePos}
+                  value={item}
+                  label={item?.name}
                   onSelected={onItemSelected}
+                  key={itemId}
                 />
               )
             })}
@@ -83,10 +92,13 @@ export const ItemDetails: React.FC<ItemDetailsProps> = ({
           <div className="entry__value">
             {usedIn.map(item => {
               return (
-                <ItemIcon
-                  key={item.name}
-                  item={item}
+                <Sprite
+                  type="item"
+                  offset={item.spritePos}
+                  value={item}
+                  label={item.name}
                   onSelected={onItemSelected}
+                  key={item.name}
                 />
               )
             })}

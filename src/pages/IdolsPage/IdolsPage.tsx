@@ -123,7 +123,10 @@ export const IdolsPage: React.FC = () => {
 
       <div className="selected-idol-details flex-column flex-fill">
         <Box label="Attack" className="attack">
-          <div className="name">{selectedIdol?.attack.name}</div>
+          <div className="name flex-row align-center">
+            <img src={`/skills/${selectedIdol?.id}-attack.png`} alt={selectedIdol?.attack.name} />
+            {selectedIdol?.attack.name}
+          </div>
 
           {selectedIdol?.attack.levels.map(level => (
             <div key={level.level}>{`Level ${level.level}:`} {level.desc}</div>
@@ -131,7 +134,11 @@ export const IdolsPage: React.FC = () => {
         </Box>
 
         <Box label="Special" className="special">
-          <div className="name">{selectedIdol?.special.name}</div>
+          <div className="name flex-row align-center">
+            <img src={`/skills/${selectedIdol?.id}-special.png`} alt={selectedIdol?.attack.name} />
+            {selectedIdol?.special.name}
+          </div>
+
           <div className="desc">{selectedIdol?.special.desc}</div>
         </Box>
 

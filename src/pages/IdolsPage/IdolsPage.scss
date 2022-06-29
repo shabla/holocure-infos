@@ -45,6 +45,15 @@
     .generation {
       margin-bottom: 20px;
 
+      .name {
+        color: white;
+        border-bottom: 1px solid white;
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
+
       .idols {
         gap: 10px;
 
@@ -64,23 +73,23 @@
   }
 
   .selected-idol-details {
+    .skill-icon {
+      margin-right: 10px;
+    }
+
     .name {
       font-size: 20px;
+    }
 
-      img {
-        margin-right: 10px;
+    .attack {
+      >main {
+        gap: 10px;
       }
     }
 
-    .desc {
-      margin-bottom: 10px;
-    }
-
-    .box {
-      flex: 1 1 auto;
-
-      >main {
-        gap: 10px;
+    .skills {
+      .name:not(:first-of-type) {
+        margin-top: 15px;
       }
     }
   }

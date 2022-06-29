@@ -3,7 +3,7 @@ import classNames from "classnames";
 import { useSearchParams } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
-import { Heading, Box } from "@/components";
+import { Box, SkillIcon } from "@/components";
 import { useIdolsStore } from "@/stores/idolsStore";
 
 import "./IdolsPage.scss"
@@ -83,7 +83,7 @@ export const IdolsPage: React.FC = () => {
             const value = selectedIdol?.stats?.[stat.key];
 
             return (
-              <div className="stat flex-row align-center">
+              <div className="stat flex-row align-center" key={stat.key}>
                 <img src={`/stats/stat-${stat.key}.png`} alt={stat.name} />
                 <div className="text flex-row justify-space-between flex-fill">
                   <div className="name">{stat.name}</div>
@@ -101,15 +101,15 @@ export const IdolsPage: React.FC = () => {
         {gensOrder.map(genName => {
           return (
             <section className="generation flex-fill" key={genName}>
-              <Heading>{genName}</Heading>
+              <div className="name">{genName}</div>
 
               <div className="idols flex-row">
                 {getIdolsByGen(genName)
                   .map(idol => (
                     <div
                       className={classNames("idol", { selected: idol === selectedIdol })}
-                      key={idol.name}
                       onClick={() => handleIdolClicked(idol)}
+                      key={idol.id}
                     >
                       <img src={getIdolIconPath(idol)} title={idol.name} />
                     </div>
@@ -124,7 +124,9 @@ export const IdolsPage: React.FC = () => {
       <div className="selected-idol-details flex-column flex-fill">
         <Box label="Attack" className="attack">
           <div className="name flex-row align-center">
-            <img src={`/skills/${selectedIdol?.id}-attack.png`} alt={selectedIdol?.attack.name} />
+            {selectedIdol && (
+              <SkillIcon offset={selectedIdol.attack.spriteOffset} />
+            )}
             {selectedIdol?.attack.name}
           </div>
 
@@ -135,7 +137,9 @@ export const IdolsPage: React.FC = () => {
 
         <Box label="Special" className="special">
           <div className="name flex-row align-center">
-            <img src={`/skills/${selectedIdol?.id}-special.png`} alt={selectedIdol?.attack.name} />
+            {selectedIdol && (
+              <SkillIcon offset={selectedIdol.special.spriteOffset} />
+            )}
             {selectedIdol?.special.name}
           </div>
 

@@ -11,10 +11,18 @@
     },
     "special": {
       "name": "Slow Time",
-      "desc": "Slows all target movement by 80% while Pistol shot shoots 50% faster for 15 seconds."
+      "desc": "Slows all target movement by 80% while Pistol shot shoots 50% faster for 15 seconds.",
+      "spriteOffset": [
+        0,
+        1
+      ]
     },
     "attack": {
       "name": "Pistol Shot",
+      "spriteOffset": [
+        0,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -112,10 +120,18 @@
     },
     "special": {
       "name": "Shark Call",
-      "desc": "Summon a shark that deals 500% damage to all targets around. Gura turns red, increasing ATK by 50% and SPD by 25% for 15 seconds."
+      "desc": "Summon a shark that deals 500% damage to all targets around. Gura turns red, increasing ATK by 50% and SPD by 25% for 15 seconds.",
+      "spriteOffset": [
+        1,
+        1
+      ]
     },
     "attack": {
       "name": "Trident Thrust",
+      "spriteOffset": [
+        1,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -213,10 +229,18 @@
     },
     "special": {
       "name": "Tako Spin",
-      "desc": "Summons 8 tentacles around Ina, then spins rapidly around her, dealing 150% damage and knockback to all targets."
+      "desc": "Summons 8 tentacles around Ina, then spins rapidly around her, dealing 150% damage and knockback to all targets.",
+      "spriteOffset": [
+        2,
+        1
+      ]
     },
     "attack": {
       "name": "Summon Tentacle",
+      "spriteOffset": [
+        2,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -314,10 +338,18 @@
     },
     "special": {
       "name": "Phoenix Fire",
-      "desc": "Explode with a big burst of flames, dealing 200% damage and creating a ring of fire around her that deals 30% damage per hit."
+      "desc": "Explode with a big burst of flames, dealing 200% damage and creating a ring of fire around her that deals 30% damage per hit.",
+      "spriteOffset": [
+        3,
+        1
+      ]
     },
     "attack": {
       "name": "Phoenix Sword",
+      "spriteOffset": [
+        3,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -415,10 +447,18 @@
     },
     "special": {
       "name": "The Reaper",
-      "desc": "Temporarily buff self to increase scythe damage by 300% and increase damage of all critical hits to 300% for 15 seconds."
+      "desc": "Temporarily buff self to increase scythe damage by 300% and increase damage of all critical hits to 300% for 15 seconds.",
+      "spriteOffset": [
+        4,
+        1
+      ]
     },
     "attack": {
       "name": "Scythe Swing",
+      "spriteOffset": [
+        4,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -516,10 +556,18 @@
     },
     "special": {
       "name": "Absolute Chaos",
-      "desc": "Launch all current weapons with zero delay for 5 seconds."
+      "desc": "Launch all current weapons with zero delay for 5 seconds.",
+      "spriteOffset": [
+        5,
+        1
+      ]
     },
     "attack": {
       "name": "Play Dice",
+      "spriteOffset": [
+        5,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -617,10 +665,18 @@
     },
     "special": {
       "name": "Ruler of Time",
-      "desc": "Every second, emit a time blast that deals damage. Each second, the emitted blast becomes stronger."
+      "desc": "Every second, emit a time blast that deals damage. Each second, the emitted blast becomes stronger.",
+      "spriteOffset": [
+        6,
+        1
+      ]
     },
     "attack": {
       "name": "Clock Hands",
+      "spriteOffset": [
+        6,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -718,10 +774,18 @@
     },
     "special": {
       "name": "Mother Nature",
-      "desc": "Summon a giant tree that creates a healing zone. IN this zone, Fauna gains a 10 second invicibility buff."
+      "desc": "Summon a giant tree that creates a healing zone. IN this zone, Fauna gains a 10 second invicibility buff.",
+      "spriteOffset": [
+        7,
+        1
+      ]
     },
     "attack": {
       "name": "Nature Shield",
+      "spriteOffset": [
+        7,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -819,10 +883,18 @@
     },
     "special": {
       "name": "True Horror",
-      "desc": "Destroy everything in sight (except for bosses). There is a 30% that drops are not deleted."
+      "desc": "Destroy everything in sight (except for bosses). There is a 30% that drops are not deleted.",
+      "spriteOffset": [
+        8,
+        1
+      ]
     },
     "attack": {
       "name": "Bird Feather",
+      "spriteOffset": [
+        8,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -920,10 +992,18 @@
     },
     "special": {
       "name": "Become Beeg",
-      "desc": "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible to all attacks, and deal 200% damage to all targets that touch her."
+      "desc": "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible to all attacks, and deal 200% damage to all targets that touch her.",
+      "spriteOffset": [
+        9,
+        1
+      ]
     },
     "attack": {
       "name": "Orbit",
+      "spriteOffset": [
+        9,
+        0
+      ],
       "levels": [
         {
           "level": 1,
@@ -1021,10 +1101,18 @@
     },
     "special": {
       "name": "Hope is Descending",
-      "desc": "Hope descends from top of screen, and then explodes for 250% damage."
+      "desc": "Hope descends from top of screen, and then explodes for 250% damage.",
+      "spriteOffset": [
+        10,
+        1
+      ]
     },
     "attack": {
       "name": "Nephilim Blast",
+      "spriteOffset": [
+        10,
+        0
+      ],
       "levels": [
         {
           "level": 1,

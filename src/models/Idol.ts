@@ -5,12 +5,14 @@ interface Level {
 
 interface Skill {
   name: string;
+  spriteOffset: [number, number];
   levels: Level[]
 }
 
 interface Special {
   name: string;
   desc: string;
+  spriteOffset: [number, number];
 }
 
 type Stats = Record<"hp" | "atk" | "spd" | "crt", number>

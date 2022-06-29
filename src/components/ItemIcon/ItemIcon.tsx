@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import { Item } from "@/models/Item";
 import itemsSpriteSheet from "@/assets/items.png";
+import { getSpriteBackground } from "@/utils/getSpriteBackground";
 
 import "./ItemIcon.scss"
 
@@ -21,12 +22,9 @@ export const ItemIcon: React.FC<ItemIconProps> = ({
   showLabel = true,
   onSelected
 }) => {
-  let spriteX = '', spriteY = '';
+  let bgStyle = '';
   if (item) {
-    const [x, y] = item.spritePos;
-
-    spriteX = `${-x * SPRITE_SIZE}px`;
-    spriteY = `${-y * SPRITE_SIZE}px`;
+    bgStyle = getSpriteBackground(itemsSpriteSheet, SPRITE_SIZE, item.spritePos);
   }
 
   return (
@@ -38,7 +36,7 @@ export const ItemIcon: React.FC<ItemIconProps> = ({
       })}
       onClick={onSelected ? () => onSelected(item!) : undefined}
       style={{
-        background: `url(${itemsSpriteSheet}) ${spriteX} ${spriteY}, rgba(0, 0, 0, 0.1)`
+        background: `${bgStyle}, rgba(0, 0, 0, 0.1)`
       }}
     >
       {showLabel && <div className="name flex-column align-center justify-center">{item?.name || '??'}</div>}

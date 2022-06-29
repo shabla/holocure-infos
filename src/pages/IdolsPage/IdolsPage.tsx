@@ -63,13 +63,12 @@ export const IdolsPage: React.FC = () => {
   const stats: {
     name: string;
     key: "hp" | "atk" | "spd" | "crt",
-    icon: string;
     format?: (value: any) => string;
   }[] = [
-      { name: 'HP', key: 'hp', icon: '' },
-      { name: 'ATK', key: 'atk', icon: '', format: (val: number) => `${val.toFixed(2)}x` },
-      { name: 'SPD', key: 'spd', icon: '', format: (val: number) => `${val.toFixed(2)}x` },
-      { name: 'CRT', key: 'crt', icon: '', format: (val: number) => `${val * 100}%` },
+      { name: 'HP', key: 'hp' },
+      { name: 'ATK', key: 'atk', format: (val: number) => `${val.toFixed(2)}x` },
+      { name: 'SPD', key: 'spd', format: (val: number) => `${val.toFixed(2)}x` },
+      { name: 'CRT', key: 'crt', format: (val: number) => `${val * 100}%` },
     ];
 
   return (
@@ -85,7 +84,7 @@ export const IdolsPage: React.FC = () => {
 
             return (
               <div className="stat flex-row align-center">
-                <img src={stat.icon} alt={stat.name} />
+                <img src={`/stats/stat-${stat.key}.png`} alt={stat.name} />
                 <div className="text flex-row justify-space-between flex-fill">
                   <div className="name">{stat.name}</div>
                   <div className="value">

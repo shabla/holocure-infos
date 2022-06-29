@@ -16,8 +16,8 @@ export const App = () => {
           <img src={holocureLogo} />
 
           <NavLink to="items" className={({ isActive }) => isActive ? 'active' : ''}>Items</NavLink>
-          <NavLink to="idols" className={({ isActive }) => isActive ? 'active' : ''}>Idols (WIP)</NavLink>
-          <NavLink to="upgrades" className={({ isActive }) => isActive ? 'active' : ''}>Upgrades (WIP)</NavLink>
+          <NavLink to="idols" className={({ isActive }) => isActive ? 'active' : ''}>Idols</NavLink>
+          <NavLink to="upgrades" className={({ isActive }) => isActive ? 'active' : ''}>Upgrades</NavLink>
           <NavLink to="about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
         </section>
 

@@ -1,4 +1,4 @@
-import React from "react";
+import { useMemo, FC } from "react";
 
 import { Sprite, Box } from "@/components";
 import { Item } from "@/models/Item";
@@ -11,13 +11,13 @@ export interface ItemDetailsProps {
   onItemSelected: (item: Item) => void;
 }
 
-export const ItemDetails: React.FC<ItemDetailsProps> = ({
+export const ItemDetails: FC<ItemDetailsProps> = ({
   item,
   onItemSelected
 }) => {
   const [getItemById, getItemUsage] = useItemsStore(state => [state.getItemById, state.getItemUsage]);
 
-  const usedIn: Item[] = React.useMemo(() => {
+  const usedIn: Item[] = useMemo(() => {
     if (item) {
       return getItemUsage(item.id);
     }

@@ -2,6 +2,7 @@
   $label-overflow-width: 12px;
 
   position: relative;
+  flex: 0 0 auto;
 
   &.show-label {
     margin: 15px $label-overflow-width 0;

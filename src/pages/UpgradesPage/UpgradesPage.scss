@@ -1,0 +1,28 @@
+.page-upgrades {
+
+  .upgrades {
+    >main {
+      gap: 10px;
+    }
+
+    .upgrade {
+      cursor: pointer;
+
+      &.selected {
+        background: white;
+        color: var(--color-blue);
+        font-weight: bold;
+      }
+    }
+  }
+
+  .sprite {
+    margin-right: 10px;
+  }
+
+  .details {
+    .desc {
+      margin-bottom: 20px;
+    }
+  }
+}

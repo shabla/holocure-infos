@@ -3,4 +3,5 @@ export interface Upgrade {
   image: string;
   desc: string;
   costs: number[];
+  spriteOffset: [number, number];
 }

@@ -387,15 +387,15 @@
         "levels": [
           {
             "level": 1,
-            "desc": "Moving gradually increases damage by 2% every second, up to 40%. Buff resets to 0$ if stopped."
+            "desc": "Moving gradually increases damage by 2% every second, up to 40%. Buff resets to 0% if stopped."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Moving gradually increases damage by 3% every second, up to 60%. Buff resets to 0% if stopped."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Moving gradually increases damage by 4% every second, up to 80%. Also increase critical hit chance by 1% per stack.  Buff resets to 0% if stopped."
           }
         ]
       },
@@ -404,15 +404,15 @@
         "levels": [
           {
             "level": 1,
-            "desc": "Leave a burning fire underneath Kiara whenever she moves athat deals 30% damage per hit. Lasts 5 seconds."
+            "desc": "Leave a burning fire underneath Kiara whenever she moves that deals 30% damage per hit. Lasts 5 seconds."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Leave a burning fire underneath Kiara whenever she moves that deals 50% damage per hit. Lasts 5 seconds."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Leave a burning fire underneath Kiara whenever she moves that deals 75% damage per hit. Lasts 5 seconds. Also slows targets for 3 seconds."
           }
         ]
       },
@@ -429,7 +429,7 @@
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "If Kiara has not taken any damage for 10 seconds, the next three hits taken is halved and stay invulnerable for 1 seconds."
           }
         ]
       }
@@ -684,79 +684,79 @@
         },
         {
           "level": 2,
-          "desc": ""
+          "desc": "Increase area of attack by 20%."
         },
         {
           "level": 3,
-          "desc": ""
+          "desc": "Increase damage by 30%."
         },
         {
           "level": 4,
-          "desc": ""
+          "desc": "Reduce the time between attack by 10%."
         },
         {
           "level": 5,
-          "desc": ""
+          "desc": "Increase area of attack by 30%."
         },
         {
           "level": 6,
-          "desc": ""
+          "desc": "Reduce time between attack by 15%."
         },
         {
           "level": 7,
-          "desc": ""
+          "desc": "Increase damage by 50% and stun targets for 0.5 seconds."
         }
       ]
     },
     "skills": [
       {
-        "name": "",
+        "name": "Kroniicopter",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another 10% to SPD and Haste for 5 seconds."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another 15% to SPD and Haste for 5 seconds."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another 20% to SPD and Haste for 5 seconds."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Time Bubble",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Every 10 seconds, create a small time bubble that freezes targets in time, preventing them from moving or attacking."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Every 10 seconds, create a medium time bubble that freezes targets in time, preventing them from moving or attacking."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Every 10 seconds, create a large time bubble that freezes targets in time, preventing them from moving or attacking."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Perfection",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "While HP is full, increase ATK, SPD, PickUp by 20%. Also increase Haste and Crit by 10%."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "While HP is full, increase ATK, SPD, PickUp by 33%. Also increase Haste and Crit by 15%."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "While HP is full, increase ATK, SPD, PickUp by 50%. Also increase Haste and Crit by 20%."
           }
         ]
       }
@@ -793,79 +793,79 @@
         },
         {
           "level": 2,
-          "desc": ""
+          "desc": "Increase damage by 20% and increase hit limit by 5."
         },
         {
           "level": 3,
-          "desc": ""
+          "desc": "Reduce the time between attacks by 15%."
         },
         {
           "level": 4,
-          "desc": ""
+          "desc": "Shoot 2 additional leaves."
         },
         {
           "level": 5,
-          "desc": ""
+          "desc": "Increase area of attack by 30% and increase hit limit by 5."
         },
         {
           "level": 6,
-          "desc": ""
+          "desc": "Increase damage by 30% and remove hit limit."
         },
         {
           "level": 7,
-          "desc": ""
+          "desc": "Shoot 2 additional leaves and aim towards targets."
         }
       ]
     },
     "skills": [
       {
-        "name": "",
+        "name": "Sapling",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "When defeating a target, there is a 5% chance that a sapling will drop. A sapling heals 3% and increase Fauna's ATK, SPD by 30% for 10 seconds."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "When defeating a target, there is a 7% chance that a sapling will drop. A sapling heals 3% and increase Fauna's ATK, SPD by 40% for 10 seconds."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "When defeating a target, there is a 10% chance that a sapling will drop. A sapling heals 3% and increase Fauna's ATK, SPD by 50% for 10 seconds."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Guardian Tree",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "When healing, a branch will grow under a random nearby target dealing 200% damage."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "When healing, a branch will grow under a random nearby target dealing 250% damage."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "When healing, a branch will grow under a random nearby target dealing 300% damage."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Whisperer",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Every 10 seconds, gain 1 \"Whisped\" (max 3). Each stack heals 2% HP every seconds. On taking the next hit, consume 1 Whisper to negate the attack."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Every 10 seconds, gain 1 \"Whisped\" (max 4). Each stack heals 2% HP every seconds. On taking the next hit, consume 1 Whisper to negate the attack."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Every 10 seconds, gain 1 \"Whisped\" (max 5). Each stack heals 2% HP every seconds. On taking the next hit, consume 1 Whisper to negate the attack."
           }
         ]
       }
@@ -902,27 +902,27 @@
         },
         {
           "level": 2,
-          "desc": ""
+          "desc": "Increase damage by 20%."
         },
         {
           "level": 3,
-          "desc": ""
+          "desc": "Increase hit limit by 5."
         },
         {
           "level": 4,
-          "desc": ""
+          "desc": "Shoot 1 additional feather."
         },
         {
           "level": 5,
-          "desc": ""
+          "desc": "Reduce the time between attacks by 30% and increase hit limit by 5."
         },
         {
           "level": 6,
-          "desc": ""
+          "desc": "Shoot 2 additional feather."
         },
         {
           "level": 7,
-          "desc": ""
+          "desc": "Feathers home into targets 3 times."
         }
       ]
     },
@@ -936,11 +936,11 @@
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Summon a Friend that usesone of you weapons at random every 5 seconds at 100% power."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Summon a Friend that usesone of you weapons at random every 5 seconds at 120% power."
           }
         ]
       },
@@ -953,28 +953,28 @@
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "For every 100 targets Mumei has defeated, increase damage by 1% (max 150%)."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "For every 100 targets Mumei has defeated, increase damage by 1% (max 200%)."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Civilization",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Attack increases by 1% for every target currently on the screen, up to 100%."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Attack increases by 2% for every target currently on the screen, up to 120%."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Attack increases by 3% for every target currently on the screen, up to 150%."
           }
         ]
       }
@@ -1011,79 +1011,79 @@
         },
         {
           "level": 2,
-          "desc": ""
+          "desc": "Increase damage by 20%."
         },
         {
           "level": 3,
-          "desc": ""
+          "desc": "Increase area of attack by 20% and range by 20%."
         },
         {
           "level": 4,
-          "desc": ""
+          "desc": "Increase damage by 33%."
         },
         {
           "level": 5,
-          "desc": ""
+          "desc": "Increase area of attack by 30% and range by 30%."
         },
         {
           "level": 6,
-          "desc": ""
+          "desc": "Reduce the time between attacks by 10%."
         },
         {
           "level": 7,
-          "desc": ""
+          "desc": "Create a second planet and knock back targets."
         }
       ]
     },
     "skills": [
       {
-        "name": "",
+        "name": "Speaker Of Space",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Area and all attacks damage increase by 10%. All attack damage is also increased by area increasing effects."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Area and all attacks damage increase by 20%. All attack damage is also increased by area increasing effects."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Area and all attacks damage increase by 30%. All attack damage is also increased by area increasing effects."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Astrology",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Every 15 seconds, gain a 15 seconds 20% buff to either ATK, SPD, Crit, Pickup Range, or Haste, or heal for 30% HP."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Every 15 seconds, gain a 15 seconds 30% buff to either ATK, SPD, Crit, Pickup Range, or Haste, or heal for 40% HP."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Every 15 seconds, gain a 15 seconds 40% buff to either ATK, SPD, Crit, Pickup Range, or Haste, or heal for 50% HP."
           }
         ]
       },
       {
-        "name": "",
+        "name": "Gravity",
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Every 5 seconds, create a gravitational blast that deals 125% damage. Damage is also increased by area increasing effects."
           },
           {
             "level": 2,
-            "desc": ""
+            "desc": "Every 5 seconds, create a gravitational blast that deals 150% damage. Damage is also increased by area increasing effects."
           },
           {
             "level": 3,
-            "desc": ""
+            "desc": "Every 5 seconds, create a gravitational blast that deals 200% damage. Damage is also increased by area increasing effects."
           }
         ]
       }
@@ -1167,7 +1167,7 @@
         "levels": [
           {
             "level": 1,
-            "desc": ""
+            "desc": "Increase damage by 3%, up to 30%, for 5 seconds every time Irys heals. Each heal resets the timer."
           },
           {
             "level": 2,

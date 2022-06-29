@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
+import classNames from "classnames";
 
-import { Upgrade } from "@/models/Upgrade";
 import { Box, Sprite } from "@/components";
+import { Upgrade } from "@/models/Upgrade";
+import { useUpgradesStore } from "@/stores/upgradesStore";
+
+import "./UpgradesPage.scss";
 
 export const UpgradesPage: React.FC = () => {
-  const [upgrades, setUpgrades] = useState<Upgrade[]>();
   const [selectedUpgrade, setSelectedUpgrade] = useState<Upgrade>();
+  const [upgrades, loadUpgrades] = useUpgradesStore(state => [
+    state.upgrades,
+    state.loadUpgrades
+  ])
 
   useEffect(() => {
-    fetch("/upgrades.json")
-      .then(data => data.json())
-      .then(upgrades => {
-        setUpgrades(upgrades);
-        setSelectedUpgrade(upgrades[0]);
-      })
+    loadUpgrades().then(upgrades => setSelectedUpgrade(upgrades[0]));
   }, [])
 
   const getUpgradeTotalCost = (upgrade: Upgrade): number => {
@@ -25,24 +27,30 @@ export const UpgradesPage: React.FC = () => {
   }
 
   return (
-    <div className="page-upgrades flex-column content-container" style={{ gap: 10 }}>
-      <Box label="Upgrades (WIP)">
+    <div className="page-upgrades flex-row content-container" style={{ gap: 10 }}>
+      <Box label="Upgrades" className="upgrades">
         {upgrades.map(upgrade => (
-          <div className="upgrade flex-row align-center" onClick={() => setSelectedUpgrade(upgrade)} key={upgrade.name}>
+          <div
+            className={classNames("upgrade flex-row align-center", { selected: upgrade === selectedUpgrade })}
+            onClick={() => setSelectedUpgrade(upgrade)}
+            key={upgrade.name}
+          >
             <Sprite
               type="upgrade"
-              offset={[0, 0]}
-              showBackground={false}
+              offset={upgrade.spriteOffset}
+              showBackground={upgrade === selectedUpgrade}
             />
             {upgrade.name}
           </div>
         ))}
       </Box>
 
-      <Box label={selectedUpgrade?.name}>
+      <Box label={selectedUpgrade?.name} className="details flex-fill">
         {selectedUpgrade && (
           <>
-            {selectedUpgrade.desc}
+            <div className="desc">
+              {selectedUpgrade.desc}
+            </div>
 
             <div className="costs">
               {selectedUpgrade.costs.join(' / ')} (Total: {getUpgradeTotalCost(selectedUpgrade)})

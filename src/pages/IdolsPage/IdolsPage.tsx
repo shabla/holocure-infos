@@ -124,7 +124,7 @@ export const IdolsPage: React.FC = () => {
 
       <div className="selected-idol-details flex-column flex-fill">
         <Box label="Attack" className="attack">
-          <div className="name flex-row align-center">
+          <div className="skill-name flex-row align-center">
             {selectedIdol && (
               <Sprite
                 type="skill"
@@ -135,13 +135,20 @@ export const IdolsPage: React.FC = () => {
             {selectedIdol?.attack.name}
           </div>
 
-          {selectedIdol?.attack.levels.map(level => (
-            <div key={level.level}>{`Level ${level.level}:`} {level.desc}</div>
-          ))}
+          <table className="info-table">
+            <tbody>
+              {selectedIdol?.attack.levels.map(level => (
+                <tr key={level.level}>
+                  <td className="name">Level {level.level}</td>
+                  <td>{level.desc}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </Box>
 
         <Box label="Special" className="special">
-          <div className="name flex-row align-center">
+          <div className="skill-name flex-row align-center">
             {selectedIdol && (
               <Sprite
                 type="skill"
@@ -158,7 +165,7 @@ export const IdolsPage: React.FC = () => {
         <Box label="Skills" className="skills">
           {selectedIdol?.skills.map(skill => (
             <Fragment key={skill.name}>
-              <div className="name flex-row align-center">
+              <div className="skill-name flex-row align-center">
                 {selectedIdol && (
                   <Sprite
                     type="skill"
@@ -169,9 +176,16 @@ export const IdolsPage: React.FC = () => {
                 {skill.name}
               </div>
 
-              {skill.levels.map(level => (
-                <div key={level.level}>{`Level ${level.level}:`} {level.desc}</div>
-              ))}
+              <table className="info-table">
+                <tbody>
+                  {skill.levels.map(level => (
+                    <tr key={level.level}>
+                      <td className="name">Level {level.level}</td>
+                      <td>{level.desc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
             </Fragment>
           ))}
         </Box>

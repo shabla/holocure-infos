@@ -74,52 +74,54 @@ export const IdolsPage: React.FC = () => {
 
   return (
     <div className="idols-page flex-row content-container">
-      <Box label={selectedIdol?.name} className="selected-idol">
-        <div className="model flex-column justify-center align-center">
-          <img src={getIdolModelPath(selectedIdol)} alt={selectedIdol?.name} />
-        </div>
+      <div className="sticky-section flex-column justify-center">
+        <Box label={selectedIdol?.name} className="selected-idol">
+          <div className="model flex-column justify-center align-center">
+            <img src={getIdolModelPath(selectedIdol)} alt={selectedIdol?.name} />
+          </div>
 
-        <div className="stats">
-          {stats.map(stat => {
-            const value = selectedIdol?.stats?.[stat.key];
+          <div className="stats">
+            {stats.map(stat => {
+              const value = selectedIdol?.stats?.[stat.key];
 
-            return (
-              <div className="stat flex-row align-center" key={stat.key}>
-                <img src={`/stats/stat-${stat.key}.png`} alt={stat.name} />
-                <div className="text flex-row justify-space-between flex-fill">
-                  <div className="name">{stat.name}</div>
-                  <div className="value">
-                    {stat.format && value ? stat.format(value) : value}
+              return (
+                <div className="stat flex-row align-center" key={stat.key}>
+                  <img src={`/stats/stat-${stat.key}.png`} alt={stat.name} />
+                  <div className="text flex-row justify-space-between flex-fill">
+                    <div className="name">{stat.name}</div>
+                    <div className="value">
+                      {stat.format && value ? stat.format(value) : value}
+                    </div>
                   </div>
                 </div>
-              </div>
+              )
+            })}
+          </div>
+        </Box>
+
+        <div className="generations flex-column">
+          {gensOrder.map(genName => {
+            return (
+              <section className="generation" key={genName}>
+                <div className="name">{genName}</div>
+
+                <div className="idols flex-row">
+                  {getIdolsByGen(genName)
+                    .map(idol => (
+                      <div
+                        className={classNames("idol", { selected: idol === selectedIdol })}
+                        onClick={() => handleIdolClicked(idol)}
+                        key={idol.id}
+                      >
+                        <img src={getIdolIconPath(idol)} title={idol.name} />
+                      </div>
+                    ))
+                  }
+                </div>
+              </section>
             )
           })}
         </div>
-      </Box>
-
-      <div className="generations">
-        {gensOrder.map(genName => {
-          return (
-            <section className="generation flex-fill" key={genName}>
-              <div className="name">{genName}</div>
-
-              <div className="idols flex-row">
-                {getIdolsByGen(genName)
-                  .map(idol => (
-                    <div
-                      className={classNames("idol", { selected: idol === selectedIdol })}
-                      onClick={() => handleIdolClicked(idol)}
-                      key={idol.id}
-                    >
-                      <img src={getIdolIconPath(idol)} title={idol.name} />
-                    </div>
-                  ))
-                }
-              </div>
-            </section>
-          )
-        })}
       </div>
 
       <div className="selected-idol-details flex-column flex-fill">

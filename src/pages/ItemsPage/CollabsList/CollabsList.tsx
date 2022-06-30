@@ -38,6 +38,7 @@ export const CollabsList: React.FC<CollabsListProps> = ({
                 offset={firstItem?.spritePos}
                 value={firstItem}
                 label={firstItem?.name}
+                showBackground
                 selected={firstItem === selectedItem}
                 onSelected={() => onItemClicked(firstItem!)}
               />
@@ -49,6 +50,7 @@ export const CollabsList: React.FC<CollabsListProps> = ({
                 offset={secondItem?.spritePos}
                 value={secondItem}
                 label={secondItem?.name}
+                showBackground
                 selected={secondItem === selectedItem}
                 onSelected={() => onItemClicked(secondItem!)}
               />
@@ -60,6 +62,7 @@ export const CollabsList: React.FC<CollabsListProps> = ({
                 offset={item.spritePos}
                 value={item}
                 label={item.name}
+                showBackground
                 selected={item === selectedItem}
                 onSelected={() => onItemClicked(item)}
               />

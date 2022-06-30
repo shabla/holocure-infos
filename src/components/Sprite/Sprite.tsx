@@ -59,7 +59,7 @@ export const Sprite = <T,>({
   height,
   offset = [0, 0],
   label,
-  showBackground = true,
+  showBackground = false,
   selected = false,
   value,
   onSelected
@@ -71,6 +71,15 @@ export const Sprite = <T,>({
   sprite = sprite || defaultValues[type].sprite;
 
   const bgStyle = getSpriteBackground(sprite, width, height, offset);
+  const containerStyle: React.CSSProperties | undefined = showLabel ? {
+    width: `calc(${width}px + (2 * var(--sprite-label-overflow)))`,
+    height: `calc(${height}px + var(--sprite-label-overflow))`
+  } : undefined;
+  const imageStyle: React.CSSProperties = {
+    width: `${width}px`,
+    height: `${height}px`,
+    background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`
+  };
 
   return (
     <div
@@ -79,18 +88,19 @@ export const Sprite = <T,>({
         clickable: !!onSelected,
         'show-label': showLabel,
       })}
-      onClick={onSelected ? () => onSelected(value!) : undefined}
-      style={{
-        width: `${width}px`,
-        height: `${height}px`,
-        background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`
-      }}
+      style={containerStyle}
     >
       {showLabel && (
-        <div className="name flex-column align-center justify-center">
+        <div className="label flex-column align-center justify-center">
           {label}
         </div>
       )}
+
+      <div
+        className="image"
+        onClick={onSelected ? () => onSelected(value!) : undefined}
+        style={imageStyle}
+      />
     </div>
   );
 }

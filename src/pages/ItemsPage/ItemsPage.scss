@@ -1,6 +1,4 @@
 .items-page {
-  gap: 10px;
-
   .sections {
     flex: 1 1 60%;
 
@@ -9,7 +7,6 @@
       grid-template-columns: repeat(5, 74px);
       justify-content: center;
       align-items: center;
-      gap: 10px;
     }
   }
 }

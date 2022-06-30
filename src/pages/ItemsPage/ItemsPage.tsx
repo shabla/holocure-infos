@@ -6,7 +6,6 @@ import { Sprite, Box } from '@/components';
 import { useItemsStore } from "@/stores/itemsStore";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetails } from "./ItemDetails/ItemDetails";
-import itemsSpriteSheet from "@/assets/items.png";
 
 import "./ItemsPage.scss"
 
@@ -53,7 +52,7 @@ export const ItemsPage: React.FC = () => {
   }
 
   return (
-    <div className="items-page flex-row align-start content-container">
+    <div className="items-page flex-row align-start content-container gap-10">
       <div className="sections">
         <Box label="Collabs">
           <CollabsList
@@ -65,13 +64,14 @@ export const ItemsPage: React.FC = () => {
 
         {sections.map(section => (
           <Box label={section.title} key={section.type}>
-            <div className="items-list">
+            <div className="items-list gap-10">
               {getItemByType(section.type)
                 .map(item => (
                   <Sprite
                     type="item"
                     offset={item.spritePos}
                     selected={item === selectedItem}
+                    showBackground
                     label={item.name}
                     value={item}
                     onSelected={handleItemClicked}

@@ -34,6 +34,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
               type="item"
               offset={item?.spritePos}
               value={item}
+              showBackground
               onSelected={onItemSelected}
             />
             <span className="item-name">{item?.name}</span>
@@ -77,6 +78,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
                         offset: item?.spritePos,
                         value: item,
                         label: item?.name,
+                        showBackground: true,
                         onSelected: onItemSelected,
                         key: itemId,
                       } as SpriteProps;
@@ -98,6 +100,7 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
                       offset: item.spritePos,
                       value: item,
                       label: item.name,
+                      showBackground: true,
                       onSelected: onItemSelected,
                       key: item.name,
                     } as SpriteProps))

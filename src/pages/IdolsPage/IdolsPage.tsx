@@ -22,15 +22,15 @@ export const IdolsPage: React.FC = () => {
   }, [])
 
   useEffect(() => {
-    const idolName = searchParams.get('i') || 'Amelia Watson';
+    const idolId = searchParams.get('i') || 'ame';
 
     if (idols) {
-      setSelectedIdol(idols.filter(i => i.name === idolName)[0] || idols[0]);
+      setSelectedIdol(idols.filter(i => i.id === idolId)[0] || idols[0]);
     }
   }, [searchParams, idols])
 
   const handleIdolSelected = (idol: Idol): void => {
-    setSearchParams({ i: idol.name })
+    setSearchParams({ i: idol.id })
   }
 
   if (loading) {

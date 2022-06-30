@@ -3,7 +3,7 @@
     "id": "ame",
     "name": "Amelia Watson",
     "gen": "Myth",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       0,
       0
     ],
@@ -128,7 +128,7 @@
     "id": "gura",
     "name": "Gawr Gura",
     "gen": "Myth",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       1,
       0
     ],
@@ -253,7 +253,7 @@
     "id": "ina",
     "name": "Ninomae Inanis",
     "gen": "Myth",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       2,
       0
     ],
@@ -378,7 +378,7 @@
     "id": "kiara",
     "name": "Takanashi Kiara",
     "gen": "Myth",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       3,
       0
     ],
@@ -503,7 +503,7 @@
     "id": "calli",
     "name": "Mori Calliope",
     "gen": "Myth",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       4,
       0
     ],
@@ -628,7 +628,7 @@
     "id": "bae",
     "name": "Hakos Baelz",
     "gen": "Council",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       0,
       1
     ],
@@ -753,7 +753,7 @@
     "id": "kronii",
     "name": "Ouro Kronii",
     "gen": "Council",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       1,
       1
     ],
@@ -878,7 +878,7 @@
     "id": "fauna",
     "name": "Ceres Fauna",
     "gen": "Council",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       2,
       1
     ],
@@ -1003,7 +1003,7 @@
     "id": "mumei",
     "name": "Nanashi Mumei",
     "gen": "Council",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       3,
       1
     ],
@@ -1128,7 +1128,7 @@
     "id": "sana",
     "name": "Tsukumo Sana",
     "gen": "Council",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       4,
       1
     ],
@@ -1253,7 +1253,7 @@
     "id": "irys",
     "name": "Irys",
     "gen": "Hope",
-    "iconSpriteOffset": [
+    "spriteOffset": [
       0,
       2
     ],

@@ -34,7 +34,7 @@ export const IdolGenerations: React.FC<IdolGenerationsProps> = ({ selectedIdol, 
                 .map(idol => (
                   <Sprite
                     type="idol-icon"
-                    offset={idol.iconSpriteOffset}
+                    offset={idol.spriteOffset}
                     value={idol}
                     selected={idol === selectedIdol}
                     onSelected={onSelected}

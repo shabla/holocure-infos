@@ -33,14 +33,6 @@ export const IdolsPage: React.FC = () => {
     setSearchParams({ i: idol.name })
   }
 
-  const getIdolModelPath = (idol?: Idol): string => {
-    if (!idol) {
-      return '';
-    }
-
-    return `idol-models/${idol.id}.png`;
-  }
-
   if (loading) {
     return null;
   }
@@ -61,7 +53,11 @@ export const IdolsPage: React.FC = () => {
       <div className="sticky-section flex-column justify-center gap-10">
         <Box label={selectedIdol?.name} className="selected-idol">
           <div className="model flex-column justify-center align-center">
-            <img src={getIdolModelPath(selectedIdol)} alt={selectedIdol?.name} />
+            <Sprite
+              type="idol-model"
+              offset={selectedIdol?.spriteOffset}
+              showBackground={false}
+            />
           </div>
 
           <div className="stats">

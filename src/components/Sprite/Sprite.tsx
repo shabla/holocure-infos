@@ -5,10 +5,11 @@ import itemsSpriteSheet from "@/assets/items.png";
 import skillsSpriteSheet from "@/assets/skills.png";
 import upgradeSpriteSheet from "@/assets/upgrades.png";
 import idolIconsSpriteSheet from "@/assets/idol-icons.png";
+import idolModelsSpriteSheet from "@/assets/idol-models.png";
 
 import "./Sprite.scss"
 
-type SpriteType = "item" | "skill" | "upgrade" | "idol-icon";
+type SpriteType = "item" | "skill" | "upgrade" | "idol-icon" | "idol-model";
 
 const defaultValues: Record<SpriteType, Required<Pick<SpriteProps, 'sprite' | 'width' | 'height'>>> = {
   item: {
@@ -30,6 +31,11 @@ const defaultValues: Record<SpriteType, Required<Pick<SpriteProps, 'sprite' | 'w
     sprite: idolIconsSpriteSheet,
     width: 86,
     height: 76,
+  },
+  "idol-model": {
+    sprite: idolModelsSpriteSheet,
+    width: 180,
+    height: 190,
   },
 }
 

@@ -21,7 +21,8 @@ export interface Idol {
   id: string;
   name: string;
   gen: string;
-  iconSpriteOffset: [number, number];
+  // spriteOffset is used for both idol model and icon, so the corresponding spritesheet has to be arranged accordingly
+  spriteOffset: [number, number];
   stats: Stats;
   attack: Skill;
   special: Special;

@@ -1,28 +1,20 @@
 import { Fragment, useEffect, useState } from "react";
-import classNames from "classnames";
 import { useSearchParams } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
 import { Box, Sprite } from "@/components";
 import { useIdolsStore } from "@/stores/idolsStore";
-import skillsSprites from "@/assets/skills.png";
+import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
 
 import "./IdolsPage.scss"
-
-const gensOrder = [
-  "Myth",
-  "Council",
-  "Hope"
-];
 
 export const IdolsPage: React.FC = () => {
   const [selectedIdol, setSelectedIdol] = useState<Idol>();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loading, idols, loadIdols, getIdolsByGen] = useIdolsStore(state => [
+  const [loading, idols, loadIdols] = useIdolsStore(state => [
     state.loading,
     state.idols,
     state.loadIdols,
-    state.getIdolsByGen
   ]);
 
   useEffect(() => {
@@ -37,16 +29,8 @@ export const IdolsPage: React.FC = () => {
     }
   }, [searchParams, idols])
 
-  const handleIdolClicked = (idol: Idol): void => {
+  const handleIdolSelected = (idol: Idol): void => {
     setSearchParams({ i: idol.name })
-  }
-
-  const getIdolIconPath = (idol?: Idol): string => {
-    if (!idol) {
-      return '';
-    }
-
-    return `idol-icons/${idol.id}.jpg`;
   }
 
   const getIdolModelPath = (idol?: Idol): string => {
@@ -73,8 +57,8 @@ export const IdolsPage: React.FC = () => {
     ];
 
   return (
-    <div className="idols-page flex-row content-container">
-      <div className="sticky-section flex-column justify-center">
+    <div className="idols-page flex-row content-container gap-10">
+      <div className="sticky-section flex-column justify-center gap-10">
         <Box label={selectedIdol?.name} className="selected-idol">
           <div className="model flex-column justify-center align-center">
             <img src={getIdolModelPath(selectedIdol)} alt={selectedIdol?.name} />
@@ -99,29 +83,7 @@ export const IdolsPage: React.FC = () => {
           </div>
         </Box>
 
-        <div className="generations flex-column">
-          {gensOrder.map(genName => {
-            return (
-              <section className="generation" key={genName}>
-                <div className="name">{genName}</div>
-
-                <div className="idols flex-row">
-                  {getIdolsByGen(genName)
-                    .map(idol => (
-                      <div
-                        className={classNames("idol", { selected: idol === selectedIdol })}
-                        onClick={() => handleIdolClicked(idol)}
-                        key={idol.id}
-                      >
-                        <img src={getIdolIconPath(idol)} title={idol.name} />
-                      </div>
-                    ))
-                  }
-                </div>
-              </section>
-            )
-          })}
-        </div>
+        <IdolGenerations selectedIdol={selectedIdol} onSelected={handleIdolSelected} />
       </div>
 
       <div className="selected-idol-details flex-column flex-fill">

@@ -3,6 +3,10 @@
     "id": "ame",
     "name": "Amelia Watson",
     "gen": "Myth",
+    "iconSpriteOffset": [
+      0,
+      0
+    ],
     "stats": {
       "hp": 75,
       "atk": 1.25,
@@ -124,6 +128,10 @@
     "id": "gura",
     "name": "Gawr Gura",
     "gen": "Myth",
+    "iconSpriteOffset": [
+      1,
+      0
+    ],
     "stats": {
       "hp": 65,
       "atk": 1.1,
@@ -245,6 +253,10 @@
     "id": "ina",
     "name": "Ninomae Inanis",
     "gen": "Myth",
+    "iconSpriteOffset": [
+      2,
+      0
+    ],
     "stats": {
       "hp": 75,
       "atk": 0.9,
@@ -366,6 +378,10 @@
     "id": "kiara",
     "name": "Takanashi Kiara",
     "gen": "Myth",
+    "iconSpriteOffset": [
+      3,
+      0
+    ],
     "stats": {
       "hp": 90,
       "atk": 1,
@@ -487,6 +503,10 @@
     "id": "calli",
     "name": "Mori Calliope",
     "gen": "Myth",
+    "iconSpriteOffset": [
+      4,
+      0
+    ],
     "stats": {
       "hp": 70,
       "atk": 1.1,
@@ -608,6 +628,10 @@
     "id": "bae",
     "name": "Hakos Baelz",
     "gen": "Council",
+    "iconSpriteOffset": [
+      0,
+      1
+    ],
     "stats": {
       "hp": 60,
       "atk": 1.1,
@@ -729,6 +753,10 @@
     "id": "kronii",
     "name": "Ouro Kronii",
     "gen": "Council",
+    "iconSpriteOffset": [
+      1,
+      1
+    ],
     "stats": {
       "hp": 70,
       "atk": 1.2,
@@ -850,6 +878,10 @@
     "id": "fauna",
     "name": "Ceres Fauna",
     "gen": "Council",
+    "iconSpriteOffset": [
+      2,
+      1
+    ],
     "stats": {
       "hp": 65,
       "atk": 1,
@@ -971,6 +1003,10 @@
     "id": "mumei",
     "name": "Nanashi Mumei",
     "gen": "Council",
+    "iconSpriteOffset": [
+      3,
+      1
+    ],
     "stats": {
       "hp": 60,
       "atk": 0.85,
@@ -1092,6 +1128,10 @@
     "id": "sana",
     "name": "Tsukumo Sana",
     "gen": "Council",
+    "iconSpriteOffset": [
+      4,
+      1
+    ],
     "stats": {
       "hp": 80,
       "atk": 0.8,
@@ -1213,6 +1253,10 @@
     "id": "irys",
     "name": "Irys",
     "gen": "Hope",
+    "iconSpriteOffset": [
+      0,
+      2
+    ],
     "stats": {
       "hp": 50,
       "atk": 1.1,

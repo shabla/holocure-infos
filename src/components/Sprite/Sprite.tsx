@@ -4,30 +4,40 @@ import { getSpriteBackground } from "@/utils/getSpriteBackground";
 import itemsSpriteSheet from "@/assets/items.png";
 import skillsSpriteSheet from "@/assets/skills.png";
 import upgradeSpriteSheet from "@/assets/upgrades.png";
+import idolIconsSpriteSheet from "@/assets/idol-icons.png";
 
 import "./Sprite.scss"
 
-type SpriteType = "item" | "skill" | "upgrade";
+type SpriteType = "item" | "skill" | "upgrade" | "idol-icon";
 
-const defaultValues: Record<SpriteType, Required<Pick<SpriteProps, 'sprite' | 'size'>>> = {
+const defaultValues: Record<SpriteType, Required<Pick<SpriteProps, 'sprite' | 'width' | 'height'>>> = {
   item: {
     sprite: itemsSpriteSheet,
-    size: 54,
+    width: 54,
+    height: 54,
   },
   skill: {
     sprite: skillsSpriteSheet,
-    size: 50,
+    width: 50,
+    height: 50,
   },
   upgrade: {
     sprite: upgradeSpriteSheet,
-    size: 50,
+    width: 50,
+    height: 50,
+  },
+  "idol-icon": {
+    sprite: idolIconsSpriteSheet,
+    width: 86,
+    height: 76,
   },
 }
 
 export interface SpriteProps<T = unknown> {
   type: SpriteType;
   sprite?: string;
-  size?: number;
+  width?: number;
+  height?: number;
   offset?: [number, number];
   selected?: boolean;
   showBackground?: boolean;
@@ -39,7 +49,8 @@ export interface SpriteProps<T = unknown> {
 export const Sprite = <T,>({
   type,
   sprite,
-  size,
+  width,
+  height,
   offset = [0, 0],
   label,
   showBackground = true,
@@ -49,10 +60,11 @@ export const Sprite = <T,>({
 }: SpriteProps<T>) => {
   const showLabel = !!label;
 
-  size = size || defaultValues[type].size;
+  width = width || defaultValues[type].width;
+  height = height || defaultValues[type].height;
   sprite = sprite || defaultValues[type].sprite;
 
-  const bgStyle = getSpriteBackground(sprite, size, offset);
+  const bgStyle = getSpriteBackground(sprite, width, height, offset);
 
   return (
     <div
@@ -63,8 +75,8 @@ export const Sprite = <T,>({
       })}
       onClick={onSelected ? () => onSelected(value!) : undefined}
       style={{
-        height: `${size}px`,
-        width: `${size}px`,
+        width: `${width}px`,
+        height: `${height}px`,
         background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`
       }}
     >

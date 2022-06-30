@@ -21,6 +21,7 @@ export interface Idol {
   id: string;
   name: string;
   gen: string;
+  iconSpriteOffset: [number, number];
   stats: Stats;
   attack: Skill;
   special: Special;

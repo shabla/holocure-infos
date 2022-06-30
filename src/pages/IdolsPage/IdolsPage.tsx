@@ -46,7 +46,7 @@ export const IdolsPage: React.FC = () => {
       return '';
     }
 
-    return `/idol-icons/${idol.id}.jpg`;
+    return `idol-icons/${idol.id}.jpg`;
   }
 
   const getIdolModelPath = (idol?: Idol): string => {
@@ -54,7 +54,7 @@ export const IdolsPage: React.FC = () => {
       return '';
     }
 
-    return `/idol-models/${idol.id}.png`;
+    return `idol-models/${idol.id}.png`;
   }
 
   if (loading) {
@@ -86,7 +86,7 @@ export const IdolsPage: React.FC = () => {
 
               return (
                 <div className="stat flex-row align-center" key={stat.key}>
-                  <img src={`/stats/stat-${stat.key}.png`} alt={stat.name} />
+                  <img src={`stats/stat-${stat.key}.png`} alt={stat.name} />
                   <div className="text flex-row justify-space-between flex-fill">
                     <div className="name">{stat.name}</div>
                     <div className="value">

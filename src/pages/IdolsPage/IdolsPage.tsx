@@ -158,7 +158,16 @@ export const IdolsPage: React.FC = () => {
         <Box label="Skills" className="skills">
           {selectedIdol?.skills.map(skill => (
             <Fragment key={skill.name}>
-              <div className="name">{skill.name}</div>
+              <div className="name flex-row align-center">
+                {selectedIdol && (
+                  <Sprite
+                    type="skill"
+                    offset={skill.spriteOffset}
+                    showBackground={false}
+                  />
+                )}
+                {skill.name}
+              </div>
 
               {skill.levels.map(level => (
                 <div key={level.level}>{`Level ${level.level}:`} {level.desc}</div>

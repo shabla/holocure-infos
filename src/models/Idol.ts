@@ -5,7 +5,7 @@ interface Level {
 
 interface Skill {
   name: string;
-  spriteOffset: [number, number];
+  spriteOffset?: [number, number];
   levels: Level[]
 }
 
@@ -22,7 +22,7 @@ export interface Idol {
   name: string;
   gen: string;
   stats: Stats;
-  special: Special;
   attack: Skill;
+  special: Special;
   skills: Skill[];
 }

@@ -338,7 +338,7 @@
     },
     "special": {
       "name": "Phoenix Fire",
-      "desc": "Explode with a big burst of flames, dealing 200% damage and creating a ring of fire around her that deals 30% damage per hit.",
+      "desc": "Explode with a big burst of flames, dealing 600% damage and creating a ring of fire around her that deals 50% damage per hit.",
       "spriteOffset": [
         3,
         1
@@ -384,6 +384,10 @@
     "skills": [
       {
         "name": "Dancer",
+        "spriteOffset": [
+          3,
+          3
+        ],
         "levels": [
           {
             "level": 1,
@@ -401,6 +405,10 @@
       },
       {
         "name": "Trailblazer",
+        "spriteOffset": [
+          3,
+          2
+        ],
         "levels": [
           {
             "level": 1,
@@ -418,6 +426,10 @@
       },
       {
         "name": "Phoenix Shield",
+        "spriteOffset": [
+          3,
+          4
+        ],
         "levels": [
           {
             "level": 1,
@@ -478,15 +490,15 @@
         },
         {
           "level": 5,
-          "desc": "Reduce the time between attacks by 25%."
+          "desc": "Reduce the time between attacks by 10%."
         },
         {
           "level": 6,
-          "desc": "Increase attack area by 30%."
+          "desc": "Increase attack area by 20%."
         },
         {
           "level": 7,
-          "desc": "Increase damage by 40%."
+          "desc": "Increase damage by 40%. Has a 7% chance to instant KO."
         }
       ]
     },
@@ -496,15 +508,15 @@
         "levels": [
           {
             "level": 1,
-            "desc": "Scythe Swing gains a 3% chance to instantly defeat non-boss targets."
+            "desc": "When defeating a target with Scythe Swing or Death, there is a 20% chance to create an explosion for 60% damage, and a 5% chance to KO."
           },
           {
             "level": 2,
-            "desc": "Scythe Swing gains a 5% chance to instantly defeat non-boss targets."
+            "desc": "When defeating a target with Scythe Swing or Death, there is a 25% chance to create an explosion for 90% damage, and a 8% chance to KO."
           },
           {
             "level": 3,
-            "desc": "Scythe Swing gains a 7% chance to instantly defeat non-boss targets and heal for 5% of their max HP."
+            "desc": "When defeating a target with Scythe Swing or Death, there is a 30% chance to create an explosion for 120% damage, and a 10% chance to KO."
           }
         ]
       },
@@ -513,15 +525,15 @@
         "levels": [
           {
             "level": 1,
-            "desc": "For each target defeated, increase ATK by 2% for 5 seconds up to 40%. Refreshes duration on each target defeated."
-          },
-          {
-            "level": 2,
             "desc": "For each target defeated, increase ATK by 3% for 5 seconds up to 60%. Refreshes duration on each target defeated."
           },
           {
+            "level": 2,
+            "desc": "For each target defeated, increase ATK by 4% for 5 seconds up to 80%. Refreshes duration on each target defeated."
+          },
+          {
             "level": 3,
-            "desc": "For each target defeated, increase ATK by 4% for 5 seconds up to 80%, and SPD by 2% up to 40%. Refreshes duration on each target defeated."
+            "desc": "For each target defeated, increase ATK by 5% for 5 seconds up to 100%, and SPD by 2% up to 40%. Refreshes duration on each target defeated."
           }
         ]
       },
@@ -949,15 +961,15 @@
         "levels": [
           {
             "level": 1,
-            "desc": "For every 100 targets Mumei has defeated, increase damage by 1% (max 100%)."
+            "desc": "For every 50 targets Mumei has defeated, increase damage by 1% (max 100%)."
           },
           {
             "level": 2,
-            "desc": "For every 100 targets Mumei has defeated, increase damage by 1% (max 150%)."
+            "desc": "For every 50 targets Mumei has defeated, increase damage by 1% (max 150%)."
           },
           {
             "level": 3,
-            "desc": "For every 100 targets Mumei has defeated, increase damage by 1% (max 200%)."
+            "desc": "For every 50 targets Mumei has defeated, increase damage by 1% (max 200%)."
           }
         ]
       },

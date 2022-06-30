@@ -4,3 +4,4 @@
 - collab combos?
 - mobile friendly
 - replace react with preact?
+- preview script broken because of base path

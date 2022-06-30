@@ -18,5 +18,29 @@
     padding: 10px;
     color: white;
     font-size: 16px;
+    overflow-y: auto;
+  }
+
+  .info-table {
+    width: 100%;
+    border-spacing: 0;
+
+    tr:nth-of-type(odd) {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    tr:nth-of-type(even) {
+      background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    td.name {
+      font-weight: bold;
+      white-space: nowrap;
+      min-width: 120px;
+    }
   }
 }

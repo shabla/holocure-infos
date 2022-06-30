@@ -1,11 +1,8 @@
 .items-page {
-  $items-column-width: 480px;
-
   gap: 10px;
 
   .sections {
-    flex: 0 0 $items-column-width;
-    width: $items-column-width;
+    flex: 1 1 60%;
 
     .items-list {
       display: grid;

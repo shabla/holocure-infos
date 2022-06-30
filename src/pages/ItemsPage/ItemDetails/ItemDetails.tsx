@@ -1,6 +1,6 @@
 import { useMemo, FC } from "react";
 
-import { Sprite, Box } from "@/components";
+import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
 
@@ -42,69 +42,72 @@ export const ItemDetails: FC<ItemDetailsProps> = ({
         </>
       }
     >
-      {item?.requirement && (
-        <div className="entry">
-          <div className="entry__name">Requirement</div>
-          <div className="entry__value">
-            {item.requirement}
-          </div>
-        </div>
-      )}
 
-      <div className="entry">
-        <div className="entry__name">{item?.levels ? 'Level 1' : 'Description'}</div>
-        <div className="entry__value">{item?.desc}</div>
-      </div>
+      <table className="info-table">
+        <tbody>
+          {item?.requirement && (
+            <tr>
+              <td className="name">Requirement</td>
+              <td className="value">{item.requirement}</td>
+            </tr>
+          )}
 
-      {item?.levels?.map(level => (
-        <div className="entry" key={level.level}>
-          <>
-            <div className="entry__name">Level {level.level}</div>
-            <div className="entry__value">{level.desc}</div>
-          </>
-        </div>
-      ))}
+          <tr>
+            <td className="name">{item?.levels ? 'Level 1' : 'Description'}</td>
+            <td className="value">{item?.desc}</td>
+          </tr>
 
-      {item?.requires && (
-        <div className="entry">
-          <div className="entry__name">Requires</div>
-          <div className="entry__value">
-            {item.requires.map(itemId => {
-              const item = getItemById(itemId);
-              return (
-                <Sprite
-                  type="item"
-                  offset={item?.spritePos}
-                  value={item}
-                  label={item?.name}
-                  onSelected={onItemSelected}
-                  key={itemId}
+          {item?.levels?.map(level => (
+            <tr key={level.level}>
+              <td className="name">Level {level.level}</td>
+              <td className="value">{level.desc}</td>
+            </tr>
+          ))}
+
+          {item?.requires && (
+            <tr>
+              <td className="name">Requires</td>
+              <td className="value">
+                <SpriteList
+                  sprites={
+                    item.requires.map(itemId => {
+                      const item = getItemById(itemId);
+                      return {
+                        type: "item",
+                        offset: item?.spritePos,
+                        value: item,
+                        label: item?.name,
+                        onSelected: onItemSelected,
+                        key: itemId,
+                      } as SpriteProps;
+                    })
+                  }
                 />
-              )
-            })}
-          </div>
-        </div>
-      )}
+              </td>
+            </tr>
+          )}
 
-      {usedIn?.length > 0 && (
-        <div className="entry">
-          <div className="entry__name">Used In</div>
-          <div className="entry__value">
-            {usedIn.map(item => {
-              return (
-                <Sprite
-                  type="item"
-                  offset={item.spritePos}
-                  value={item}
-                  label={item.name}
-                  onSelected={onItemSelected}
-                  key={item.name}
+          {usedIn?.length > 0 && (
+            <tr>
+              <td className="name">Used In</td>
+              <td className="value">
+                <SpriteList
+                  sprites={
+                    usedIn.map(item => ({
+                      type: "item",
+                      offset: item.spritePos,
+                      value: item,
+                      label: item.name,
+                      onSelected: onItemSelected,
+                      key: item.name,
+                    } as SpriteProps))
+                  }
                 />
-              )
-            })}
-          </div>
-        </div>
-      )}
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </table>
     </Box>
   )
 }

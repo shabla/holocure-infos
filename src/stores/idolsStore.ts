@@ -18,7 +18,7 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
   loadIdols: async () => {
     set({ loading: true });
 
-    const data = await fetch('/idols.json');
+    const data = await fetch('idols.json');
     const idols: Idol[] = await data.json();
 
     set({ loading: false, idols });

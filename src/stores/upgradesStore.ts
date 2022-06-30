@@ -14,7 +14,7 @@ export const useUpgradesStore = create<UpgradesStore>((set, get) => ({
   loadUpgrades: async () => {
     set({ loading: true });
 
-    const data = await fetch('/upgrades.json');
+    const data = await fetch('upgrades.json');
     const upgrades: Upgrade[] = await data.json();
 
     set({ loading: false, upgrades });

@@ -32,7 +32,7 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
   loadItems: async () => {
     set({ loading: true });
 
-    const data = await fetch('/items.json');
+    const data = await fetch('items.json');
     const items: Item[] = await data.json();
 
     set({

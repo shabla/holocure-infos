@@ -7,12 +7,12 @@ export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
   label?: React.ReactNode;
 }
 
-export const Box: React.FC<BoxProps> = ({
+export const Box = ({
   label,
   className,
   children,
   ...props
-}) => {
+}: BoxProps) => {
   return (
     <div className={classNames("box flex-column", className)} {...props}>
       <header className="flex-row align-center justify-space-between">{label}</header>

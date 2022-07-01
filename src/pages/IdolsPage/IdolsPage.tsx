@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
@@ -8,7 +8,7 @@ import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
 
 import "./IdolsPage.scss"
 
-export const IdolsPage: React.FC = () => {
+export const IdolsPage = () => {
   const [selectedIdol, setSelectedIdol] = useState<Idol>();
   const [searchParams, setSearchParams] = useSearchParams();
   const [loaded, idols, loadIdols] = useIdolsStore(state => [
@@ -124,7 +124,7 @@ export const IdolsPage: React.FC = () => {
 
         <Box label="Skills" className="skills">
           {selectedIdol?.skills.map(skill => (
-            <Fragment key={skill.name}>
+            <React.Fragment key={skill.name}>
               <div className="skill-name flex-row align-center">
                 {selectedIdol && (
                   <Sprite
@@ -146,7 +146,7 @@ export const IdolsPage: React.FC = () => {
                   ))}
                 </tbody>
               </table>
-            </Fragment>
+            </React.Fragment>
           ))}
         </Box>
       </div>

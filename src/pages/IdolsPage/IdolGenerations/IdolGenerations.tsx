@@ -1,5 +1,3 @@
-import React from "react";
-
 import { useIdolsStore } from "@/stores/idolsStore";
 import { Idol } from "@/models/Idol";
 import { Sprite } from "@/components";
@@ -17,7 +15,7 @@ const gensOrder = [
   "Hope"
 ];
 
-export const IdolGenerations: React.FC<IdolGenerationsProps> = ({ selectedIdol, onSelected }) => {
+export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsProps) => {
   const [getIdolsByGen] = useIdolsStore(state => [
     state.getIdolsByGen
   ]);

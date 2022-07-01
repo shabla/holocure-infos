@@ -7,7 +7,7 @@ import { useUpgradesStore } from "@/stores/upgradesStore";
 
 import "./UpgradesPage.scss";
 
-export const UpgradesPage: React.FC = () => {
+export const UpgradesPage = () => {
   const [selectedUpgrade, setSelectedUpgrade] = useState<Upgrade>();
   const [loaded, upgrades, loadUpgrades] = useUpgradesStore(state => [
     state.loaded,

@@ -1,4 +1,4 @@
-import { useMemo, FC } from "react";
+import { useMemo } from "react";
 
 import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
 import { Item } from "@/models/Item";
@@ -11,10 +11,10 @@ export interface ItemDetailsProps {
   onItemSelected: (item: Item) => void;
 }
 
-export const ItemDetails: FC<ItemDetailsProps> = ({
+export const ItemDetails = ({
   item,
   onItemSelected
-}) => {
+}: ItemDetailsProps) => {
   const [getItemById, getItemUsage] = useItemsStore(state => [state.getItemById, state.getItemUsage]);
 
   const usedIn: Item[] = useMemo(() => {

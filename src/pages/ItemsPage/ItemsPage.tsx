@@ -19,7 +19,7 @@ const sections: ItemSection[] = [
   { type: "item", title: "Items" },
 ]
 
-export const ItemsPage: React.FC = () => {
+export const ItemsPage = () => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>();
   const [searchParams, setSearchParams] = useSearchParams();
   const [loaded, itemsById, loadItems, getItemByType] = useItemsStore(state => [

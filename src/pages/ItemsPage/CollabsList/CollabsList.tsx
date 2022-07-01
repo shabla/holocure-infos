@@ -12,11 +12,11 @@ export interface CollabsListProps {
   onItemClicked: (item: Item) => void;
 }
 
-export const CollabsList: React.FC<CollabsListProps> = ({
+export const CollabsList = ({
   items,
   selectedItem,
   onItemClicked
-}) => {
+}: CollabsListProps) => {
   const getItemById = useItemsStore(state => state.getItemById);
 
   return (

@@ -1,10 +1,8 @@
-import React from "react";
-
 import { Box } from "@/components";
 
 import "./AboutPage.scss"
 
-export const AboutPage: React.FC = () => {
+export const AboutPage = () => {
   return (
     <div className="about-page content-container">
       <Box label="Credits">
@@ -19,7 +17,7 @@ export const AboutPage: React.FC = () => {
           </li>
           <li>
             Almost everything else on this site was extracted from the game manually, if you see something wrong/missing or have a feature request,{' '}
-            <a href="https://old.reddit.com/message/compose?to=Shabla" target="_blank" rel="noopener noreferrer">let me know!</a>
+            <a href="https://github.com/shabla/holocure-infos/issues" target="_blank" rel="noopener noreferrer">create an issue on Github</a>!
           </li>
         </ul>
       </Box>

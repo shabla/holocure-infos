@@ -11,8 +11,8 @@ import "./IdolsPage.scss"
 export const IdolsPage: React.FC = () => {
   const [selectedIdol, setSelectedIdol] = useState<Idol>();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loading, idols, loadIdols] = useIdolsStore(state => [
-    state.loading,
+  const [loaded, idols, loadIdols] = useIdolsStore(state => [
+    state.loaded,
     state.idols,
     state.loadIdols,
   ]);
@@ -33,7 +33,7 @@ export const IdolsPage: React.FC = () => {
     setSearchParams({ i: idol.id })
   }
 
-  if (loading) {
+  if (!loaded) {
     return null;
   }
 

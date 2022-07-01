@@ -22,15 +22,15 @@ const sections: ItemSection[] = [
 export const ItemsPage: React.FC = () => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loading, itemsById, loadItems, getItemByType] = useItemsStore(state => [
-    state.loading,
+  const [loaded, itemsById, loadItems, getItemByType] = useItemsStore(state => [
+    state.loaded,
     state.itemsById,
     state.loadItems,
     state.getItemByType
   ])
 
   useEffect(() => {
-    loadItems()
+    loadItems();
   }, []);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export const ItemsPage: React.FC = () => {
     setSearchParams({ i: item.id });
   }
 
-  if (loading) {
+  if (!loaded) {
     return null;
   }
 

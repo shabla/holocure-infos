@@ -9,7 +9,8 @@ import "./UpgradesPage.scss";
 
 export const UpgradesPage: React.FC = () => {
   const [selectedUpgrade, setSelectedUpgrade] = useState<Upgrade>();
-  const [upgrades, loadUpgrades] = useUpgradesStore(state => [
+  const [loaded, upgrades, loadUpgrades] = useUpgradesStore(state => [
+    state.loaded,
     state.upgrades,
     state.loadUpgrades
   ])
@@ -22,7 +23,7 @@ export const UpgradesPage: React.FC = () => {
     return upgrade.costs.reduce((acc, cost) => acc + cost, 0);
   }
 
-  if (!upgrades) {
+  if (!loaded) {
     return null;
   }
 

@@ -3,17 +3,17 @@ import create from "zustand"
 import { Item } from "@/models/Item"
 
 interface ItemsStore {
-  loading: boolean;
+  loaded: boolean;
   items: Item[];
   itemsById: Record<string, Item>;
-  loadItems: () => Promise<void>;
+  loadItems: (force?: boolean) => Promise<void>;
   getItemById: (id: string) => Item | undefined;
   getItemUsage: (id: string) => Item[];
   getItemByType: (type: Item['type']) => Item[];
 }
 
 export const useItemsStore = create<ItemsStore>((set, get) => ({
-  loading: false,
+  loaded: false,
   items: [],
   itemsById: {},
   // Get item with given id
@@ -29,14 +29,16 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
     return get().items.filter(i => i.type === type);
   },
   // Fetch items file
-  loadItems: async () => {
-    set({ loading: true });
+  loadItems: async (force?: boolean) => {
+    if (get().loaded && !force) {
+      return;
+    }
 
     const data = await fetch('items.json');
     const items: Item[] = await data.json();
 
     set({
-      loading: false,
+      loaded: true,
       items,
       itemsById: items.reduce((acc, item) => {
         acc[item.id] = item;

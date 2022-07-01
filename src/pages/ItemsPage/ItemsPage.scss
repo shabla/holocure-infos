@@ -1,6 +1,19 @@
 .items-page {
+  label.checkbox {
+    font-size: 1.6rem;
+    text-transform: none;
+    cursor: pointer;
+    color: var(--color-pink);
+
+    input {
+      margin-right: 10px;
+      height: 1.6rem;
+      width: 1.6rem;
+    }
+  }
+
   .sections {
-    flex: 1 1 60%;
+    flex: 1 1 55%;
 
     .items-list {
       display: grid;

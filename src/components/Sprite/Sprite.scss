@@ -29,8 +29,17 @@
     pointer-events: none;
   }
 
-  &.selected .image {
-    outline: 5px solid white;
-    background-color: rgba(0, 0, 0, 0.1);
+  &.selected {
+    .image {
+      outline: 5px solid white;
+    }
+
+    &.combo .image {
+      outline-color: var(--color-pink);
+    }
+  }
+
+  &.disabled {
+    opacity: 0.3;
   }
 }

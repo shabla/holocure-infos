@@ -6,7 +6,7 @@ interface ItemsStore {
   loaded: boolean;
   items: Item[];
   itemsById: Record<string, Item>;
-  loadItems: (force?: boolean) => Promise<void>;
+  loadItems: (force?: boolean) => Promise<Item[]>;
   getItemById: (id: string) => Item | undefined;
   getItemUsage: (id: string) => Item[];
   getItemByType: (type: Item['type']) => Item[];
@@ -31,7 +31,7 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
   // Fetch items file
   loadItems: async (force?: boolean) => {
     if (get().loaded && !force) {
-      return;
+      return get().items;
     }
 
     const data = await fetch('items.json');
@@ -46,5 +46,7 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
         return acc;
       }, {} as Record<string, Item>)
     })
+
+    return items;
   },
 }))

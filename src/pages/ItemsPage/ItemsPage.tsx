@@ -22,29 +22,83 @@ const sections: ItemSection[] = [
 export const ItemsPage = () => {
   const [selectedItem, setSelectedItem] = useState<Item | undefined>();
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loaded, itemsById, loadItems, getItemByType] = useItemsStore(state => [
+  const [comboMode, setComboMode] = useState<boolean>(false);
+  const [comboItems, setComboItems] = useState<Item[]>([]);
+  const [loaded, loadItems, getItemById, getItemByType] = useItemsStore(state => [
     state.loaded,
-    state.itemsById,
     state.loadItems,
-    state.getItemByType
+    state.getItemById,
+    state.getItemByType,
   ])
 
   useEffect(() => {
-    loadItems();
-  }, []);
+    loadItems().then(() => {
+      const itemId = searchParams.get('i');
+      const selectedItem = itemId ? getItemById(itemId) : undefined;
+      setSelectedItem(selectedItem);
 
-  useEffect(() => {
-    let itemId = searchParams.get('i');
+      const comboItemIds = searchParams.get('c');
+      if (comboItemIds !== null) {
+        setComboMode(true);
 
-    if (!itemId) {
-      itemId = 'spider-cooking';
+        const validItems = comboItemIds
+          .split(",")
+          .map(id => getItemById(id))
+          .filter(i => i !== undefined && i.type === "collab") as Item[];
+
+        setComboItems(validItems);
+
+      } else {
+        setComboMode(false);
+        setComboItems([]);
+      }
+    });
+  }, [searchParams, getItemById])
+
+  const updateUrlParams = (selectedItem?: Item, comboItems?: Item[]) => {
+    const params = new URLSearchParams(searchParams);
+
+    if (selectedItem === undefined) {
+      params.delete("i")
+    } else {
+      params.set("i", selectedItem.id);
     }
 
-    setSelectedItem(itemsById[itemId]);
-  }, [searchParams, itemsById])
+    if (comboItems === undefined) {
+      params.delete("c");
+    } else {
+      params.set("c", comboItems.map(i => i.id).join(","));
+    }
+
+    setSearchParams(params);
+  }
 
   const handleItemClicked = (item: Item) => {
-    setSearchParams({ i: item.id });
+    updateUrlParams(item, comboItems.length > 0 ? comboItems : undefined);
+  }
+
+  const handleComboItemsChanged = (items: Item[]) => {
+    updateUrlParams(selectedItem, items)
+  }
+
+  const handleComboModeChanged = (state: boolean) => {
+    if (state) {
+      if (selectedItem && selectedItem.type === "collab") {
+        // If a collab item is selected, include it in the combo
+        updateUrlParams(undefined, [selectedItem]);
+
+      } else {
+        // keep non-collab selected item
+        updateUrlParams(selectedItem, []);
+      }
+    } else if (comboItems.length === 1) {
+      // disable combo, only 1 item in the combo, selected it
+      updateUrlParams(comboItems[0]);
+
+    } else {
+      // disable combo, keep selected item
+      updateUrlParams(selectedItem);
+    }
   }
 
   if (!loaded) {
@@ -54,11 +108,29 @@ export const ItemsPage = () => {
   return (
     <div className="items-page flex-row content-container gap-10">
       <div className="sections">
-        <Box label="Collabs">
+        <Box label={
+          <>
+            <span>Collabs</span>
+
+            <div>
+              <label className="checkbox flex-row align-x-center">
+                <input
+                  type="checkbox"
+                  checked={comboMode}
+                  onChange={e => handleComboModeChanged(e.currentTarget.checked)}
+                />
+                Combo mode
+              </label>
+            </div>
+          </>
+        }>
           <CollabsList
-            onItemClicked={handleItemClicked}
             selectedItem={selectedItem}
             items={getItemByType("collab")}
+            comboMode={comboMode}
+            comboItems={comboItems}
+            onItemClicked={handleItemClicked}
+            onComboItemsChanged={handleComboItemsChanged}
           />
         </Box>
 

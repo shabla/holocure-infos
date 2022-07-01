@@ -47,6 +47,7 @@ export interface SpriteProps<T = unknown> {
   offset?: [number, number];
   selected?: boolean;
   showBackground?: boolean;
+  className?: string;
   label?: string;
   value?: T;
   onSelected?: (value: T) => void;
@@ -60,6 +61,7 @@ export const Sprite = <T,>({
   offset = [0, 0],
   label,
   showBackground = false,
+  className,
   selected = false,
   value,
   onSelected
@@ -83,7 +85,7 @@ export const Sprite = <T,>({
 
   return (
     <div
-      className={classNames("sprite", {
+      className={classNames("sprite", className, {
         selected,
         clickable: !!onSelected,
         'show-label': showLabel,

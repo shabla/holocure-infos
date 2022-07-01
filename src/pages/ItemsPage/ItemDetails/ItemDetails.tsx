@@ -28,89 +28,92 @@ export const ItemDetails = ({
     <Box
       className="item-details"
       label={
-        <>
-          <div className="flex-row align-x-center">
-            <Sprite
-              type="item"
-              offset={item?.spritePos}
-              value={item}
-              showBackground
-              onSelected={onItemSelected}
-            />
-            <span className="item-name">{item?.name}</span>
-          </div>
-          <span className="item-type">{item?.type}</span>
-        </>
+        item && (
+          <>
+            <div className="flex-row align-x-center">
+              <Sprite
+                type="item"
+                offset={item?.spritePos}
+                value={item}
+                showBackground
+                onSelected={onItemSelected}
+              />
+              <span className="item-name">{item?.name}</span>
+            </div>
+            <span className="item-type">{item?.type}</span>
+          </>
+        )
       }
     >
+      {item && (
+        <table className="info-table">
+          <tbody>
+            {item?.requirement && (
+              <tr>
+                <td className="name">Requirement</td>
+                <td className="value">{item.requirement}</td>
+              </tr>
+            )}
 
-      <table className="info-table">
-        <tbody>
-          {item?.requirement && (
             <tr>
-              <td className="name">Requirement</td>
-              <td className="value">{item.requirement}</td>
+              <td className="name">{item?.levels ? 'Level 1' : 'Description'}</td>
+              <td className="value">{item?.desc}</td>
             </tr>
-          )}
 
-          <tr>
-            <td className="name">{item?.levels ? 'Level 1' : 'Description'}</td>
-            <td className="value">{item?.desc}</td>
-          </tr>
+            {item?.levels?.map(level => (
+              <tr key={level.level}>
+                <td className="name">Level {level.level}</td>
+                <td className="value">{level.desc}</td>
+              </tr>
+            ))}
 
-          {item?.levels?.map(level => (
-            <tr key={level.level}>
-              <td className="name">Level {level.level}</td>
-              <td className="value">{level.desc}</td>
-            </tr>
-          ))}
+            {item?.requires && (
+              <tr>
+                <td className="name">Requires</td>
+                <td className="value">
+                  <SpriteList
+                    sprites={
+                      item.requires.map(itemId => {
+                        const item = getItemById(itemId);
+                        return {
+                          type: "item",
+                          offset: item?.spritePos,
+                          value: item,
+                          label: item?.name,
+                          showBackground: true,
+                          onSelected: onItemSelected,
+                          key: itemId,
+                        } as SpriteProps;
+                      })
+                    }
+                  />
+                </td>
+              </tr>
+            )}
 
-          {item?.requires && (
-            <tr>
-              <td className="name">Requires</td>
-              <td className="value">
-                <SpriteList
-                  sprites={
-                    item.requires.map(itemId => {
-                      const item = getItemById(itemId);
-                      return {
+            {usedIn?.length > 0 && (
+              <tr>
+                <td className="name">Used In</td>
+                <td className="value">
+                  <SpriteList
+                    sprites={
+                      usedIn.map(item => ({
                         type: "item",
-                        offset: item?.spritePos,
+                        offset: item.spritePos,
                         value: item,
-                        label: item?.name,
+                        label: item.name,
                         showBackground: true,
                         onSelected: onItemSelected,
-                        key: itemId,
-                      } as SpriteProps;
-                    })
-                  }
-                />
-              </td>
-            </tr>
-          )}
-
-          {usedIn?.length > 0 && (
-            <tr>
-              <td className="name">Used In</td>
-              <td className="value">
-                <SpriteList
-                  sprites={
-                    usedIn.map(item => ({
-                      type: "item",
-                      offset: item.spritePos,
-                      value: item,
-                      label: item.name,
-                      showBackground: true,
-                      onSelected: onItemSelected,
-                      key: item.name,
-                    } as SpriteProps))
-                  }
-                />
-              </td>
-            </tr>
-          )}
-        </tbody>
-      </table>
+                        key: item.name,
+                      } as SpriteProps))
+                    }
+                  />
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      )}
     </Box>
   )
 }

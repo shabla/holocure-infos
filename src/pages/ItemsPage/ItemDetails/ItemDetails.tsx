@@ -29,7 +29,7 @@ export const ItemDetails = ({
       className="item-details"
       label={
         <>
-          <div className="flex-row align-center">
+          <div className="flex-row align-x-center">
             <Sprite
               type="item"
               offset={item?.spritePos}

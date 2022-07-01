@@ -8,28 +8,27 @@
   flex-direction: column;
 }
 
-.align-start {
-  align-items: flex-start;
-}
+.align {
 
-.align-center {
-  align-items: center;
-}
+  // Main axis alignment (h for row, v for column)
+  &-center {
+    justify-content: center;
+  }
 
-.align-space-between {
-  align-items: space-between;
-}
+  &-space-between {
+    justify-content: space-between;
+  }
 
-.justify-start {
-  justify-content: flex-start;
-}
+  // Cross axis alignment (v for row, h for column)
+  &-x {
+    &-center {
+      align-items: center;
+    }
 
-.justify-center {
-  justify-content: center;
-}
-
-.justify-space-between {
-  justify-content: space-between;
+    &-space-between {
+      align-items: space-between;
+    }
+  }
 }
 
 .flex-fill {

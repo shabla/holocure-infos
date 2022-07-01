@@ -32,7 +32,7 @@ export const UpgradesPage = () => {
       <Box label="Upgrades" className="upgrades">
         {upgrades.map(upgrade => (
           <div
-            className={classNames("upgrade flex-row align-center", { selected: upgrade === selectedUpgrade })}
+            className={classNames("upgrade flex-row align-x-center", { selected: upgrade === selectedUpgrade })}
             onClick={() => setSelectedUpgrade(upgrade)}
             key={upgrade.name}
           >

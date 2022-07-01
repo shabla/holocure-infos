@@ -50,9 +50,9 @@ export const IdolsPage = () => {
 
   return (
     <div className="idols-page flex-row content-container gap-10">
-      <div className="sticky-section flex-column justify-center gap-10">
+      <div className="sticky-section flex-column gap-10">
         <Box label={selectedIdol?.name} className="selected-idol">
-          <div className="model flex-column justify-center align-center">
+          <div className="model flex-column align-center align-x-center">
             <Sprite
               type="idol-model"
               offset={selectedIdol?.spriteOffset}
@@ -65,9 +65,9 @@ export const IdolsPage = () => {
               const value = selectedIdol?.stats?.[stat.key];
 
               return (
-                <div className="stat flex-row align-center" key={stat.key}>
+                <div className="stat flex-row align-x-center" key={stat.key}>
                   <img src={`stats/stat-${stat.key}.png`} alt={stat.name} />
-                  <div className="text flex-row justify-space-between flex-fill">
+                  <div className="text flex-row align-space-between flex-fill">
                     <div className="name">{stat.name}</div>
                     <div className="value">
                       {stat.format && value ? stat.format(value) : value}
@@ -84,7 +84,7 @@ export const IdolsPage = () => {
 
       <div className="selected-idol-details flex-column flex-fill">
         <Box label="Attack" className="attack">
-          <div className="skill-name flex-row align-center">
+          <div className="skill-name flex-row align-x-center">
             {selectedIdol && (
               <Sprite
                 type="skill"
@@ -108,7 +108,7 @@ export const IdolsPage = () => {
         </Box>
 
         <Box label="Special" className="special">
-          <div className="skill-name flex-row align-center">
+          <div className="skill-name flex-row align-x-center">
             {selectedIdol && (
               <Sprite
                 type="skill"
@@ -125,7 +125,7 @@ export const IdolsPage = () => {
         <Box label="Skills" className="skills">
           {selectedIdol?.skills.map(skill => (
             <React.Fragment key={skill.name}>
-              <div className="skill-name flex-row align-center">
+              <div className="skill-name flex-row align-x-center">
                 {selectedIdol && (
                   <Sprite
                     type="skill"

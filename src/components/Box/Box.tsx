@@ -15,7 +15,7 @@ export const Box = ({
 }: BoxProps) => {
   return (
     <div className={classNames("box flex-column", className)} {...props}>
-      <header className="flex-row align-center justify-space-between">{label}</header>
+      <header className="flex-row align-x-center align-space-between">{label}</header>
       <main className="flex-column flex-fill">{children}</main>
     </div>
   )

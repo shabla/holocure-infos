@@ -52,7 +52,7 @@ export const ItemsPage = () => {
   }
 
   return (
-    <div className="items-page flex-row align-start content-container gap-10">
+    <div className="items-page flex-row content-container gap-10">
       <div className="sections">
         <Box label="Collabs">
           <CollabsList

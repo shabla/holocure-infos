@@ -91,7 +91,7 @@ export const Sprite = <T,>({
       style={containerStyle}
     >
       {showLabel && (
-        <div className="label flex-column align-center justify-center">
+        <div className="label flex-column align-center align-x-center">
           {label}
         </div>
       )}

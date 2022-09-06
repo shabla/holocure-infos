@@ -12,7 +12,9 @@ export interface IdolGenerationsProps {
 const gensOrder = [
   "Myth",
   "Council",
-  "Hope"
+  "Hope",
+  "Gamers",
+  "Gen 0"
 ];
 
 export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsProps) => {

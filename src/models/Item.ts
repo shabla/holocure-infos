@@ -1,6 +1,6 @@
 export interface ItemLevel {
   level: number;
-  desc: number;
+  desc: string;
 }
 
 export interface Item {

@@ -24,6 +24,7 @@ export interface Idol {
   // spriteOffset is used for both idol model and icon, so the corresponding spritesheet has to be arranged accordingly
   spriteOffset: [number, number];
   stats: Stats;
+  notes?: string[];
   attack: Skill;
   special: Special;
   skills: Skill[];

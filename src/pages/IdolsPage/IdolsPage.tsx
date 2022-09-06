@@ -4,11 +4,10 @@ import { useSearchParams } from "react-router-dom";
 import { Idol } from "@/models/Idol";
 import { Box, Sprite } from "@/components";
 import { useIdolsStore } from "@/stores/idolsStore";
+import { getHighlightedElements } from "@/utils/getHighlightedElements";
 import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
 
 import "./IdolsPage.scss"
-
-const skillTokenPattern = /\{(.*?)\}/g;
 
 export const IdolsPage = () => {
   const [selectedIdol, setSelectedIdol] = useState<Idol>();
@@ -141,34 +140,10 @@ export const IdolsPage = () => {
               <table className="info-table">
                 <tbody>
                   {skill.levels.map(level => {
-                    const match = level.desc.match(skillTokenPattern);
-                    let descChildren: React.ReactNode[] = [];
-
-                    if (match) {
-                      let remaining = level.desc;
-
-                      match.forEach(m => {
-                        const tokenIndex = remaining.indexOf(m);
-
-                        const beforeToken = remaining.slice(0, tokenIndex);
-                        descChildren.push(beforeToken)
-
-                        const tokenValue = m.replaceAll(/[{}]/g, "");
-                        descChildren.push(<span className="highlight">{tokenValue}</span>)
-
-                        remaining = remaining.slice(m.length + tokenIndex);
-                      })
-
-                      descChildren.push(remaining);
-
-                    } else {
-                      descChildren = [level.desc];
-                    }
-
                     return (
                       <tr key={level.level}>
                         <td className="name">Level {level.level}</td>
-                        <td>{descChildren}</td>
+                        <td>{getHighlightedElements(level.desc)}</td>
                       </tr>
                     )
                   })}

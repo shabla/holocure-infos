@@ -36,5 +36,10 @@ h6 {
   position: relative;
 }
 
+.highlight {
+  color: #bcff5c;
+  font-weight: bold;
+}
+
 @import "./flex.scss";
 @import "./spacing.scss";

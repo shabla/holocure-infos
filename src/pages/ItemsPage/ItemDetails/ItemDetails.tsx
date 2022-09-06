@@ -3,6 +3,7 @@ import { useMemo } from "react";
 import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
+import { getHighlightedElements } from "@/utils/getHighlightedElements";
 
 import "./ItemDetails.scss"
 
@@ -57,13 +58,13 @@ export const ItemDetails = ({
 
             <tr>
               <td className="name">{item?.levels ? 'Level 1' : 'Description'}</td>
-              <td className="value">{item?.desc}</td>
+              <td className="value">{item && getHighlightedElements(item.desc)}</td>
             </tr>
 
             {item?.levels?.map(level => (
               <tr key={level.level}>
                 <td className="name">Level {level.level}</td>
-                <td className="value">{level.desc}</td>
+                <td className="value">{getHighlightedElements(level.desc)}</td>
               </tr>
             ))}
 

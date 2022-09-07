@@ -1,25 +1,30 @@
 import { Box, Sprite } from "@/components";
 import { Idol } from "@/models/Idol";
-import { useSpriteOffsetsStore } from "@/stores/spritesStore";
+import { useSpriteOffsetsStore } from "@/stores";
+import hpIcon from "@/assets/stat-hp.png";
+import crtIcon from "@/assets/stat-crt.png";
+import atkIcon from "@/assets/stat-atk.png";
+import spdIcon from "@/assets/stat-spd.png";
 
-export interface IdolStatsProps {
+export interface IdolProfileBoxProps {
   idol?: Idol;
 }
 
 interface IdolStat {
   name: string;
+  image: string;
   key: "hp" | "atk" | "spd" | "crt",
   format?: (value: any) => string;
 }
 
 const stats: IdolStat[] = [
-  { name: 'HP', key: 'hp' },
-  { name: 'ATK', key: 'atk', format: (val: number) => `${val.toFixed(2)}x` },
-  { name: 'SPD', key: 'spd', format: (val: number) => `${val.toFixed(2)}x` },
-  { name: 'CRT', key: 'crt', format: (val: number) => `${val * 100}%` },
+  { name: 'HP', key: 'hp', image: hpIcon },
+  { name: 'ATK', key: 'atk', image: atkIcon, format: (val: number) => `${val.toFixed(2)}x` },
+  { name: 'SPD', key: 'spd', image: spdIcon, format: (val: number) => `${val.toFixed(2)}x` },
+  { name: 'CRT', key: 'crt', image: crtIcon, format: (val: number) => `${val * 100}%` },
 ];
 
-export const IdolStats = ({ idol }: IdolStatsProps) => {
+export const IdolProfileBox = ({ idol }: IdolProfileBoxProps) => {
   const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
   const idolsSpriteSheet = getSpriteSheet('idols');
 
@@ -41,7 +46,7 @@ export const IdolStats = ({ idol }: IdolStatsProps) => {
 
           return (
             <div className="stat flex-row align-x-center" key={stat.key}>
-              <img src={`stats/stat-${stat.key}.png`} alt={stat.name} />
+              <img src={stat.image} alt={stat.name} />
               <div className="text flex-row align-space-between flex-fill">
                 <div className="name">{stat.name}</div>
                 <div className="value">

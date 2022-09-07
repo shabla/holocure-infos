@@ -1,28 +1,24 @@
-interface Level {
+export interface Level {
   level: number;
   desc: string;
 }
 
-interface Skill {
+export interface Skill {
   name: string;
-  spriteOffset?: [number, number];
   levels: Level[]
 }
 
-interface Special {
+export interface Special {
   name: string;
   desc: string;
-  spriteOffset: [number, number];
 }
 
-type Stats = Record<"hp" | "atk" | "spd" | "crt", number>
+export type Stats = Record<"hp" | "atk" | "spd" | "crt", number>
 
 export interface Idol {
   id: string; // generated at runtime
   name: string;
   gen: string;
-  // spriteOffset is used for both idol model and icon, so the corresponding spritesheet has to be arranged accordingly
-  spriteOffset: [number, number];
   stats: Stats;
   notes?: string[];
   attack: Skill;

@@ -1,12 +1,9 @@
 import React from "react";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 
+import { ItemsPage, IdolsPage, UpgradesPage, AboutPage } from "@/pages";
+import { useSpriteOffsetsStore } from "@/stores";
 import holocureLogo from "./assets/holocure-logo-sm.png";
-import { ItemsPage } from "./pages/ItemsPage/ItemsPage";
-import { IdolsPage } from "./pages/IdolsPage/IdolsPage";
-import { UpgradesPage } from "./pages/UpgradesPage/UpgradesPage";
-import { AboutPage } from "./pages/AboutPage/AboutPage";
-import { useSpriteOffsetsStore } from "./stores/spritesStore";
 
 import './App.scss'
 

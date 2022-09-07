@@ -577,28 +577,28 @@
   - name: "Inugami Korone"
     gen: "Gamers"
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 60
+      atk: 1
+      spd: 1.4
+      crt: 0.01
     special:
-      name: "korone special"
-      desc: ""
+      name: "Ending Making Time!"
+      desc: "Create waves of giant exploding Yubi's. Targets defeated get their Yubi's taken."
     attack:
       name: "Orayo!"
       levels:
         - level: 1
-          desc: ""
+          desc: "Punch towards the front in a random cone."
         - level: 2
           desc: "Increase attack area by 25%."
         - level: 3
-          desc: ""
+          desc: "???"
         - level: 4
-          desc: ""
+          desc: "???"
         - level: 5
-          desc: ""
+          desc: "???"
         - level: 6
-          desc: ""
+          desc: "???"
         - level: 7
           desc: "Reduce delay between combination punches by 50%."
     skills:
@@ -629,55 +629,55 @@
   - name: "Nekomata Okayu"
     gen: "Gamers"
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 60
+      atk: 0.9
+      spd: 1.4
+      crt: 0.05
     special:
-      name: "okayu special"
-      desc: ""
+      name: "Mogu Mogu"
+      desc: "For 6 seconds, Okayu is invincible and increases SPD by 50%. Non-boss targets touched will be eater, healing 5% HP."
     attack:
-      name: "okayu atk"
+      name: "Onigiri"
       levels:
         - level: 1
-          desc: ""
+          desc: "Throw an onigiri at an arc."
         - level: 2
-          desc: ""
+          desc: "???"
         - level: 3
-          desc: ""
+          desc: "???"
         - level: 4
-          desc: ""
+          desc: "???"
         - level: 5
-          desc: ""
+          desc: "???"
         - level: 6
-          desc: ""
+          desc: "???"
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Yummy"
         levels:
           - level: 1
             desc: "Increase food drops by 50%. When eating food, gain 40% ATK, 15% SPD, and 5% Crit for 8 seconds."
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Sensitive Voice"
         levels:
           - level: 1
             desc: "Increase Crit by 5%. Crits have a 10% chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal 3% HP."
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Feast"
         levels:
           - level: 1
             desc: "When a target is defeated, there is a 6% chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
   - name: "Shirakami Fubuki"
     gen: "Gamers"
     stats:
@@ -700,11 +700,11 @@
         - level: 4
           desc: "Swing tail in front and back."
         - level: 5
-          desc: ""
+          desc: "???"
         - level: 6
-          desc: ""
+          desc: "???"
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Friendzone"
         levels:
@@ -733,30 +733,30 @@
   - name: "Ookami Mio"
     gen: "Gamers"
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 70
+      atk: 0.85
+      spd: 1.4
+      crt: 0.01
     special:
-      name: "mio sp"
-      desc: ""
+      name: "Hatotaurus"
+      desc: "Summon Hatotaurus, punching continuously forward for 6 seconds. During this time, Mio takes 30% less damage."
     attack:
       name: "Tarot Cards"
       levels:
         - level: 1
-          desc: ""
+          desc: "Throw a card that quickly returns back."
         - level: 2
-          desc: ""
+          desc: "???"
         - level: 3
           desc: "Throw 2 tarrot cards."
         - level: 4
-          desc: ""
+          desc: "???"
         - level: 5
           desc: "Throw cards farther and increase damage by 40%."
         - level: 6
           desc: "Throw 3 tarot cards."
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Omen"
         levels:
@@ -769,7 +769,7 @@
       - name: "Mama"
         levels:
           - level: 1
-            desc: ""
+            desc: "???"
           - level: 2
             desc: "Every 4 seconds, heal 1% for each target within {125px}, up to {20%}."
           - level: 3
@@ -781,7 +781,7 @@
           - level: 2
             desc: "The closer a target is within 150px, the more damage they receive, up to {100%}."
           - level: 3
-            desc: ""
+            desc: "???"
   - name: "Tokino Sora"
     gen: "Gen 0"
     stats:
@@ -817,7 +817,7 @@
           - level: 2
             desc: "When receiving any healing, enemies within {125px} are also \"healed\", taking {150%} + X% damage where X is 2 times the heal amount."
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Ankimo"
         levels:
           - level: 1
@@ -831,43 +831,43 @@
           - level: 1
             desc: "Attacks have a {10%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {20%} chance to heal {2} HP when defeated."
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
             desc: "Attacks have a {20%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {30%} chance to heal {4} HP when defeated."
   - name: "Roboco-san"
     gen: "Gen 0"
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 75
+      atk: 1
+      spd: 1.4
+      crt: 0.05
     special:
-      name: "roboco sp"
-      desc: ""
+      name: "Hi-Spec Mode"
+      desc: "Release a discharge that deals 300% damage. For 8 seconds, Robocco gaiuns 100% AKT, SPD, Pickup Radius, and 50% Crit and Haste."
     attack:
-      name: "roboco atk"
+      name: "???"
       levels:
         - level: 1
-          desc: ""
+          desc: "Shoots a few times in aimed direction."
         - level: 2
-          desc: ""
+          desc: "???"
         - level: 3
           desc: "Bullets +1 pierce."
         - level: 4
-          desc: ""
+          desc: "???"
         - level: 5
-          desc: ""
+          desc: "???"
         - level: 6
-          desc: ""
+          desc: "???"
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Robo-Discharge"
         levels:
           - level: 1
             desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {100%} damage. +1% Discharge damage for each level Roboco has."
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
             desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {150%} damage. +1% Discharge damage for each level Roboco has."
       - name: "Hi-Level"
@@ -889,30 +889,30 @@
   - name: "Sakura Miko"
     gen: "Gen 0"
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 60
+      atk: 0.9
+      spd: 1.4
+      crt: 0.01
     special:
-      name: "miko sp"
-      desc: ""
+      name: "Demon Lord's Domain"
+      desc: "Create a zone around Miko for 8 seconds, summoning hot flames that burn everything. Targets in this zone take 50% more damage."
     attack:
       name: "Sakura Gohei"
       levels:
         - level: 1
-          desc: ""
+          desc: "Swing a gohei that creates a burst of Sakura blossoms."
         - level: 2
-          desc: ""
+          desc: "???"
         - level: 3
           desc: "Increase damage by 30%."
         - level: 4
-          desc: ""
+          desc: "???"
         - level: 5
-          desc: ""
+          desc: "???"
         - level: 6
-          desc: ""
+          desc: "???"
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Baby Language?"
         levels:
@@ -921,75 +921,75 @@
           - level: 2
             desc: "Attacks have {15%} chance to create a \"Nyeh\", dealing {75%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Eroge Hero"
         levels:
           - level: 1
             desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal 2 HP every 2 seconds. Each conquest resets the timer."
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Skill 3"
         levels:
           - level: 1
-            desc: ""
+            desc: "???"
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
   - name: "Hoshimashi Suisei"
     gen: "Gen 0"
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 70
+      atk: 1.3
+      spd: 1.3
+      crt: 0.1
     special:
-      name: "suisei sp"
-      desc: ""
+      name: "Summon Blocks"
+      desc: "Summon a rain of falling blocks that deal 300% damage each for 5 seconds, flattening targets making them unable to move for 5 seconds."
     attack:
       name: "Axe Swing"
       levels:
         - level: 1
-          desc: ""
+          desc: "Swing a bloody axe in an arc in front."
         - level: 2
           desc: "Increase damage by 30%."
         - level: 3
-          desc: ""
+          desc: "???"
         - level: 4
           desc: "Reduce time between attacks by 10%."
         - level: 5
-          desc: ""
+          desc: "???"
         - level: 6
-          desc: ""
+          desc: "???"
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Skill 1"
         levels:
           - level: 1
-            desc: ""
+            desc: "???"
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Skill 2"
         levels:
           - level: 1
-            desc: ""
+            desc: "???"
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
       - name: "Skill 3"
         levels:
           - level: 1
-            desc: ""
+            desc: "???"
           - level: 2
-            desc: ""
+            desc: "???"
           - level: 3
-            desc: ""
+            desc: "???"
   - name: "AZKi"
     gen: "Gen 0"
     stats:
@@ -1016,7 +1016,7 @@
         - level: 6
           desc: "Reduce time between attacks by 25%."
         - level: 7
-          desc: ""
+          desc: "???"
     skills:
       - name: "Encore!"
         levels:

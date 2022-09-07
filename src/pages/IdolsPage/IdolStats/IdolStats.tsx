@@ -1,5 +1,6 @@
-import { Box, Sprite } from "@/components";
+import { Box, Sprite2 } from "@/components";
 import { Idol } from "@/models/Idol";
+import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
 export interface IdolStatsProps {
   idol?: Idol;
@@ -19,14 +20,19 @@ const stats: IdolStat[] = [
 ];
 
 export const IdolStats = ({ idol }: IdolStatsProps) => {
+  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
+  const idolsSpriteSheet = getSpriteSheet('idols');
+
   return (
     <Box label={idol?.name} className="selected-idol">
       <div className="model flex-column align-center align-x-center">
-        <Sprite
-          type="idol-model"
-          offset={idol?.spriteOffset}
-          showBackground={false}
-        />
+        {idol && (
+          <Sprite2
+            spriteSheet={idolsSpriteSheet}
+            name={idol.name}
+            showBackground={false}
+          />
+        )}
       </div>
 
       <div className="stats">

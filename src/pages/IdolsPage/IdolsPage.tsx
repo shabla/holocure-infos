@@ -2,11 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
-import { Box, Sprite } from "@/components";
+import { Box, Sprite, Sprite2 } from "@/components";
 import { useIdolsStore } from "@/stores/idolsStore";
+import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
 import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
 import { IdolStats } from "./IdolStats/IdolStats";
+
 
 import "./IdolsPage.scss"
 
@@ -20,6 +22,8 @@ export const IdolsPage = () => {
     state.loadIdols,
     state.getIdolById,
   ]);
+  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
+  const skillsSpriteSheet = getSpriteSheet('skills');
 
   useEffect(() => {
     loadIdols();
@@ -55,9 +59,9 @@ export const IdolsPage = () => {
         <Box label="Attack" className="attack">
           <div className="skill-name flex-row align-x-center">
             {selectedIdol && (
-              <Sprite
-                type="skill"
-                offset={selectedIdol.attack.spriteOffset}
+              <Sprite2
+                spriteSheet={skillsSpriteSheet}
+                name={selectedIdol.attack.name}
                 showBackground={false}
               />
             )}

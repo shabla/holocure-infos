@@ -52,11 +52,14 @@ export const useSpriteOffsetsStore = create<SpriteOffsetsStore>((set, get) => ({
     const res = await fetch('sprites.json');
     const offsetsByType: SpriteOffsetsDict = await res.json();
 
-    offsetsByType['idols'].file = idolModelsSpriteSheet;
-    offsetsByType['idols-icon'].file = idolIconsSpriteSheet;
     offsetsByType['items'].file = itemsSpriteSheet;
     offsetsByType['upgrades'].file = upgradeSpriteSheet;
     offsetsByType['skills'].file = skillsSpriteSheet;
+    offsetsByType['idols'].file = idolModelsSpriteSheet;
+    offsetsByType['idols-icon'].file = idolIconsSpriteSheet;
+
+    // idols and idols icons use the space offsets (sketchy)
+    offsetsByType['idols-icon'].offsets = offsetsByType['idols'].offsets;
 
     set({
       loaded: true,

@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 
 import holocureLogo from "./assets/holocure-logo-sm.png";
@@ -5,10 +6,24 @@ import { ItemsPage } from "./pages/ItemsPage/ItemsPage";
 import { IdolsPage } from "./pages/IdolsPage/IdolsPage";
 import { UpgradesPage } from "./pages/UpgradesPage/UpgradesPage";
 import { AboutPage } from "./pages/AboutPage/AboutPage";
+import { useSpriteOffsetsStore } from "./stores/spritesStore";
 
 import './App.scss'
 
 export const App = () => {
+  const [loadSpriteOffsets, loaded] = useSpriteOffsetsStore(state => [
+    state.loadSpriteOffsets,
+    state.loaded,
+  ]);
+
+  React.useEffect(() => {
+    loadSpriteOffsets();
+  }, []);
+
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <div className="app">
       <nav className="nav flex-row align-space-between align-x-center">

@@ -918,13 +918,13 @@
       - 0
       - 0
     stats:
-      hp: 0
-      atk: 0
-      spd: 0
-      crt: 0
+      hp: 55
+      atk: 1
+      spd: 1.5
+      crt: 0.05
     special:
-      name: ""
-      desc: ""
+      name: "Fubuki Storm"
+      desc: "Summon many katanas, flurrying around for 5 seconds. During this time, Fubuki dodges all attacks."
       spriteOffset:
         - 0
         - 0
@@ -935,7 +935,7 @@
         - 0
       levels:
         - level: 1
-          desc: ""
+          desc: "Swipes Tail in front at close range."
         - level: 2
           desc: "Increase damage by 20%."
         - level: 3

@@ -1,6 +1,5 @@
 import classNames from "classnames";
 
-import { getSpriteBackground } from "@/utils/getSpriteBackground";
 import itemsSpriteSheet from "@/assets/items.png";
 import skillsSpriteSheet from "@/assets/skills.png";
 import upgradeSpriteSheet from "@/assets/upgrades.png";
@@ -10,6 +9,18 @@ import idolModelsSpriteSheet from "@/assets/idol-models.png";
 import "./Sprite.scss"
 
 type SpriteType = "item" | "skill" | "upgrade" | "idol-icon" | "idol-model";
+
+const getSpriteBackground = (
+  file: string,
+  width: number,
+  height: number,
+  offset: [number, number]
+): string => {
+  const x = -offset[0] * width;
+  const y = -offset[1] * height;
+
+  return `url(${file}) ${x}px ${y}px`;
+}
 
 const defaultValues: Record<SpriteType, Required<Pick<SpriteProps, 'sprite' | 'width' | 'height'>>> = {
   item: {

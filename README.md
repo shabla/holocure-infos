@@ -1,3 +1,2 @@
 # TODO
-- add hidden values like weapon base damage, cooldowns, ...
-- mobile friendly
+- sprite offsets store? detach sprite offset from data, fix Sprite to use that (done in for upgrades), sprites data missing skills and idol icons

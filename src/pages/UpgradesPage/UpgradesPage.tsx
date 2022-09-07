@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { Box, Sprite } from "@/components";
+import { Box, Sprite2 } from "@/components";
 import { Upgrade } from "@/models/Upgrade";
 import { useUpgradesStore } from "@/stores/upgradesStore";
+import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
 import "./UpgradesPage.scss";
 
@@ -14,6 +15,8 @@ export const UpgradesPage = () => {
     state.upgrades,
     state.loadUpgrades
   ])
+  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
+  const spriteSheet = getSpriteSheet('upgrades');
 
   useEffect(() => {
     loadUpgrades().then(upgrades => setSelectedUpgrade(upgrades[0]));
@@ -36,9 +39,9 @@ export const UpgradesPage = () => {
             onClick={() => setSelectedUpgrade(upgrade)}
             key={upgrade.name}
           >
-            <Sprite
-              type="upgrade"
-              offset={upgrade.spriteOffset}
+            <Sprite2
+              spriteSheet={spriteSheet}
+              name={upgrade.name}
               showBackground={upgrade === selectedUpgrade}
             />
             {upgrade.name}

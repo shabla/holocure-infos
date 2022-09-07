@@ -1,0 +1,267 @@
+idols:
+  width: 180
+  height: 190
+  offsets:
+    "Amelia Watson":
+      - 0
+      - 0
+    "Gawr Gura":
+      - 1
+      - 0
+    "Ninomae Inanis":
+      - 2
+      - 0
+    "Takanashi Kiara":
+      - 3
+      - 0
+    "Mori Calliope":
+      - 4
+      - 0
+    "Hakos Baelz":
+      - 0
+      - 1
+    "Ouro Kronii":
+      - 1
+      - 1
+    "Ceres Fauna":
+      - 2
+      - 1
+    "Nanashi Mumei":
+      - 3
+      - 1
+    "Tsukumo Sana":
+      - 4
+      - 1
+    "Irys":
+      - 0
+      - 2
+    "Inugami Korone":
+      - 0
+      - 0
+    "Nekomata Okayu":
+      - 0
+      - 0
+    "Shirakami Fubuki":
+      - 0
+      - 0
+    "Ookami Mio":
+      - 0
+      - 0
+    "Tokino Sora":
+      - 0
+      - 0
+    "Roboco-san":
+      - 0
+      - 0
+    "Sakura Miko":
+      - 0
+      - 0
+    "Hoshimashi Suisei":
+      - 0
+      - 0
+    "AZKi":
+      - 0
+      - 0
+
+idols-icon:
+  width: 86
+  height: 76
+  offsets:
+
+skills:
+  width: 50
+  height: 50
+  offsets:
+
+items:
+  width: 54
+  height: 54
+  offsets:
+    "Spider Cooking":
+      - 0
+      - 0
+    "Elite Lava Bucket":
+      - 1
+      - 0
+    "Holo Bomb":
+      - 2
+      - 0
+    "Psycho Axe":
+      - 3
+      - 0
+    "BL Book":
+      - 4
+      - 0
+    "Cutting Board":
+      - 5
+      - 0
+    "Fan Beam":
+      - 6
+      - 0
+    "Plug Type Asacoco":
+      - 0
+      - 1
+    "Glowstick":
+      - 1
+      - 1
+    "Idol Song":
+      - 2
+      - 1
+    "X-Potato":
+      - 0
+      - 0
+    "Wamy Water":
+      - 0
+      - 0
+    "Frozen Sea":
+      - 0
+      - 0
+    "BL Fujoshi":
+      - 3
+      - 4
+    "MiComet":
+      - 4
+      - 4
+    "Elite Cooking":
+      - 1
+      - 4
+    "Rap Dog":
+      - 0
+      - 0
+    "Idol Concert":
+      - 2
+      - 4
+    "Light Beam":
+      - 6
+      - 4
+    "Dragon Fire":
+      - 0
+      - 4
+    "Breathe-In Type Asacoco":
+      - 6
+      - 3
+    "Flattening Board":
+      - 5
+      - 4
+    "Stolen Piggy Bank":
+      - 3
+      - 1
+    "Sake":
+      - 3
+      - 
+    "Body Pillow":
+      - 4
+      - 1
+    "Injection Type Asacoco":
+      - 5
+      - 1
+    "Credit Card":
+      - 6
+      - 1
+    "Knightly Milk":
+      - 0
+      - 2
+    "Face Mask":
+      - 1
+      - 2
+    "Plushie":
+      - 2
+      - 2
+    "Nurse's Horns":
+      - 3
+      - 2
+    "Full Meal":
+      - 4
+      - 2
+    "Piki Piki Piman":
+      - 5
+      - 2
+    "Headphones":
+      - 6
+      - 2
+    "Gorilla's Paw":
+      - 0
+      - 3
+    "Uber Sheep":
+      - 1
+      - 3
+    "Idol Costume":
+      - 2
+      - 3
+    "Energy Drink":
+      - 3
+      - 3
+    "Study Glasses":
+      - 4
+      - 3
+    "Super Chatto Time!":
+      - 5
+      - 3
+    "Super Super Chatto Time!":
+      - 0
+      - 0
+    "Membership":
+      - 0
+      - 0
+    "Halu":
+      - 0
+      - 
+    "Just Bandage":
+      - 0
+      - 0
+    "Limiter":
+      - 0
+      - 0
+
+upgrades:
+  height: 50
+  width: 50
+  offsets:
+    "Max HP Up":
+      - 0
+      - 0
+    "ATK Up":
+      - 1
+      - 0
+    "SPD Up":
+      - 2
+      - 0
+    "Crit Up":
+      - 3
+      - 0
+    "Pick Up Range":
+      - 4
+      - 0
+    "Haste Up":
+      - 5
+      - 0
+    "Regeneration":
+      - 6
+      - 0
+    "Special Attack":
+      - 0
+      - 1
+    "Special Cooldown Reduction":
+      - 1
+      - 1
+    "Growth":
+      - 0
+      - 0
+    "EXP Gain Up":
+      - 2
+      - 1
+    "Food Drops Up":
+      - 3
+      - 1
+    "Money Gain Up":
+      - 4
+      - 1
+    "Reroll":
+      - 0
+      - 2
+    "Enhancement Rate Up":
+      - 0
+      - 0
+    "Defense Up":
+      - 0
+      - 0

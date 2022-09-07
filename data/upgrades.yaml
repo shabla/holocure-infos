@@ -1,6 +1,5 @@
 
   - name: "Max HP Up"
-    image: ""
     desc: "Increase Max HP by 4% per level."
     costs:
       - 200
@@ -12,7 +11,6 @@
       - 0
       - 0
   - name: "ATK Up"
-    image: ""
     desc: "Increase all damage by 6% per level."
     costs:
       - 300
@@ -24,7 +22,6 @@
       - 1
       - 0
   - name: "SPD Up"
-    image: ""
     desc: "Increase movement speed by 6% per level."
     costs:
       - 200
@@ -36,7 +33,6 @@
       - 2
       - 0
   - name: "Crit Up"
-    image: ""
     desc: "Increase critical hit chance by 2% per level."
     costs:
       - 300
@@ -48,7 +44,6 @@
       - 3
       - 0
   - name: "Pick Up Range"
-    image: ""
     desc: "Increase base pick up range by 10% per level."
     costs:
       - 200
@@ -60,7 +55,6 @@
       - 4
       - 0
   - name: "Haste Up"
-    image: ""
     desc: "Increase attack speed by 4% per level."
     costs:
       - 400
@@ -72,7 +66,6 @@
       - 5
       - 0
   - name: "Regeneration"
-    image: ""
     desc: "Slowly heals 1 HP every 5 seconds. +1 HP per level."
     costs:
       - 200
@@ -84,7 +77,6 @@
       - 6
       - 0
   - name: "Special Attack"
-    image: ""
     desc: "Unlocks the special attack for all characters. Press the secondary button (X) to use."
     costs:
       - 500
@@ -92,7 +84,6 @@
       - 0
       - 1
   - name: "Special Cooldown Reduction"
-    image: ""
     desc: "Reduces the cooldown time of special attack by 3% per level."
     costs:
       - 500
@@ -103,8 +94,14 @@
     spriteOffset:
       - 1
       - 1
+  - name: "Growth"
+    desc: "Increase the damage of Character Main Weapons and Special Attacks by 2% per in-game level."
+    costs:
+      - 1000
+    spriteOffset:
+      - 0
+      - 0
   - name: "EXP Gain Up"
-    image: ""
     desc: "Increases the amount of EXP gained by 4% per level."
     costs:
       - 300
@@ -116,7 +113,6 @@
       - 2
       - 1
   - name: "Food Drops Up"
-    image: ""
     desc: "Increases the rate that food is dropped by 4% per level."
     costs:
       - 150
@@ -128,7 +124,6 @@
       - 3
       - 1
   - name: "Money Gain Up"
-    image: ""
     desc: "Increases the amount of HoloCoins gained by 20% per level."
     costs:
       - 400
@@ -140,12 +135,35 @@
       - 4
       - 1
   - name: "Reroll"
-    image: ""
     desc: "Grants a use of Reroll when leveling up."
     costs:
       - 2500
       - 5000
       - 7500
+      - -1
+      - -1
     spriteOffset:
       - 0
       - 2
+  - name: "Enhancement Rate Up"
+    desc: "Increases the chance of success during enhancements by 3% per level."
+    costs:
+      - 300
+      - -1
+      - -1
+      - -1
+      - -1
+    spriteOffset:
+      - 0
+      - 0
+  - name: "Defense Up"
+    desc: "Increases defense, reducing damage taken by 3% per level."
+    costs:
+      - 500
+      - -1
+      - -1
+      - -1
+      - -1
+    spriteOffset:
+      - 0
+      - 0

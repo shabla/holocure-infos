@@ -16,11 +16,16 @@ export interface SpriteProps<T = unknown> {
 }
 
 const getSpriteBackground = (spriteSheet: SpriteSheet, name: string): string => {
-  const offset = spriteSheet.offsets?.[name] || [0, 0];
-  const x = -(offset[0] || 0) * spriteSheet.width;
-  const y = -(offset[1] || 0) * spriteSheet.height;
+  const offset = spriteSheet.offsets?.[name];
 
-  return `url(${spriteSheet.file}) ${x}px ${y}px`;
+  if (offset) {
+    const x = -(offset[0] || 0) * spriteSheet.width;
+    const y = -(offset[1] || 0) * spriteSheet.height;
+
+    return `url(${spriteSheet.file}) ${x}px ${y}px`;
+  }
+
+  return `url(https://via.placeholder.com/${spriteSheet.width}x${spriteSheet.height}?text=???)`
 }
 
 export const Sprite = <T,>({

@@ -4,7 +4,7 @@ export interface ItemLevel {
 }
 
 export interface Item {
-  id: string;
+  id: string; // set at runtime
   type: "weapon" | "item" | "collab";
   spritePos: [number, number];
   name: string;

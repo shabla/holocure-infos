@@ -1,9 +1,10 @@
 import React, { useMemo } from "react";
 import classNames from "classnames";
 
-import { Sprite } from "@/components";
+import { Sprite2 } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
+import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
 import "./CollabsList.scss";
 
@@ -25,6 +26,8 @@ export const CollabsList = ({
   onComboItemsChanged,
 }: CollabsListProps) => {
   const getItemById = useItemsStore(state => state.getItemById);
+  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
+  const itemsSpriteSheet = getSpriteSheet('items');
 
   const disabledCollabs = useMemo(() => {
     return items
@@ -80,13 +83,17 @@ export const CollabsList = ({
           isCollabItemDisabled = disabledCollabs.includes(item);
         }
 
+        if (!firstItem || !secondItem || !item) {
+          return null
+        }
+
         return (
           <React.Fragment key={item.name}>
-            <Sprite
-              type="item"
-              offset={firstItem?.spritePos}
+            <Sprite2
+              spriteSheet={itemsSpriteSheet}
+              name={firstItem.name}
               value={firstItem}
-              label={firstItem?.name}
+              label={firstItem.name}
               showBackground
               className={classNames({ "disabled": isFirstItemDisabled })}
               selected={firstItem === selectedItem}
@@ -99,11 +106,11 @@ export const CollabsList = ({
 
             <div className="operator">+</div>
 
-            <Sprite
-              type="item"
-              offset={secondItem?.spritePos}
+            <Sprite2
+              spriteSheet={itemsSpriteSheet}
+              name={secondItem.name}
               value={secondItem}
-              label={secondItem?.name}
+              label={secondItem.name}
               showBackground
               className={classNames({ "disabled": isSecondItemDisabled })}
               selected={secondItem === selectedItem}
@@ -116,9 +123,9 @@ export const CollabsList = ({
 
             <div className="operator">=</div>
 
-            <Sprite
-              type="item"
-              offset={item.spritePos}
+            <Sprite2
+              spriteSheet={itemsSpriteSheet}
+              name={item.name}
               value={item}
               label={item.name}
               showBackground

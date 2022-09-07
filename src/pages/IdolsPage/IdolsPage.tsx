@@ -9,7 +9,6 @@ import { getHighlightedElements } from "@/utils/getHighlightedElements";
 import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
 import { IdolStats } from "./IdolStats/IdolStats";
 
-
 import "./IdolsPage.scss"
 
 export const IdolsPage = () => {

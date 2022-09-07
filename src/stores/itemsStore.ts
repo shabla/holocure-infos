@@ -1,5 +1,6 @@
 import create from "zustand"
 
+import { nameToId } from "@/utils/nameToId";
 import { Item } from "@/models/Item"
 
 interface ItemsStore {
@@ -36,6 +37,11 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
 
     const data = await fetch('items.json');
     const items: Item[] = await data.json();
+
+    // generate id based on item name
+    items.forEach(item => {
+      item.id = nameToId(item.name);
+    });
 
     set({
       loaded: true,

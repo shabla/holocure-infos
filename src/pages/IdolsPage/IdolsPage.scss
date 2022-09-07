@@ -43,35 +43,4 @@
       }
     }
   }
-
-  .selected-idol-details {
-    .sprite {
-      margin-right: 10px;
-    }
-
-    .skill-name {
-      font-size: 20px;
-      padding: 10px 0;
-    }
-
-    .attack {
-      >main {
-        padding: 0;
-
-        .skill-name {
-          padding: 10px;
-        }
-      }
-    }
-
-    .skills {
-      >main {
-        padding: 0;
-
-        .skill-name {
-          padding: 10px;
-        }
-      }
-    }
-  }
 }

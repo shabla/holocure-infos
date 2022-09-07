@@ -1,0 +1,18 @@
+.idol-skill-box {
+  >main {
+    padding: 0;
+
+    .skill-name {
+      padding: 10px;
+      font-size: 20px;
+    }
+  }
+
+  .sprite {
+    margin-right: 10px;
+  }
+
+  .desc-only {
+    padding: 0 10px 10px 10px;
+  }
+}

@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
-import { Idol } from "@/models/Idol";
-import { Box, Sprite } from "@/components";
-import { useIdolsStore } from "@/stores/idolsStore";
-import { useSpriteOffsetsStore } from "@/stores/spritesStore";
-import { getHighlightedElements } from "@/utils/getHighlightedElements";
+import { Idol } from "@/models";
+import { useIdolsStore, } from "@/stores";
 import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
-import { IdolStats } from "./IdolStats/IdolStats";
+import { IdolProfileBox } from "./IdolProfileBox/IdolProfileBox";
+import { IdolSkillBox } from "./IdolSkillBox/IdolSkillBox";
 
 import "./IdolsPage.scss"
 
@@ -21,8 +19,6 @@ export const IdolsPage = () => {
     state.loadIdols,
     state.getIdolById,
   ]);
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const skillsSpriteSheet = getSpriteSheet('skills');
 
   useEffect(() => {
     loadIdols();
@@ -50,79 +46,30 @@ export const IdolsPage = () => {
   return (
     <div className="idols-page flex-row content-container">
       <div className="sticky-section flex-column">
-        <IdolStats idol={selectedIdol} />
+        <IdolProfileBox idol={selectedIdol} />
         <IdolGenerations selectedIdol={selectedIdol} onSelected={handleIdolSelected} />
       </div>
 
-      <div className="selected-idol-details flex-column flex-fill">
-        <Box label="Attack" className="attack">
-          <div className="skill-name flex-row align-x-center">
-            {selectedIdol && (
-              <Sprite
-                spriteSheet={skillsSpriteSheet}
-                name={selectedIdol.attack.name}
-                showBackground={false}
-              />
-            )}
-            {selectedIdol?.attack.name}
-          </div>
-
-          <table className="info-table">
-            <tbody>
-              {selectedIdol?.attack.levels.map(level => (
-                <tr key={level.level}>
-                  <td className="name">Level {level.level}</td>
-                  <td>{level.desc}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Box>
-
-        <Box label="Special" className="special">
-          <div className="skill-name flex-row align-x-center">
-            {selectedIdol && (
-              <Sprite
-                spriteSheet={skillsSpriteSheet}
-                name={selectedIdol.special.name}
-                showBackground={false}
-              />
-            )}
-            {selectedIdol?.special.name}
-          </div>
-
-          <div className="desc">{selectedIdol?.special.desc}</div>
-        </Box>
-
-        <Box label="Skills" className="skills">
-          {selectedIdol?.skills.map(skill => (
-            <React.Fragment key={skill.name}>
-              <div className="skill-name flex-row align-x-center">
-                {selectedIdol && (
-                  <Sprite
-                    spriteSheet={skillsSpriteSheet}
-                    name={skill.name}
-                    showBackground={false}
-                  />
-                )}
-                {skill.name}
-              </div>
-
-              <table className="info-table">
-                <tbody>
-                  {skill.levels.map(level => {
-                    return (
-                      <tr key={level.level}>
-                        <td className="name">Level {level.level}</td>
-                        <td>{getHighlightedElements(level.desc)}</td>
-                      </tr>
-                    )
-                  })}
-                </tbody>
-              </table>
-            </React.Fragment>
-          ))}
-        </Box>
+      <div className="flex-column flex-fill">
+        {selectedIdol && (
+          <React.Fragment>
+            <IdolSkillBox
+              title="Attack"
+              skills={[selectedIdol.attack]}
+            />
+            <IdolSkillBox
+              title="Special"
+              skills={[{
+                name: selectedIdol.special.name,
+                levels: [{ level: 1, desc: selectedIdol.special.desc }]
+              }]}
+            />
+            <IdolSkillBox
+              title="Skills"
+              skills={selectedIdol.skills}
+            />
+          </React.Fragment>
+        )}
       </div>
     </div>
   )

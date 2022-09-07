@@ -1,9 +1,5 @@
-- id: "spider-cooking"
-  spritePos:
-    - 0
-    - 0
+- name: "Spider Cooking"
   type: "weapon"
-  name: "Spider Cooking"
   desc: "Create an area of miasma around, dealing slow damage to enemies inside."
   levels:
     - level: 2
@@ -18,12 +14,8 @@
       desc: "Increase damage by 30%."
     - level: 7
       desc: "Adds small knockback on hit."
-- id: "elite-lava-bucket"
-  spritePos:
-    - 1
-    - 0
+- name: "Elite Lava Bucket"
   type: "weapon"
-  name: "Elite Lava Bucket"
   desc: "Drop lava on the ground, burning targets slowly."
   levels:
     - level: 2
@@ -38,12 +30,8 @@
       desc: "Throw 3 lava buckets."
     - level: 7
       desc: "Throw 4 lava buckets and increase lava size by 20%."
-- id: "holo-bomb"
-  spritePos:
-    - 2
-    - 0
+- name: "Holo Bomb"
   type: "weapon"
-  name: "Holo Bomb"
   desc: "A bomb that explodes, dealing damage to all nearby targets."
   levels:
     - level: 2
@@ -58,12 +46,8 @@
       desc: "Increase explosion size by 20%."
     - level: 7
       desc: "Throw 3 bombs."
-- id: "psycho-axe"
-  spritePos:
-    - 3
-    - 0
+- name: "Psycho Axe"
   type: "weapon"
-  name: "Psycho Axe"
   desc: "Throw an axe that spirals outward from the player."
   levels:
     - level: 2
@@ -78,12 +62,8 @@
       desc: "Increase attack size by 50%."
     - level: 7
       desc: "Increase damage by 50%."
-- id: "bl-book"
-  spritePos:
-    - 4
-    - 0
+- name: "BL Book"
   type: "weapon"
-  name: "BL Book"
   desc: "Repel targets with orbitting BL Books."
   levels:
     - level: 2
@@ -98,12 +78,8 @@
       desc: "Add 1 additional book."
     - level: 7
       desc: "Increase damage by 40%."
-- id: "cutting-board"
-  spritePos:
-    - 5
-    - 0
+- name: "Cutting Board"
   type: "weapon"
-  name: "Cutting Board"
   desc: "Create a defensive wall that damages targets behind you. Effectiveness is increased on certain characters."
   requirement: "Survive for 10 minutes using Ina in one run."
   levels:
@@ -119,12 +95,8 @@
       desc: "Reduce the time between attacks by 0.5 seconds."
     - level: 7
       desc: "Shoot additional walls from sides."
-- id: "fan-beam"
-  spritePos:
-    - 6
-    - 0
+- name: "Fan Beam"
   type: "weapon"
-  name: "Fan Beam"
   desc: "Shoot a powerful laser beam from the microphone. Horizontal Only."
   requirement: "Defeat Fubuzilla."
   levels:
@@ -140,12 +112,8 @@
       desc: "Increase beam size by 50%."
     - level: 7
       desc: "Fire an additional beam behind."
-- id: "plug-type-asacoco"
-  spritePos:
-    - 0
-    - 1
+- name: "Plug Type Asacoco"
   type: "weapon"
-  name: "Plug Type Asacoco"
   desc: "Fire a fast piercing tail targeted at a random target."
   levels:
     - level: 2
@@ -160,12 +128,8 @@
       desc: "Adds knockback on hit."
     - level: 7
       desc: "Fire an additional Asacoco."
-- id: "glowstick"
-  spritePos:
-    - 1
-    - 1
+- name: "Glowstick"
   type: "weapon"
-  name: "Glowstick"
   desc: "Throw a glowstick to a nearby target and then spins back to player."
   levels:
     - level: 2
@@ -180,12 +144,8 @@
       desc: "Increase damage by 33%."
     - level: 7
       desc: "Throw one additional glowstick."
-- id: "idol-song"
-  spritePos:
-    - 2
-    - 1
+- name: "Idol Song"
   type: "weapon"
-  name: "Idol Song"
   desc: "Magical music notes that float vertically in both directions."
   requirement: "Survive for 10 minutes using Irys in one run."
   levels:
@@ -201,12 +161,8 @@
       desc: "Increase music note size by 25%."
     - level: 7
       desc: "Increase damage by 50%."
-- id: "x-potato"
-  spritePos:
-    - 0
-    - 0
+- name: "X-Potato"
   type: "weapon"
-  name: "X-Potato"
   desc: "Throw a potato that bounces around the screen before exploding into an X."
   levels: 
     - level: 2
@@ -221,12 +177,8 @@
       desc: "Increase the size of potatoes and the X explosion size by 30%."
     - level: 7
       desc: ""
-- id: "wamy-water"
-  spritePos:
-    - 0
-    - 0
+- name: "Wamy Water"
   type: "weapon"
-  name: "Wamy Water"
   desc: "Create a splash of unknown water in front, knocking enemies back."
   requirement: "???"
   levels: 
@@ -242,131 +194,79 @@
       desc: "Increase damage by 30%."
     - level: 7
       desc: "Increase attack area by 30% and stops enemies for a short moment after knockback."
-- id: "frozen-sea"
-  spritePos:
-    - 0
-    - 0
+- name: "Frozen Sea"
   type: "collab"
-  name: "Frozen Sea"
   desc: "A collaboration of BL Book and Wamy Water. Endless waves of ice that slows enemies."
   requires:
     - "bl-book"
     - "wamy-water"
-- id: "bl-fujoshi"
-  spritePos:
-    - 3
-    - 4
+- name: "BL Fujoshi"
   type: "collab"
-  name: "BL Fujoshi"
   desc: "A collaboration of BL Book and Psycho Axe. Endless BL, how shameless!"
   requires:
     - "bl-book"
     - "psycho-axe"
-- id: "micomet"
-  spritePos:
-    - 4
-    - 4
+- name: "MiComet"
   type: "collab"
-  name: "MiComet"
   desc: "A collaboration of Elite Lava Bucket and Psycho Axe. Real business partners."
   requires:
     - "elite-lava-bucket"
     - "psycho-axe"
-- id: "elite-cooking"
-  spritePos:
-    - 1
-    - 4
+- name: "Elite Cooking"
   type: "collab"
-  name: "Elite Cooking"
   desc: "A collaboration of Elite Lava Bucket and Spider Cooking. May have severe unknown side effects if consumed."
   requires:
     - "elite-lava-bucket"
     - "spider-cooking"
-- id: "rap-dog"
-  spritePos:
-    - 0
-    - 0
+- name: "Rap Dog"
   type: "collab"
-  name: "Rap Dog"
   desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS."
   requires:
     - "x-potato"
     - "idol-song"
-- id: "idol-concert"
-  spritePos:
-    - 2
-    - 4
+- name: "Idol Concert"
   type: "collab"
-  name: "Idol Concert"
   desc: "A collaboration of Idol Song and Glowstick. Throw glowstick in all directions that esxplode into song!"
   requires:
     - "glowstick"
     - "idol-song"
-- id: "light-beam"
-  spritePos:
-    - 6
-    - 4
+- name: "Light Beam"
   type: "collab"
-  name: "Light Beam"
   desc: "A collaboration of Glowstick and Fan Beam. Throw glowsticks that explode into targeted beams!"
   requires:
     - "glowstick"
     - "fan-beam"
-- id: "dragon-fire"
-  spritePos:
-    - 0
-    - 4
+- name: "Dragon Fire"
   type: "collab"
-  name: "Dragon Fire"
   desc: "A collaboration of Fan Beam and Plug In Type Asacoco. The power of a once LEGENDARY Dragon. The OG."
   requires:
     - "plug-type-asacoco"
     - "fan-beam"
-- id: "breathe-in-type-asacoco"
-  spritePos:
-    - 6
-    - 3
+- name: "Breathe-In Type Asacoco"
   type: "collab"
-  name: "Breathe-In Type Asacoco"
   desc: "A collaboration of PLug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!"
   requires:
     - "plug-type-asacoco"
     - "holo-bomb"
-- id: "flattening-board"
-  spritePos:
-    - 5
-    - 4
+- name: "Flattening Board"
   type: "collab"
-  name: "Flattening Board"
   desc: "A collaboration of Cutting Board and Holo Bomb. Feel the wrath of cutting boards...!?."
   requires:
     - "cutting-board"
     - "holo-bomb"
-- id: "stolen-piggy-bank"
-  spritePos:
-    - 3
-    - 1
+- name: "Stolen Piggy Bank"
   type: "item"
-  name: "Stolen Piggy Bank"
   desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
-- id: "sake"
-  spritePos:
-    - 3
-    - 1
+- name: "Sake"
   type: "item"
-  name: "Sake"
   desc: "If not taking any damage for 5 seconds, increase crit by {10%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
   levels:
     - level: 2
       desc: "If not taking any damage for 5 seconds, increase crit by {15%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
     - level: 3
       desc: "If not taking any damage for 5 seconds, increase crit by {20%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
-- id: "body-pillow"
-  spritePos:
-    - 4
-    - 1
+- name: "Body Pillow"
   type: "item"
-  name: "Body Pillow"
   desc: "Gain a shield that absorbs up to {15} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {5%}."
   levels:
     - level: 2
@@ -377,12 +277,8 @@
       desc: "Gain a shield that absorbs up to {30} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {20%}."
     - level: 5
       desc: "Gain a shield that absorbs up to {35} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {25%}."
-- id: "injection-type-asacoco"
-  spritePos:
-    - 5
-    - 1
+- name: "Injection Type Asacoco"
   type: "item"
-  name: "Injection Type Asacoco"
   desc: "Lose 5% HP every second (until 1 HP remains), but gain 40% damage."
   requirement: "Beat Stage Mode with an Asacoco product (only Tail Plug and Breathe-In Type Asacoco works, not Dragon Fire)"
   levels:
@@ -390,12 +286,8 @@
       desc: ""
     - level: 3
       desc: ""
-- id: "credit-card"
-  spritePos:
-    - 6
-    - 1
+- name: "Credit Card"
   type: "item"
-  name: "Credit Card"
   desc: "Cost of enhancing is reduced by {20%} and anvils appear 20% more often."
   requirement: "Find and Anvil."
   levels:
@@ -407,36 +299,24 @@
       desc: "Cost of enhancing is reduced by {35%} and anvils appear 20% more often."
     - level: 5
       desc: "Cost of enhancing is reduced by {40%} and anvils appear 20% more often."
-- id: "knightly-milk"
-  spritePos:
-    - 0
-    - 2
+- name: "Knightly Milk"
   type: "item"
-  name: "Knightly Milk"
   desc: "Increases attack range of area-type weapons by {10%}. Also Increase pick-up radius by {30%}."
   levels:
     - level: 2
       desc: "Increases attack range of area-type weapons by {15%}. Also Increase pick-up radius by {40%}."
     - level: 3
       desc: "Increases attack range of area-type weapons by {20%}. Also Increase pick-up radius by {50%}."
-- id: "face-mask"
-  spritePos:
-    - 1
-    - 2
+- name: "Face Mask"
   type: "item"
-  name: "Face Mask"
   desc: "Increase damage by 50% and haste by 10%. Take 30% more damage."
   levels:
     - level: 2
       desc: ""
     - level: 3
       desc: ""
-- id: "plushie"
-  spritePos:
-    - 2
-    - 2
+- name: "Plushie"
   type: "item"
-  name: "Plushie"
   desc: "After taking any damage, gain invulnerability for 0.3 seconds. However, you also lose 20% ATK and SPD for 5 seconds."
   requirement: "Survive for 10 minutes using Bae in one run."
   levels:
@@ -444,43 +324,27 @@
       desc: "After taking any damage, gain invulnerability for 0.4 seconds. However, you also lose 20% ATK and SPD for 5 seconds."
     - level: 3
       desc: "After taking any damage, gain invulnerability for 0.5 seconds. However, you also lose 20% ATK and SPD for 5 seconds."
-- id: "nurses-horns"
-  spritePos:
-    - 3
-    - 2
+- name: "Nurse's Horns"
   type: "item"
-  name: "Nurse's Horns"
   desc: "When a target is defeated, there is a 20% chance to heal for 2 HP."
   levels:
     - level: 2
       desc: ""
     - level: 3
       desc: ""
-- id: "full-meal"
-  spritePos:
-    - 4
-    - 2
+- name: "Full Meal"
   type: "item"
-  name: "Full Meal"
   desc: "All healing is doubled."
-- id: "piki-piki-piman"
-  spritePos:
-    - 5
-    - 2
+- name: "Piki Piki Piman"
   type: "item"
-  name: "Piki Piki Piman"
   desc: "After receiving damage, increase the special meter by 2%. There is a 0.2 second cooldown."
   levels:
     - level: 2
       desc: ""
     - level: 3
       desc: ""
-- id: "headphones"
-  spritePos:
-    - 6
-    - 2
+- name: "Headphones"
   type: "item"
-  name: "Headphones"
   desc: "15% chance to negate 1 hit, and create a shockwave that knocks back all enemies."
   levels:
     - level: 2
@@ -491,12 +355,8 @@
       desc: "30% chance to negate 1 hit, and create a shockwave that knocks back all enemies."
     - level: 5
       desc: "35% chance to negate 1 hit, and create a shockwave that knocks back all enemies."
-- id: "gorillas-paw"
-  spritePos:
-    - 0
-    - 3
+- name: "Gorilla's Paw"
   type: "item"
-  name: "Gorilla's Paw"
   desc: "Increase normal attack damage by 30%, but lose 20% critical chance."
   requirement: "Defeat Smol Ame."
   levels:
@@ -504,12 +364,8 @@
       desc: ""
     - level: 3
       desc: ""
-- id: "uber-sheep"
-  spritePos:
-    - 1
-    - 3
+- name: "Uber Sheep"
   type: "item"
-  name: "Uber Sheep"
   desc: "Every 10 seconds, food will drop closeby. Also increase food drop chance from defeated targets by 10%."
   levels:
     - level: 2
@@ -520,12 +376,8 @@
       desc: ""
     - level: 5
       desc: ""
-- id: "idol-costume"
-  spritePos:
-    - 2
-    - 3
+- name: "Idol Costume"
   type: "item"
-  name: "Idol Costume"
   desc: "Reduce Special cooldown by 20%."
   requirement: "Use a special move."
   levels:
@@ -537,12 +389,8 @@
       desc: "Reduce Special cooldown by 35%."
     - level: 5
       desc: "Reduce Special cooldown by 40%."
-- id: "energy-drink"
-  spritePos:
-    - 3
-    - 3
+- name: "Energy Drink"
   type: "item"
-  name: "Energy Drink"
   desc: "Increase SPD by 20%, but reduce Max HP by 25% as well."
   requirement: "Survive for 10 minutes using Calli in one run."
   levels:
@@ -554,12 +402,8 @@
       desc: "Increase SPD by 35%, but reduce Max HP by 25% as well."
     - level: 5
       desc: "Increase SPD by 40%, but reduce Max HP by 25% as well."
-- id: "study-glasses"
-  spritePos:
-    - 4
-    - 3
+- name: "Study Glasses"
   type: "item"
-  name: "Study Glasses"
   desc: "Increase EXP gain by 10%."
   requirement: "Reach level 50 in one run."
   levels:
@@ -571,12 +415,8 @@
       desc: "Increase EXP gain by 25%."
     - level: 5
       desc: "Increase EXP gain by 30%."
-- id: "super-chatto-time"
-  spritePos:
-    - 5
-    - 3
+- name: "Super Chatto Time!"
   type: "item"
-  name: "Super Chatto Time!"
   desc: "Targets drop 10% more Holo Coins."
   requirement: "Obtain 5000 coins total. (you only need to have 5000 total at the end of a run, not from a single run)"
   levels:
@@ -588,50 +428,30 @@
       desc: "?Targets drop 80% more Holo Coins."
     - level: 5
       desc: "?Targets drop 100% more Holo Coins."
-- id: "super-super-chatto-time"
-  spritePos:
-    - 0
-    - 0
+- name: "Super Super Chatto Time!"
   type: "item"
-  name: "Super Super Chatto Time!"
   desc: "Targets drop 100% more Holo Coins. Picking up coins also heal 3 HP."
   requirement: "???"
-- id: "membership"
-  spritePos:
-    - 0
-    - 0
+- name: "Membership"
   type: "item"
-  name: "Membership"
   desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by 30% and take 10% less damage."
   requirement: "???"
-- id: "halu"
-  spritePos:
-    - 0
-    - 0
+- name: "Halu"
   type: "item"
-  name: "Halu"
   desc: "Increase regular fan spawns, and fans become 5% stronger. Gain 1 HoloCoin for every 5 targets defeated since taking this item."
   levels:
     - level: 2
       desc: ""
-- id: "just-bandage"
-  spritePos:
-    - 0
-    - 0
+- name: "Just Bandage"
   type: "item"
-  name: "Just Bandage"
   desc: "Increase Max HP by 10. After being hit, heal 10% HP every 3 seconds until 80% of the damage taken is recovered (recovers minimum 1 HP)."
   levels:
     - level: 2
       desc: "Increase Max HP by {20}. After being hit, heal 10% HP every 3 seconds until {90%} of the damage taken is recovered (recovers minimum 1 HP)."
     - level: 3
       desc: "Increase Max HP by {30}. After being hit, heal 10% HP every 3 seconds until {100%} of the damage taken is recovered (recovers minimum 1 HP)."
-- id: "limiter"
-  spritePos:
-    - 0
-    - 0
+- name: "Limiter"
   type: "item"
-  name: "Limiter"
   desc: "Gain {100%} Pick Up Radius."
   levels:
     - level: 2

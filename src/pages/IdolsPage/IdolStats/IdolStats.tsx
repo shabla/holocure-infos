@@ -1,4 +1,4 @@
-import { Box, Sprite2 } from "@/components";
+import { Box, Sprite } from "@/components";
 import { Idol } from "@/models/Idol";
 import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
@@ -27,7 +27,7 @@ export const IdolStats = ({ idol }: IdolStatsProps) => {
     <Box label={idol?.name} className="selected-idol">
       <div className="model flex-column align-center align-x-center">
         {idol && (
-          <Sprite2
+          <Sprite
             spriteSheet={idolsSpriteSheet}
             name={idol.name}
             showBackground={false}

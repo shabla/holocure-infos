@@ -1,61 +1,12 @@
 import classNames from "classnames";
 
-import itemsSpriteSheet from "@/assets/items.png";
-import skillsSpriteSheet from "@/assets/skills.png";
-import upgradeSpriteSheet from "@/assets/upgrades.png";
-import idolIconsSpriteSheet from "@/assets/idol-icons.png";
-import idolModelsSpriteSheet from "@/assets/idol-models.png";
+import { SpriteSheet } from "@/stores/spritesStore";
 
 import "./Sprite.scss"
 
-type SpriteType = "item" | "skill" | "upgrade" | "idol-icon" | "idol-model";
-
-const getSpriteBackground = (
-  file: string,
-  width: number,
-  height: number,
-  offset: [number, number]
-): string => {
-  const x = -offset[0] * width;
-  const y = -offset[1] * height;
-
-  return `url(${file}) ${x}px ${y}px`;
-}
-
-const defaultValues: Record<SpriteType, Required<Pick<SpriteProps, 'sprite' | 'width' | 'height'>>> = {
-  item: {
-    sprite: itemsSpriteSheet,
-    width: 54,
-    height: 54,
-  },
-  skill: {
-    sprite: skillsSpriteSheet,
-    width: 50,
-    height: 50,
-  },
-  upgrade: {
-    sprite: upgradeSpriteSheet,
-    width: 50,
-    height: 50,
-  },
-  "idol-icon": {
-    sprite: idolIconsSpriteSheet,
-    width: 86,
-    height: 76,
-  },
-  "idol-model": {
-    sprite: idolModelsSpriteSheet,
-    width: 180,
-    height: 190,
-  },
-}
-
 export interface SpriteProps<T = unknown> {
-  type: SpriteType;
-  sprite?: string;
-  width?: number;
-  height?: number;
-  offset?: [number, number];
+  spriteSheet: SpriteSheet;
+  name: string;
   selected?: boolean;
   showBackground?: boolean;
   className?: string;
@@ -64,12 +15,17 @@ export interface SpriteProps<T = unknown> {
   onSelected?: (value: T) => void;
 }
 
+const getSpriteBackground = (spriteSheet: SpriteSheet, name: string): string => {
+  const offset = spriteSheet.offsets?.[name] || [0, 0];
+  const x = -(offset[0] || 0) * spriteSheet.width;
+  const y = -(offset[1] || 0) * spriteSheet.height;
+
+  return `url(${spriteSheet.file}) ${x}px ${y}px`;
+}
+
 export const Sprite = <T,>({
-  type,
-  sprite,
-  width,
-  height,
-  offset = [0, 0],
+  spriteSheet,
+  name,
   label,
   showBackground = false,
   className,
@@ -78,19 +34,14 @@ export const Sprite = <T,>({
   onSelected
 }: SpriteProps<T>) => {
   const showLabel = !!label;
-
-  width = width || defaultValues[type].width;
-  height = height || defaultValues[type].height;
-  sprite = sprite || defaultValues[type].sprite;
-
-  const bgStyle = getSpriteBackground(sprite, width, height, offset);
+  const bgStyle = getSpriteBackground(spriteSheet, name);
   const containerStyle: React.CSSProperties | undefined = showLabel ? {
-    width: `calc(${width}px + (2 * var(--sprite-label-overflow)))`,
-    height: `calc(${height}px + var(--sprite-label-overflow))`
+    width: `calc(${spriteSheet.width}px + (2 * var(--sprite-label-overflow)))`,
+    height: `calc(${spriteSheet.height}px + var(--sprite-label-overflow))`
   } : undefined;
   const imageStyle: React.CSSProperties = {
-    width: `${width}px`,
-    height: `${height}px`,
+    width: `${spriteSheet.width}px`,
+    height: `${spriteSheet.height}px`,
     background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`
   };
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import classNames from "classnames";
 
-import { Box, Sprite2 } from "@/components";
+import { Box, Sprite } from "@/components";
 import { Upgrade } from "@/models/Upgrade";
 import { useUpgradesStore } from "@/stores/upgradesStore";
 import { useSpriteOffsetsStore } from "@/stores/spritesStore";
@@ -39,7 +39,7 @@ export const UpgradesPage = () => {
             onClick={() => setSelectedUpgrade(upgrade)}
             key={upgrade.name}
           >
-            <Sprite2
+            <Sprite
               spriteSheet={spriteSheet}
               name={upgrade.name}
               showBackground={upgrade === selectedUpgrade}

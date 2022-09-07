@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { Sprite2, Sprite2Props, SpriteList, Box } from "@/components";
+import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
@@ -35,7 +35,7 @@ export const ItemDetails = ({
         item ? (
           <>
             <div className="flex-row align-x-center">
-              <Sprite2
+              <Sprite
                 spriteSheet={itemsSpriteSheet}
                 name={item?.name}
                 value={item}
@@ -87,7 +87,7 @@ export const ItemDetails = ({
                           showBackground: true,
                           onSelected: onItemSelected,
                           key: itemId,
-                        } as Sprite2Props;
+                        } as SpriteProps;
                       })
                     }
                   />
@@ -109,7 +109,7 @@ export const ItemDetails = ({
                         showBackground: true,
                         onSelected: onItemSelected,
                         key: item.name,
-                      } as Sprite2Props))
+                      } as SpriteProps))
                     }
                   />
                 </td>

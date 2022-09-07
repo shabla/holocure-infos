@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models/Item';
-import { Sprite2, Box } from '@/components';
+import { Sprite, Box } from '@/components';
 import { useItemsStore } from "@/stores/itemsStore";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetails } from "./ItemDetails/ItemDetails";
@@ -125,7 +125,7 @@ export const ItemsPage = () => {
 
             {comboItems.map(comboItem => (
               <div className="flex-column align-x-center gap-10">
-                <Sprite2
+                <Sprite
                   spriteSheet={itemsSpriteSheet}
                   name={comboItem.name}
                   selected={comboItem === selectedItem}
@@ -141,7 +141,7 @@ export const ItemsPage = () => {
                     const item = getItemById(id)!;
 
                     return (
-                      <Sprite2
+                      <Sprite
                         spriteSheet={itemsSpriteSheet}
                         name={item.name}
                         selected={item === selectedItem}
@@ -193,7 +193,7 @@ export const ItemsPage = () => {
               <div className="items-list gap-10">
                 {getItemByType(section.type)
                   .map(item => (
-                    <Sprite2
+                    <Sprite
                       spriteSheet={itemsSpriteSheet}
                       name={item.name}
                       selected={item === selectedItem}

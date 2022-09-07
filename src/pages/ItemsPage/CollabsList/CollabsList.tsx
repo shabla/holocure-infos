@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import classNames from "classnames";
 
-import { Sprite2 } from "@/components";
+import { Sprite } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
 import { useSpriteOffsetsStore } from "@/stores/spritesStore";
@@ -89,7 +89,7 @@ export const CollabsList = ({
 
         return (
           <React.Fragment key={item.name}>
-            <Sprite2
+            <Sprite
               spriteSheet={itemsSpriteSheet}
               name={firstItem.name}
               value={firstItem}
@@ -106,7 +106,7 @@ export const CollabsList = ({
 
             <div className="operator">+</div>
 
-            <Sprite2
+            <Sprite
               spriteSheet={itemsSpriteSheet}
               name={secondItem.name}
               value={secondItem}
@@ -123,7 +123,7 @@ export const CollabsList = ({
 
             <div className="operator">=</div>
 
-            <Sprite2
+            <Sprite
               spriteSheet={itemsSpriteSheet}
               name={item.name}
               value={item}

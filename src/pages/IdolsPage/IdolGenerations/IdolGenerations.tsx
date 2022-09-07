@@ -1,7 +1,7 @@
 import { useIdolsStore } from "@/stores/idolsStore";
 import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 import { Idol } from "@/models/Idol";
-import { Sprite2 } from "@/components";
+import { Sprite } from "@/components";
 
 import "./IdolGenerations.scss";
 
@@ -34,7 +34,7 @@ export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsPro
             <div className="flex-row gap-10">
               {getIdolsByGen(genName)
                 .map(idol => (
-                  <Sprite2
+                  <Sprite
                     spriteSheet={idolsIconSpriteSheet}
                     name={idol.name}
                     value={idol}

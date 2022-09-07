@@ -1,5 +1,6 @@
 import create from "zustand";
 
+import { nameToId } from "@/utils/nameToId";
 import { Idol } from "@/models/Idol";
 
 interface IdolsStore {
@@ -31,7 +32,7 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
       loaded: true,
       idols: idols.map(idol => ({
         ...idol,
-        id: idol.name.toLocaleLowerCase().replace(' ', '-')
+        id: nameToId(idol.name)
       }))
     });
   }

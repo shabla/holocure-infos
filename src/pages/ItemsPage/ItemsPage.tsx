@@ -106,112 +106,112 @@ export const ItemsPage = () => {
   }
 
   return (
-    <div className="items-page flex-row content-container gap-10">
-      <div className="sections">
-        {comboMode && (
-          <Box label={
-            <>
-              Build-a-combo
+    <div className="items-page flex-column content-container">
 
-              <button onClick={() => {
-                handleComboItemsChanged([]);
-              }}>Clear</button>
-            </>
-          } style={{ height: 230 }}>
-            <div className="flex-row flex-fill align-center align-x-center gap-20">
-              {comboItems.length === 0 && (
-                <div className="">Click on collab items to add them to your combo</div>
-              )}
-
-              {comboItems.map(comboItem => (
-                <div className="flex-column align-x-center gap-10">
-                  <Sprite
-                    type="item"
-                    offset={comboItem.spritePos}
-                    selected={comboItem === selectedItem}
-                    showBackground
-                    label={comboItem.name}
-                    value={comboItem}
-                    onSelected={handleItemClicked}
-                    key={comboItem.id}
-                  />
-
-                  <div className="flex-row gap-10">
-                    {comboItem.requires?.map(id => {
-                      const item = getItemById(id)!;
-
-                      return (
-                        <Sprite
-                          type="item"
-                          offset={item.spritePos}
-                          selected={item === selectedItem}
-                          showBackground
-                          label={item.name}
-                          value={item}
-                          onSelected={handleItemClicked}
-                          key={item.id}
-                        />
-                      )
-                    })}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Box>
-        )}
-
-        <Box label={
+      {comboMode && (
+        <Box className="combo" label={
           <>
-            <span>Collabs</span>
-
-            <div>
-              <label className="checkbox flex-row align-x-center">
-                <input
-                  type="checkbox"
-                  checked={comboMode}
-                  onChange={e => handleComboModeChanged(e.currentTarget.checked)}
-                />
-                Combo mode
-              </label>
-            </div>
+            Build-a-combo ({comboItems.length} / 4)
+            <button onClick={() => handleComboItemsChanged([])}>Clear</button>
           </>
         }>
-          <CollabsList
-            selectedItem={selectedItem}
-            items={getItemByType("collab")}
-            comboMode={comboMode}
-            comboItems={comboItems}
-            onItemClicked={handleItemClicked}
-            onComboItemsChanged={handleComboItemsChanged}
-          />
+          <div className="flex-row flex-fill align-center align-x-center gap-20">
+            {comboItems.length === 0 && (
+              <div className="">Click on collab items to add it to your combo</div>
+            )}
+
+            {comboItems.map(comboItem => (
+              <div className="flex-column align-x-center gap-10">
+                <Sprite
+                  type="item"
+                  offset={comboItem.spritePos}
+                  selected={comboItem === selectedItem}
+                  showBackground
+                  label={comboItem.name}
+                  value={comboItem}
+                  onSelected={handleItemClicked}
+                  key={comboItem.id}
+                />
+
+                <div className="flex-row gap-5">
+                  {comboItem.requires?.map(id => {
+                    const item = getItemById(id)!;
+
+                    return (
+                      <Sprite
+                        type="item"
+                        offset={item.spritePos}
+                        selected={item === selectedItem}
+                        showBackground
+                        label={item.name}
+                        value={item}
+                        onSelected={handleItemClicked}
+                        key={item.id}
+                      />
+                    )
+                  })}
+                </div>
+              </div>
+            ))}
+          </div>
         </Box>
+      )}
 
-        {sections.map(section => (
-          <Box label={section.title} key={section.type}>
-            <div className="items-list gap-10">
-              {getItemByType(section.type)
-                .map(item => (
-                  <Sprite
-                    type="item"
-                    offset={item.spritePos}
-                    selected={item === selectedItem}
-                    showBackground
-                    label={item.name}
-                    value={item}
-                    onSelected={handleItemClicked}
-                    key={item.id}
+      <div className="sections-container flex-row">
+        <div className="sections">
+          <Box label={
+            <>
+              <span>Collabs</span>
+
+              <div>
+                <label className="checkbox flex-row align-x-center">
+                  <input
+                    type="checkbox"
+                    checked={comboMode}
+                    onChange={e => handleComboModeChanged(e.currentTarget.checked)}
                   />
-                ))
-              }
-            </div>
+                  Combo mode
+                </label>
+              </div>
+            </>
+          }>
+            <CollabsList
+              selectedItem={selectedItem}
+              items={getItemByType("collab")}
+              comboMode={comboMode}
+              comboItems={comboItems}
+              onItemClicked={handleItemClicked}
+              onComboItemsChanged={handleComboItemsChanged}
+            />
           </Box>
-        ))}
-      </div>
 
-      <ItemDetails
-        item={selectedItem}
-        onItemSelected={handleItemClicked}
-      />
+          {sections.map(section => (
+            <Box label={section.title} key={section.type}>
+              <div className="items-list gap-10">
+                {getItemByType(section.type)
+                  .map(item => (
+                    <Sprite
+                      type="item"
+                      offset={item.spritePos}
+                      selected={item === selectedItem}
+                      showBackground
+                      label={item.name}
+                      value={item}
+                      onSelected={handleItemClicked}
+                      key={item.id}
+                    />
+                  ))
+                }
+              </div>
+            </Box>
+          ))}
+        </div>
+
+        <ItemDetails
+          item={selectedItem}
+          onItemSelected={handleItemClicked}
+        />
+      </div>
     </div>
   );
 }

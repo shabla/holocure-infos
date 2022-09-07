@@ -1,4 +1,14 @@
 .items-page {
+  gap: var(--content-padding);
+
+  .sections-container {
+    gap: var(--content-padding);
+  }
+
+  .combo {
+    height: 230px;
+  }
+
   label.checkbox {
     font-size: 1.6rem;
     text-transform: none;
@@ -13,7 +23,7 @@
   }
 
   .sections {
-    flex: 1 1 55%;
+    flex: 1 1 50%;
 
     .items-list {
       display: grid;

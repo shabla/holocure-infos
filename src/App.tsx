@@ -11,9 +11,9 @@ import './App.scss'
 export const App = () => {
   return (
     <div className="app">
-      <nav className="nav">
-        <section>
-          <img src={holocureLogo} />
+      <nav className="nav flex-row align-space-between align-x-center">
+        <section className="menu flex-row align-x-center">
+          <img src={holocureLogo} alt="HoloCure Logo" />
 
           <NavLink to="items" className={({ isActive }) => isActive ? 'active' : ''}>Items</NavLink>
           <NavLink to="idols" className={({ isActive }) => isActive ? 'active' : ''}>Idols</NavLink>
@@ -21,7 +21,7 @@ export const App = () => {
           <NavLink to="about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
         </section>
 
-        <section className="bottom">
+        <section className="download">
           <a href="https://kay-yu.itch.io/holocure" target="_blank" rel="noopener noreferrer">
             Download the game!
           </a>

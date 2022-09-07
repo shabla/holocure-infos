@@ -45,8 +45,8 @@ export const IdolsPage = () => {
   }
 
   return (
-    <div className="idols-page flex-row content-container gap-10">
-      <div className="sticky-section flex-column gap-10">
+    <div className="idols-page flex-row content-container">
+      <div className="sticky-section flex-column">
         <IdolStats idol={selectedIdol} />
         <IdolGenerations selectedIdol={selectedIdol} onSelected={handleIdolSelected} />
       </div>

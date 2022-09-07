@@ -1,17 +1,13 @@
 .app {
-  $navbar-width: 300px;
-
   display: flex;
 
   .nav {
-    background-color: var(--color-dark-blue);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    width: $navbar-width;
-    flex: 0 0 $navbar-width;
     position: fixed;
-    height: 100vh;
+    width: 100%;
+    height: var(--navbar-height);
+    background-color: var(--color-dark-blue);
+    flex: 0 0 var(--navbar-height);
+    z-index: 10;
 
     a {
       display: block;
@@ -20,7 +16,7 @@
       font-size: 20px;
       border: 2px solid white;
       text-decoration: none;
-      padding: 8px 16px;
+      padding: 4px 8px;
 
       &:hover,
       &.active {
@@ -29,32 +25,33 @@
       }
     }
 
-    section {
-      display: flex;
-      flex-direction: column;
+    .menu {
       gap: 5px;
-
       color: white;
       text-align: center;
 
-      &.bottom {
-        margin-top: 60px;
-
-        a {
-          background-color: var(--color-pink);
-        }
+      >img {
+        height: var(--navbar-height);
+        margin-right: 10px;
+        margin-left: 5px;
       }
     }
 
-    img {
-      width: 100%;
-      margin-bottom: 15px;
+    .download {
+      margin-right: 5px;
+      flex-shrink: 0;
+
+      a {
+        background-color: var(--color-pink);
+      }
     }
   }
 
   >main {
-    padding: 10px;
-    margin-left: $navbar-width;
+    --content-padding: 10px;
+
+    padding: var(--content-padding);
+    margin-top: var(--navbar-height);
     flex: 1 1 auto;
   }
 }

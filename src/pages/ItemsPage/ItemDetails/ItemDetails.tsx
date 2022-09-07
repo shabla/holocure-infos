@@ -29,7 +29,7 @@ export const ItemDetails = ({
     <Box
       className="item-details"
       label={
-        item && (
+        item ? (
           <>
             <div className="flex-row align-x-center">
               <Sprite
@@ -43,10 +43,10 @@ export const ItemDetails = ({
             </div>
             <span className="item-type">{item?.type}</span>
           </>
-        )
+        ) : <div><div className="item-name">-</div></div>
       }
     >
-      {item && (
+      {item ? (
         <table className="info-table">
           <tbody>
             {item?.requirement && (
@@ -114,7 +114,7 @@ export const ItemDetails = ({
             )}
           </tbody>
         </table>
-      )}
+      ) : <div className="flex-column align-x-center p-20">Select an item to see more details</div>}
     </Box>
   )
 }

@@ -1,9 +1,11 @@
 .idols-page {
   align-items: flex-start;
+  gap: var(--content-padding);
 
   .sticky-section {
     position: sticky;
-    top: 10px;
+    top: calc(var(--navbar-height) + var(--content-padding));
+    gap: var(--content-padding);
   }
 
   .selected-idol {

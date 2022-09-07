@@ -23,7 +23,7 @@ export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsPro
   ]);
 
   return (
-    <div className="idol-generations flex-column gap-20">
+    <div className="idol-generations flex-row flex-wrap">
       {gensOrder.map(genName => {
         return (
           <section key={genName}>

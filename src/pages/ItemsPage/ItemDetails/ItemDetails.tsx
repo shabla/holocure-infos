@@ -1,9 +1,10 @@
 import { useMemo } from "react";
 
-import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
+import { Sprite2, Sprite2Props, SpriteList, Box } from "@/components";
 import { Item } from "@/models/Item";
 import { useItemsStore } from "@/stores/itemsStore";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
+import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
 import "./ItemDetails.scss"
 
@@ -17,6 +18,8 @@ export const ItemDetails = ({
   onItemSelected
 }: ItemDetailsProps) => {
   const [getItemById, getItemUsage] = useItemsStore(state => [state.getItemById, state.getItemUsage]);
+  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
+  const itemsSpriteSheet = getSpriteSheet('items');
 
   const usedIn: Item[] = useMemo(() => {
     if (item) {
@@ -32,9 +35,9 @@ export const ItemDetails = ({
         item ? (
           <>
             <div className="flex-row align-x-center">
-              <Sprite
-                type="item"
-                offset={item?.spritePos}
+              <Sprite2
+                spriteSheet={itemsSpriteSheet}
+                name={item?.name}
                 value={item}
                 showBackground
                 onSelected={onItemSelected}
@@ -77,14 +80,14 @@ export const ItemDetails = ({
                       item.requires.map(itemId => {
                         const item = getItemById(itemId);
                         return {
-                          type: "item",
-                          offset: item?.spritePos,
+                          spriteSheet: itemsSpriteSheet,
+                          name: item?.name,
                           value: item,
                           label: item?.name,
                           showBackground: true,
                           onSelected: onItemSelected,
                           key: itemId,
-                        } as SpriteProps;
+                        } as Sprite2Props;
                       })
                     }
                   />
@@ -99,14 +102,14 @@ export const ItemDetails = ({
                   <SpriteList
                     sprites={
                       usedIn.map(item => ({
-                        type: "item",
-                        offset: item.spritePos,
+                        spriteSheet: itemsSpriteSheet,
+                        name: item?.name,
                         value: item,
                         label: item.name,
                         showBackground: true,
                         onSelected: onItemSelected,
                         key: item.name,
-                      } as SpriteProps))
+                      } as Sprite2Props))
                     }
                   />
                 </td>

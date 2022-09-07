@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models/Item';
-import { Sprite, Box } from '@/components';
+import { Sprite2, Box } from '@/components';
 import { useItemsStore } from "@/stores/itemsStore";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetails } from "./ItemDetails/ItemDetails";
+import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
 import "./ItemsPage.scss"
 
@@ -30,6 +31,8 @@ export const ItemsPage = () => {
     state.getItemById,
     state.getItemByType,
   ])
+  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
+  const itemsSpriteSheet = getSpriteSheet('items');
 
   useEffect(() => {
     loadItems().then(() => {
@@ -122,9 +125,9 @@ export const ItemsPage = () => {
 
             {comboItems.map(comboItem => (
               <div className="flex-column align-x-center gap-10">
-                <Sprite
-                  type="item"
-                  offset={comboItem.spritePos}
+                <Sprite2
+                  spriteSheet={itemsSpriteSheet}
+                  name={comboItem.name}
                   selected={comboItem === selectedItem}
                   showBackground
                   label={comboItem.name}
@@ -138,9 +141,9 @@ export const ItemsPage = () => {
                     const item = getItemById(id)!;
 
                     return (
-                      <Sprite
-                        type="item"
-                        offset={item.spritePos}
+                      <Sprite2
+                        spriteSheet={itemsSpriteSheet}
+                        name={item.name}
                         selected={item === selectedItem}
                         showBackground
                         label={item.name}
@@ -190,9 +193,9 @@ export const ItemsPage = () => {
               <div className="items-list gap-10">
                 {getItemByType(section.type)
                   .map(item => (
-                    <Sprite
-                      type="item"
-                      offset={item.spritePos}
+                    <Sprite2
+                      spriteSheet={itemsSpriteSheet}
+                      name={item.name}
                       selected={item === selectedItem}
                       showBackground
                       label={item.name}

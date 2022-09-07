@@ -18,7 +18,7 @@ interface Special {
 type Stats = Record<"hp" | "atk" | "spd" | "crt", number>
 
 export interface Idol {
-  id: string;
+  id: string; // generated at runtime
   name: string;
   gen: string;
   // spriteOffset is used for both idol model and icon, so the corresponding spritesheet has to be arranged accordingly

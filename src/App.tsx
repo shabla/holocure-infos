@@ -30,7 +30,9 @@ export const App = () => {
 
       <main>
         <Routes>
-          <Route path="idols" element={<IdolsPage />} />
+          <Route path="idols" element={<IdolsPage />} >
+            <Route path=":idolId" element={<IdolsPage />} />
+          </Route>
           <Route path="items" element={<ItemsPage />} />
           <Route path="upgrades" element={<UpgradesPage />} />
           <Route path="about" element={<AboutPage />} />

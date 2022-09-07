@@ -1,5 +1,4 @@
-  - id: "ame"
-    name: "Amelia Watson"
+  - name: "Amelia Watson"
     gen: "Myth"
     spriteOffset:
       - 0
@@ -69,8 +68,7 @@
             desc: "Increase critical hit chance by {20%}."
           - level: 3
             desc: "Increase critical hit chance by {30%} with a {2% chance to defeat a target in 1 hit}."
-  - id: "gura"
-    name: "Gawr Gura"
+  - name: "Gawr Gura"
     gen: "Myth"
     spriteOffset:
       - 1
@@ -142,8 +140,7 @@
             desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {30%} more damage, lasting 6 seconds."
           - level: 3
             desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {50%} more damage, lasting 6 seconds and {deal 50% damage every 0.5 seconds}."
-  - id: "ina"
-    name: "Ninomae Inanis"
+  - name: "Ninomae Inanis"
     gen: "Myth"
     spriteOffset:
       - 2
@@ -215,8 +212,7 @@
             desc: "Targets within {100px} of Ina move slower by {25%}."
           - level: 3
             desc: "Targets within {125px} of Ina move slower by {30%} and also {take 75% damage ever 2 second}."
-  - id: "kiara"
-    name: "Takanashi Kiara"
+  - name: "Takanashi Kiara"
     gen: "Myth"
     spriteOffset:
       - 3
@@ -286,8 +282,7 @@
             desc: "If Kiara has not taken any damage in the last 10 seconds, the damage from the {next two hits} taken is halved and you are invulnerable for {0.5 seconds}."
           - level: 3
             desc: "If Kiara has not taken any damage in the last 10 seconds, the damage from the {next three hits} taken is halved and you are invulnerable for {1 seconds}."
-  - id: "calli"
-    name: "Mori Calliope"
+  - name: "Mori Calliope"
     gen: "Myth"
     spriteOffset:
       - 4
@@ -357,8 +352,7 @@
             desc: "Targets within {125px} take {30%} extra damage."
           - level: 3
             desc: "Targets within {150px} take {40%} extra damage and have {10% additional chance to be critically hit}."
-  - id: "bae"
-    name: "Hakos Baelz"
+  - name: "Hakos Baelz"
     gen: "Council"
     spriteOffset:
       - 0
@@ -428,8 +422,7 @@
             desc: "Reduce your attack damage by {7%}, but increase Critical Chance by 30%."
           - level: 3
             desc: "Increase Critical Chance by 30%."
-  - id: "kronii"
-    name: "Ouro Kronii"
+  - name: "Ouro Kronii"
     gen: "Council"
     spriteOffset:
       - 1
@@ -499,8 +492,7 @@
             desc: "While HP is full, increase ATK, SPD, Pickup Range by {33%}. Increase Haste and Critical Chance by {15%}."
           - level: 3
             desc: "While HP is full, increase ATK, SPD, Pickup Range by {50%}. Increase Haste and Critical Chance by {20%}."
-  - id: "fauna"
-    name: "Ceres Fauna"
+  - name: "Ceres Fauna"
     gen: "Council"
     spriteOffset:
       - 2
@@ -570,8 +562,7 @@
             desc: "Every 10 second, gain 1 \"Whisper\" (max {4}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
           - level: 3
             desc: "Every 10 second, gain 1 \"Whisper\" (max {5}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
-  - id: "mumei"
-    name: "Nanashi Mumei"
+  - name: "Nanashi Mumei"
     gen: "Council"
     spriteOffset:
       - 3
@@ -641,8 +632,7 @@
             desc: "Increase ATK by {2%} for every target currently on the screen, up to {120%}."
           - level: 3
             desc: "Increase ATK by {3%} for every target currently on the screen, up to {150%}."
-  - id: "sana"
-    name: "Tsukumo Sana"
+  - name: "Tsukumo Sana"
     gen: "Council"
     spriteOffset:
       - 4
@@ -712,8 +702,7 @@
             desc: "Every 5 second, create a gravitational blast that deals {150%} damage. Damage is also increased by area increasing effects."
           - level: 3
             desc: "Every 5 second, create a gravitational blast that deals {200%} damage. Damage is also increased by area increasing effects."
-  - id: "irys"
-    name: "Irys"
+  - name: "Irys"
     gen: "Hope"
     spriteOffset:
       - 0
@@ -783,8 +772,7 @@
             desc: "Upon being hit, there is a {25%} chance to heal {20%} HP."
           - level: 3
             desc: "Upon being hit, there is a {30%} chance to heal {30%} HP and {create a shockwave that knocks back all targets}."
-  - id: "korone"
-    name: "Inugami Korone"
+  - name: "Inugami Korone"
     gen: "Gamers"
     spriteOffset:
       - 0
@@ -854,8 +842,7 @@
             desc: "Increase all healing by {20%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {15} for 10 seconds."
           - level: 3
             desc: "Increase all healing by {30%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {20} for 10 seconds."
-  - id: "okayu"
-    name: "Nekomata Okayu"
+  - name: "Nekomata Okayu"
     gen: "Gamers"
     spriteOffset:
       - 0
@@ -925,8 +912,7 @@
             desc: ""
           - level: 3
             desc: ""
-  - id: "fubuki"
-    name: "Shirakami Fubuki"
+  - name: "Shirakami Fubuki"
     gen: "Gamers"
     spriteOffset:
       - 0
@@ -996,8 +982,7 @@
             desc: "Increase SPD by {15%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {125%}."
           - level: 3
             desc: "Increase SPD by {20%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {150%}."
-  - id: "mio"
-    name: "Ookami Mio"
+  - name: "Ookami Mio"
     gen: "Gamers"
     spriteOffset:
       - 0
@@ -1067,8 +1052,7 @@
             desc: "The closer a target is within 150px, the more damage they receive, up to {100%}."
           - level: 3
             desc: ""
-  - id: "sora"
-    name: "Tokino Sora"
+  - name: "Tokino Sora"
     gen: "Gen 0"
     spriteOffset:
       - 0
@@ -1138,8 +1122,7 @@
             desc: ""
           - level: 3
             desc: "Attacks have a {20%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {30%} chance to heal {4} HP when defeated."
-  - id: "roboco"
-    name: "Roboco-san"
+  - name: "Roboco-san"
     gen: "Gen 0"
     spriteOffset:
       - 0
@@ -1209,8 +1192,7 @@
             desc: "Defeating a target has a {15%} chance to drop a Battery. Batteries gives an additional {75%} EXP and shocks nearby targets for 0.5 seconds."
           - level: 3
             desc: "Defeating a target has a {20%} chance to drop a Battery. Batteries gives an additional {100%} EXP and shocks nearby targets for 0.5 seconds."
-  - id: "miko"
-    name: "Sakura Miko"
+  - name: "Sakura Miko"
     gen: "Gen 0"
     spriteOffset:
       - 0
@@ -1280,8 +1262,7 @@
             desc: ""
           - level: 3
             desc: ""
-  - id: "suisei"
-    name: "Hoshimashi Suisei"
+  - name: "Hoshimashi Suisei"
     gen: "Gen 0"
     spriteOffset:
       - 0
@@ -1351,8 +1332,7 @@
             desc: ""
           - level: 3
             desc: ""
-  - id: "azki"
-    name: "AZKi"
+  - name: "AZKi"
     gen: "Gen 0"
     spriteOffset:
       - 0

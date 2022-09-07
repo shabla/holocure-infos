@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
 import { Box, Sprite } from "@/components";
@@ -11,12 +11,14 @@ import { IdolStats } from "./IdolStats/IdolStats";
 import "./IdolsPage.scss"
 
 export const IdolsPage = () => {
+  const routeParams = useParams<{ idolId: string }>();
+  const navigate = useNavigate();
   const [selectedIdol, setSelectedIdol] = useState<Idol>();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [loaded, idols, loadIdols] = useIdolsStore(state => [
+  const [loaded, idols, loadIdols, getIdolById] = useIdolsStore(state => [
     state.loaded,
     state.idols,
     state.loadIdols,
+    state.getIdolById,
   ]);
 
   useEffect(() => {
@@ -24,15 +26,18 @@ export const IdolsPage = () => {
   }, [])
 
   useEffect(() => {
-    const idolId = searchParams.get('i') || 'ame';
+    if (loaded) {
+      const idol = getIdolById(routeParams.idolId || '');
+      if (!idol) {
+        return navigate(idols[0]?.id);
+      }
 
-    if (idols) {
-      setSelectedIdol(idols.filter(i => i.id === idolId)[0] || idols[0]);
+      setSelectedIdol(idol)
     }
-  }, [searchParams, idols])
+  }, [routeParams, idols]);
 
   const handleIdolSelected = (idol: Idol): void => {
-    setSearchParams({ i: idol.id })
+    navigate(idol.id);
   }
 
   if (!loaded) {

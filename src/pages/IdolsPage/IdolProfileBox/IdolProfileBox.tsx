@@ -6,6 +6,8 @@ import crtIcon from "@/assets/stat-crt.png";
 import atkIcon from "@/assets/stat-atk.png";
 import spdIcon from "@/assets/stat-spd.png";
 
+import "./IdolProfileBox.scss";
+
 export interface IdolProfileBoxProps {
   idol?: Idol;
 }
@@ -29,7 +31,7 @@ export const IdolProfileBox = ({ idol }: IdolProfileBoxProps) => {
   const idolsSpriteSheet = getSpriteSheet('idols');
 
   return (
-    <Box label={idol?.name} className="selected-idol">
+    <Box label={idol?.name} className="idol-profile-box">
       <div className="model flex-column align-center align-x-center">
         {idol && (
           <Sprite

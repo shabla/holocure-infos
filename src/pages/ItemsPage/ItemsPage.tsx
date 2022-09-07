@@ -108,6 +108,58 @@ export const ItemsPage = () => {
   return (
     <div className="items-page flex-row content-container gap-10">
       <div className="sections">
+        {comboMode && (
+          <Box label={
+            <>
+              Build-a-combo
+
+              <button onClick={() => {
+                handleComboItemsChanged([]);
+              }}>Clear</button>
+            </>
+          } style={{ height: 230 }}>
+            <div className="flex-row flex-fill align-center align-x-center gap-20">
+              {comboItems.length === 0 && (
+                <div className="">Click on collab items to add them to your combo</div>
+              )}
+
+              {comboItems.map(comboItem => (
+                <div className="flex-column align-x-center gap-10">
+                  <Sprite
+                    type="item"
+                    offset={comboItem.spritePos}
+                    selected={comboItem === selectedItem}
+                    showBackground
+                    label={comboItem.name}
+                    value={comboItem}
+                    onSelected={handleItemClicked}
+                    key={comboItem.id}
+                  />
+
+                  <div className="flex-row gap-10">
+                    {comboItem.requires?.map(id => {
+                      const item = getItemById(id)!;
+
+                      return (
+                        <Sprite
+                          type="item"
+                          offset={item.spritePos}
+                          selected={item === selectedItem}
+                          showBackground
+                          label={item.name}
+                          value={item}
+                          onSelected={handleItemClicked}
+                          key={item.id}
+                        />
+                      )
+                    })}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Box>
+        )}
+
         <Box label={
           <>
             <span>Collabs</span>

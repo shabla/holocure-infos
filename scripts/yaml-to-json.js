@@ -2,45 +2,100 @@ const fs = require('fs');
 const path = require('path');
 const yaml = require('js-yaml');
 
-const files = ['idols', 'items', 'upgrades'];
+const types = [
+  {
+    name: 'idols',
+    validate: validateIdols
+  },
+  {
+    name: 'items',
+    validate: validateItems
+  },
+  {
+    name: 'upgrades',
+    validate: validateUpgrades
+  }
+];
 
-function loadYAMLFile(inputPath) {
-  return yaml.load(fs.readFileSync(inputPath, 'utf8'));
+// Load sprites offsets
+const sprites = loadYAMLFile(path.resolve(__dirname, `../data/sprites.yaml`));
+
+for (const type of types) {
+  console.log(`\n[${type.name}] Converting ${type.name}.yaml to ${type.name}.json`);
+  const data = loadYAMLFile(path.resolve(__dirname, `../data/${type.name}.yaml`));
+  type.validate(data, sprites);
+  saveJSONFile(path.resolve(__dirname, `../public/${type.name}.json`), data);
 }
 
-try {
-  // Load sprites offsets
-  const sprites = loadYAMLFile(path.resolve(__dirname, `../data/sprites.yaml`));
+// Save sprites offsets
+const outputPath = path.resolve(__dirname, `../public/sprites.json`);
+saveJSONFile(outputPath, sprites);
 
-  for (const filename of files) {
-    const inputPath = path.resolve(__dirname, `../data/${filename}.yaml`);
-    const outputPath = path.resolve(__dirname, `../public/${filename}.json`);
 
-    console.log(`\nConverting ${filename}.yaml to ${filename}.json`);
+function loadYAMLFile(inputPath) {
+  try {
+    return yaml.load(fs.readFileSync(inputPath, 'utf8'));
+  } catch (e) {
+    console.log(e);
+  }
+}
 
-    const data = loadYAMLFile(inputPath);
+function saveJSONFile(outputPath, data, callback = err => err && console.log(err)) {
+  try {
+    fs.writeFile(outputPath, JSON.stringify(data), null, callback);
+  } catch (e) {
+    console.log(e);
+  }
+}
 
-    // Check if all the items have a defined sprite and warn if missing
-    for (const obj of data) {
-      if (!sprites?.[filename]) {
-        sprites[filename] = { width: 0, height: 0, offsets: [] };
-      }
+function validateIdols(idols, sprites) {
+  for (const idol of idols) {
+    const idolName = idol.name;
+    const specialName = idol.special.name;
+    const attackName = idol.attack.name;
+    const skillNames = idol.skills?.map(skill => skill.name) || [];
 
-      if (!sprites[filename].offsets[obj.name]) {
-        console.log(`[${filename}] sprite missing for "${obj.name}"`)
-        // default for missing sprites
-        sprites[filename][obj.name] = [0, 0]
-      }
+    // Idol offset
+    if (!sprites['idols'].offsets[idolName]) {
+      console.log(`  [${idolName}] Sprite offset missing for idol "${idolName}"`);
     }
 
+    // Special offset
+    if (!sprites['skills'].offsets[specialName]) {
+      console.log(`  [${idolName}] Sprite offset missing for special "${specialName}"`);
+    }
 
-    fs.writeFile(outputPath, JSON.stringify(data), null, err => err ? console.log(err) : undefined);
+    // Attack offset
+    if (!sprites['skills'].offsets[attackName]) {
+      console.log(`  [${idolName}] Sprite offset missing for special "${attackName}"`);
+    }
+
+    // Number of skills
+    if (skillNames.length !== 3) {
+      console.log(`  [${idolName}] Found ${skillNames} skills, that doesn't seem right.`);
+    }
+
+    // Skills offset
+    for (const skillName of skillNames) {
+      if (!sprites['skills'].offsets[skillName]) {
+        console.log(`  [${idolName}] Sprite offset missing for skill "${skillName}"`);
+      }
+    }
   }
+}
 
-  // Sprites
-  const outputPath = path.resolve(__dirname, `../public/sprites.json`);
-  fs.writeFile(outputPath, JSON.stringify(sprites), null, err => err ? console.log(err) : undefined);
+function validateItems(items, sprites) {
+  for (const item of items) {
+    if (!sprites['items'].offsets[item.name]) {
+      console.log(`  [${item.name}] Sprite offset missing`);
+    }
+  }
+}
 
-} catch (e) {
-  console.log(e);
+function validateUpgrades(upgrades, sprites) {
+  for (const upgrade of upgrades) {
+    if (!sprites['upgrades'].offsets[upgrade.name]) {
+      console.log(`  [${upgrade.name}] Sprite offset missing`);
+    }
+  }
 }

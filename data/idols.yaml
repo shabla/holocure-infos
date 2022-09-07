@@ -8,14 +8,8 @@
     special:
       name: "Slow Time"
       desc: "Slows all targets movement by 80% and Pistol Shot shoots 50% faster for 15 seconds."
-      spriteOffset:
-        - 0
-        - 1
     attack:
       name: "Pistol Shot"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: "Shoots 3 projectiles forward. Horizontal only."
@@ -33,9 +27,6 @@
           desc: "Shoot 2 additional shots and bullets spread slightly vertically."
     skills:
       - name: "FPS Mastery"
-        spriteOffset:
-          - 0
-          - 2
         levels:
           - level: 1
             desc: "Weapon deals {15%} more damage."
@@ -44,9 +35,6 @@
           - level: 3
             desc: "Weapon deals {35%} more damage and {fires 10% faster}."
       - name: "Bubba"
-        spriteOffset:
-          - 0
-          - 4
         levels:
           - level: 1
             desc: "Gain a dog companion that attacks random targets, dealing {100%} of your base damage per hit."
@@ -55,9 +43,6 @@
           - level: 3
             desc: "Gain a dog companion that attacks random targets, dealing {200%} of your base damage per hit and {stuns targets for 2 seconds on hit}."
       - name: "Detective Eye"
-        spriteOffset:
-          - 0
-          - 3
         levels:
           - level: 1
             desc: "Increase critical hit chance by {10%}."
@@ -75,16 +60,10 @@
     special:
       name: "Shark Call"
       desc: "Summon a shark that deals 500% damage to all targets around Gura. Gura turns red, increasing ATK by 50% and SPD by 25% for 15 seconds."
-      spriteOffset:
-        - 1
-        - 1
     notes:
       - "The Cutting Board weapon gain a 30% size bonus when used by Gura (because Gura is flat)."
     attack:
       name: "Trident Thrust"
-      spriteOffset:
-        - 1
-        - 0
       levels:
         - level: 1
           desc: "Mid ranged stab attack in front."
@@ -102,9 +81,6 @@
           desc: "Thrust 3 times in a fork-like shape."
     skills:
       - name: "Short Height"
-        spriteOffset:
-          - 1
-          - 2
         levels:
           - level: 1
             desc: "Grants a {15%} chance to dodge an attack. After dodging, increase movement speed by {30%} and stay invulnerable for 0.5 second."
@@ -113,9 +89,6 @@
           - level: 3
             desc: "Grants a {35%} chance to dodge an attack. After dodging, increase movement speed by {50%} and stay invulnerable for 0.5 second."
       - name: "Shark Bite"
-        spriteOffset:
-          - 1
-          - 3
         levels:
           - level: 1
             desc: "Attacks have a {10%} chance to place 1 'Bite Mark' (max 5). Target takes {6%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
@@ -124,9 +97,6 @@
           - level: 3
             desc: "Attacks have a {120%} chance to place 1 'Bite Mark' (max 5). Target takes {12%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
       - name: "Power of Atlantis"
-        spriteOffset:
-          - 1
-          - 4
         levels:
           - level: 1
             desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {15%} more damage, lasting 6 seconds."
@@ -146,14 +116,8 @@
     special:
       name: "Tako Spin"
       desc: "Summons 8 tentacles around Ina that spins rapidly around her, dealing 150% damage and knockback all targets."
-      spriteOffset:
-        - 2
-        - 1
     attack:
       name: "Summon Tentacle"
-      spriteOffset:
-        - 2
-        - 0
       levels:
         - level: 1
           desc: "A tentacle shoots out in front."
@@ -171,9 +135,6 @@
           desc: "Chain another tentacle at a random direction."
     skills:
       - name: "Cult"
-        spriteOffset:
-          - 2
-          - 2
         levels:
           - level: 1
             desc: "For every target within 150px, increase ATK by {5%} up to {50%}."
@@ -182,9 +143,6 @@
           - level: 3
             desc: "For every target within 150px, increase ATK by {10%} up to {100%}."
       - name: "The Ancient One"
-        spriteOffset:
-          - 2
-          - 4
         levels:
           - level: 1
             desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {30%} chance to convert targets to Harmless Takodachis."
@@ -193,9 +151,6 @@
           - level: 3
             desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {50%} chance to convert targets to Harmless Takodachis. {Harmless Takodachis heal Ina 1% HP}."
       - name: "The Void"
-        spriteOffset:
-          - 2
-          - 3
         levels:
           - level: 1
             desc: "Targets within {75px} of Ina move slower by {20%}."
@@ -213,14 +168,8 @@
     special:
       name: "Phoenix Fire"
       desc: "Explode with a big burst of flames, dealing 600% damage and creating a ring of fire around her that deals 50% damage per hit."
-      spriteOffset:
-        - 3
-        - 1
     attack:
       name: "Phoenix Sword"
-      spriteOffset:
-        - 3
-        - 0
       levels:
         - level: 1
           desc: "Short ranged slash in front."
@@ -238,9 +187,6 @@
           desc: "Sword is engulfed in flames, and can hit multiple times."
     skills:
       - name: "Dancer"
-        spriteOffset:
-          - 3
-          - 3
         levels:
           - level: 1
             desc: "Moving gradually increases damage by {2%} every second, up to {40%}. Buff resets if you stop."
@@ -249,9 +195,6 @@
           - level: 3
             desc: "Moving gradually increases damage by {4%} every second, up to {80%}. {Increase critical hit chance by 1% per stack}. Buff resets if you stop."
       - name: "Trailblazer"
-        spriteOffset:
-          - 3
-          - 2
         levels:
           - level: 1
             desc: "Leave a burning fire underneath Kiara as she moves that deals {30%} damage per hit. Lasts 5 seconds."
@@ -260,9 +203,6 @@
           - level: 3
             desc: "Leave a burning fire underneath Kiara as she moves that deals {75%} damage per hit. Lasts 5 seconds. {Slows targets for 3 seconds}."
       - name: "Phoenix Shield"
-        spriteOffset:
-          - 3
-          - 4
         levels:
           - level: 1
             desc: "If Kiara has not taken any damage in the last 10 seconds, the damage from the {next hit} taken is halved and you are invulnerable for {0.5 seconds}."
@@ -280,14 +220,8 @@
     special:
       name: "The Reaper"
       desc: "Temporarily buff yourself to increase Scythe Swing damage by 300% and increase damage of all critical hits to 300% for 15 seconds."
-      spriteOffset:
-        - 4
-        - 1
     attack:
       name: "Scythe Swing"
-      spriteOffset:
-        - 4
-        - 0
       levels:
         - level: 1
           desc: "Swings in a half circle arc in front."
@@ -305,9 +239,6 @@
           desc: "Increase damage by 40%. Has a 7% chance to instant KO."
     skills:
       - name: "Death"
-        spriteOffset:
-          - 4
-          - 2
         levels:
           - level: 1
             desc: "Defeating a target with Scythe Swing or Death has a {20%} chance to create an explosion for {60%} damage, and a {5%} chance to KO."
@@ -316,9 +247,6 @@
           - level: 3
             desc: "Defeating a target with Scythe Swing or Death has a {30%} chance to create an explosion for {120%} damage, and a {10%} chance to KO."
       - name: "Work-a-holic"
-        spriteOffset:
-          - 4
-          - 4
         levels:
           - level: 1
             desc: "For each target defeated, increase ATK by {3%} for 5 seconds up to {60%}. Duration refreshes when defeating a target."
@@ -327,9 +255,6 @@
           - level: 3
             desc: "For each target defeated, increase ATK by {5%} for 5 seconds up to {100%}, and SPD by 2% up to 40%. Duration refreshes when defeating a target."
       - name: "The Rapper"
-        spriteOffset:
-          - 4
-          - 3
         levels:
           - level: 1
             desc: "Targets within {100px} take {20%} extra damage."
@@ -347,14 +272,8 @@
     special:
       name: "Absolute Chaos"
       desc: "Fire all weapons at the same time with zero delay for 5 seconds."
-      spriteOffset:
-        - 5
-        - 1
     attack:
       name: "Play Dice"
-      spriteOffset:
-        - 5
-        - 0
       levels:
         - level: 1
           desc: "Throw a die in front. The number on the die determines the damage."
@@ -372,9 +291,6 @@
           desc: "Throw 3 dice."
     skills:
       - name: "CRATitcal Hit"
-        spriteOffset:
-          - 5
-          - 3
         levels:
           - level: 1
             desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {2 times} damage."
@@ -383,9 +299,6 @@
           - level: 3
             desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {4 times} damage."
       - name: "Down Under"
-        spriteOffset:
-          - 5
-          - 4
         levels:
           - level: 1
             desc: "Attacks have a {10%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move."
@@ -394,9 +307,6 @@
           - level: 3
             desc: "Attacks have a {20%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move and {take extra 20% damage}."
       - name: "RatNG"
-        spriteOffset:
-          - 5
-          - 2
         levels:
           - level: 1
             desc: "Reduce your attack damage by {15%}, but increase Critical Chance by 30%."
@@ -414,14 +324,8 @@
     special:
       name: "Ruler of Time"
       desc: "Every second, emit a time blast that deals damage. Each second, the emitted blast becomes stronger."
-      spriteOffset:
-        - 6
-        - 1
     attack:
       name: "Clock Hands"
-      spriteOffset:
-        - 6
-        - 0
       levels:
         - level: 1
           desc: "Stab forward with a large clock hand, a second smaller clock hand will attack a random target."
@@ -439,9 +343,6 @@
           desc: "Increase damage by 50% and stun targets for 0.5 seconds."
     skills:
       - name: "Kroniicopter"
-        spriteOffset:
-          - 6
-          - 4
         levels:
           - level: 1
             desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {10%} to SPD and Haste for 5 seconds."
@@ -450,9 +351,6 @@
           - level: 3
             desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {20%} to SPD and Haste for 5 seconds."
       - name: "Time Bubble"
-        spriteOffset:
-          - 6
-          - 2
         levels:
           - level: 1
             desc: "Every 10 seconds, create a {small} time bubble that freezes targets in time, preventing them from moving or attacking."
@@ -461,9 +359,6 @@
           - level: 3
             desc: "Every 10 seconds, create a {large} time bubble that freezes targets in time, preventing them from moving or attacking."
       - name: "Perfection"
-        spriteOffset:
-          - 6
-          - 3
         levels:
           - level: 1
             desc: "While HP is full, increase ATK, SPD, Pickup Range by {20%}. Increase Haste and Critical Chance by {10%}."
@@ -481,14 +376,8 @@
     special:
       name: "Mother Nature"
       desc: "Summon a giant tree that creates a zone that heals Fauna and grants invincibility for 10 seconds."
-      spriteOffset:
-        - 7
-        - 1
     attack:
       name: "Nature Shield"
-      spriteOffset:
-        - 7
-        - 0
       levels:
         - level: 1
           desc: "Create 3 razor sharp leaves that spiral outward."
@@ -506,9 +395,6 @@
           desc: "Shoot 2 additional leaves and aim towards targets."
     skills:
       - name: "Sapling"
-        spriteOffset:
-          - 7
-          - 4
         levels:
           - level: 1
             desc: "Defeated targets have a {5%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {30%} for 10 seconds."
@@ -517,9 +403,6 @@
           - level: 3
             desc: "Defeated targets have a {10%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {50%} for 10 seconds."
       - name: "Guardian Tree"
-        spriteOffset:
-          - 7
-          - 2
         levels:
           - level: 1
             desc: "Every time you heal, a branch will grow under a random nearby target and deal {200%} damage."
@@ -528,9 +411,6 @@
           - level: 3
             desc: "Every time you heal, a branch will grow under a random nearby target and deal {300%} damage."
       - name: "Whisperer"
-        spriteOffset:
-          - 7
-          - 3
         levels:
           - level: 1
             desc: "Every 10 second, gain 1 \"Whisper\" (max {3}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
@@ -548,14 +428,8 @@
     special:
       name: "True Horror"
       desc: "Destroy everything in sight (except for bosses). There is a 30% that drops are not destroyed."
-      spriteOffset:
-        - 8
-        - 1
     attack:
       name: "Bird Feather"
-      spriteOffset:
-        - 8
-        - 0
       levels:
         - level: 1
           desc: "Shoot a bunch of feathers at a speard. Pierces through targets."
@@ -573,9 +447,6 @@
           desc: "Feathers home into targets 3 times."
     skills:
       - name: "Friend"
-        spriteOffset:
-          - 8
-          - 3
         levels:
           - level: 1
             desc: "Summon a Friend that uses one of you weapons at random every 5 second at {80%} damage."
@@ -584,9 +455,6 @@
           - level: 3
             desc: "Summon a Friend that uses one of you weapons at random every 5 second at {120%} damage."
       - name: "History"
-        spriteOffset:
-          - 8
-          - 4
         levels:
           - level: 1
             desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {100%})."
@@ -595,9 +463,6 @@
           - level: 3
             desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {200%})."
       - name: "Civilization"
-        spriteOffset:
-          - 8
-          - 2
         levels:
           - level: 1
             desc: "Increase ATK by {1%} for every target currently on the screen, up to {100%}."
@@ -615,14 +480,8 @@
     special:
       name: "Become Beeg"
       desc: "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible and deals 200% damage to all targets that touch her."
-      spriteOffset:
-        - 9
-        - 1
     attack:
       name: "Orbit"
-      spriteOffset:
-        - 9
-        - 0
       levels:
         - level: 1
           desc: "Create an orbitting planet. Hits multiple targets."
@@ -640,9 +499,6 @@
           desc: "Create a second planet and knockbacks on hit."
     skills:
       - name: "Speaker Of Space"
-        spriteOffset:
-          - 9
-          - 2
         levels:
           - level: 1
             desc: "Increase area of attack and ATK by {10%}. All attack damage is also increased by area increasing effects."
@@ -651,9 +507,6 @@
           - level: 3
             desc: "Increase area of attack and ATK by {30%}. All attack damage is also increased by area increasing effects."
       - name: "Astrology"
-        spriteOffset:
-          - 9
-          - 4
         levels:
           - level: 1
             desc: "Every 15 second, gain a 15 seconds {20%} buff to either ATK, SPD, Critical Chance, Pickup Range, Haste, or heal for {30%} HP."
@@ -662,9 +515,6 @@
           - level: 3
             desc: "Every 15 second, gain a 15 seconds {40%} buff to either ATK, SPD, Critical Chance, Pickup Range, Haste, or heal for {50%} HP."
       - name: "Gravity"
-        spriteOffset:
-          - 9
-          - 3
         levels:
           - level: 1
             desc: "Every 5 second, create a gravitational blast that deals {125%} damage. Damage is also increased by area increasing effects."
@@ -682,14 +532,8 @@
     special:
       name: "Hope is Descending"
       desc: "Hope descends from the top of screen, and then explodes for 250% damage."
-      spriteOffset:
-        - 10
-        - 1
     attack:
       name: "Nephilim Blast"
-      spriteOffset:
-        - 10
-        - 0
       levels:
         - level: 1
           desc: "Shoots dual light and dark blast."
@@ -707,9 +551,6 @@
           desc: "Blasts becomes a short beam that hits multiple times."
     skills:
       - name: "Half Angel"
-        spriteOffset:
-          - 10
-          - 2
         levels:
           - level: 1
             desc: "Critical hits have a {10%} chance to heal {1} HP. There is a 0.3 seconds cooldown between each heal."
@@ -718,9 +559,6 @@
           - level: 3
             desc: "Critical hits have a {20%} chance to heal {3} HP. There is a 0.3 seconds cooldown between each heal."
       - name: "Half Demon"
-        spriteOffset:
-          - 10
-          - 3
         levels:
           - level: 1
             desc: "Increase damage by {3%}, up to {30%}, for 5 seconds every time Irys heals. Each heal resets the timer."
@@ -729,9 +567,6 @@
           - level: 3
             desc: "Increase damage by {5%}, up to {50%}, for 5 seconds every time Irys heals. Each heal resets the timer."
       - name: "Hope"
-        spriteOffset:
-          - 10
-          - 4
         levels:
           - level: 1
             desc: "Upon being hit, there is a {20%} chance to heal {15%} HP."
@@ -747,16 +582,10 @@
       spd: 0
       crt: 0
     special:
-      name: ""
+      name: "korone special"
       desc: ""
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Orayo!"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: ""
@@ -774,9 +603,6 @@
           desc: "Reduce delay between combination punches by 50%."
     skills:
       - name: "Korone Brainwashing"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {0.5%} for 7 seconds."
@@ -785,9 +611,6 @@
           - level: 3
             desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {1%} for 7 seconds."
       - name: "Endurance"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Reduce damage taken by {5%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {15%} and further damage reduction temporarily."
@@ -796,9 +619,6 @@
           - level: 3
             desc: "Reduce damage taken by {15%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {60%} and further damage reduction temporarily."
       - name: "Choco Coronet"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Increase all healing by {10%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {10} for 10 seconds."
@@ -814,16 +634,10 @@
       spd: 0
       crt: 0
     special:
-      name: ""
+      name: "okayu special"
       desc: ""
-      spriteOffset:
-        - 0
-        - 0
     attack:
-      name: ""
-      spriteOffset:
-        - 0
-        - 0
+      name: "okayu atk"
       levels:
         - level: 1
           desc: ""
@@ -841,9 +655,6 @@
           desc: ""
     skills:
       - name: "Yummy"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Increase food drops by 50%. When eating food, gain 40% ATK, 15% SPD, and 5% Crit for 8 seconds."
@@ -852,9 +663,6 @@
           - level: 3
             desc: ""
       - name: "Sensitive Voice"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Increase Crit by 5%. Crits have a 10% chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal 3% HP."
@@ -863,9 +671,6 @@
           - level: 3
             desc: ""
       - name: "Feast"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "When a target is defeated, there is a 6% chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
@@ -883,14 +688,8 @@
     special:
       name: "Fubuki Storm"
       desc: "Summon many katanas, flurrying around for 5 seconds. During this time, Fubuki dodges all attacks."
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Fox Tail"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: "Swipes Tail in front at close range."
@@ -908,9 +707,6 @@
           desc: ""
     skills:
       - name: "Friendzone"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Gain a buff that increases SPD by {20%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {1} second."
@@ -919,9 +715,6 @@
           - level: 3
             desc: "Gain a buff that increases SPD by {30%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {3} second."
       - name: "Kon Kon"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {40%} chance to create a noise burst dealing {100%} damage."
@@ -930,9 +723,6 @@
           - level: 3
             desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {80%} chance to create a noise burst dealing {150%} damage."
       - name: "Fox King"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Increase SPD by {10%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {100%}."
@@ -948,16 +738,10 @@
       spd: 0
       crt: 0
     special:
-      name: ""
+      name: "mio sp"
       desc: ""
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Tarot Cards"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: ""
@@ -975,9 +759,6 @@
           desc: ""
     skills:
       - name: "Omen"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Tarot Cards has a {10%} chance to create an Omen, dealing {200%} damage to targets. If Omen defeats a target, the special meter fills slightly."
@@ -986,9 +767,6 @@
           - level: 3
             desc: "Tarot Cards has a {20%} chance to create an Omen, dealing {300%} damage to targets. If Omen defeats a target, the special meter fills slightly."
       - name: "Mama"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: ""
@@ -997,9 +775,6 @@
           - level: 3
             desc: "Every 4 seconds, heal 1% for each target within {150px}, up to {30%}."
       - name: "Cheerful Laugh"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "The closer a target is within 150px, the more damage they receive, up to {50%}."
@@ -1017,14 +792,8 @@
     special:
       name: "Idol Dream"
       desc: "Spread idol wings. Increase ATK and healing received by 50% for 10 seconds."
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Bright Star"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: "Shoot forward a spinning star."
@@ -1042,9 +811,6 @@
           desc: "Stars end with a burst."
     skills:
       - name: "Idol Healing"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "When receiving any healing, enemies within {100px} are also \"healed\", taking {125%} + X% damage where X is 2 times the heal amount."
@@ -1053,9 +819,6 @@
           - level: 3
             desc: ""
       - name: "Ankimo"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {50%} damage. Tagged enemies have a {20%} chance to follow Ankimo for 4 seconds."
@@ -1064,9 +827,6 @@
           - level: 3
             desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {100%} damage. Tagged enemies have a {30%} chance to follow Ankimo for 4 seconds."
       - name: "You're The Enemy, Then"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Attacks have a {10%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {20%} chance to heal {2} HP when defeated."
@@ -1082,16 +842,10 @@
       spd: 0
       crt: 0
     special:
-      name: ""
+      name: "roboco sp"
       desc: ""
-      spriteOffset:
-        - 0
-        - 0
     attack:
-      name: ""
-      spriteOffset:
-        - 0
-        - 0
+      name: "roboco atk"
       levels:
         - level: 1
           desc: ""
@@ -1109,9 +863,6 @@
           desc: ""
     skills:
       - name: "Robo-Discharge"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {100%} damage. +1% Discharge damage for each level Roboco has."
@@ -1120,9 +871,6 @@
           - level: 3
             desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {150%} damage. +1% Discharge damage for each level Roboco has."
       - name: "Hi-Level"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Roboco gains {1%} ATK for each level Roboco has, and {3%} Crit for every 10 levels."
@@ -1131,9 +879,6 @@
           - level: 3
             desc: "Roboco gains {1.2%} ATK for each level Roboco has, and {5%} Crit for every 10 levels."
       - name: "Battery Charged"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Defeating a target has a {10%} chance to drop a Battery. Batteries gives an additional {50%} EXP and shocks nearby targets for 0.5 seconds."
@@ -1149,16 +894,10 @@
       spd: 0
       crt: 0
     special:
-      name: ""
+      name: "miko sp"
       desc: ""
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Sakura Gohei"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: ""
@@ -1176,9 +915,6 @@
           desc: ""
     skills:
       - name: "Baby Language?"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Attacks have {10%} chance to create a \"Nyeh\", dealing {50%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
@@ -1187,9 +923,6 @@
           - level: 3
             desc: ""
       - name: "Eroge Hero"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal 2 HP every 2 seconds. Each conquest resets the timer."
@@ -1198,9 +931,6 @@
           - level: 3
             desc: ""
       - name: "Skill 3"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: ""
@@ -1216,16 +946,10 @@
       spd: 0
       crt: 0
     special:
-      name: ""
+      name: "suisei sp"
       desc: ""
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Axe Swing"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: ""
@@ -1243,9 +967,6 @@
           desc: ""
     skills:
       - name: "Skill 1"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: ""
@@ -1254,9 +975,6 @@
           - level: 3
             desc: ""
       - name: "Skill 2"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: ""
@@ -1265,9 +983,6 @@
           - level: 3
             desc: ""
       - name: "Skill 3"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: ""
@@ -1285,14 +1000,8 @@
     special:
       name: "Full Concert"
       desc: "Shine a circle of brilliant stage lights, damaging all targets nearby for 6 seconds."
-      spriteOffset:
-        - 0
-        - 0
     attack:
       name: "Diva Song"
-      spriteOffset:
-        - 0
-        - 0
       levels:
         - level: 1
           desc: "Send a flying musical note in front."
@@ -1310,9 +1019,6 @@
           desc: ""
     skills:
       - name: "Encore!"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "Every 7 seconds, create a burst of song dealing {100%} damage. For every target defeated in the last 7 seconds, +10% song damage."
@@ -1321,9 +1027,6 @@
           - level: 3
             desc: "Every 7 seconds, create a burst of song dealing {300%} damage. For every target defeated in the last 7 seconds, +10% song damage."
       - name: "Performance"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "For each second while moving, {+2%} SPD (max {20%}) and {+2%} dodge chance (max {20%}). Both buffs loses {3} stacks if receiving damage."
@@ -1332,9 +1035,6 @@
           - level: 3
             desc: "For each second while moving, {+6%} SPD (max {60%}) and {+4%} dodge chance (max {40%}). Both buffs loses {2} stacks if receiving damage."
       - name: "Virtual Diva"
-        spriteOffset:
-          - 0
-          - 0
         levels:
           - level: 1
             desc: "For each second AZKi does not receive damage, increase Haste by {1%}, up to {10%}. Buff resets to 0% if AZKi takes damage."

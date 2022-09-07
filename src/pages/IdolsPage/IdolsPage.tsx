@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 
 import { Idol } from "@/models/Idol";
-import { Box, Sprite, Sprite2 } from "@/components";
+import { Box, Sprite2 } from "@/components";
 import { useIdolsStore } from "@/stores/idolsStore";
 import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
@@ -83,9 +83,9 @@ export const IdolsPage = () => {
         <Box label="Special" className="special">
           <div className="skill-name flex-row align-x-center">
             {selectedIdol && (
-              <Sprite
-                type="skill"
-                offset={selectedIdol.special.spriteOffset}
+              <Sprite2
+                spriteSheet={skillsSpriteSheet}
+                name={selectedIdol.special.name}
                 showBackground={false}
               />
             )}
@@ -100,9 +100,9 @@ export const IdolsPage = () => {
             <React.Fragment key={skill.name}>
               <div className="skill-name flex-row align-x-center">
                 {selectedIdol && (
-                  <Sprite
-                    type="skill"
-                    offset={skill.spriteOffset}
+                  <Sprite2
+                    spriteSheet={skillsSpriteSheet}
+                    name={skill.name}
                     showBackground={false}
                   />
                 )}

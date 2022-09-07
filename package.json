@@ -4,10 +4,11 @@
   "version": "0.0.0",
   "scripts": {
     "start": "npm run dev",
-    "dev": "vite",
+    "dev": "npm run generate-data && vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "deploy": "node ./scripts/yaml-to-json.js && npm run build && node ./scripts/publish"
+    "generate-data": "node ./scripts/yaml-to-json.js",
+    "deploy": "npm run generate-data && npm run build && node ./scripts/publish"
   },
   "dependencies": {
     "classnames": "^2.3.1",

@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+public/idols.json
+public/items.json
+public/upgrades.json

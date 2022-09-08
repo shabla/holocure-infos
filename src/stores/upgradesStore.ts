@@ -1,6 +1,6 @@
 import create from "zustand";
 
-import { Upgrade } from "@/models/Upgrade";
+import { Upgrade } from "@/models";
 
 interface UpgradesStore {
   loaded: boolean;

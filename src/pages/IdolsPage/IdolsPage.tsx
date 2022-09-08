@@ -7,8 +7,6 @@ import { IdolGenerations } from "./IdolGenerations/IdolGenerations";
 import { IdolProfileBox } from "./IdolProfileBox/IdolProfileBox";
 import { IdolSkillBox } from "./IdolSkillBox/IdolSkillBox";
 
-import "./IdolsPage.scss"
-
 export const IdolsPage = () => {
   const routeParams = useParams<{ idolId: string }>();
   const navigate = useNavigate();
@@ -44,8 +42,8 @@ export const IdolsPage = () => {
   }
 
   return (
-    <div className="idols-page flex-row content-container">
-      <div className="sticky-section flex-column">
+    <div className="idols-page flex-row align-x-start content-container gap-content">
+      <div className="sticky flex-column gap-content">
         <IdolProfileBox idol={selectedIdol} />
         <IdolGenerations selectedIdol={selectedIdol} onSelected={handleIdolSelected} />
       </div>

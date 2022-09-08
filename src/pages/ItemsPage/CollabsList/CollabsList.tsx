@@ -2,9 +2,8 @@ import React, { useMemo } from "react";
 import classNames from "classnames";
 
 import { Sprite } from "@/components";
-import { Item } from "@/models/Item";
-import { useItemsStore } from "@/stores/itemsStore";
-import { useSpriteOffsetsStore } from "@/stores/spritesStore";
+import { Item } from "@/models";
+import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
 
 import "./CollabsList.scss";
 

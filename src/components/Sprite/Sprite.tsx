@@ -1,6 +1,6 @@
 import classNames from "classnames";
 
-import { SpriteSheet } from "@/stores/spritesStore";
+import { SpriteSheet } from "@/stores";
 
 import "./Sprite.scss"
 

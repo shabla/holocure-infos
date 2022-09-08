@@ -1,5 +1,5 @@
 import { Box, Sprite } from "@/components";
-import { Idol } from "@/models/Idol";
+import { Idol } from "@/models";
 import { useSpriteOffsetsStore } from "@/stores";
 import hpIcon from "@/assets/stat-hp.png";
 import crtIcon from "@/assets/stat-crt.png";

@@ -108,7 +108,7 @@ export const ItemsPage = () => {
   }
 
   return (
-    <div className="items-page flex-column content-container">
+    <div className="items-page flex-column content-container gap-content">
 
       {comboMode && (
         <Box className="combo" label={
@@ -159,7 +159,7 @@ export const ItemsPage = () => {
         </Box>
       )}
 
-      <div className="sections-container flex-row">
+      <div className="sections-container flex-row gap-content">
         <div className="sections">
           <Box label={
             <>

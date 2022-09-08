@@ -1,7 +1,7 @@
 import create from "zustand"
 
 import { nameToId } from "@/utils/nameToId";
-import { Item } from "@/models/Item"
+import { Item } from "@/models"
 
 interface ItemsStore {
   loaded: boolean;

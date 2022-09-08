@@ -29,7 +29,7 @@ export const ItemDetailsBox = ({
 
   return (
     <Box
-      className="item-details-box"
+      className="item-details-box sticky"
       label={
         item ? (
           <>

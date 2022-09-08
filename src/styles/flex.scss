@@ -21,6 +21,10 @@
 
   // Cross axis alignment (v for row, h for column)
   &-x {
+    &-start {
+      align-items: flex-start;
+    }
+
     &-center {
       align-items: center;
     }

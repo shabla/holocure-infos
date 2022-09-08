@@ -47,6 +47,11 @@
     }
   }
 
+  .sticky {
+    position: sticky;
+    top: calc(var(--navbar-height) + var(--content-padding));
+  }
+
   >main {
     --content-padding: 10px;
 

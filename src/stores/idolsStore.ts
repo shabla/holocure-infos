@@ -1,7 +1,7 @@
 import create from "zustand";
 
 import { nameToId } from "@/utils/nameToId";
-import { Idol } from "@/models/Idol";
+import { Idol } from "@/models";
 
 interface IdolsStore {
   loaded: boolean;

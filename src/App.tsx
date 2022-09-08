@@ -3,6 +3,7 @@ import { NavLink, Routes, Route, Navigate } from "react-router-dom";
 
 import { ItemsPage, IdolsPage, UpgradesPage, AboutPage } from "@/pages";
 import { useSpriteOffsetsStore } from "@/stores";
+import { NavbarLink } from "@/components";
 import holocureLogo from "./assets/holocure-logo-sm.png";
 
 import './App.scss'
@@ -23,21 +24,22 @@ export const App = () => {
 
   return (
     <div className="app">
-      <nav className="nav flex-row align-space-between align-x-center">
-        <section className="menu flex-row align-x-center">
+      <nav className="navbar flex-row align-center align-x-center">
+
+        <div className="content-container flex-row align-x-center gap-10">
           <img src={holocureLogo} alt="HoloCure Logo" />
 
-          <NavLink to="items" className={({ isActive }) => isActive ? 'active' : ''}>Items</NavLink>
-          <NavLink to="idols" className={({ isActive }) => isActive ? 'active' : ''}>Idols</NavLink>
-          <NavLink to="upgrades" className={({ isActive }) => isActive ? 'active' : ''}>Upgrades</NavLink>
-          <NavLink to="about" className={({ isActive }) => isActive ? 'active' : ''}>About</NavLink>
-        </section>
+          <section className="menu flex-row align-x-center gap-5" style={{ flexBasis: '1fr' }}>
+            <NavbarLink to="items">Items</NavbarLink>
+            <NavbarLink to="idols">Idols</NavbarLink>
+            <NavbarLink to="upgrades">Upgrades</NavbarLink>
+            <NavbarLink to="about">About</NavbarLink>
+          </section>
 
-        <section className="download">
-          <a href="https://kay-yu.itch.io/holocure" target="_blank" rel="noopener noreferrer">
+          <a href="https://kay-yu.itch.io/holocure" target="_blank" rel="noopener noreferrer" className="download flex-noshrink">
             Download the game!
           </a>
-        </section>
+        </div>
       </nav>
 
       <main>

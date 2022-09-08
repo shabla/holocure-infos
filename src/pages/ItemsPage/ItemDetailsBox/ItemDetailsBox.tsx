@@ -116,7 +116,7 @@ export const ItemDetailsBox = ({
             )}
           </tbody>
         </table>
-      ) : <div className="flex-column align-x-center p-20">Select an item to see more details</div>}
+      ) : <div className="flex-column align-center align-x-center flex-fill p-20">Select an item to see more details</div>}
     </Box>
   )
 }

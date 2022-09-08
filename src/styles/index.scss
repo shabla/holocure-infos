@@ -30,16 +30,5 @@ h6 {
   margin: 0;
 }
 
-.content-container {
-  max-width: 140rem;
-  margin: 0 auto;
-  position: relative;
-}
-
-.highlight {
-  color: #bcff5c;
-  font-weight: bold;
-}
-
 @import "./flex.scss";
 @import "./spacing.scss";

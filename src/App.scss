@@ -1,12 +1,13 @@
 .app {
+  --content-padding: 5px;
+
   display: flex;
 
-  .nav {
+  .navbar {
     position: fixed;
     width: 100%;
     height: var(--navbar-height);
     background-color: var(--color-dark-blue);
-    flex: 0 0 var(--navbar-height);
     z-index: 10;
 
     a {
@@ -26,24 +27,17 @@
     }
 
     .menu {
-      gap: 5px;
       color: white;
       text-align: center;
+      flex: 1 1 auto;
 
       >img {
         height: var(--navbar-height);
-        margin-right: 10px;
-        margin-left: 5px;
       }
     }
 
-    .download {
-      margin-right: 5px;
-      flex-shrink: 0;
-
-      a {
-        background-color: var(--color-pink);
-      }
+    a.download {
+      background-color: var(--color-pink);
     }
   }
 
@@ -52,11 +46,33 @@
     top: calc(var(--navbar-height) + var(--content-padding));
   }
 
-  >main {
-    --content-padding: 10px;
 
+  .highlight {
+    color: #bcff5c;
+    font-weight: bold;
+  }
+
+  >main {
     padding: var(--content-padding);
     margin-top: var(--navbar-height);
     flex: 1 1 auto;
+  }
+}
+
+.content-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media only screen and (min-width: 800px) {
+  .app {
+    --content-padding: 10px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .content-container {
+    max-width: 140rem;
   }
 }

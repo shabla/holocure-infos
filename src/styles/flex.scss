@@ -42,3 +42,7 @@
 .flex-wrap {
   flex-wrap: wrap;
 }
+
+.flex-noshrink {
+  flex-shrink: 0;
+}

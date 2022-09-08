@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { Item } from '@/models/Item';
+import { Item } from '@/models';
 import { Sprite, Box } from '@/components';
-import { useItemsStore } from "@/stores/itemsStore";
+import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
-import { ItemDetails } from "./ItemDetails/ItemDetails";
-import { useSpriteOffsetsStore } from "@/stores/spritesStore";
+import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
 
 import "./ItemsPage.scss"
 
@@ -170,6 +169,7 @@ export const ItemsPage = () => {
                 <label className="checkbox flex-row align-x-center">
                   <input
                     type="checkbox"
+                    className="mr-10"
                     checked={comboMode}
                     onChange={e => handleComboModeChanged(e.currentTarget.checked)}
                   />
@@ -210,7 +210,7 @@ export const ItemsPage = () => {
           ))}
         </div>
 
-        <ItemDetails
+        <ItemDetailsBox
           item={selectedItem}
           onItemSelected={handleItemClicked}
         />

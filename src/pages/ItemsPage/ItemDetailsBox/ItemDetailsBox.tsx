@@ -1,22 +1,21 @@
 import { useMemo } from "react";
 
 import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
-import { Item } from "@/models/Item";
-import { useItemsStore } from "@/stores/itemsStore";
+import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
+import { Item } from "@/models";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
-import { useSpriteOffsetsStore } from "@/stores/spritesStore";
 
-import "./ItemDetails.scss"
+import "./ItemDetailsBox.scss"
 
-export interface ItemDetailsProps {
+export interface ItemDetailsBoxProps {
   item?: Item;
   onItemSelected: (item: Item) => void;
 }
 
-export const ItemDetails = ({
+export const ItemDetailsBox = ({
   item,
   onItemSelected
-}: ItemDetailsProps) => {
+}: ItemDetailsBoxProps) => {
   const [getItemById, getItemUsage] = useItemsStore(state => [state.getItemById, state.getItemUsage]);
   const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
   const itemsSpriteSheet = getSpriteSheet('items');
@@ -30,7 +29,7 @@ export const ItemDetails = ({
 
   return (
     <Box
-      className="item-details"
+      className="item-details-box"
       label={
         item ? (
           <>

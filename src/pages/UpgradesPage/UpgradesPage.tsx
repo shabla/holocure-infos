@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 import classNames from "classnames";
 
 import { Box, Sprite } from "@/components";
-import { Upgrade } from "@/models/Upgrade";
-import { useUpgradesStore } from "@/stores/upgradesStore";
-import { useSpriteOffsetsStore } from "@/stores/spritesStore";
+import { Upgrade } from "@/models";
+import { useUpgradesStore, useSpriteOffsetsStore } from "@/stores";
 
 import "./UpgradesPage.scss";
 
@@ -31,7 +30,7 @@ export const UpgradesPage = () => {
   }
 
   return (
-    <div className="page-upgrades flex-row content-container" style={{ gap: 10 }}>
+    <div className="upgrades-page flex-row content-container gap-10">
       <Box label="Upgrades" className="upgrades">
         {upgrades.map(upgrade => (
           <div
@@ -43,6 +42,7 @@ export const UpgradesPage = () => {
               spriteSheet={spriteSheet}
               name={upgrade.name}
               showBackground={upgrade === selectedUpgrade}
+              className="mr-10"
             />
             {upgrade.name}
           </div>
@@ -52,7 +52,7 @@ export const UpgradesPage = () => {
       <Box label={selectedUpgrade?.name} className="details flex-fill">
         {selectedUpgrade && (
           <>
-            <div className="desc">
+            <div className="desc mb-20">
               {selectedUpgrade.desc}
             </div>
 

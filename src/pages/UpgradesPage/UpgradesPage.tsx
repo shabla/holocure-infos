@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { Box, Sprite } from "@/components";
 import { Upgrade } from "@/models";
-import { useUpgradesStore, useSpriteSheetStore } from "@/stores";
+import { useUpgradesStore, useSpriteSheetsStore } from "@/stores";
 
 import "./UpgradesPage.scss";
 

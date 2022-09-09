@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import classNames from "classnames";
 
-import { useSpriteSheetStore } from "@/stores";
+import { useSpriteSheetsStore } from "@/stores";
 import { SpriteSheet, SpriteType } from "@/stores";
 
 import "./Sprite.scss"
@@ -40,7 +40,7 @@ export const Sprite = <T,>({
   value,
   onSelected
 }: SpriteProps<T>) => {
-  const spriteSheet = useSpriteSheetStore(
+  const spriteSheet = useSpriteSheetsStore(
     useCallback(state => state.getSpriteSheet(type), [type])
   );
   const showLabel = !!label;

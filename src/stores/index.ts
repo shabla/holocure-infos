@@ -1,4 +1,4 @@
 export * from "./idolsStore";
 export * from "./itemsStore";
-export * from "./spritesStore";
+export * from "./spriteSheetsStore";
 export * from "./upgradesStore";

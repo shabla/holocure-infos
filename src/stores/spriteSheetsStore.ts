@@ -7,34 +7,31 @@ import idolIconsSpriteSheet from "@/assets/idol-icons.png";
 import idolModelsSpriteSheet from "@/assets/idol-models.png";
 
 export type SpriteType = 'idols' | 'idols-icon' | 'items' | 'upgrades' | 'skills';
-type SpriteOffset = [number, number];
 
 export type SpriteSheet = {
   width: number;
   height: number;
-  offsets: Record<string, SpriteOffset>;
+  offsets: Record<string, [number, number]>;
   file: string; // set at runtime
 }
 
-type SpriteOffsetsDict = Record<string, SpriteSheet>;
-
 interface SpriteOffsetsStore {
   loaded: boolean;
-  offsetsByType: SpriteOffsetsDict;
-  loadSpriteOffsets: (force?: boolean) => Promise<SpriteOffsetsDict>;
+  byType: Record<string, SpriteSheet>;
+  loadSpriteSheets: (force?: boolean) => Promise<Record<string, SpriteSheet>>;
   getSpriteSheet: (type: SpriteType) => SpriteSheet;
 }
 
-const emptyType = {
+const emptyType: SpriteSheet = {
   width: 0,
   height: 0,
   offsets: {},
   file: '',
 };
 
-export const useSpriteSheetStore = create<SpriteOffsetsStore>((set, get) => ({
+export const useSpriteSheetsStore = create<SpriteOffsetsStore>((set, get) => ({
   loaded: false,
-  offsetsByType: {
+  byType: {
     idols: { ...emptyType },
     'idols-icon': { ...emptyType },
     items: { ...emptyType },
@@ -42,40 +39,40 @@ export const useSpriteSheetStore = create<SpriteOffsetsStore>((set, get) => ({
     upgrades: { ...emptyType }
   },
   getSpriteSheet: (type: SpriteType): SpriteSheet => {
-    return get().offsetsByType[type];
+    return get().byType[type];
   },
-  loadSpriteOffsets: async (force?: boolean): Promise<SpriteOffsetsDict> => {
+  loadSpriteSheets: async (force?: boolean): Promise<Record<string, SpriteSheet>> => {
     if ((get().loaded && !force)) {
-      return get().offsetsByType;
+      return get().byType;
     }
 
     try {
       const res = await fetch('sprites.json');
-      const offsetsByType: SpriteOffsetsDict = await res.json();
+      const byType: Record<string, SpriteSheet> = await res.json();
 
-      offsetsByType['items'].file = itemsSpriteSheet;
-      offsetsByType['upgrades'].file = upgradeSpriteSheet;
-      offsetsByType['skills'].file = skillsSpriteSheet;
-      offsetsByType['idols'].file = idolModelsSpriteSheet;
-      offsetsByType['idols-icon'].file = idolIconsSpriteSheet;
+      byType['items'].file = itemsSpriteSheet;
+      byType['upgrades'].file = upgradeSpriteSheet;
+      byType['skills'].file = skillsSpriteSheet;
+      byType['idols'].file = idolModelsSpriteSheet;
+      byType['idols-icon'].file = idolIconsSpriteSheet;
 
       // idols and idols icons use the space offsets (sketchy)
-      offsetsByType['idols-icon'].offsets = offsetsByType['idols'].offsets;
+      byType['idols-icon'].offsets = byType['idols'].offsets;
 
       set({
         loaded: true,
-        offsetsByType,
+        byType,
       })
 
-      return offsetsByType;
+      return byType;
+
     } catch (e) {
       set({
         loaded: false,
-        offsetsByType: {},
+        byType: {},
       })
 
       return {}
     }
-
   },
 }))

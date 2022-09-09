@@ -2,20 +2,20 @@ import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 
 import { ItemsPage, IdolsPage, UpgradesPage, AboutPage } from "@/pages";
-import { useSpriteSheetStore } from "@/stores";
+import { useSpriteSheetsStore } from "@/stores";
 import { NavbarLink } from "@/components";
 import holocureLogo from "./assets/holocure-logo-sm.png";
 
 import './App.scss'
 
 export const App = () => {
-  const [loadSpriteOffsets, loaded] = useSpriteSheetStore(state => [
-    state.loadSpriteOffsets,
+  const [loadSpriteSheets, loaded] = useSpriteSheetsStore(state => [
+    state.loadSpriteSheets,
     state.loaded,
   ]);
 
   React.useEffect(() => {
-    loadSpriteOffsets();
+    loadSpriteSheets();
   }, []);
 
   if (!loaded) {

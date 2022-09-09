@@ -16,13 +16,13 @@ export const ItemDetailsBox = ({
   item,
   onItemSelected
 }: ItemDetailsBoxProps) => {
-  const [getItemById, getItemUsage] = useItemsStore(state => [state.getItemById, state.getItemUsage]);
+  const [getItemById, getItemsUsedBy] = useItemsStore(state => [state.getItemById, state.getItemsUsedBy]);
   const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
   const itemsSpriteSheet = getSpriteSheet('items');
 
   const usedIn: Item[] = useMemo(() => {
     if (item) {
-      return getItemUsage(item.id);
+      return getItemsUsedBy(item.id);
     }
     return [];
   }, [item])

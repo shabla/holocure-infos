@@ -20,6 +20,7 @@ const types = [
 // Load sprites offsets
 const sprites = loadYAMLFile(path.resolve(__dirname, `../data/sprites.yaml`));
 
+// Convert yaml data files to json files
 for (const type of types) {
   console.log(`\n[${type.name}] Converting ${type.name}.yaml to ${type.name}.json`);
   const data = loadYAMLFile(path.resolve(__dirname, `../data/${type.name}.yaml`));

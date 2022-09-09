@@ -9,8 +9,8 @@ interface ItemsStore {
   itemsById: Record<string, Item>;
   loadItems: (force?: boolean) => Promise<Item[]>;
   getItemById: (id: string) => Item | undefined;
-  getItemUsage: (id: string) => Item[];
-  getItemByType: (type: Item['type']) => Item[];
+  getItemsUsedBy: (id: string) => Item[];
+  getItemsByType: (type: Item['type']) => Item[];
 }
 
 export const useItemsStore = create<ItemsStore>((set, get) => ({
@@ -22,11 +22,11 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
     return get().itemsById[id];
   },
   // Get the list of items that uses item id passed (collabs)
-  getItemUsage: (id: string): Item[] => {
+  getItemsUsedBy: (id: string): Item[] => {
     return get().items.filter(i => i.requires?.includes(id));
   },
   // Filter by item type
-  getItemByType: (type: string): Item[] => {
+  getItemsByType: (type: string): Item[] => {
     return get().items.filter(i => i.type === type);
   },
   // Fetch items file
@@ -35,24 +35,30 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
       return get().items;
     }
 
-    const data = await fetch('items.json');
-    const items: Item[] = await data.json();
+    try {
+      const data = await fetch('items.json');
+      const items: Item[] = await data.json();
 
-    // generate id based on item name
-    items.forEach(item => {
-      item.id = nameToId(item.name);
-    });
+      // generate id based on item name
+      items.forEach(item => {
+        item.id = nameToId(item.name);
+      });
 
-    set({
-      loaded: true,
-      items,
-      itemsById: items.reduce((acc, item) => {
-        acc[item.id] = item;
+      set({
+        loaded: true,
+        items,
+        itemsById: items.reduce((acc, item) => {
+          acc[item.id] = item;
 
-        return acc;
-      }, {} as Record<string, Item>)
-    })
+          return acc;
+        }, {} as Record<string, Item>)
+      })
 
-    return items;
+      return items;
+    } catch (e) {
+      set({ loaded: false, items: [], itemsById: {} })
+
+      return [];
+    }
   },
 }))

@@ -24,11 +24,11 @@ export const ItemsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [comboMode, setComboMode] = useState<boolean>(false);
   const [comboItems, setComboItems] = useState<Item[]>([]);
-  const [loaded, loadItems, getItemById, getItemByType] = useItemsStore(state => [
+  const [loaded, loadItems, getItemById, getItemsByType] = useItemsStore(state => [
     state.loaded,
     state.loadItems,
     state.getItemById,
-    state.getItemByType,
+    state.getItemsByType,
   ])
   const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
   const itemsSpriteSheet = getSpriteSheet('items');
@@ -123,7 +123,7 @@ export const ItemsPage = () => {
             )}
 
             {comboItems.map(comboItem => (
-              <div className="flex-column align-x-center gap-10">
+              <div className="flex-column align-x-center gap-10" key={comboItem.id}>
                 <Sprite
                   spriteSheet={itemsSpriteSheet}
                   name={comboItem.name}
@@ -180,7 +180,7 @@ export const ItemsPage = () => {
           }>
             <CollabsList
               selectedItem={selectedItem}
-              items={getItemByType("collab")}
+              items={getItemsByType("collab")}
               comboMode={comboMode}
               comboItems={comboItems}
               onItemClicked={handleItemClicked}
@@ -191,7 +191,7 @@ export const ItemsPage = () => {
           {sections.map(section => (
             <Box label={section.title} key={section.type}>
               <div className="items-list gap-10">
-                {getItemByType(section.type)
+                {getItemsByType(section.type)
                   .map(item => (
                     <Sprite
                       spriteSheet={itemsSpriteSheet}

@@ -25,15 +25,19 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
       return;
     }
 
-    const data = await fetch('idols.json');
-    const idols: Idol[] = await data.json();
+    try {
+      const data = await fetch('idols.json');
+      const idols: Idol[] = await data.json();
 
-    set({
-      loaded: true,
-      idols: idols.map(idol => ({
-        ...idol,
-        id: nameToId(idol.name)
-      }))
-    });
+      set({
+        loaded: true,
+        idols: idols.map(idol => ({
+          ...idol,
+          id: nameToId(idol.name)
+        }))
+      });
+    } catch (e) {
+      set({ loaded: false, idols: [] });
+    }
   }
 }));

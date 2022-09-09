@@ -3,12 +3,11 @@ import classNames from "classnames";
 
 import { Box, Sprite } from "@/components";
 import { Upgrade } from "@/models";
-import { useUpgradesStore, useSpriteSheetsStore } from "@/stores";
+import { useUpgradesStore } from "@/stores";
 
 import "./UpgradesPage.scss";
 
 export const UpgradesPage = () => {
-  const [selectedUpgrade, setSelectedUpgrade] = useState<Upgrade>();
   const [loaded, upgrades, loadUpgrades] = useUpgradesStore(state => [
     state.loaded,
     state.upgrades,
@@ -16,7 +15,7 @@ export const UpgradesPage = () => {
   ]);
 
   useEffect(() => {
-    loadUpgrades().then(upgrades => setSelectedUpgrade(upgrades[0]));
+    loadUpgrades();
   }, [])
 
   const getUpgradeTotalCost = (upgrade: Upgrade): number => {
@@ -30,36 +29,70 @@ export const UpgradesPage = () => {
   return (
     <div className="upgrades-page flex-row content-container gap-10">
       <Box label="Upgrades" className="upgrades">
-        {upgrades.map(upgrade => (
-          <div
-            className={classNames("upgrade flex-row align-x-center", { selected: upgrade === selectedUpgrade })}
-            onClick={() => setSelectedUpgrade(upgrade)}
-            key={upgrade.name}
-          >
-            <Sprite
-              type="upgrades"
-              name={upgrade.name}
-              showBackground={upgrade === selectedUpgrade}
-              className="mr-10"
-            />
-            {upgrade.name}
-          </div>
-        ))}
-      </Box>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th className="name">Name</th>
+              <th className="desc">Description</th>
+              <th className="upgrades">Upgrades</th>
+              <th className="total text-right">Total Cost</th>
+            </tr>
+          </thead>
 
-      <Box label={selectedUpgrade?.name} className="details flex-fill">
-        {selectedUpgrade && (
-          <>
-            <div className="desc mb-20">
-              {selectedUpgrade.desc}
-            </div>
+          <tbody>
+            {(() => {
+              let total = 0;
+              return (
+                <>
+                  {upgrades.map(upgrade => {
+                    const upgradeTotal = getUpgradeTotalCost(upgrade);
+                    total += upgradeTotal;
 
-            <div className="costs">
-              {selectedUpgrade.costs.join(' / ')} (Total: {getUpgradeTotalCost(selectedUpgrade)})
-            </div>
-          </>
-        )}
+                    return (
+                      <tr key={upgrade.name} className="upgrade">
+                        <td>
+                          <Sprite
+                            type="upgrades"
+                            name={upgrade.name}
+                            showBackground={false}
+                          />
+                        </td>
+
+                        <td className="name min-content">{upgrade.name}</td>
+
+                        <td className="desc">{upgrade.desc}</td>
+
+                        <td className="upgrades min-content">
+                          <div className="flex-row align-x-center">
+                            <Sprite
+                              type="upgrades"
+                              name="Money Gain Up"
+                              scale={0.5}
+                            />
+                            {upgrade.costs
+                              .map(cost => cost.toLocaleString())
+                              .join(' / ')
+                            }
+                          </div>
+                        </td>
+
+                        <td className="total min-content text-right">{upgradeTotal.toLocaleString()}</td>
+                      </tr>
+                    )
+                  })}
+
+                  <tr key="total min-content">
+                    <td colSpan={4} className="text-right"><b>Total:</b></td>
+                    <td className="total text-right">{total.toLocaleString()}</td>
+                  </tr>
+                </>
+              );
+            })()}
+
+          </tbody>
+        </table>
       </Box>
-    </div>
+    </div >
   )
 }

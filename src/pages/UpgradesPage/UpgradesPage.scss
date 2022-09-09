@@ -5,13 +5,45 @@
     }
   }
 
-  .upgrade {
-    cursor: pointer;
-
-    &.selected {
-      background: white;
-      color: var(--color-blue);
-      font-weight: bold;
-    }
+  table {
+    border-collapse: collapse;
   }
+
+  td,
+  th {
+    vertical-align: middle;
+  }
+
+  th.upgrades {
+    padding-left: 50px;
+  }
+
+  th {
+    text-align: left;
+  }
+
+  .name,
+  .desc,
+  .total {
+    padding-left: 10px;
+  }
+
+  .desc {
+    min-width: 300px;
+  }
+}
+
+.text {
+  &-left {
+    text-align: left !important;
+  }
+
+  &-right {
+    text-align: right !important;
+  }
+}
+
+.min-content {
+  width: 1%;
+  white-space: nowrap;
 }

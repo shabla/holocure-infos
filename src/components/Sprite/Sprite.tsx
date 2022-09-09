@@ -1,8 +1,7 @@
 import { useCallback } from "react";
 import classNames from "classnames";
 
-import { useSpriteSheetsStore } from "@/stores";
-import { SpriteSheet, SpriteType } from "@/stores";
+import { useSpriteSheetsStore, SpriteSheet, SpriteType } from "@/stores";
 
 import "./Sprite.scss"
 
@@ -11,6 +10,7 @@ export interface SpriteProps<T = unknown> {
   name: string;
   selected?: boolean;
   showBackground?: boolean;
+  scale?: number;
   className?: string;
   label?: string;
   value?: T;
@@ -35,6 +35,7 @@ export const Sprite = <T,>({
   name,
   label,
   showBackground = false,
+  scale = 1,
   className,
   selected = false,
   value,
@@ -47,12 +48,13 @@ export const Sprite = <T,>({
   const bgStyle = getSpriteBackground(spriteSheet, name);
   const containerStyle: React.CSSProperties | undefined = showLabel ? {
     width: `calc(${spriteSheet.width}px + (2 * var(--sprite-label-overflow)))`,
-    height: `calc(${spriteSheet.height}px + var(--sprite-label-overflow))`
+    height: `calc(${spriteSheet.height}px + var(--sprite-label-overflow))`,
   } : undefined;
   const imageStyle: React.CSSProperties = {
     width: `${spriteSheet.width}px`,
     height: `${spriteSheet.height}px`,
-    background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`
+    background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`,
+    transform: `scale(${scale})`
   };
 
   return (

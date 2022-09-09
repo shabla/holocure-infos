@@ -1,15 +1,15 @@
 import React from "react";
-import { NavLink, Routes, Route, Navigate } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 
 import { ItemsPage, IdolsPage, UpgradesPage, AboutPage } from "@/pages";
-import { useSpriteOffsetsStore } from "@/stores";
+import { useSpriteSheetStore } from "@/stores";
 import { NavbarLink } from "@/components";
 import holocureLogo from "./assets/holocure-logo-sm.png";
 
 import './App.scss'
 
 export const App = () => {
-  const [loadSpriteOffsets, loaded] = useSpriteOffsetsStore(state => [
+  const [loadSpriteOffsets, loaded] = useSpriteSheetStore(state => [
     state.loadSpriteOffsets,
     state.loaded,
   ]);

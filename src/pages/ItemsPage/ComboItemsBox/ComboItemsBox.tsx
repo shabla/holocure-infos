@@ -1,6 +1,6 @@
 import { Item } from '@/models';
 import { Sprite, Box } from '@/components';
-import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
+import { useItemsStore } from "@/stores";
 
 import "./ComboItemsBox.scss"
 
@@ -13,8 +13,6 @@ export interface ComboItemsBoxProps {
 
 export const ComboItemsBox = ({ items, selectedItem, onItemClicked, onClear }: ComboItemsBoxProps) => {
   const getItemById = useItemsStore(state => state.getItemById)
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const itemsSpriteSheet = getSpriteSheet('items');
 
   return (
     <Box className="combo-items-box" label={
@@ -31,7 +29,7 @@ export const ComboItemsBox = ({ items, selectedItem, onItemClicked, onClear }: C
         {items.map(comboItem => (
           <div className="flex-column align-x-center gap-10" key={comboItem.id}>
             <Sprite
-              spriteSheet={itemsSpriteSheet}
+              type="items"
               name={comboItem.name}
               selected={comboItem === selectedItem}
               showBackground
@@ -47,7 +45,7 @@ export const ComboItemsBox = ({ items, selectedItem, onItemClicked, onClear }: C
 
                 return (
                   <Sprite
-                    spriteSheet={itemsSpriteSheet}
+                    type="items"
                     name={item.name}
                     selected={item === selectedItem}
                     showBackground

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 
 import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
-import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
+import { useItemsStore } from "@/stores";
 import { Item } from "@/models";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
 
@@ -17,8 +17,6 @@ export const ItemDetailsBox = ({
   onItemSelected
 }: ItemDetailsBoxProps) => {
   const [getItemById, getItemsUsedBy] = useItemsStore(state => [state.getItemById, state.getItemsUsedBy]);
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const itemsSpriteSheet = getSpriteSheet('items');
 
   const usedIn: Item[] = useMemo(() => {
     if (item) {
@@ -35,7 +33,7 @@ export const ItemDetailsBox = ({
           <>
             <div className="flex-row align-x-center">
               <Sprite
-                spriteSheet={itemsSpriteSheet}
+                type="items"
                 name={item?.name}
                 value={item}
                 showBackground
@@ -79,7 +77,7 @@ export const ItemDetailsBox = ({
                       item.requires.map(itemId => {
                         const item = getItemById(itemId);
                         return {
-                          spriteSheet: itemsSpriteSheet,
+                          type: "items",
                           name: item?.name,
                           value: item,
                           label: item?.name,
@@ -101,7 +99,7 @@ export const ItemDetailsBox = ({
                   <SpriteList
                     sprites={
                       usedIn.map(item => ({
-                        spriteSheet: itemsSpriteSheet,
+                        type: "items",
                         name: item?.name,
                         value: item,
                         label: item.name,

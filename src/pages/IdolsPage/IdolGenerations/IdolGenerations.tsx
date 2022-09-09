@@ -1,4 +1,4 @@
-import { useIdolsStore, useSpriteOffsetsStore } from "@/stores";
+import { useIdolsStore } from "@/stores";
 import { Idol } from "@/models";
 import { SpriteProps, SpriteList } from "@/components";
 
@@ -19,8 +19,6 @@ const gensOrder = [
 
 export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsProps) => {
   const getIdolsByGen = useIdolsStore(state => state.getIdolsByGen);
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const idolsIconSpriteSheet = getSpriteSheet('idols-icon');
 
   return (
     <div className="idol-generations flex-row flex-wrap">
@@ -32,7 +30,7 @@ export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsPro
             <SpriteList
               sprites={getIdolsByGen(genName)
                 .map(idol => ({
-                  spriteSheet: idolsIconSpriteSheet,
+                  type: "idols-icon",
                   name: idol.name,
                   value: idol,
                   selected: idol === selectedIdol,

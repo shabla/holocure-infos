@@ -32,7 +32,7 @@ const emptyType = {
   file: '',
 };
 
-export const useSpriteOffsetsStore = create<SpriteOffsetsStore>((set, get) => ({
+export const useSpriteSheetStore = create<SpriteOffsetsStore>((set, get) => ({
   loaded: false,
   offsetsByType: {
     idols: { ...emptyType },

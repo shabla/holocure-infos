@@ -1,6 +1,5 @@
 import { Box, Sprite } from "@/components";
 import { Idol } from "@/models";
-import { useSpriteOffsetsStore } from "@/stores";
 import hpIcon from "@/assets/stat-hp.png";
 import crtIcon from "@/assets/stat-crt.png";
 import atkIcon from "@/assets/stat-atk.png";
@@ -27,15 +26,12 @@ const stats: IdolStat[] = [
 ];
 
 export const IdolProfileBox = ({ idol }: IdolProfileBoxProps) => {
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const idolsSpriteSheet = getSpriteSheet('idols');
-
   return (
     <Box label={idol?.name} className="idol-profile-box">
       <div className="model flex-column align-center align-x-center">
         {idol && (
           <Sprite
-            spriteSheet={idolsSpriteSheet}
+            type="idols"
             name={idol.name}
             showBackground={false}
           />

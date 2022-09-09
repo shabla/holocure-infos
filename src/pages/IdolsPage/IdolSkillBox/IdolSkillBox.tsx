@@ -2,7 +2,6 @@ import React from "react";
 
 import { Box, Sprite } from "@/components";
 import { Skill } from "@/models";
-import { useSpriteOffsetsStore } from "@/stores";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
 
 import "./IdolSkillBox.scss";
@@ -13,16 +12,13 @@ export interface IdolSkillBoxProps {
 }
 
 export const IdolSkillBox = ({ title, skills }: IdolSkillBoxProps) => {
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const skillsSpriteSheet = getSpriteSheet('skills');
-
   return (
     <Box label={title} className="idol-skill-box">
       {skills.map(skill => (
         <React.Fragment key={skill.name}>
           <div className="skill-name flex-row align-x-center">
             <Sprite
-              spriteSheet={skillsSpriteSheet}
+              type="skills"
               name={skill.name}
               showBackground={false}
             />

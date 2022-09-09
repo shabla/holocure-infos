@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { Sprite } from "@/components";
 import { Item } from "@/models";
-import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
+import { useItemsStore } from "@/stores";
 
 import "./CollabsList.scss";
 
@@ -25,8 +25,6 @@ export const CollabsList = ({
   onComboItemsChanged,
 }: CollabsListProps) => {
   const getItemById = useItemsStore(state => state.getItemById);
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const itemsSpriteSheet = getSpriteSheet('items');
 
   const disabledCollabs = useMemo(() => {
     return items
@@ -89,7 +87,7 @@ export const CollabsList = ({
         return (
           <React.Fragment key={item.name}>
             <Sprite
-              spriteSheet={itemsSpriteSheet}
+              type="items"
               name={firstItem.name}
               value={firstItem}
               label={firstItem.name}
@@ -106,7 +104,7 @@ export const CollabsList = ({
             <div className="operator">+</div>
 
             <Sprite
-              spriteSheet={itemsSpriteSheet}
+              type="items"
               name={secondItem.name}
               value={secondItem}
               label={secondItem.name}
@@ -123,7 +121,7 @@ export const CollabsList = ({
             <div className="operator">=</div>
 
             <Sprite
-              spriteSheet={itemsSpriteSheet}
+              type="items"
               name={item.name}
               value={item}
               label={item.name}

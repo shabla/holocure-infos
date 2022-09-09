@@ -1,11 +1,13 @@
+import { useCallback } from "react";
 import classNames from "classnames";
 
-import { SpriteSheet } from "@/stores";
+import { useSpriteSheetStore } from "@/stores";
+import { SpriteSheet, SpriteType } from "@/stores";
 
 import "./Sprite.scss"
 
 export interface SpriteProps<T = unknown> {
-  spriteSheet: SpriteSheet;
+  type: SpriteType;
   name: string;
   selected?: boolean;
   showBackground?: boolean;
@@ -29,7 +31,7 @@ const getSpriteBackground = (spriteSheet: SpriteSheet, name: string): string => 
 }
 
 export const Sprite = <T,>({
-  spriteSheet,
+  type,
   name,
   label,
   showBackground = false,
@@ -38,6 +40,9 @@ export const Sprite = <T,>({
   value,
   onSelected
 }: SpriteProps<T>) => {
+  const spriteSheet = useSpriteSheetStore(
+    useCallback(state => state.getSpriteSheet(type), [type])
+  );
   const showLabel = !!label;
   const bgStyle = getSpriteBackground(spriteSheet, name);
   const containerStyle: React.CSSProperties | undefined = showLabel ? {

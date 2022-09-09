@@ -3,7 +3,7 @@ import classNames from "classnames";
 
 import { Box, Sprite } from "@/components";
 import { Upgrade } from "@/models";
-import { useUpgradesStore, useSpriteOffsetsStore } from "@/stores";
+import { useUpgradesStore, useSpriteSheetStore } from "@/stores";
 
 import "./UpgradesPage.scss";
 
@@ -13,9 +13,7 @@ export const UpgradesPage = () => {
     state.loaded,
     state.upgrades,
     state.loadUpgrades
-  ])
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const spriteSheet = getSpriteSheet('upgrades');
+  ]);
 
   useEffect(() => {
     loadUpgrades().then(upgrades => setSelectedUpgrade(upgrades[0]));
@@ -39,7 +37,7 @@ export const UpgradesPage = () => {
             key={upgrade.name}
           >
             <Sprite
-              spriteSheet={spriteSheet}
+              type="upgrades"
               name={upgrade.name}
               showBackground={upgrade === selectedUpgrade}
               className="mr-10"

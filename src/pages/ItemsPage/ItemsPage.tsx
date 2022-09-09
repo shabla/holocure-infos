@@ -3,7 +3,7 @@ import { useSearchParams } from "react-router-dom";
 
 import { Item } from '@/models';
 import { Sprite, Box } from '@/components';
-import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
+import { useItemsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
 import { ComboItemsBox } from "./ComboItemsBox/ComboItemsBox";
@@ -30,9 +30,7 @@ export const ItemsPage = () => {
     state.loadItems,
     state.getItemById,
     state.getItemsByType,
-  ])
-  const getSpriteSheet = useSpriteOffsetsStore(state => state.getSpriteSheet);
-  const itemsSpriteSheet = getSpriteSheet('items');
+  ]);
 
   useEffect(() => {
     loadItems().then(() => {
@@ -154,7 +152,7 @@ export const ItemsPage = () => {
                 {getItemsByType(section.type)
                   .map(item => (
                     <Sprite
-                      spriteSheet={itemsSpriteSheet}
+                      type="items"
                       name={item.name}
                       selected={item === selectedItem}
                       showBackground

@@ -5,6 +5,7 @@ export interface Level {
 
 export interface Skill {
   name: string;
+  note?: string;
   levels: Level[]
 }
 

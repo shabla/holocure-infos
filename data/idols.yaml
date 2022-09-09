@@ -479,7 +479,7 @@
       crt: 0.01
     special:
       name: "Become Beeg"
-      desc: "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible and deals 200% damage to all targets that touch her."
+      desc: "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible to all attacks and deals 200% damage to all targets. Then all absorb all EXP on screen."
     attack:
       name: "Orbit"
       levels:
@@ -509,11 +509,11 @@
       - name: "Astrology"
         levels:
           - level: 1
-            desc: "Every 15 second, gain a 15 seconds {20%} buff to either ATK, SPD, Critical Chance, Pickup Range, Haste, or heal for {30%} HP."
+            desc: "Every 15 second, gain a 15 seconds {20%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {30%} HP."
           - level: 2
-            desc: "Every 15 second, gain a 15 seconds {30%} buff to either ATK, SPD, Critical Chance, Pickup Range, Haste, or heal for {40%} HP."
+            desc: "Every 15 second, gain a 15 seconds {30%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {40%} HP."
           - level: 3
-            desc: "Every 15 second, gain a 15 seconds {40%} buff to either ATK, SPD, Critical Chance, Pickup Range, Haste, or heal for {50%} HP."
+            desc: "Every 15 second, gain a 15 seconds {40%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {50%} HP."
       - name: "Gravity"
         levels:
           - level: 1
@@ -817,7 +817,7 @@
           - level: 2
             desc: "When receiving any healing, enemies within {125px} are also \"healed\", taking {150%} + X% damage where X is 2 times the heal amount."
           - level: 3
-            desc: "???"
+            desc: "When receiving any healing, enemies within {150px} are also \"healed\", taking {175%} + X% damage where X is 2 times the heal amount."
       - name: "Ankimo"
         levels:
           - level: 1
@@ -831,7 +831,7 @@
           - level: 1
             desc: "Attacks have a {10%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {20%} chance to heal {2} HP when defeated."
           - level: 2
-            desc: "???"
+            desc: "Attacks have a {15%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {25%} chance to heal {3} HP when defeated."
           - level: 3
             desc: "Attacks have a {20%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {30%} chance to heal {4} HP when defeated."
   - name: "Roboco-san"
@@ -906,13 +906,13 @@
         - level: 3
           desc: "Increase damage by 30%."
         - level: 4
-          desc: "???"
+          desc: "Swing twice."
         - level: 5
-          desc: "???"
+          desc: "Reduce time between attacks by 15%."
         - level: 6
-          desc: "???"
+          desc: "Increase damage by 30%."
         - level: 7
-          desc: "???"
+          desc: "On hit, target takes 25% extra damage for one second."
     skills:
       - name: "Baby Language?"
         levels:
@@ -921,23 +921,24 @@
           - level: 2
             desc: "Attacks have {15%} chance to create a \"Nyeh\", dealing {75%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
           - level: 3
-            desc: "???"
+            desc: "Attacks have {20%} chance to create a \"Nyeh\", dealing {100%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
       - name: "Eroge Hero"
         levels:
           - level: 1
-            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal 2 HP every 2 seconds. Each conquest resets the timer."
+            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {2} HP every 2 seconds. Each conquest resets the timer."
           - level: 2
-            desc: "???"
+            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {3} HP every 2 seconds. Each conquest resets the timer."
           - level: 3
-            desc: "???"
-      - name: "Skill 3"
+            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {4} HP every 2 seconds. Each conquest resets the timer."
+      - name: "Elite"
+        note: "Elite Weapons are \"...(probably lava bucket, anything else?)\"."
         levels:
           - level: 1
-            desc: "???"
+            desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {20%}. Any \"Elite\" weapons are 10% larger."
           - level: 2
-            desc: "???"
+            desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {35%}. Any \"Elite\" weapons are 10% larger."
           - level: 3
-            desc: "???"
+            desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any \"Elite\" weapons are 10% larger."
   - name: "Hoshimashi Suisei"
     gen: "Gen 0"
     stats:
@@ -999,7 +1000,7 @@
       crt: 0.03
     special:
       name: "Full Concert"
-      desc: "Shine a circle of brilliant stage lights, damaging all targets nearby for 6 seconds."
+      desc: "Shine a circle of brilliant stage lights, damaging all nearby targets for 6 seconds."
     attack:
       name: "Diva Song"
       levels:

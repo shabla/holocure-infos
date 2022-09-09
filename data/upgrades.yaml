@@ -10,8 +10,8 @@
       - 12000
       - 18000
       - 24000
-      - -1
-      - -1
+      - 30000
+      - 36000
   - name: "ATK Up"
     desc: "Increase all damage by 6% per level."
     costs:
@@ -21,10 +21,10 @@
       - 4100
       - 9100
       - 18000
-      - -1
-      - -1
-      - -1
-      - -1
+      - 25000
+      - 31000
+      - 37000
+      - 43000
   - name: "SPD Up"
     desc: "Increase movement speed by 6% per level."
     costs:
@@ -36,8 +36,8 @@
       - 12000
       - 18000
       - 24000
-      - -1
-      - -1
+      - 30000
+      - 36000
   - name: "Crit Up"
     desc: "Increase critical hit chance by 2% per level."
     costs:
@@ -57,8 +57,8 @@
       - 12000
       - 18000
       - 24000
-      - -1
-      - -1
+      - 30000
+      - 36000
   - name: "Haste Up"
     desc: "Increase attack speed by 4% per level."
     costs:
@@ -117,9 +117,9 @@
       - 12000
       - 20000
       - 30000
-      - -1
-      - -1
-      - -1
+      - 40000
+      - 50000
+      - 60000
   - name: "Reroll"
     desc: "Grants a use of Reroll when leveling up."
     costs:

@@ -6,6 +6,7 @@ import { Sprite, Box } from '@/components';
 import { useItemsStore, useSpriteOffsetsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
+import { ComboItemsBox } from "./ComboItemsBox/ComboItemsBox";
 
 import "./ItemsPage.scss"
 
@@ -109,58 +110,17 @@ export const ItemsPage = () => {
 
   return (
     <div className="items-page flex-column content-container gap-content">
-
       {comboMode && (
-        <Box className="combo" label={
-          <>
-            Build-a-combo ({comboItems.length} / 4)
-            <button onClick={() => handleComboItemsChanged([])}>Clear</button>
-          </>
-        }>
-          <div className="flex-row flex-fill align-center align-x-center gap-20">
-            {comboItems.length === 0 && (
-              <div className="">Click on collab items to add it to your combo</div>
-            )}
-
-            {comboItems.map(comboItem => (
-              <div className="flex-column align-x-center gap-10" key={comboItem.id}>
-                <Sprite
-                  spriteSheet={itemsSpriteSheet}
-                  name={comboItem.name}
-                  selected={comboItem === selectedItem}
-                  showBackground
-                  label={comboItem.name}
-                  value={comboItem}
-                  onSelected={handleItemClicked}
-                  key={comboItem.id}
-                />
-
-                <div className="flex-row gap-5">
-                  {comboItem.requires?.map(id => {
-                    const item = getItemById(id)!;
-
-                    return (
-                      <Sprite
-                        spriteSheet={itemsSpriteSheet}
-                        name={item.name}
-                        selected={item === selectedItem}
-                        showBackground
-                        label={item.name}
-                        value={item}
-                        onSelected={handleItemClicked}
-                        key={item.id}
-                      />
-                    )
-                  })}
-                </div>
-              </div>
-            ))}
-          </div>
-        </Box>
+        <ComboItemsBox
+          items={comboItems}
+          selectedItem={selectedItem}
+          onItemClicked={handleItemClicked}
+          onClear={() => setComboItems([])}
+        />
       )}
 
-      <div className="sections-container flex-row gap-content">
-        <div className="sections">
+      <div className="flex-row gap-content">
+        <div className="item-sections">
           <Box label={
             <>
               <span>Collabs</span>

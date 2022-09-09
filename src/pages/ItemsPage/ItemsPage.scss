@@ -1,10 +1,6 @@
 .items-page {
   --items-per-row: 3;
 
-  .combo {
-    height: 230px;
-  }
-
   label.checkbox {
     font-size: 1.6rem;
     text-transform: none;
@@ -17,7 +13,7 @@
     }
   }
 
-  .sections {
+  .item-sections {
     flex: 1 0 50%;
     min-width: 310px;
 

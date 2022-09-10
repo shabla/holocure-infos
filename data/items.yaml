@@ -1,20 +1,81 @@
-- name: "CEO's Tears"
-  type: "weapon"
-  desc: "Fires rapid tears at random targets."
-  requirement: "Clear Stage 2 in stage mode."
-  levels:
-    - level: 2
-      desc: "Increase damage by 20%."
-    - level: 3
-      desc: "Shoot 2 tears."
-    - level: 4
-      desc: "Reduce the time between attacks by 33%."
-    - level: 5
-      desc: "Tears are 25% faster and increase damage by 20%."
-    - level: 6
-      desc: "Reduce the time between attacks by 50%."
-    - level: 7
-      desc: "Shoot 4 tears."
+###
+### Collabs
+###
+- name: "Frozen Sea"
+  type: "collab"
+  desc: "A collaboration of BL Book and Wamy Water. Endless waves of ice that slows targets."
+  requires:
+    - "bl-book"
+    - "wamy-water"
+- name: "BL Fujoshi"
+  type: "collab"
+  desc: "A collaboration of BL Book and Psycho Axe. Endless BL, how shameless!"
+  requires:
+    - "bl-book"
+    - "psycho-axe"
+- name: "MiComet"
+  type: "collab"
+  desc: "A collaboration of Elite Lava Bucket and Psycho Axe. Real business partners."
+  requires:
+    - "elite-lava-bucket"
+    - "psycho-axe"
+- name: "Elite Cooking"
+  type: "collab"
+  desc: "A collaboration of Elite Lava Bucket and Spider Cooking. May have severe unknown side effects if consumed."
+  requires:
+    - "elite-lava-bucket"
+    - "spider-cooking"
+- name: "Broken Dreams"
+  type: "collab"
+  desc: "A collaboration of Spider Cooking and CEO's Tears."
+  requires:
+    - "ceos-tears"
+    - "spider-cooking"
+- name: "Stream of Tears"
+  type: "collab"
+  desc: "A collaboration of Fan Beam and CEO's Tears. Nothing can stop the stream of tears."
+  requires:
+    - "ceos-tears"
+    - "fan-beam"
+- name: "Rap Dog"
+  type: "collab"
+  desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS where targets hit take 15% more damage."
+  requires:
+    - "x-potato"
+    - "idol-song"
+- name: "Idol Concert"
+  type: "collab"
+  desc: "A collaboration of Idol Song and Glowstick. Throw glowstick in all directions that esxplode into song!"
+  requires:
+    - "glowstick"
+    - "idol-song"
+- name: "Light Beam"
+  type: "collab"
+  desc: "A collaboration of Glowstick and Fan Beam. Throw glowsticks that explode into targeted beams!"
+  requires:
+    - "glowstick"
+    - "fan-beam"
+- name: "Dragon Fire"
+  type: "collab"
+  desc: "A collaboration of Fan Beam and Plug In Type Asacoco. The power of a once LEGENDARY Dragon. The OG."
+  requires:
+    - "plug-type-asacoco"
+    - "fan-beam"
+- name: "Breathe-In Type Asacoco"
+  type: "collab"
+  desc: "A collaboration of PLug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!"
+  requires:
+    - "plug-type-asacoco"
+    - "holo-bomb"
+- name: "Flattening Board"
+  type: "collab"
+  desc: "A collaboration of Cutting Board and Holo Bomb. Feel the wrath of cutting boards...!?."
+  requires:
+    - "cutting-board"
+    - "holo-bomb"
+###
+### Weapons
+###
 - name: "Spider Cooking"
   type: "weapon"
   desc: "Create an area of miasma around, dealing slow damage to enemies inside."
@@ -185,6 +246,23 @@
       desc: "Increase music note size by 25%."
     - level: 7
       desc: "Increase damage by 50%."
+- name: "CEO's Tears"
+  type: "weapon"
+  desc: "Fires rapid tears at random targets."
+  requirement: "Clear Stage 2 in stage mode."
+  levels:
+    - level: 2
+      desc: "Increase damage by 20%."
+    - level: 3
+      desc: "Shoot 2 tears."
+    - level: 4
+      desc: "Reduce the time between attacks by 33%."
+    - level: 5
+      desc: "Tears are 25% faster and increase damage by 20%."
+    - level: 6
+      desc: "Reduce the time between attacks by 50%."
+    - level: 7
+      desc: "Shoot 4 tears."
 - name: "X-Potato"
   type: "weapon"
   desc: "Throw a potato that bounces around the screen before exploding into an X."
@@ -219,82 +297,9 @@
       desc: "Increase damage by 30%."
     - level: 7
       desc: "Increase attack area by 30% and stops enemies for a short moment after knockback."
-- name: "Frozen Sea"
-  type: "collab"
-  desc: "A collaboration of BL Book and Wamy Water. Endless waves of ice that slows targets."
-  requires:
-    - "bl-book"
-    - "wamy-water"
-- name: "Broken Dreams"
-  type: "collab"
-  desc: "A collaboration of Spider Cooking and CEO's Tears."
-  requires:
-    - "spider-cooking"
-    - "ceos-tears"
-- name: "Stream of Tears"
-  type: "collab"
-  desc: "A collaboration of Fan Beam and CEO's Tears. Nothing can stop the stream of tears."
-  requires:
-    - "fan-beam"
-    - "ceos-tears"
-- name: "BL Fujoshi"
-  type: "collab"
-  desc: "A collaboration of BL Book and Psycho Axe. Endless BL, how shameless!"
-  requires:
-    - "bl-book"
-    - "psycho-axe"
-- name: "MiComet"
-  type: "collab"
-  desc: "A collaboration of Elite Lava Bucket and Psycho Axe. Real business partners."
-  requires:
-    - "elite-lava-bucket"
-    - "psycho-axe"
-- name: "Elite Cooking"
-  type: "collab"
-  desc: "A collaboration of Elite Lava Bucket and Spider Cooking. May have severe unknown side effects if consumed."
-  requires:
-    - "elite-lava-bucket"
-    - "spider-cooking"
-- name: "Rap Dog"
-  type: "collab"
-  desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS where targets hit take 15% more damage."
-  requires:
-    - "x-potato"
-    - "idol-song"
-- name: "Idol Concert"
-  type: "collab"
-  desc: "A collaboration of Idol Song and Glowstick. Throw glowstick in all directions that esxplode into song!"
-  requires:
-    - "glowstick"
-    - "idol-song"
-- name: "Light Beam"
-  type: "collab"
-  desc: "A collaboration of Glowstick and Fan Beam. Throw glowsticks that explode into targeted beams!"
-  requires:
-    - "glowstick"
-    - "fan-beam"
-- name: "Dragon Fire"
-  type: "collab"
-  desc: "A collaboration of Fan Beam and Plug In Type Asacoco. The power of a once LEGENDARY Dragon. The OG."
-  requires:
-    - "plug-type-asacoco"
-    - "fan-beam"
-- name: "Breathe-In Type Asacoco"
-  type: "collab"
-  desc: "A collaboration of PLug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!"
-  requires:
-    - "plug-type-asacoco"
-    - "holo-bomb"
-- name: "Flattening Board"
-  type: "collab"
-  desc: "A collaboration of Cutting Board and Holo Bomb. Feel the wrath of cutting boards...!?."
-  requires:
-    - "cutting-board"
-    - "holo-bomb"
-- name: "Stolen Piggy Bank"
-  type: "item"
-  desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
-  requirement: "Kill a Golden Yagoo."
+###
+### Items
+###
 - name: "Sake"
   type: "item"
   desc: "If not taking any damage for 5 seconds, increase crit by {10%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
@@ -539,3 +544,7 @@
       desc: "Gain {2} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
     - level: 3
       desc: "Gain {3} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
+- name: "Stolen Piggy Bank"
+  type: "item"
+  desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
+  requirement: "Kill a Golden Yagoo."

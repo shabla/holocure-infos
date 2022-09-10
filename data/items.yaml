@@ -1,20 +1,20 @@
 - name: "CEO's Tears"
   type: "weapon"
   desc: "Fires rapid tears at random targets."
-  requirement: "??? finish stage 2???"
+  requirement: "Clear Stage 2 in stage mode."
   levels:
     - level: 2
-      desc: "???"
+      desc: "Increase damage by 20%."
     - level: 3
-      desc: "???"
+      desc: "Shoot 2 tears."
     - level: 4
-      desc: "???"
+      desc: "Reduce the time between attacks by 33%."
     - level: 5
-      desc: "???"
+      desc: "Tears are 25% faster and increase damage by 20%."
     - level: 6
-      desc: "???"
+      desc: "Reduce the time between attacks by 50%."
     - level: 7
-      desc: "???"
+      desc: "Shoot 4 tears."
 - name: "Spider Cooking"
   type: "weapon"
   desc: "Create an area of miasma around, dealing slow damage to enemies inside."
@@ -188,24 +188,24 @@
 - name: "X-Potato"
   type: "weapon"
   desc: "Throw a potato that bounces around the screen before exploding into an X."
-  requirement: "???"
+  requirement: "Survive 10 minutes with Korone."
   levels: 
     - level: 2
       desc: "Increase the X explosion size by 20%."
     - level: 3
       desc: "Throw 2 potatoes."
     - level: 4
-      desc: ""
+      desc: "Increase damage and speed by 30%."
     - level: 5
       desc: "Reduce the time between attacks by 15% and remove hit limit."
     - level: 6
       desc: "Increase the size of potatoes and the X explosion size by 30%."
     - level: 7
-      desc: ""
+      desc: "Throw 4 potatoes."
 - name: "Wamy Water"
   type: "weapon"
   desc: "Create a splash of unknown water in front, knocking targets back."
-  requirement: "??? clear stage 1 with Sana ???"
+  requirement: "Clear Stage 1 with Sake."
   levels: 
     - level: 2
       desc: "Increase damage by 20%."
@@ -225,6 +225,18 @@
   requires:
     - "bl-book"
     - "wamy-water"
+- name: "Broken Dreams"
+  type: "collab"
+  desc: "A collaboration of Spider Cooking and CEO's Tears."
+  requires:
+    - "spider-cooking"
+    - "ceos-tears"
+- name: "Stream of Tears"
+  type: "collab"
+  desc: "A collaboration of Fan Beam and CEO's Tears. Nothing can stop the stream of tears."
+  requires:
+    - "fan-beam"
+    - "ceos-tears"
 - name: "BL Fujoshi"
   type: "collab"
   desc: "A collaboration of BL Book and Psycho Axe. Endless BL, how shameless!"
@@ -245,7 +257,7 @@
     - "spider-cooking"
 - name: "Rap Dog"
   type: "collab"
-  desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS."
+  desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS where targets hit take 15% more damage."
   requires:
     - "x-potato"
     - "idol-song"
@@ -282,7 +294,7 @@
 - name: "Stolen Piggy Bank"
   type: "item"
   desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
-  requirement: "??? finish stage 2 ???"
+  requirement: "Kill a Golden Yagoo."
 - name: "Sake"
   type: "item"
   desc: "If not taking any damage for 5 seconds, increase crit by {10%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
@@ -316,17 +328,17 @@
       desc: "Lose 5% HP every second (until 1 HP remains), but gain {80%} damage."
 - name: "Credit Card"
   type: "item"
-  desc: "Cost of enhancing is reduced by {20%} and anvils appear 20% more often."
+  desc: "Cost of enhancing is reduced by {20%} and anvils appear {20%} more often."
   requirement: "Find and Anvil."
   levels:
     - level: 2
-      desc: "Cost of enhancing is reduced by {25%} and anvils appear 20% more often."
+      desc: "Cost of enhancing is reduced by {25%} and anvils appear {40%} more often."
     - level: 3
-      desc: "Cost of enhancing is reduced by {30%} and anvils appear 20% more often."
+      desc: "Cost of enhancing is reduced by {30%} and anvils appear {60%} more often."
     - level: 4
-      desc: "Cost of enhancing is reduced by {35%} and anvils appear 20% more often."
+      desc: "Cost of enhancing is reduced by {35%} and anvils appear {80%} more often."
     - level: 5
-      desc: "Cost of enhancing is reduced by {40%} and anvils appear 20% more often."
+      desc: "Cost of enhancing is reduced by {40%} and anvils appear {100%} more often."
 - name: "Knightly Milk"
   type: "item"
   desc: "Increases attack range of area-type weapons by {10%}. Also Increase pick-up radius by {30%}."
@@ -336,15 +348,13 @@
       desc: "Increases attack range of area-type weapons by {15%}. Also Increase pick-up radius by {40%}."
     - level: 3
       desc: "Increases attack range of area-type weapons by {20%}. Also Increase pick-up radius by {50%}."
+  super:
+    name: "Super Knightly Milk"
+    desc: "Increases attack size of weapons by 30%. Also increase Pick Up Range by 100% and increase Max HP by 20."
 - name: "Face Mask"
   type: "item"
   desc: "Increase damage by 50% and haste by 10%. Take 30% more damage."
   requirement: "Unlocked from the start"
-  levels:
-    - level: 2
-      desc: "???"
-    - level: 3
-      desc: ""
 - name: "Plushie"
   type: "item"
   desc: "After taking any damage, gain invulnerability for {0.3} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
@@ -362,7 +372,7 @@
     - level: 2
       desc: "When a target is defeated, there is a 20% chance to heal for {4} HP."
     - level: 3
-      desc: "???"
+      desc: "When a target is defeated, there is a 20% chance to heal for {6} HP."
 - name: "Full Meal"
   type: "item"
   desc: "All healing is doubled."
@@ -398,19 +408,22 @@
       desc: "Increase normal attack damage by {40%}, but lose 20% critical chance."
     - level: 3
       desc: "Increase normal attack damage by {50%}, but lose 20% critical chance."
+  super:
+    name: "Super Gorilla's Paw"
+    desc: "Increase attack damage by 50% and critical hits do 50 more damage."
 - name: "Uber Sheep"
   type: "item"
-  desc: "Every 10 seconds, food will drop closeby. Also increase food drop chance from defeated targets by 10%."
+  desc: "Every {10} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {10%}."
   requirement: "Unlocked from the start"
   levels:
     - level: 2
-      desc: "???"
+      desc: "Every {9} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {12%}."
     - level: 3
-      desc: "???"
+      desc: "Every {8} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {15%}."
     - level: 4
-      desc: "???"
+      desc: "Every {7} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {18%}."
     - level: 5
-      desc: "???"
+      desc: "Every {6} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {20%}."
 - name: "Idol Costume"
   type: "item"
   desc: "Reduce Special cooldown by {20%}."
@@ -424,6 +437,9 @@
       desc: "Reduce Special cooldown by {35%}."
     - level: 5
       desc: "Reduce Special cooldown by {40%}."
+  super:
+    name: "Super Idol Costume"
+    desc: "Reduce Special cooldown by 45%. Allows the use of Special once more immediately per charge."
 - name: "Energy Drink"
   type: "item"
   desc: "Increase Haste by {10%} and SPD by {30%}, but reduce Max HP by 20% as well."
@@ -433,6 +449,9 @@
       desc: "Increase Haste by {15%} and SPD by {40%}, but reduce Max HP by 20% as well."
     - level: 3
       desc: "Increase Haste by {20%} and SPD by {50%}, but reduce Max HP by 20% as well."
+  super:
+    name: "Super Energy Drink"
+    desc: "Increase Haste by 30% and SPD by 60%."
 - name: "Study Glasses"
   type: "item"
   desc: "Increase EXP gain by {10%}."
@@ -459,12 +478,13 @@
       desc: "Targets drop {40%} more Holo Coins."
     - level: 5
       desc: "Targets drop {50%} more Holo Coins."
-    - level: 999
-      desc: "Targets drop 100% more Holo Coins. Picking up coins also heal 3 HP."
+  super:
+    name: "Super Super Chatto Time!"
+    desc: "Targets drop 100% more Holo Coins. Picking up coins also heal 3 HP."
 - name: "Membership"
   type: "item"
   desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {30%} and take {10%} less damage."
-  requirement: "??? complete stage 1 ???"
+  requirement: "Clear Stage 1 with Super Chatto Time!"
   levels:
     - level: 2
       desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {40%} and take {18%} less damage."
@@ -473,7 +493,7 @@
 - name: "Halu"
   type: "item"
   desc: "Increase regular fan spawns, and fans become {5%} stronger. Gain 1 HoloCoin for every {5} targets defeated since taking this item."
-  requirement: "??? complete stage 1 ???"
+  requirement: "Clear Stage 1."
   levels:
     - level: 2
       desc: "Increase regular fan spawns more, and fans become {15%} stronger. Gain 1 HoloCoin for every {4} targets defeated since taking this item."
@@ -486,16 +506,25 @@
 - name: "Just Bandage"
   type: "item"
   desc: "Increase Max HP by {10}. After being hit, heal 10% HP every 3 seconds until {80%} of the damage taken is recovered (recovers minimum 1 HP)."
-  requirement: "???"
+  requirement: "?Die after 10 minutes?"
   levels:
     - level: 2
       desc: "Increase Max HP by {20}. After being hit, heal 10% HP every 3 seconds until {90%} of the damage taken is recovered (recovers minimum 1 HP)."
     - level: 3
       desc: "Increase Max HP by {30}. After being hit, heal 10% HP every 3 seconds until {100%} of the damage taken is recovered (recovers minimum 1 HP)."
+- name: "GWS Pill"
+  type: "item"
+  desc: "While the Special meter is still charging, increase crit by {15%}."
+  requirement: "Die with Halu."
+  levels:
+    - level: 2
+      desc: "While the Special meter is still charging, increase crit by {20%}."
+    - level: 3
+      desc: "While the Special meter is still charging, increase crit by {25%}."
 - name: "Limiter"
   type: "item"
   desc: "Gain {100%} Pick Up Range."
-  requirement: "Clear stage 1 with Sana."
+  requirement: "Survive 10 minutes with Sana."
   levels:
     - level: 2
       desc: "Gain {200%} Pick Up Range."
@@ -504,7 +533,7 @@
 - name: "Chicken's Feather"
   type: "item"
   desc: "Gain {1} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
-  requirement: "Clear stage 1 as Kiara?"
+  requirement: "Survive 10 minutes with Kiara."
   levels:
     - level: 2
       desc: "Gain {2} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."

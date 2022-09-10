@@ -184,32 +184,32 @@
         - level: 6
           desc: "Increase damage by 20%."
         - level: 7
-          desc: "Sword is engulfed in flames, and can hit multiple times."
+          desc: "Sword is engulfed in flames, and can hit many times. Also leave a burning fire under hit targets."
     skills:
       - name: "Dancer"
         levels:
           - level: 1
-            desc: "Moving gradually increases damage by {2%} every second, up to {40%}. Buff resets if you stop."
+            desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {2%} every second, up to {40%}. If stopped, buff will slowly decrease."
           - level: 2
-            desc: "Moving gradually increases damage by {3%} every second, up to {60%}. Buff resets if you stop."
+            desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {3%} every second, up to {60%}. If stopped, buff will slowly decrease."
           - level: 3
-            desc: "Moving gradually increases damage by {4%} every second, up to {80%}. {Increase critical hit chance by 1% per stack}. Buff resets if you stop."
+            desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {4%} every second, up to {80%}. Also increase Crit chance by 1% per stack"
       - name: "Trailblazer"
         levels:
           - level: 1
-            desc: "Leave a burning fire underneath Kiara as she moves that deals {30%} damage per hit. Lasts 5 seconds."
+            desc: "Increase SPD by {10%}. Leafve a burning fire underneath Kiara whenever she moves that deals {30%} damage per hit. Lasts 5 seconds."
           - level: 2
-            desc: "Leave a burning fire underneath Kiara as she moves that deals {50%} damage per hit. Lasts 5 seconds."
+            desc: "Increase SPD by {15%}. Leafve a burning fire underneath Kiara whenever she moves that deals {50%} damage per hit. Lasts 5 seconds."
           - level: 3
-            desc: "Leave a burning fire underneath Kiara as she moves that deals {75%} damage per hit. Lasts 5 seconds. {Slows targets for 3 seconds}."
+            desc: "Increase SPD by {20%}. Leafve a burning fire underneath Kiara whenever she moves that deals {75%} damage per hit. Lasts 5 seconds."
       - name: "Phoenix Shield"
         levels:
           - level: 1
-            desc: "If Kiara has not taken any damage in the last 10 seconds, the damage from the {next hit} taken is halved and you are invulnerable for {0.5 seconds}."
+            desc: "Every 10 seconds gain {a stack} of Phoenix Shield. The {next damage taken} is halved and become invulnerable for 0.25 seconds."
           - level: 2
-            desc: "If Kiara has not taken any damage in the last 10 seconds, the damage from the {next two hits} taken is halved and you are invulnerable for {0.5 seconds}."
+            desc: "Every 10 seconds gain {2 stacks} of Phoenix Shield. The {next 2 hits taken} are halved and become invulnerable for 0.25 seconds."
           - level: 3
-            desc: "If Kiara has not taken any damage in the last 10 seconds, the damage from the {next three hits} taken is halved and you are invulnerable for {1 seconds}."
+            desc: "Every 10 seconds gain {3 stacks} of Phoenix Shield. The {next 3 hits taken} are halved and become invulnerable for 0.25 seconds."
   - name: "Mori Calliope"
     gen: "Myth"
     stats:
@@ -592,13 +592,13 @@
         - level: 2
           desc: "Increase attack area by 25%."
         - level: 3
-          desc: "???"
+          desc: "Increase damage by 30%."
         - level: 4
-          desc: "???"
+          desc: "Increase amount of punches by 1."
         - level: 5
-          desc: "???"
+          desc: "Increases attack area by 25%. Widen Korone's punch range slightly."
         - level: 6
-          desc: "???"
+          desc: "Increases amount of punches by 1."
         - level: 7
           desc: "Reduce delay between combination punches by 50%."
     skills:
@@ -642,42 +642,42 @@
         - level: 1
           desc: "Throw an onigiri at an arc."
         - level: 2
-          desc: "???"
+          desc: "Increase damage by 20%."
         - level: 3
-          desc: "???"
+          desc: "Throw 2 onigiri."
         - level: 4
-          desc: "???"
+          desc: "Increase attack area by 40%."
         - level: 5
-          desc: "???"
+          desc: "Throw 4 onigiri."
         - level: 6
-          desc: "???"
+          desc: "Speed of onirigir is increased by 20%."
         - level: 7
-          desc: "???"
+          desc: "Throw 6 onigiri and slows down targets by 30% for 5 seconds."
     skills:
       - name: "Yummy"
         levels:
           - level: 1
-            desc: "Increase food drops by 50%. When eating food, gain 40% ATK, 15% SPD, and 5% Crit for 8 seconds."
+            desc: "Increase food drops by {50%}. When eating food, gain {40%} ATK, {15%} SPD, and {5%} Crit for 8 seconds."
           - level: 2
-            desc: "???"
+            desc: "Increase food drops by {75%}. When eating food, gain {60%} ATK, {25%} SPD, and {10%} Crit for 8 seconds."
           - level: 3
-            desc: "???"
+            desc: "Increase food drops by {100%}. When eating food, gain {80%} ATK, {35%} SPD, and {15%} Crit for 8 seconds."
       - name: "Sensitive Voice"
         levels:
           - level: 1
-            desc: "Increase Crit by 5%. Crits have a 10% chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal 3% HP."
+            desc: "Increase Crit by {5%}. Crits have a {10%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {3%} HP."
           - level: 2
-            desc: "???"
+            desc: "Increase Crit by {10%}. Crits have a {15%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {4%} HP."
           - level: 3
-            desc: "???"
+            desc: "Increase Crit by {15%}. Crits have a {20%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {5%} HP."
       - name: "Feast"
         levels:
           - level: 1
-            desc: "When a target is defeated, there is a 6% chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
+            desc: "When a target is defeated, there is a {6%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
           - level: 2
-            desc: "???"
+            desc: "When a target is defeated, there is a {8%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
           - level: 3
-            desc: "???"
+            desc: "When a target is defeated, there is a {10%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
   - name: "Shirakami Fubuki"
     gen: "Gamers"
     stats:
@@ -700,11 +700,11 @@
         - level: 4
           desc: "Swing tail in front and back."
         - level: 5
-          desc: "???"
+          desc: "Reduce time between attacks by 15%."
         - level: 6
-          desc: "???"
+          desc: "Increase attack area by 20%."
         - level: 7
-          desc: "???"
+          desc: "If Fox tail hits a target, there is a 20% chance to summon a Fubuki Sword that deals 100% damage."
     skills:
       - name: "Friendzone"
         levels:
@@ -746,17 +746,17 @@
         - level: 1
           desc: "Throw a card that quickly returns back."
         - level: 2
-          desc: "???"
+          desc: "Increase damage by 20%."
         - level: 3
           desc: "Throw 2 tarrot cards."
         - level: 4
-          desc: "???"
+          desc: "Reduce time between attacks by 15%."
         - level: 5
           desc: "Throw cards farther and increase damage by 40%."
         - level: 6
           desc: "Throw 3 tarot cards."
         - level: 7
-          desc: "???"
+          desc: "When hitting a target, there is a 30% chance that the target may lose 20% ATK, SPD, or take 20% more damage."
     skills:
       - name: "Omen"
         levels:
@@ -769,7 +769,7 @@
       - name: "Mama"
         levels:
           - level: 1
-            desc: "???"
+            desc: "Every 4 seconds, heal 1% for each target within {100px}, up to {10%}."
           - level: 2
             desc: "Every 4 seconds, heal 1% for each target within {125px}, up to {20%}."
           - level: 3
@@ -781,7 +781,7 @@
           - level: 2
             desc: "The closer a target is within 150px, the more damage they receive, up to {100%}."
           - level: 3
-            desc: "???"
+            desc: "The closer a target is within 150px, the more damage they receive, up to {150%}."
   - name: "Tokino Sora"
     gen: "Gen 0"
     stats:
@@ -843,31 +843,31 @@
       crt: 0.05
     special:
       name: "Hi-Spec Mode"
-      desc: "Release a discharge that deals 300% damage. For 8 seconds, Robocco gaiuns 100% AKT, SPD, Pickup Radius, and 50% Crit and Haste."
+      desc: "Release a discharge that deals 300% damage. For 8 seconds, Robocco gains 100% AKT, SPD, Pick Up Range, and 50% Crit and Haste."
     attack:
-      name: "???"
+      name: "Hi-Spec Pistol"
       levels:
         - level: 1
           desc: "Shoots a few times in aimed direction."
         - level: 2
-          desc: "???"
+          desc: "Shoot one more bullet."
         - level: 3
           desc: "Bullets +1 pierce."
         - level: 4
-          desc: "???"
+          desc: "Reduce time between attacks by 15%."
         - level: 5
-          desc: "???"
+          desc: "Increase damage by 20%."
         - level: 6
-          desc: "???"
+          desc: "Shoot one more bullet."
         - level: 7
-          desc: "???"
+          desc: "Gun becomes a piercing blast."
     skills:
       - name: "Robo-Discharge"
         levels:
           - level: 1
             desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {100%} damage. +1% Discharge damage for each level Roboco has."
           - level: 2
-            desc: "???"
+            desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {125%} damage. +1% Discharge damage for each level Roboco has."
           - level: 3
             desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {150%} damage. +1% Discharge damage for each level Roboco has."
       - name: "Hi-Level"
@@ -902,7 +902,7 @@
         - level: 1
           desc: "Swing a gohei that creates a burst of Sakura blossoms."
         - level: 2
-          desc: "???"
+          desc: "Increase attack area by 20%."
         - level: 3
           desc: "Increase damage by 30%."
         - level: 4
@@ -957,40 +957,40 @@
         - level: 2
           desc: "Increase damage by 30%."
         - level: 3
-          desc: "???"
+          desc: "Increase attack area by 20%."
         - level: 4
           desc: "Reduce time between attacks by 10%."
         - level: 5
-          desc: "???"
+          desc: "Increase damage by 30%."
         - level: 6
-          desc: "???"
+          desc: "Increase attack area by 20%."
         - level: 7
-          desc: "???"
+          desc: "Crit is guaranteed on Axe Swing and crits deal 3x damage."
     skills:
-      - name: "Skill 1"
+      - name: "Stellar"
         levels:
           - level: 1
-            desc: "???"
+            desc: "Critical hits have a 25% chance to increase ATK by {2%} for 4 seconds, up to {10%}. If activated, all targets within 75px take that critical hit."
           - level: 2
-            desc: "???"
+            desc: "Critical hits have a 25% chance to increase ATK by {4%} for 4 seconds, up to {20%}. If activated, all targets within 75px take that critical hit."
           - level: 3
-            desc: "???"
-      - name: "Skill 2"
+            desc: "Critical hits have a 25% chance to increase ATK by {6%} for 4 seconds, up to {30%}. If activated, all targets within 75px take that critical hit."
+      - name: "Suicopath"
         levels:
           - level: 1
-            desc: "???"
+            desc: "Defeating targets increases Crit by {4%} for 4 seconds, up to {20%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
           - level: 2
-            desc: "???"
+            desc: "Defeating targets increases Crit by {6%} for 4 seconds, up to {30%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
           - level: 3
-            desc: "???"
-      - name: "Skill 3"
+            desc: "Defeating targets increases Crit by {8%} for 4 seconds, up to {40%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
+      - name: "Block Master"
         levels:
           - level: 1
-            desc: "???"
+            desc: "Critical hits have a {15%} chance to summon a falling block from above that deals {150%} damage."
           - level: 2
-            desc: "???"
+            desc: "Critical hits have a {20%} chance to summon a falling block from above that deals {200%} damage."
           - level: 3
-            desc: "???"
+            desc: "Critical hits have a {25%} chance to summon a falling block from above that deals {250%} damage."
   - name: "AZKi"
     gen: "Gen 0"
     stats:
@@ -1017,7 +1017,7 @@
         - level: 6
           desc: "Reduce time between attacks by 25%."
         - level: 7
-          desc: "???"
+          desc: "When hitting a target, there is a 30% chance that the music note sends 2 more notes that deal 50% damage."
     skills:
       - name: "Encore!"
         levels:

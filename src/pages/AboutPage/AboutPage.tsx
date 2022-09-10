@@ -12,6 +12,9 @@ export const AboutPage = () => {
           <li>
             <a href="https://www.reddit.com/r/holocure/comments/vkcri9/unlock_conditions/" target="_blank" rel="noopener noreferrer">
               /u/cylindrical418
+            </a> and
+            <a href="https://www.reddit.com/r/holocure/comments/x9qong/unlock_requirement_of_new_stuff/" target="_blank" rel="noopener noreferrer">
+              /u/RikuPain (& friends)
             </a>
             {' '}on reddit for the unlock conditions
           </li>

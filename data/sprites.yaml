@@ -220,6 +220,7 @@ items:
   width: 54
   height: 54
   offsets:
+    # Weapons
     "Spider Cooking":
       - 0
       - 0
@@ -250,6 +251,17 @@ items:
     "Idol Song":
       - 2
       - 1
+    "Wamy Water":
+      - 2
+      - 5
+    "CEO's Tears":
+      - 1
+      - 5
+    "X-Potato":
+      - 4
+      - 5
+
+    # Collabs
     "BL Fujoshi":
       - 3
       - 4
@@ -274,6 +286,20 @@ items:
     "Flattening Board":
       - 5
       - 4
+    "Frozen Sea":
+      - 2
+      - 6
+    "Broken Dreams":
+      - 3
+      - 6
+    "Stream of Tears":
+      - 5
+      - 6
+    "Rap Dog":
+      - 0
+      - 6
+    
+    # Items
     "Sake":
       - 3
       - 1
@@ -325,6 +351,27 @@ items:
     "Super Chatto Time!":
       - 5
       - 3
+    "Membership":
+      - 3
+      - 5
+    "Halu":
+      - 6
+      - 5
+    "GWS Pill":
+      - 5
+      - 5
+    "Limiter":
+      - 0
+      - 5
+    "Chicken's Feather":
+      - 4
+      - 6
+    "Stolen Piggy Bank":
+      - 1
+      - 6
+    "Just Bandage":
+      - 6
+      - 6
 
 upgrades:
   height: 50
@@ -368,4 +415,13 @@ upgrades:
       - 1
     "Reroll":
       - 0
+      - 2
+    "Growth":
+      - 1
+      - 2
+    "Enhancement Rate Up":
+      - 2
+      - 2
+    "Defense Up":
+      - 3
       - 2

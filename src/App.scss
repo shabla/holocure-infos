@@ -31,7 +31,7 @@
       text-align: center;
       flex: 1 1 auto;
 
-      >img {
+      > img {
         height: var(--navbar-height);
       }
     }
@@ -46,16 +46,16 @@
     top: calc(var(--navbar-height) + var(--content-padding));
   }
 
-
   .highlight {
     color: #bcff5c;
     font-weight: bold;
   }
 
-  >main {
+  > main {
     padding: var(--content-padding);
     margin-top: var(--navbar-height);
     flex: 1 1 auto;
+    // z-index: 0;
   }
 }
 

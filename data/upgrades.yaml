@@ -1,146 +1,48 @@
-
-  - name: "Max HP Up"
-    desc: "Increase Max HP by 4% per level."
-    costs:
-      - 200
-      - 500
-      - 1200
-      - 2750
-      - 6000
-      - 12000
-      - 18000
-      - 24000
-      - 30000
-      - 36000
-  - name: "ATK Up"
-    desc: "Increase all damage by 6% per level."
-    costs:
-      - 300
-      - 750
-      - 1800
-      - 4100
-      - 9100
-      - 18000
-      - 25000
-      - 31000
-      - 37000
-      - 43000
-  - name: "SPD Up"
-    desc: "Increase movement speed by 6% per level."
-    costs:
-      - 200
-      - 500
-      - 1200
-      - 2750
-      - 6000
-      - 12000
-      - 18000
-      - 24000
-      - 30000
-      - 36000
-  - name: "Crit Up"
-    desc: "Increase critical hit chance by 2% per level."
-    costs:
-      - 300
-      - 750
-      - 1800
-      - 4100
-      - 9100
-  - name: "Pick Up Range"
-    desc: "Increase base pick up range by 10% per level."
-    costs:
-      - 200
-      - 500
-      - 1200
-      - 2750
-      - 6000
-      - 12000
-      - 18000
-      - 24000
-      - 30000
-      - 36000
-  - name: "Haste Up"
-    desc: "Increase attack speed by 4% per level."
-    costs:
-      - 400
-      - 1000
-      - 2400
-      - 5500
-      - 12000
-  - name: "Regeneration"
-    desc: "Slowly heals 1 HP every 5 seconds. +1 HP per level."
-    costs:
-      - 200
-      - 500
-      - 1200
-      - 2750
-      - 6000
-  - name: "Special Attack"
-    desc: "Unlocks the special attack for all characters. Press the secondary button (X) to use."
-    costs:
-      - 500
-  - name: "Special Cooldown Reduction"
-    desc: "Reduces the cooldown time of special attack by 3% per level."
-    costs:
-      - 500
-      - 1250
-      - 3000
-      - 6900
-      - 15000
-  - name: "Growth"
-    desc: "Increase the damage of Character Main Weapons and Special Attacks by 2% per in-game level."
-    costs:
-      - 1000
-  - name: "EXP Gain Up"
-    desc: "Increases the amount of EXP gained by 4% per level."
-    costs:
-      - 300
-      - 750
-      - 1800
-      - 4100
-      - 9100
-  - name: "Food Drops Up"
-    desc: "Increases the rate that food is dropped by 4% per level."
-    costs:
-      - 150
-      - 375
-      - 900
-      - 2000
-      - 4500
-  - name: "Money Gain Up"
-    desc: "Increases the amount of HoloCoins gained by 20% per level."
-    costs:
-      - 400
-      - 1000
-      - 2400
-      - 5500
-      - 12000
-      - 20000
-      - 30000
-      - 40000
-      - 50000
-      - 60000
-  - name: "Reroll"
-    desc: "Grants a use of Reroll when leveling up."
-    costs:
-      - 2500
-      - 5000
-      - 7500
-      - 10000
-      - 12500
-  - name: "Enhancement Rate Up"
-    desc: "Increases the chance of success during enhancements by 3% per level."
-    costs:
-      - 300
-      - 750
-      - 1800
-      - 4100
-      - 9100
-  - name: "Defense Up"
-    desc: "Increases defense, reducing damage taken by 3% per level."
-    costs:
-      - 500
-      - 1250
-      - 3000
-      - 6900
-      - 15000
+- name: "Max HP Up"
+  desc: "Increase Max HP by 4% per level."
+  costs: [200, 500, 1200, 2750, 6000, 12000, 18000, 24000, 30000, 36000]
+- name: "ATK Up"
+  desc: "Increase all damage by 6% per level."
+  costs: [300, 750, 1800, 4100, 9100, 18000, 25000, 31000, 37000, 43000]
+- name: "SPD Up"
+  desc: "Increase movement speed by 6% per level."
+  costs: [200, 500, 1200, 2750, 6000, 12000, 18000, 24000, 30000, 36000]
+- name: "Crit Up"
+  desc: "Increase critical hit chance by 2% per level."
+  costs: [300, 750, 1800, 4100, 9100]
+- name: "Pick Up Range"
+  desc: "Increase base pick up range by 10% per level."
+  costs: [200, 500, 1200, 2750, 6000, 12000, 18000, 24000, 30000, 36000]
+- name: "Haste Up"
+  desc: "Increase attack speed by 4% per level."
+  costs: [400, 1000, 2400, 5500, 12000]
+- name: "Regeneration"
+  desc: "Slowly heals 1 HP every 5 seconds. +1 HP per level."
+  costs: [200, 500, 1200, 2750, 6000]
+- name: "Special Attack"
+  desc: "Unlocks the special attack for all characters. Press the secondary button (X) to use."
+  costs: [500]
+- name: "Special Cooldown Reduction"
+  desc: "Reduces the cooldown time of special attack by 3% per level."
+  costs: [500, 1250, 3000, 6900, 15000]
+- name: "Growth"
+  desc: "Increase the damage of Character Main Weapons and Special Attacks by 2% per in-game level."
+  costs: [1000]
+- name: "EXP Gain Up"
+  desc: "Increases the amount of EXP gained by 4% per level."
+  costs: [300, 750, 1800, 4100, 9100]
+- name: "Food Drops Up"
+  desc: "Increases the rate that food is dropped by 4% per level."
+  costs: [150, 375, 900, 2000, 4500]
+- name: "Money Gain Up"
+  desc: "Increases the amount of HoloCoins gained by 20% per level."
+  costs: [400, 1000, 2400, 5500, 12000, 20000, 30000, 40000, 50000, 60000]
+- name: "Reroll"
+  desc: "Grants a use of Reroll when leveling up."
+  costs: [2500, 5000, 7500, 10000, 12500]
+- name: "Enhancement Rate Up"
+  desc: "Increases the chance of success during enhancements by 3% per level."
+  costs: [300, 750, 1800, 4100, 9100]
+- name: "Defense Up"
+  desc: "Increases defense, reducing damage taken by 3% per level."
+  costs: [500, 1250, 3000, 6900, 15000]

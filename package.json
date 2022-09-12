@@ -7,7 +7,7 @@
     "dev": "npm run generate-data && vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "generate-data": "node ./scripts/yaml-to-json.js",
+    "data": "node ./scripts/yaml-to-json.js",
     "deploy": "npm run generate-data && npm run build && node ./scripts/publish"
   },
   "dependencies": {

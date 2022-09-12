@@ -1,1045 +1,1054 @@
-  - name: "Amelia Watson"
-    gen: "Myth"
-    stats:
-      hp: 75
-      atk: 1.25
-      spd: 1.35
-      crt: 0.1
-    special:
-      name: "Slow Time"
-      desc: "Slows all targets movement by 80% and Pistol Shot shoots 50% faster for 15 seconds."
-    attack:
-      name: "Pistol Shot"
+# Myth
+- name: "Amelia Watson"
+  gen: "Myth"
+  stats:
+    hp: 75
+    atk: 1.25
+    spd: 1.35
+    crt: 0.1
+  special:
+    name: "Slow Time"
+    desc: "Slows all targets movement by 80% and Pistol Shot shoots 50% faster for 15 seconds."
+  attack:
+    name: "Pistol Shot"
+    levels:
+      - level: 1
+        desc: "Shoots 3 projectiles forward. Horizontal only."
+      - level: 2
+        desc: "Shoot 1 additional shot and each bullet can pierce +1 times."
+      - level: 3
+        desc: "Increase damage by 25%."
+      - level: 4
+        desc: "Bullets ricochet if hit limit is reached."
+      - level: 5
+        desc: "Each bullet can pierce +1 times. Reduce the time between attacks by 25%."
+      - level: 6
+        desc: "Increase damage by 40%."
+      - level: 7
+        desc: "Shoot 2 additional shots and bullets spread slightly vertically."
+  skills:
+    - name: "FPS Mastery"
       levels:
         - level: 1
-          desc: "Shoots 3 projectiles forward. Horizontal only."
+          desc: "Weapon deals {15%} more damage."
         - level: 2
-          desc: "Shoot 1 additional shot and each bullet can pierce +1 times."
+          desc: "Weapon deals {25%} more damage."
         - level: 3
-          desc: "Increase damage by 25%."
-        - level: 4
-          desc: "Bullets ricochet if hit limit is reached."
-        - level: 5
-          desc: "Each bullet can pierce +1 times. Reduce the time between attacks by 25%."
-        - level: 6
-          desc: "Increase damage by 40%."
-        - level: 7
-          desc: "Shoot 2 additional shots and bullets spread slightly vertically."
-    skills:
-      - name: "FPS Mastery"
-        levels:
-          - level: 1
-            desc: "Weapon deals {15%} more damage."
-          - level: 2
-            desc: "Weapon deals {25%} more damage."
-          - level: 3
-            desc: "Weapon deals {35%} more damage and {fires 10% faster}."
-      - name: "Bubba"
-        levels:
-          - level: 1
-            desc: "Gain a dog companion that attacks random targets, dealing {100%} of your base damage per hit."
-          - level: 2
-            desc: "Gain a dog companion that attacks random targets, dealing {150%} of your base damage per hit."
-          - level: 3
-            desc: "Gain a dog companion that attacks random targets, dealing {200%} of your base damage per hit and {stuns targets for 2 seconds on hit}."
-      - name: "Detective Eye"
-        levels:
-          - level: 1
-            desc: "Increase critical hit chance by {10%}."
-          - level: 2
-            desc: "Increase critical hit chance by {20%}."
-          - level: 3
-            desc: "Increase critical hit chance by {30%} with a {2% chance to defeat a target in 1 hit}."
-  - name: "Gawr Gura"
-    gen: "Myth"
-    stats:
-      hp: 65
-      atk: 1.1
-      spd: 1.4
-      crt: 0.5
-    special:
-      name: "Shark Call"
-      desc: "Summon a shark that deals 500% damage to all targets around Gura. Gura turns red, increasing ATK by 50% and SPD by 25% for 15 seconds."
-    notes:
-      - "The Cutting Board weapon gain a 30% size bonus when used by Gura (because Gura is flat)."
-    attack:
-      name: "Trident Thrust"
+          desc: "Weapon deals {35%} more damage and {fires 10% faster}."
+    - name: "Bubba"
       levels:
         - level: 1
-          desc: "Mid ranged stab attack in front."
+          desc: "Gain a dog companion that attacks random targets, dealing {100%} of your base damage per hit."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Gain a dog companion that attacks random targets, dealing {150%} of your base damage per hit."
         - level: 3
-          desc: "Stab one extra time, forming a V shape."
-        - level: 4
-          desc: "Reduce the time between attacks by 15%."
-        - level: 5
-          desc: "Increase damage by 40%."
-        - level: 6
-          desc: "Increase attack area by 25%."
-        - level: 7
-          desc: "Thrust 3 times in a fork-like shape."
-    skills:
-      - name: "Short Height"
-        levels:
-          - level: 1
-            desc: "Grants a {15%} chance to dodge an attack. After dodging, increase movement speed by {30%} and stay invulnerable for 0.5 second."
-          - level: 2
-            desc: "Grants a {25%} chance to dodge an attack. After dodging, increase movement speed by {40%} and stay invulnerable for 0.5 second."
-          - level: 3
-            desc: "Grants a {35%} chance to dodge an attack. After dodging, increase movement speed by {50%} and stay invulnerable for 0.5 second."
-      - name: "Shark Bite"
-        levels:
-          - level: 1
-            desc: "Attacks have a {10%} chance to place 1 'Bite Mark' (max 5). Target takes {6%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
-          - level: 2
-            desc: "Attacks have a {15%} chance to place 1 'Bite Mark' (max 5). Target takes {9%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
-          - level: 3
-            desc: "Attacks have a {120%} chance to place 1 'Bite Mark' (max 5). Target takes {12%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
-      - name: "Power of Atlantis"
-        levels:
-          - level: 1
-            desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {15%} more damage, lasting 6 seconds."
-          - level: 2
-            desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {30%} more damage, lasting 6 seconds."
-          - level: 3
-            desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {50%} more damage, lasting 6 seconds and {deal 50% damage every 0.5 seconds}."
-  - name: "Ninomae Inanis"
-    gen: "Myth"
-    stats:
-      hp: 75
-      atk: 0.9
-      spd: 1.5
-      crt: 0.01
-    notes:
-      - "The Cutting Board weapon gain a 30% size bonus when used by Ina (because Ina is flat)."
-    special:
-      name: "Tako Spin"
-      desc: "Summons 8 tentacles around Ina that spins rapidly around her, dealing 150% damage and knockback all targets."
-    attack:
-      name: "Summon Tentacle"
+          desc: "Gain a dog companion that attacks random targets, dealing {200%} of your base damage per hit and {stuns targets for 2 seconds on hit}."
+    - name: "Detective Eye"
       levels:
         - level: 1
-          desc: "A tentacle shoots out in front."
+          desc: "Increase critical hit chance by {10%}."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Increase critical hit chance by {20%}."
         - level: 3
-          desc: "Reduce the time between attacks by 20%."
-        - level: 4
-          desc: "Increase attack area by 25%."
-        - level: 5
-          desc: "Increase damage by 50%."
-        - level: 6
-          desc: "Add small knockback on hit."
-        - level: 7
-          desc: "Chain another tentacle at a random direction."
-    skills:
-      - name: "Cult"
-        levels:
-          - level: 1
-            desc: "For every target within 150px, increase ATK by {5%} up to {50%}."
-          - level: 2
-            desc: "For every target within 150px, increase ATK by {7.5%} up to {75%}."
-          - level: 3
-            desc: "For every target within 150px, increase ATK by {10%} up to {100%}."
-      - name: "The Ancient One"
-        levels:
-          - level: 1
-            desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {30%} chance to convert targets to Harmless Takodachis."
-          - level: 2
-            desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {40%} chance to convert targets to Harmless Takodachis."
-          - level: 3
-            desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {50%} chance to convert targets to Harmless Takodachis. {Harmless Takodachis heal Ina 1% HP}."
-      - name: "The Void"
-        levels:
-          - level: 1
-            desc: "Targets within {75px} of Ina move slower by {20%}."
-          - level: 2
-            desc: "Targets within {100px} of Ina move slower by {25%}."
-          - level: 3
-            desc: "Targets within {125px} of Ina move slower by {30%} and also {take 75% damage ever 2 second}."
-  - name: "Takanashi Kiara"
-    gen: "Myth"
-    stats:
-      hp: 90
-      atk: 1
-      spd: 1.4
-      crt: 0.05
-    special:
-      name: "Phoenix Fire"
-      desc: "Explode with a big burst of flames, dealing 600% damage and creating a ring of fire around her that deals 50% damage per hit."
-    attack:
-      name: "Phoenix Sword"
+          desc: "Increase critical hit chance by {30%} with a {2% chance to defeat a target in 1 hit}."
+- name: "Gawr Gura"
+  gen: "Myth"
+  stats:
+    hp: 65
+    atk: 1.1
+    spd: 1.4
+    crt: 0.5
+  special:
+    name: "Shark Call"
+    desc: "Summon a shark that deals 500% damage to all targets around Gura. Gura turns red, increasing ATK by 50% and SPD by 25% for 15 seconds."
+  notes:
+    - "The Cutting Board weapon gain a 30% size bonus when used by Gura (because Gura is flat)."
+  attack:
+    name: "Trident Thrust"
+    levels:
+      - level: 1
+        desc: "Mid ranged stab attack in front."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Stab one extra time, forming a V shape."
+      - level: 4
+        desc: "Reduce the time between attacks by 15%."
+      - level: 5
+        desc: "Increase damage by 40%."
+      - level: 6
+        desc: "Increase attack area by 25%."
+      - level: 7
+        desc: "Thrust 3 times in a fork-like shape."
+  skills:
+    - name: "Short Height"
       levels:
         - level: 1
-          desc: "Short ranged slash in front."
+          desc: "Grants a {15%} chance to dodge an attack. After dodging, increase movement speed by {30%} and stay invulnerable for 0.5 second."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Grants a {25%} chance to dodge an attack. After dodging, increase movement speed by {40%} and stay invulnerable for 0.5 second."
         - level: 3
-          desc: "Increase attack area by 25%."
-        - level: 4
-          desc: "Reduce the time between attacks by 15%."
-        - level: 5
-          desc: "Can hit twice per slash."
-        - level: 6
-          desc: "Increase damage by 20%."
-        - level: 7
-          desc: "Sword is engulfed in flames, and can hit many times. Also leave a burning fire under hit targets."
-    skills:
-      - name: "Dancer"
-        levels:
-          - level: 1
-            desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {2%} every second, up to {40%}. If stopped, buff will slowly decrease."
-          - level: 2
-            desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {3%} every second, up to {60%}. If stopped, buff will slowly decrease."
-          - level: 3
-            desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {4%} every second, up to {80%}. Also increase Crit chance by 1% per stack"
-      - name: "Trailblazer"
-        levels:
-          - level: 1
-            desc: "Increase SPD by {10%}. Leafve a burning fire underneath Kiara whenever she moves that deals {30%} damage per hit. Lasts 5 seconds."
-          - level: 2
-            desc: "Increase SPD by {15%}. Leafve a burning fire underneath Kiara whenever she moves that deals {50%} damage per hit. Lasts 5 seconds."
-          - level: 3
-            desc: "Increase SPD by {20%}. Leafve a burning fire underneath Kiara whenever she moves that deals {75%} damage per hit. Lasts 5 seconds."
-      - name: "Phoenix Shield"
-        levels:
-          - level: 1
-            desc: "Every 10 seconds gain {a stack} of Phoenix Shield. The {next damage taken} is halved and become invulnerable for 0.25 seconds."
-          - level: 2
-            desc: "Every 10 seconds gain {2 stacks} of Phoenix Shield. The {next 2 hits taken} are halved and become invulnerable for 0.25 seconds."
-          - level: 3
-            desc: "Every 10 seconds gain {3 stacks} of Phoenix Shield. The {next 3 hits taken} are halved and become invulnerable for 0.25 seconds."
-  - name: "Mori Calliope"
-    gen: "Myth"
-    stats:
-      hp: 70
-      atk: 1.1
-      spd: 1.3
-      crt: 0.1
-    special:
-      name: "The Reaper"
-      desc: "Temporarily buff yourself to increase Scythe Swing damage by 300% and increase damage of all critical hits to 300% for 15 seconds."
-    attack:
-      name: "Scythe Swing"
+          desc: "Grants a {35%} chance to dodge an attack. After dodging, increase movement speed by {50%} and stay invulnerable for 0.5 second."
+    - name: "Shark Bite"
       levels:
         - level: 1
-          desc: "Swings in a half circle arc in front."
+          desc: "Attacks have a {10%} chance to place 1 'Bite Mark' (max 5). Target takes {6%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Attacks have a {15%} chance to place 1 'Bite Mark' (max 5). Target takes {9%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
         - level: 3
-          desc: "Increase attack area by 20%."
-        - level: 4
-          desc: "Increase damage by 30%."
-        - level: 5
-          desc: "Reduce the time between attacks by 10%."
-        - level: 6
-          desc: "Increase attack area by 20%."
-        - level: 7
-          desc: "Increase damage by 40%. Has a 7% chance to instant KO."
-    skills:
-      - name: "Death"
-        levels:
-          - level: 1
-            desc: "Defeating a target with Scythe Swing or Death has a {20%} chance to create an explosion for {60%} damage, and a {5%} chance to KO."
-          - level: 2
-            desc: "Defeating a target with Scythe Swing or Death has a {25%} chance to create an explosion for {90%} damage, and a {8%} chance to KO."
-          - level: 3
-            desc: "Defeating a target with Scythe Swing or Death has a {30%} chance to create an explosion for {120%} damage, and a {10%} chance to KO."
-      - name: "Work-a-holic"
-        levels:
-          - level: 1
-            desc: "For each target defeated, increase ATK by {3%} for 5 seconds up to {60%}. Duration refreshes when defeating a target."
-          - level: 2
-            desc: "For each target defeated, increase ATK by {4%} for 5 seconds up to {80%}. Duration refreshes when defeating a target."
-          - level: 3
-            desc: "For each target defeated, increase ATK by {5%} for 5 seconds up to {100%}, and SPD by 2% up to 40%. Duration refreshes when defeating a target."
-      - name: "The Rapper"
-        levels:
-          - level: 1
-            desc: "Targets within {100px} take {20%} extra damage."
-          - level: 2
-            desc: "Targets within {125px} take {30%} extra damage."
-          - level: 3
-            desc: "Targets within {150px} take {40%} extra damage and have {10% additional chance to be critically hit}."
-  - name: "Hakos Baelz"
-    gen: "Council"
-    stats:
-      hp: 60
-      atk: 1.1
-      spd: 1.6
-      crt: 0.1
-    special:
-      name: "Absolute Chaos"
-      desc: "Fire all weapons at the same time with zero delay for 5 seconds."
-    attack:
-      name: "Play Dice"
+          desc: "Attacks have a {120%} chance to place 1 'Bite Mark' (max 5). Target takes {12%} more damage per stack and you gain a 20% chance per stack to be healed for 1% HP when defeating a target."
+    - name: "Power of Atlantis"
       levels:
         - level: 1
-          desc: "Throw a die in front. The number on the die determines the damage."
+          desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {15%} more damage, lasting 6 seconds."
         - level: 2
-          desc: "Increase damage by 30%"
+          desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {30%} more damage, lasting 6 seconds."
         - level: 3
-          desc: "Throw 2 dice."
-        - level: 4
-          desc: "Dice shoots out farther, and increase area of attack by 30%."
-        - level: 5
-          desc: "Add small knockback on hit."
-        - level: 6
-          desc: "Increase damage by 30%."
-        - level: 7
-          desc: "Throw 3 dice."
-    skills:
-      - name: "CRATitcal Hit"
-        levels:
-          - level: 1
-            desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {2 times} damage."
-          - level: 2
-            desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {3 times} damage."
-          - level: 3
-            desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {4 times} damage."
-      - name: "Down Under"
-        levels:
-          - level: 1
-            desc: "Attacks have a {10%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move."
-          - level: 2
-            desc: "Attacks have a {15%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move."
-          - level: 3
-            desc: "Attacks have a {20%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move and {take extra 20% damage}."
-      - name: "RatNG"
-        levels:
-          - level: 1
-            desc: "Reduce your attack damage by {15%}, but increase Critical Chance by 30%."
-          - level: 2
-            desc: "Reduce your attack damage by {7%}, but increase Critical Chance by 30%."
-          - level: 3
-            desc: "Increase Critical Chance by 30%."
-  - name: "Ouro Kronii"
-    gen: "Council"
-    stats:
-      hp: 70
-      atk: 1.2
-      spd: 1.35
-      crt: 0.03
-    special:
-      name: "Ruler of Time"
-      desc: "Every second, emit a time blast that deals damage. Each second, the emitted blast becomes stronger."
-    attack:
-      name: "Clock Hands"
+          desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {50%} more damage, lasting 6 seconds and {deal 50% damage every 0.5 seconds}."
+- name: "Ninomae Inanis"
+  gen: "Myth"
+  stats:
+    hp: 75
+    atk: 0.9
+    spd: 1.5
+    crt: 0.01
+  notes:
+    - "The Cutting Board weapon gain a 30% size bonus when used by Ina (because Ina is flat)."
+  special:
+    name: "Tako Spin"
+    desc: "Summons 8 tentacles around Ina that spins rapidly around her, dealing 150% damage and knockback all targets."
+  attack:
+    name: "Summon Tentacle"
+    levels:
+      - level: 1
+        desc: "A tentacle shoots out in front."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Reduce the time between attacks by 20%."
+      - level: 4
+        desc: "Increase attack area by 25%."
+      - level: 5
+        desc: "Increase damage by 50%."
+      - level: 6
+        desc: "Add small knockback on hit."
+      - level: 7
+        desc: "Chain another tentacle at a random direction."
+  skills:
+    - name: "Cult"
       levels:
         - level: 1
-          desc: "Stab forward with a large clock hand, a second smaller clock hand will attack a random target."
+          desc: "For every target within 150px, increase ATK by {5%} up to {50%}."
         - level: 2
-          desc: "Increase area of attack by 20%."
+          desc: "For every target within 150px, increase ATK by {7.5%} up to {75%}."
         - level: 3
-          desc: "Increase damage by 30%."
-        - level: 4
-          desc: "Reduce the time between attack by 10%."
-        - level: 5
-          desc: "Increase area of attack by 30%."
-        - level: 6
-          desc: "Reduce time between attack by 15%."
-        - level: 7
-          desc: "Increase damage by 50% and stun targets for 0.5 seconds."
-    skills:
-      - name: "Kroniicopter"
-        levels:
-          - level: 1
-            desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {10%} to SPD and Haste for 5 seconds."
-          - level: 2
-            desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {15%} to SPD and Haste for 5 seconds."
-          - level: 3
-            desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {20%} to SPD and Haste for 5 seconds."
-      - name: "Time Bubble"
-        levels:
-          - level: 1
-            desc: "Every 10 seconds, create a {small} time bubble that freezes targets in time, preventing them from moving or attacking."
-          - level: 2
-            desc: "Every 10 seconds, create a {medium} time bubble that freezes targets in time, preventing them from moving or attacking."
-          - level: 3
-            desc: "Every 10 seconds, create a {large} time bubble that freezes targets in time, preventing them from moving or attacking."
-      - name: "Perfection"
-        levels:
-          - level: 1
-            desc: "While HP is full, increase ATK, SPD, Pickup Range by {20%}. Increase Haste and Critical Chance by {10%}."
-          - level: 2
-            desc: "While HP is full, increase ATK, SPD, Pickup Range by {33%}. Increase Haste and Critical Chance by {15%}."
-          - level: 3
-            desc: "While HP is full, increase ATK, SPD, Pickup Range by {50%}. Increase Haste and Critical Chance by {20%}."
-  - name: "Ceres Fauna"
-    gen: "Council"
-    stats:
-      hp: 65
-      atk: 1
-      spd: 1.3
-      crt: 0.03
-    special:
-      name: "Mother Nature"
-      desc: "Summon a giant tree that creates a zone that heals Fauna and grants invincibility for 10 seconds."
-    attack:
-      name: "Nature Shield"
+          desc: "For every target within 150px, increase ATK by {10%} up to {100%}."
+    - name: "The Ancient One"
       levels:
         - level: 1
-          desc: "Create 3 razor sharp leaves that spiral outward."
+          desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {30%} chance to convert targets to Harmless Takodachis."
         - level: 2
-          desc: "Increase damage by 20% and increase hit limit by 5."
+          desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {40%} chance to convert targets to Harmless Takodachis."
         - level: 3
-          desc: "Reduce the time between attacks by 15%."
-        - level: 4
-          desc: "Shoot 2 additional leaves."
-        - level: 5
-          desc: "Increase area of attack by 30% and increase hit limit by 5."
-        - level: 6
-          desc: "Increase damage by 30% and remove hit limit."
-        - level: 7
-          desc: "Shoot 2 additional leaves and aim towards targets."
-    skills:
-      - name: "Sapling"
-        levels:
-          - level: 1
-            desc: "Defeated targets have a {5%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {30%} for 10 seconds."
-          - level: 2
-            desc: "Defeated targets have a {7%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {40%} for 10 seconds."
-          - level: 3
-            desc: "Defeated targets have a {10%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {50%} for 10 seconds."
-      - name: "Guardian Tree"
-        levels:
-          - level: 1
-            desc: "Every time you heal, a branch will grow under a random nearby target and deal {200%} damage."
-          - level: 2
-            desc: "Every time you heal, a branch will grow under a random nearby target and deal {250%} damage."
-          - level: 3
-            desc: "Every time you heal, a branch will grow under a random nearby target and deal {300%} damage."
-      - name: "Whisperer"
-        levels:
-          - level: 1
-            desc: "Every 10 second, gain 1 \"Whisper\" (max {3}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
-          - level: 2
-            desc: "Every 10 second, gain 1 \"Whisper\" (max {4}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
-          - level: 3
-            desc: "Every 10 second, gain 1 \"Whisper\" (max {5}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
-  - name: "Nanashi Mumei"
-    gen: "Council"
-    stats:
-      hp: 60
-      atk: 0.85
-      spd: 1.4
-      crt: 0.05
-    special:
-      name: "True Horror"
-      desc: "Destroy everything in sight (except for bosses). There is a 30% that drops are not destroyed."
-    attack:
-      name: "Bird Feather"
+          desc: "Summon AO. Every 5 seconds, AO creates a zone that has a {50%} chance to convert targets to Harmless Takodachis. {Harmless Takodachis heal Ina 1% HP}."
+    - name: "The Void"
       levels:
         - level: 1
-          desc: "Shoot a bunch of feathers at a speard. Pierces through targets."
+          desc: "Targets within {75px} of Ina move slower by {20%}."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Targets within {100px} of Ina move slower by {25%}."
         - level: 3
-          desc: "Increase hit limit by 5."
-        - level: 4
-          desc: "Shoot 1 additional feather."
-        - level: 5
-          desc: "Reduce the time between attacks by 30% and increase hit limit by 5."
-        - level: 6
-          desc: "Shoot 2 additional feather."
-        - level: 7
-          desc: "Feathers home into targets 3 times."
-    skills:
-      - name: "Friend"
-        levels:
-          - level: 1
-            desc: "Summon a Friend that uses one of you weapons at random every 5 second at {80%} damage."
-          - level: 2
-            desc: "Summon a Friend that uses one of you weapons at random every 5 second at {100%} damage."
-          - level: 3
-            desc: "Summon a Friend that uses one of you weapons at random every 5 second at {120%} damage."
-      - name: "History"
-        levels:
-          - level: 1
-            desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {100%})."
-          - level: 2
-            desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {150%})."
-          - level: 3
-            desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {200%})."
-      - name: "Civilization"
-        levels:
-          - level: 1
-            desc: "Increase ATK by {1%} for every target currently on the screen, up to {100%}."
-          - level: 2
-            desc: "Increase ATK by {2%} for every target currently on the screen, up to {120%}."
-          - level: 3
-            desc: "Increase ATK by {3%} for every target currently on the screen, up to {150%}."
-  - name: "Tsukumo Sana"
-    gen: "Council"
-    stats:
-      hp: 80
-      atk: 0.8
-      spd: 1.3
-      crt: 0.01
-    special:
-      name: "Become Beeg"
-      desc: "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible to all attacks and deals 200% damage to all targets. Then all absorb all EXP on screen."
-    attack:
-      name: "Orbit"
+          desc: "Targets within {125px} of Ina move slower by {30%} and also {take 75% damage ever 2 second}."
+- name: "Takanashi Kiara"
+  gen: "Myth"
+  stats:
+    hp: 90
+    atk: 1
+    spd: 1.4
+    crt: 0.05
+  special:
+    name: "Phoenix Fire"
+    desc: "Explode with a big burst of flames, dealing 600% damage and creating a ring of fire around her that deals 50% damage per hit."
+  attack:
+    name: "Phoenix Sword"
+    levels:
+      - level: 1
+        desc: "Short ranged slash in front."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Increase attack area by 25%."
+      - level: 4
+        desc: "Reduce the time between attacks by 15%."
+      - level: 5
+        desc: "Can hit twice per slash."
+      - level: 6
+        desc: "Increase damage by 20%."
+      - level: 7
+        desc: "Sword is engulfed in flames, and can hit many times. Also leave a burning fire under hit targets."
+  skills:
+    - name: "Dancer"
       levels:
         - level: 1
-          desc: "Create an orbitting planet. Hits multiple targets."
+          desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {2%} every second, up to {40%}. If stopped, buff will slowly decrease."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {3%} every second, up to {60%}. If stopped, buff will slowly decrease."
         - level: 3
-          desc: "Increase area of attack by 20% and range by 20%."
-        - level: 4
-          desc: "Increase damage by 33%."
-        - level: 5
-          desc: "Increase area of attack by 30% and range by 30%."
-        - level: 6
-          desc: "Reduce the time between attacks by 10%."
-        - level: 7
-          desc: "Create a second planet and knockbacks on hit."
-    skills:
-      - name: "Speaker Of Space"
-        levels:
-          - level: 1
-            desc: "Increase area of attack and ATK by {10%}. All attack damage is also increased by area increasing effects."
-          - level: 2
-            desc: "Increase area of attack and ATK by {20%}. All attack damage is also increased by area increasing effects."
-          - level: 3
-            desc: "Increase area of attack and ATK by {30%}. All attack damage is also increased by area increasing effects."
-      - name: "Astrology"
-        levels:
-          - level: 1
-            desc: "Every 15 second, gain a 15 seconds {20%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {30%} HP."
-          - level: 2
-            desc: "Every 15 second, gain a 15 seconds {30%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {40%} HP."
-          - level: 3
-            desc: "Every 15 second, gain a 15 seconds {40%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {50%} HP."
-      - name: "Gravity"
-        levels:
-          - level: 1
-            desc: "Every 5 second, create a gravitational blast that deals {125%} damage. Damage is also increased by area increasing effects."
-          - level: 2
-            desc: "Every 5 second, create a gravitational blast that deals {150%} damage. Damage is also increased by area increasing effects."
-          - level: 3
-            desc: "Every 5 second, create a gravitational blast that deals {200%} damage. Damage is also increased by area increasing effects."
-  - name: "Irys"
-    gen: "Hope"
-    stats:
-      hp: 50
-      atk: 1.1
-      spd: 1.5
-      crt: 0.05
-    special:
-      name: "Hope is Descending"
-      desc: "Hope descends from the top of screen, and then explodes for 250% damage."
-    attack:
-      name: "Nephilim Blast"
+          desc: "Moving gradually heals 5% HP per 5 seconds and increases ATK by {4%} every second, up to {80%}. Also increase Crit chance by 1% per stack"
+    - name: "Trailblazer"
       levels:
         - level: 1
-          desc: "Shoots dual light and dark blast."
+          desc: "Increase SPD by {10%}. Leafve a burning fire underneath Kiara whenever she moves that deals {30%} damage per hit. Lasts 5 seconds."
         - level: 2
-          desc: "Increase damage by 20%"
+          desc: "Increase SPD by {15%}. Leafve a burning fire underneath Kiara whenever she moves that deals {50%} damage per hit. Lasts 5 seconds."
         - level: 3
-          desc: "Increase attack area by 50%. Each blast can pierce +3 times."
-        - level: 4
-          desc: "Reduce the time between attacks by 25%."
-        - level: 5
-          desc: "Can pierce through targets."
-        - level: 6
-          desc: "Increase damage by 33%."
-        - level: 7
-          desc: "Blasts becomes a short beam that hits multiple times."
-    skills:
-      - name: "Half Angel"
-        levels:
-          - level: 1
-            desc: "Critical hits have a {10%} chance to heal {1} HP. There is a 0.3 seconds cooldown between each heal."
-          - level: 2
-            desc: "Critical hits have a {15%} chance to heal {2} HP. There is a 0.3 seconds cooldown between each heal."
-          - level: 3
-            desc: "Critical hits have a {20%} chance to heal {3} HP. There is a 0.3 seconds cooldown between each heal."
-      - name: "Half Demon"
-        levels:
-          - level: 1
-            desc: "Increase damage by {3%}, up to {30%}, for 5 seconds every time Irys heals. Each heal resets the timer."
-          - level: 2
-            desc: "Increase damage by {4%}, up to {40%}, for 5 seconds every time Irys heals. Each heal resets the timer."
-          - level: 3
-            desc: "Increase damage by {5%}, up to {50%}, for 5 seconds every time Irys heals. Each heal resets the timer."
-      - name: "Hope"
-        levels:
-          - level: 1
-            desc: "Upon being hit, there is a {20%} chance to heal {15%} HP."
-          - level: 2
-            desc: "Upon being hit, there is a {25%} chance to heal {20%} HP."
-          - level: 3
-            desc: "Upon being hit, there is a {30%} chance to heal {30%} HP and {create a shockwave that knocks back all targets}."
-  - name: "Inugami Korone"
-    gen: "Gamers"
-    stats:
-      hp: 60
-      atk: 1
-      spd: 1.4
-      crt: 0.01
-    special:
-      name: "Ending Making Time!"
-      desc: "Create waves of giant exploding Yubi's. Targets defeated get their Yubi's taken."
-    attack:
-      name: "Orayo!"
+          desc: "Increase SPD by {20%}. Leafve a burning fire underneath Kiara whenever she moves that deals {75%} damage per hit. Lasts 5 seconds."
+    - name: "Phoenix Shield"
       levels:
         - level: 1
-          desc: "Punch towards the front in a random cone."
+          desc: "Every 10 seconds gain {a stack} of Phoenix Shield. The {next damage taken} is halved and become invulnerable for 0.25 seconds."
         - level: 2
-          desc: "Increase attack area by 25%."
+          desc: "Every 10 seconds gain {2 stacks} of Phoenix Shield. The {next 2 hits taken} are halved and become invulnerable for 0.25 seconds."
         - level: 3
-          desc: "Increase damage by 30%."
-        - level: 4
-          desc: "Increase amount of punches by 1."
-        - level: 5
-          desc: "Increases attack area by 25%. Widen Korone's punch range slightly."
-        - level: 6
-          desc: "Increases amount of punches by 1."
-        - level: 7
-          desc: "Reduce delay between combination punches by 50%."
-    skills:
-      - name: "Korone Brainwashing"
-        levels:
-          - level: 1
-            desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {0.5%} for 7 seconds."
-          - level: 2
-            desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {0.75%} for 7 seconds."
-          - level: 3
-            desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {1%} for 7 seconds."
-      - name: "Endurance"
-        levels:
-          - level: 1
-            desc: "Reduce damage taken by {5%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {15%} and further damage reduction temporarily."
-          - level: 2
-            desc: "Reduce damage taken by {10%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {30%} and further damage reduction temporarily."
-          - level: 3
-            desc: "Reduce damage taken by {15%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {60%} and further damage reduction temporarily."
-      - name: "Choco Coronet"
-        levels:
-          - level: 1
-            desc: "Increase all healing by {10%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {10} for 10 seconds."
-          - level: 2
-            desc: "Increase all healing by {20%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {15} for 10 seconds."
-          - level: 3
-            desc: "Increase all healing by {30%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {20} for 10 seconds."
-  - name: "Nekomata Okayu"
-    gen: "Gamers"
-    stats:
-      hp: 60
-      atk: 0.9
-      spd: 1.4
-      crt: 0.05
-    special:
-      name: "Mogu Mogu"
-      desc: "For 6 seconds, Okayu is invincible and increases SPD by 50%. Non-boss targets touched will be eater, healing 5% HP."
-    attack:
-      name: "Onigiri"
+          desc: "Every 10 seconds gain {3 stacks} of Phoenix Shield. The {next 3 hits taken} are halved and become invulnerable for 0.25 seconds."
+- name: "Mori Calliope"
+  gen: "Myth"
+  stats:
+    hp: 70
+    atk: 1.1
+    spd: 1.3
+    crt: 0.1
+  special:
+    name: "The Reaper"
+    desc: "Temporarily buff yourself to increase Scythe Swing damage by 300% and increase damage of all critical hits to 300% for 15 seconds."
+  attack:
+    name: "Scythe Swing"
+    levels:
+      - level: 1
+        desc: "Swings in a half circle arc in front."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Increase attack area by 20%."
+      - level: 4
+        desc: "Increase damage by 30%."
+      - level: 5
+        desc: "Reduce the time between attacks by 10%."
+      - level: 6
+        desc: "Increase attack area by 20%."
+      - level: 7
+        desc: "Increase damage by 40%. Has a 7% chance to instant KO."
+  skills:
+    - name: "Death"
       levels:
         - level: 1
-          desc: "Throw an onigiri at an arc."
+          desc: "Defeating a target with Scythe Swing or Death has a {20%} chance to create an explosion for {60%} damage, and a {5%} chance to KO."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Defeating a target with Scythe Swing or Death has a {25%} chance to create an explosion for {90%} damage, and a {8%} chance to KO."
         - level: 3
-          desc: "Throw 2 onigiri."
-        - level: 4
-          desc: "Increase attack area by 40%."
-        - level: 5
-          desc: "Throw 4 onigiri."
-        - level: 6
-          desc: "Speed of onirigir is increased by 20%."
-        - level: 7
-          desc: "Throw 6 onigiri and slows down targets by 30% for 5 seconds."
-    skills:
-      - name: "Yummy"
-        levels:
-          - level: 1
-            desc: "Increase food drops by {50%}. When eating food, gain {40%} ATK, {15%} SPD, and {5%} Crit for 8 seconds."
-          - level: 2
-            desc: "Increase food drops by {75%}. When eating food, gain {60%} ATK, {25%} SPD, and {10%} Crit for 8 seconds."
-          - level: 3
-            desc: "Increase food drops by {100%}. When eating food, gain {80%} ATK, {35%} SPD, and {15%} Crit for 8 seconds."
-      - name: "Sensitive Voice"
-        levels:
-          - level: 1
-            desc: "Increase Crit by {5%}. Crits have a {10%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {3%} HP."
-          - level: 2
-            desc: "Increase Crit by {10%}. Crits have a {15%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {4%} HP."
-          - level: 3
-            desc: "Increase Crit by {15%}. Crits have a {20%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {5%} HP."
-      - name: "Feast"
-        levels:
-          - level: 1
-            desc: "When a target is defeated, there is a {6%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
-          - level: 2
-            desc: "When a target is defeated, there is a {8%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
-          - level: 3
-            desc: "When a target is defeated, there is a {10%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
-  - name: "Shirakami Fubuki"
-    gen: "Gamers"
-    stats:
-      hp: 55
-      atk: 1
-      spd: 1.5
-      crt: 0.05
-    special:
-      name: "Fubuki Storm"
-      desc: "Summon many katanas, flurrying around for 5 seconds. During this time, Fubuki dodges all attacks."
-    attack:
-      name: "Fox Tail"
+          desc: "Defeating a target with Scythe Swing or Death has a {30%} chance to create an explosion for {120%} damage, and a {10%} chance to KO."
+    - name: "Work-a-holic"
       levels:
         - level: 1
-          desc: "Swipes Tail in front at close range."
+          desc: "For each target defeated, increase ATK by {3%} for 5 seconds up to {60%}. Duration refreshes when defeating a target."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "For each target defeated, increase ATK by {4%} for 5 seconds up to {80%}. Duration refreshes when defeating a target."
         - level: 3
-          desc: "Increase attack area by 20%."
-        - level: 4
-          desc: "Swing tail in front and back."
-        - level: 5
-          desc: "Reduce time between attacks by 15%."
-        - level: 6
-          desc: "Increase attack area by 20%."
-        - level: 7
-          desc: "If Fox tail hits a target, there is a 20% chance to summon a Fubuki Sword that deals 100% damage."
-    skills:
-      - name: "Friendzone"
-        levels:
-          - level: 1
-            desc: "Gain a buff that increases SPD by {20%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {1} second."
-          - level: 2
-            desc: "Gain a buff that increases SPD by {25%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {2} second."
-          - level: 3
-            desc: "Gain a buff that increases SPD by {30%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {3} second."
-      - name: "Kon Kon"
-        levels:
-          - level: 1
-            desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {40%} chance to create a noise burst dealing {100%} damage."
-          - level: 2
-            desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {60%} chance to create a noise burst dealing {125%} damage."
-          - level: 3
-            desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {80%} chance to create a noise burst dealing {150%} damage."
-      - name: "Fox King"
-        levels:
-          - level: 1
-            desc: "Increase SPD by {10%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {100%}."
-          - level: 2
-            desc: "Increase SPD by {15%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {125%}."
-          - level: 3
-            desc: "Increase SPD by {20%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {150%}."
-  - name: "Ookami Mio"
-    gen: "Gamers"
-    stats:
-      hp: 70
-      atk: 0.85
-      spd: 1.4
-      crt: 0.01
-    special:
-      name: "Hatotaurus"
-      desc: "Summon Hatotaurus, punching continuously forward for 6 seconds. During this time, Mio takes 30% less damage."
-    attack:
-      name: "Tarot Cards"
+          desc: "For each target defeated, increase ATK by {5%} for 5 seconds up to {100%}, and SPD by 2% up to 40%. Duration refreshes when defeating a target."
+    - name: "The Rapper"
       levels:
         - level: 1
-          desc: "Throw a card that quickly returns back."
+          desc: "Targets within {100px} take {20%} extra damage."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Targets within {125px} take {30%} extra damage."
         - level: 3
-          desc: "Throw 2 tarrot cards."
-        - level: 4
-          desc: "Reduce time between attacks by 15%."
-        - level: 5
-          desc: "Throw cards farther and increase damage by 40%."
-        - level: 6
-          desc: "Throw 3 tarot cards."
-        - level: 7
-          desc: "When hitting a target, there is a 30% chance that the target may lose 20% ATK, SPD, or take 20% more damage."
-    skills:
-      - name: "Omen"
-        levels:
-          - level: 1
-            desc: "Tarot Cards has a {10%} chance to create an Omen, dealing {200%} damage to targets. If Omen defeats a target, the special meter fills slightly."
-          - level: 2
-            desc: "Tarot Cards has a {15%} chance to create an Omen, dealing {250%} damage to targets. If Omen defeats a target, the special meter fills slightly."
-          - level: 3
-            desc: "Tarot Cards has a {20%} chance to create an Omen, dealing {300%} damage to targets. If Omen defeats a target, the special meter fills slightly."
-      - name: "Mama"
-        levels:
-          - level: 1
-            desc: "Every 4 seconds, heal 1% for each target within {100px}, up to {10%}."
-          - level: 2
-            desc: "Every 4 seconds, heal 1% for each target within {125px}, up to {20%}."
-          - level: 3
-            desc: "Every 4 seconds, heal 1% for each target within {150px}, up to {30%}."
-      - name: "Cheerful Laugh"
-        levels:
-          - level: 1
-            desc: "The closer a target is within 150px, the more damage they receive, up to {50%}."
-          - level: 2
-            desc: "The closer a target is within 150px, the more damage they receive, up to {100%}."
-          - level: 3
-            desc: "The closer a target is within 150px, the more damage they receive, up to {150%}."
-  - name: "Tokino Sora"
-    gen: "Gen 0"
-    stats:
-      hp: 65
-      atk: 1
-      spd: 1.4
-      crt: 0.03
-    special:
-      name: "Idol Dream"
-      desc: "Spread idol wings. Increase ATK and healing received by 50% for 10 seconds."
-    attack:
-      name: "Bright Star"
+          desc: "Targets within {150px} take {40%} extra damage and have {10% additional chance to be critically hit}."
+
+# Council
+- name: "Hakos Baelz"
+  gen: "Council"
+  stats:
+    hp: 60
+    atk: 1.1
+    spd: 1.6
+    crt: 0.1
+  special:
+    name: "Absolute Chaos"
+    desc: "Fire all weapons at the same time with zero delay for 5 seconds."
+  attack:
+    name: "Play Dice"
+    levels:
+      - level: 1
+        desc: "Throw a die in front. The number on the die determines the damage."
+      - level: 2
+        desc: "Increase damage by 30%"
+      - level: 3
+        desc: "Throw 2 dice."
+      - level: 4
+        desc: "Dice shoots out farther, and increase area of attack by 30%."
+      - level: 5
+        desc: "Add small knockback on hit."
+      - level: 6
+        desc: "Increase damage by 30%."
+      - level: 7
+        desc: "Throw 3 dice."
+  skills:
+    - name: "CRATitcal Hit"
       levels:
         - level: 1
-          desc: "Shoot forward a spinning star."
+          desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {2 times} damage."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {3 times} damage."
         - level: 3
-          desc: "Stars last 1 second longer."
-        - level: 4
-          desc: "Shoot 2 stars."
-        - level: 5
-          desc: "Increase size by 30%."
-        - level: 6
-          desc: "Shoot 3 stars."
-        - level: 7
-          desc: "Stars end with a burst."
-    skills:
-      - name: "Idol Healing"
-        levels:
-          - level: 1
-            desc: "When receiving any healing, enemies within {100px} are also \"healed\", taking {125%} + X% damage where X is 2 times the heal amount."
-          - level: 2
-            desc: "When receiving any healing, enemies within {125px} are also \"healed\", taking {150%} + X% damage where X is 2 times the heal amount."
-          - level: 3
-            desc: "When receiving any healing, enemies within {150px} are also \"healed\", taking {175%} + X% damage where X is 2 times the heal amount."
-      - name: "Ankimo"
-        levels:
-          - level: 1
-            desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {50%} damage. Tagged enemies have a {20%} chance to follow Ankimo for 4 seconds."
-          - level: 2
-            desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {75%} damage. Tagged enemies have a {25%} chance to follow Ankimo for 4 seconds."
-          - level: 3
-            desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {100%} damage. Tagged enemies have a {30%} chance to follow Ankimo for 4 seconds."
-      - name: "You're The Enemy, Then"
-        levels:
-          - level: 1
-            desc: "Attacks have a {10%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {20%} chance to heal {2} HP when defeated."
-          - level: 2
-            desc: "Attacks have a {15%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {25%} chance to heal {3} HP when defeated."
-          - level: 3
-            desc: "Attacks have a {20%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {30%} chance to heal {4} HP when defeated."
-  - name: "Roboco-san"
-    gen: "Gen 0"
-    stats:
-      hp: 75
-      atk: 1
-      spd: 1.4
-      crt: 0.05
-    special:
-      name: "Hi-Spec Mode"
-      desc: "Release a discharge that deals 300% damage. For 8 seconds, Robocco gains 100% AKT, SPD, Pick Up Range, and 50% Crit and Haste."
-    attack:
-      name: "Hi-Spec Pistol"
+          desc: "Critical hits will roll a second time with the same percentage chance to deal an extended critical hit, dealing {4 times} damage."
+    - name: "Down Under"
       levels:
         - level: 1
-          desc: "Shoots a few times in aimed direction."
+          desc: "Attacks have a {10%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move."
         - level: 2
-          desc: "Shoot one more bullet."
+          desc: "Attacks have a {15%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move."
         - level: 3
-          desc: "Bullets +1 pierce."
-        - level: 4
-          desc: "Reduce time between attacks by 15%."
-        - level: 5
-          desc: "Increase damage by 20%."
-        - level: 6
-          desc: "Shoot one more bullet."
-        - level: 7
-          desc: "Gun becomes a piercing blast."
-    skills:
-      - name: "Robo-Discharge"
-        levels:
-          - level: 1
-            desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {100%} damage. +1% Discharge damage for each level Roboco has."
-          - level: 2
-            desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {125%} damage. +1% Discharge damage for each level Roboco has."
-          - level: 3
-            desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {150%} damage. +1% Discharge damage for each level Roboco has."
-      - name: "Hi-Level"
-        levels:
-          - level: 1
-            desc: "Roboco gains {1%} ATK for each level Roboco has, and {3%} Crit for every 10 levels."
-          - level: 2
-            desc: "Roboco gains {1.1%} ATK for each level Roboco has, and {4%} Crit for every 10 levels."
-          - level: 3
-            desc: "Roboco gains {1.2%} ATK for each level Roboco has, and {5%} Crit for every 10 levels."
-      - name: "Battery Charged"
-        levels:
-          - level: 1
-            desc: "Defeating a target has a {10%} chance to drop a Battery. Batteries gives an additional {50%} EXP and shocks nearby targets for 0.5 seconds."
-          - level: 2
-            desc: "Defeating a target has a {15%} chance to drop a Battery. Batteries gives an additional {75%} EXP and shocks nearby targets for 0.5 seconds."
-          - level: 3
-            desc: "Defeating a target has a {20%} chance to drop a Battery. Batteries gives an additional {100%} EXP and shocks nearby targets for 0.5 seconds."
-  - name: "Sakura Miko"
-    gen: "Gen 0"
-    stats:
-      hp: 60
-      atk: 0.9
-      spd: 1.4
-      crt: 0.01
-    special:
-      name: "Demon Lord's Domain"
-      desc: "Create a zone around Miko for 8 seconds, summoning hot flames that burn everything. Targets in this zone take 50% more damage."
-    attack:
-      name: "Sakura Gohei"
+          desc: "Attacks have a {20%} chance to cause the target to be upside down for 2 seconds. While upside down, the target can't move and {take extra 20% damage}."
+    - name: "RatNG"
       levels:
         - level: 1
-          desc: "Swing a gohei that creates a burst of Sakura blossoms."
+          desc: "Reduce your attack damage by {15%}, but increase Critical Chance by 30%."
         - level: 2
-          desc: "Increase attack area by 20%."
+          desc: "Reduce your attack damage by {7%}, but increase Critical Chance by 30%."
         - level: 3
-          desc: "Increase damage by 30%."
-        - level: 4
-          desc: "Swing twice."
-        - level: 5
-          desc: "Reduce time between attacks by 15%."
-        - level: 6
-          desc: "Increase damage by 30%."
-        - level: 7
-          desc: "On hit, target takes 25% extra damage for one second."
-    skills:
-      - name: "Baby Language?"
-        levels:
-          - level: 1
-            desc: "Attacks have {10%} chance to create a \"Nyeh\", dealing {50%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
-          - level: 2
-            desc: "Attacks have {15%} chance to create a \"Nyeh\", dealing {75%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
-          - level: 3
-            desc: "Attacks have {20%} chance to create a \"Nyeh\", dealing {100%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
-      - name: "Eroge Hero"
-        levels:
-          - level: 1
-            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {2} HP every 2 seconds. Each conquest resets the timer."
-          - level: 2
-            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {3} HP every 2 seconds. Each conquest resets the timer."
-          - level: 3
-            desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {4} HP every 2 seconds. Each conquest resets the timer."
-      - name: "Elite"
-        note: "Elite Weapons are \"...(probably lava bucket, anything else?)\"."
-        levels:
-          - level: 1
-            desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {20%}. Any \"Elite\" weapons are 10% larger."
-          - level: 2
-            desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {35%}. Any \"Elite\" weapons are 10% larger."
-          - level: 3
-            desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any \"Elite\" weapons are 10% larger."
-  - name: "Hoshimashi Suisei"
-    gen: "Gen 0"
-    stats:
-      hp: 70
-      atk: 1.3
-      spd: 1.3
-      crt: 0.1
-    special:
-      name: "Summon Blocks"
-      desc: "Summon a rain of falling blocks that deal 300% damage each for 5 seconds, flattening targets making them unable to move for 5 seconds."
-    attack:
-      name: "Axe Swing"
+          desc: "Increase Critical Chance by 30%."
+- name: "Ouro Kronii"
+  gen: "Council"
+  stats:
+    hp: 70
+    atk: 1.2
+    spd: 1.35
+    crt: 0.03
+  special:
+    name: "Ruler of Time"
+    desc: "Every second, emit a time blast that deals damage. Each second, the emitted blast becomes stronger."
+  attack:
+    name: "Clock Hands"
+    levels:
+      - level: 1
+        desc: "Stab forward with a large clock hand, a second smaller clock hand will attack a random target."
+      - level: 2
+        desc: "Increase area of attack by 20%."
+      - level: 3
+        desc: "Increase damage by 30%."
+      - level: 4
+        desc: "Reduce the time between attack by 10%."
+      - level: 5
+        desc: "Increase area of attack by 30%."
+      - level: 6
+        desc: "Reduce time between attack by 15%."
+      - level: 7
+        desc: "Increase damage by 50% and stun targets for 0.5 seconds."
+  skills:
+    - name: "Kroniicopter"
       levels:
         - level: 1
-          desc: "Swing a bloody axe in an arc in front."
+          desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {10%} to SPD and Haste for 5 seconds."
         - level: 2
-          desc: "Increase damage by 30%."
+          desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {15%} to SPD and Haste for 5 seconds."
         - level: 3
-          desc: "Increase attack area by 20%."
-        - level: 4
-          desc: "Reduce time between attacks by 10%."
-        - level: 5
-          desc: "Increase damage by 30%."
-        - level: 6
-          desc: "Increase attack area by 20%."
-        - level: 7
-          desc: "Crit is guaranteed on Axe Swing and crits deal 3x damage."
-    skills:
-      - name: "Stellar"
-        levels:
-          - level: 1
-            desc: "Critical hits have a 25% chance to increase ATK by {2%} for 4 seconds, up to {10%}. If activated, all targets within 75px take that critical hit."
-          - level: 2
-            desc: "Critical hits have a 25% chance to increase ATK by {4%} for 4 seconds, up to {20%}. If activated, all targets within 75px take that critical hit."
-          - level: 3
-            desc: "Critical hits have a 25% chance to increase ATK by {6%} for 4 seconds, up to {30%}. If activated, all targets within 75px take that critical hit."
-      - name: "Suicopath"
-        levels:
-          - level: 1
-            desc: "Defeating targets increases Crit by {4%} for 4 seconds, up to {20%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
-          - level: 2
-            desc: "Defeating targets increases Crit by {6%} for 4 seconds, up to {30%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
-          - level: 3
-            desc: "Defeating targets increases Crit by {8%} for 4 seconds, up to {40%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
-      - name: "Block Master"
-        levels:
-          - level: 1
-            desc: "Critical hits have a {15%} chance to summon a falling block from above that deals {150%} damage."
-          - level: 2
-            desc: "Critical hits have a {20%} chance to summon a falling block from above that deals {200%} damage."
-          - level: 3
-            desc: "Critical hits have a {25%} chance to summon a falling block from above that deals {250%} damage."
-  - name: "AZKi"
-    gen: "Gen 0"
-    stats:
-      hp: 75
-      atk: 1.1
-      spd: 1.35
-      crt: 0.03
-    special:
-      name: "Full Concert"
-      desc: "Shine a circle of brilliant stage lights, damaging all nearby targets for 6 seconds."
-    attack:
-      name: "Diva Song"
+          desc: "Increase SPD and Haste by 10%. If Clock Hands lands a critical hit, gain another {20%} to SPD and Haste for 5 seconds."
+    - name: "Time Bubble"
       levels:
         - level: 1
-          desc: "Send a flying musical note in front."
+          desc: "Every 10 seconds, create a {small} time bubble that freezes targets in time, preventing them from moving or attacking."
         - level: 2
-          desc: "Increase damage by 20%."
+          desc: "Every 10 seconds, create a {medium} time bubble that freezes targets in time, preventing them from moving or attacking."
         - level: 3
-          desc: "Reduce time between attacks by 15%."
-        - level: 4
-          desc: "Increase attack area by 20%."
-        - level: 5
-          desc: "Increase damage by 25% and speed by 25%."
-        - level: 6
-          desc: "Reduce time between attacks by 25%."
-        - level: 7
-          desc: "When hitting a target, there is a 30% chance that the music note sends 2 more notes that deal 50% damage."
-    skills:
-      - name: "Encore!"
-        levels:
-          - level: 1
-            desc: "Every 7 seconds, create a burst of song dealing {100%} damage. For every target defeated in the last 7 seconds, +10% song damage."
-          - level: 2
-            desc: "Every 7 seconds, create a burst of song dealing {200%} damage. For every target defeated in the last 7 seconds, +10% song damage."
-          - level: 3
-            desc: "Every 7 seconds, create a burst of song dealing {300%} damage. For every target defeated in the last 7 seconds, +10% song damage."
-      - name: "Performance"
-        levels:
-          - level: 1
-            desc: "For each second while moving, {+2%} SPD (max {20%}) and {+2%} dodge chance (max {20%}). Both buffs loses {3} stacks if receiving damage."
-          - level: 2
-            desc: "For each second while moving, {+4%} SPD (max {40%}) and {+3%} dodge chance (max {30%}). Both buffs loses {2} stacks if receiving damage."
-          - level: 3
-            desc: "For each second while moving, {+6%} SPD (max {60%}) and {+4%} dodge chance (max {40%}). Both buffs loses {2} stacks if receiving damage."
-      - name: "Virtual Diva"
-        levels:
-          - level: 1
-            desc: "For each second AZKi does not receive damage, increase Haste by {1%}, up to {10%}. Buff resets to 0% if AZKi takes damage."
-          - level: 2
-            desc: "For each second AZKi does not receive damage, increase Haste by {2%}, up to {20%}. Buff resets to 0% if AZKi takes damage."
-          - level: 3
-            desc: "For each second AZKi does not receive damage, increase Haste by {3%}, up to {30%}. Buff resets to 0% if AZKi takes damage."
+          desc: "Every 10 seconds, create a {large} time bubble that freezes targets in time, preventing them from moving or attacking."
+    - name: "Perfection"
+      levels:
+        - level: 1
+          desc: "While HP is full, increase ATK, SPD, Pickup Range by {20%}. Increase Haste and Critical Chance by {10%}."
+        - level: 2
+          desc: "While HP is full, increase ATK, SPD, Pickup Range by {33%}. Increase Haste and Critical Chance by {15%}."
+        - level: 3
+          desc: "While HP is full, increase ATK, SPD, Pickup Range by {50%}. Increase Haste and Critical Chance by {20%}."
+- name: "Ceres Fauna"
+  gen: "Council"
+  stats:
+    hp: 65
+    atk: 1
+    spd: 1.3
+    crt: 0.03
+  special:
+    name: "Mother Nature"
+    desc: "Summon a giant tree that creates a zone that heals Fauna and grants invincibility for 10 seconds."
+  attack:
+    name: "Nature Shield"
+    levels:
+      - level: 1
+        desc: "Create 3 razor sharp leaves that spiral outward."
+      - level: 2
+        desc: "Increase damage by 20% and increase hit limit by 5."
+      - level: 3
+        desc: "Reduce the time between attacks by 15%."
+      - level: 4
+        desc: "Shoot 2 additional leaves."
+      - level: 5
+        desc: "Increase area of attack by 30% and increase hit limit by 5."
+      - level: 6
+        desc: "Increase damage by 30% and remove hit limit."
+      - level: 7
+        desc: "Shoot 2 additional leaves and aim towards targets."
+  skills:
+    - name: "Sapling"
+      levels:
+        - level: 1
+          desc: "Defeated targets have a {5%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {30%} for 10 seconds."
+        - level: 2
+          desc: "Defeated targets have a {7%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {40%} for 10 seconds."
+        - level: 3
+          desc: "Defeated targets have a {10%} chance to drop a sapling. Picking up a sapling heals 3% HP and increase Fauna's ATK, SPD by {50%} for 10 seconds."
+    - name: "Guardian Tree"
+      levels:
+        - level: 1
+          desc: "Every time you heal, a branch will grow under a random nearby target and deal {200%} damage."
+        - level: 2
+          desc: "Every time you heal, a branch will grow under a random nearby target and deal {250%} damage."
+        - level: 3
+          desc: "Every time you heal, a branch will grow under a random nearby target and deal {300%} damage."
+    - name: "Whisperer"
+      levels:
+        - level: 1
+          desc: "Every 10 second, gain 1 \"Whisper\" (max {3}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
+        - level: 2
+          desc: "Every 10 second, gain 1 \"Whisper\" (max {4}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
+        - level: 3
+          desc: "Every 10 second, gain 1 \"Whisper\" (max {5}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
+- name: "Nanashi Mumei"
+  gen: "Council"
+  stats:
+    hp: 60
+    atk: 0.85
+    spd: 1.4
+    crt: 0.05
+  special:
+    name: "True Horror"
+    desc: "Destroy everything in sight (except for bosses). There is a 30% that drops are not destroyed."
+  attack:
+    name: "Bird Feather"
+    levels:
+      - level: 1
+        desc: "Shoot a bunch of feathers at a speard. Pierces through targets."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Increase hit limit by 5."
+      - level: 4
+        desc: "Shoot 1 additional feather."
+      - level: 5
+        desc: "Reduce the time between attacks by 30% and increase hit limit by 5."
+      - level: 6
+        desc: "Shoot 2 additional feather."
+      - level: 7
+        desc: "Feathers home into targets 3 times."
+  skills:
+    - name: "Friend"
+      levels:
+        - level: 1
+          desc: "Summon a Friend that uses one of you weapons at random every 5 second at {80%} damage."
+        - level: 2
+          desc: "Summon a Friend that uses one of you weapons at random every 5 second at {100%} damage."
+        - level: 3
+          desc: "Summon a Friend that uses one of you weapons at random every 5 second at {120%} damage."
+    - name: "History"
+      levels:
+        - level: 1
+          desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {100%})."
+        - level: 2
+          desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {150%})."
+        - level: 3
+          desc: "For every 50 targets Mumei has defeated, increase damage by 1% (max {200%})."
+    - name: "Civilization"
+      levels:
+        - level: 1
+          desc: "Increase ATK by {1%} for every target currently on the screen, up to {100%}."
+        - level: 2
+          desc: "Increase ATK by {2%} for every target currently on the screen, up to {120%}."
+        - level: 3
+          desc: "Increase ATK by {3%} for every target currently on the screen, up to {150%}."
+- name: "Tsukumo Sana"
+  gen: "Council"
+  stats:
+    hp: 80
+    atk: 0.8
+    spd: 1.3
+    crt: 0.01
+  special:
+    name: "Become Beeg"
+    desc: "Become a Beeg version for 10 seconds. While Beeg, Sana is invincible to all attacks and deals 200% damage to all targets. Then all absorb all EXP on screen."
+  attack:
+    name: "Orbit"
+    levels:
+      - level: 1
+        desc: "Create an orbitting planet. Hits multiple targets."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Increase area of attack by 20% and range by 20%."
+      - level: 4
+        desc: "Increase damage by 33%."
+      - level: 5
+        desc: "Increase area of attack by 30% and range by 30%."
+      - level: 6
+        desc: "Reduce the time between attacks by 10%."
+      - level: 7
+        desc: "Create a second planet and knockbacks on hit."
+  skills:
+    - name: "Speaker Of Space"
+      levels:
+        - level: 1
+          desc: "Increase area of attack and ATK by {10%}. All attack damage is also increased by area increasing effects."
+        - level: 2
+          desc: "Increase area of attack and ATK by {20%}. All attack damage is also increased by area increasing effects."
+        - level: 3
+          desc: "Increase area of attack and ATK by {30%}. All attack damage is also increased by area increasing effects."
+    - name: "Astrology"
+      levels:
+        - level: 1
+          desc: "Every 15 second, gain a 15 seconds {20%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {30%} HP."
+        - level: 2
+          desc: "Every 15 second, gain a 15 seconds {30%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {40%} HP."
+        - level: 3
+          desc: "Every 15 second, gain a 15 seconds {40%} buff to either ATK, SPD, Crit, Pickup Range, Haste, or heal for {50%} HP."
+    - name: "Gravity"
+      levels:
+        - level: 1
+          desc: "Every 5 second, create a gravitational blast that deals {125%} damage. Damage is also increased by area increasing effects."
+        - level: 2
+          desc: "Every 5 second, create a gravitational blast that deals {150%} damage. Damage is also increased by area increasing effects."
+        - level: 3
+          desc: "Every 5 second, create a gravitational blast that deals {200%} damage. Damage is also increased by area increasing effects."
+
+# Hope
+- name: "Irys"
+  gen: "Hope"
+  stats:
+    hp: 50
+    atk: 1.1
+    spd: 1.5
+    crt: 0.05
+  special:
+    name: "Hope is Descending"
+    desc: "Hope descends from the top of screen, and then explodes for 250% damage."
+  attack:
+    name: "Nephilim Blast"
+    levels:
+      - level: 1
+        desc: "Shoots dual light and dark blast."
+      - level: 2
+        desc: "Increase damage by 20%"
+      - level: 3
+        desc: "Increase attack area by 50%. Each blast can pierce +3 times."
+      - level: 4
+        desc: "Reduce the time between attacks by 25%."
+      - level: 5
+        desc: "Can pierce through targets."
+      - level: 6
+        desc: "Increase damage by 33%."
+      - level: 7
+        desc: "Blasts becomes a short beam that hits multiple times."
+  skills:
+    - name: "Half Angel"
+      levels:
+        - level: 1
+          desc: "Critical hits have a {10%} chance to heal {1} HP. There is a 0.3 seconds cooldown between each heal."
+        - level: 2
+          desc: "Critical hits have a {15%} chance to heal {2} HP. There is a 0.3 seconds cooldown between each heal."
+        - level: 3
+          desc: "Critical hits have a {20%} chance to heal {3} HP. There is a 0.3 seconds cooldown between each heal."
+    - name: "Half Demon"
+      levels:
+        - level: 1
+          desc: "Increase damage by {3%}, up to {30%}, for 5 seconds every time Irys heals. Each heal resets the timer."
+        - level: 2
+          desc: "Increase damage by {4%}, up to {40%}, for 5 seconds every time Irys heals. Each heal resets the timer."
+        - level: 3
+          desc: "Increase damage by {5%}, up to {50%}, for 5 seconds every time Irys heals. Each heal resets the timer."
+    - name: "Hope"
+      levels:
+        - level: 1
+          desc: "Upon being hit, there is a {20%} chance to heal {15%} HP."
+        - level: 2
+          desc: "Upon being hit, there is a {25%} chance to heal {20%} HP."
+        - level: 3
+          desc: "Upon being hit, there is a {30%} chance to heal {30%} HP and {create a shockwave that knocks back all targets}."
+
+# Gamers
+- name: "Shirakami Fubuki"
+  gen: "Gamers"
+  stats:
+    hp: 55
+    atk: 1
+    spd: 1.5
+    crt: 0.05
+  special:
+    name: "Fubuki Storm"
+    desc: "Summon many katanas, flurrying around for 5 seconds. During this time, Fubuki dodges all attacks."
+  attack:
+    name: "Fox Tail"
+    levels:
+      - level: 1
+        desc: "Swipes Tail in front at close range."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Increase attack area by 20%."
+      - level: 4
+        desc: "Swing tail in front and back."
+      - level: 5
+        desc: "Reduce time between attacks by 15%."
+      - level: 6
+        desc: "Increase attack area by 20%."
+      - level: 7
+        desc: "If Fox tail hits a target, there is a 20% chance to summon a Fubuki Sword that deals 100% damage."
+  skills:
+    - name: "Friendzone"
+      levels:
+        - level: 1
+          desc: "Gain a buff that increases SPD by {20%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {1} second."
+        - level: 2
+          desc: "Gain a buff that increases SPD by {25%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {2} second."
+        - level: 3
+          desc: "Gain a buff that increases SPD by {30%}. On the next hit taken, consume the buff to dodge the attack and gain 100% SPD and 100% dodge for {3} second."
+    - name: "Kon Kon"
+      levels:
+        - level: 1
+          desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {40%} chance to create a noise burst dealing {100%} damage."
+        - level: 2
+          desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {60%} chance to create a noise burst dealing {125%} damage."
+        - level: 3
+          desc: "Gain a 10% chance to dodge attacks. When dodging, there is a {80%} chance to create a noise burst dealing {150%} damage."
+    - name: "Fox King"
+      levels:
+        - level: 1
+          desc: "Increase SPD by {10%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {100%}."
+        - level: 2
+          desc: "Increase SPD by {15%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {125%}."
+        - level: 3
+          desc: "Increase SPD by {20%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {150%}."
+- name: "Ookami Mio"
+  gen: "Gamers"
+  stats:
+    hp: 70
+    atk: 0.85
+    spd: 1.4
+    crt: 0.01
+  special:
+    name: "Hatotaurus"
+    desc: "Summon Hatotaurus, punching continuously forward for 6 seconds. During this time, Mio takes 30% less damage."
+  attack:
+    name: "Tarot Cards"
+    levels:
+      - level: 1
+        desc: "Throw a card that quickly returns back."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Throw 2 tarrot cards."
+      - level: 4
+        desc: "Reduce time between attacks by 15%."
+      - level: 5
+        desc: "Throw cards farther and increase damage by 40%."
+      - level: 6
+        desc: "Throw 3 tarot cards."
+      - level: 7
+        desc: "When hitting a target, there is a 30% chance that the target may lose 20% ATK, SPD, or take 20% more damage."
+  skills:
+    - name: "Omen"
+      levels:
+        - level: 1
+          desc: "Tarot Cards has a {10%} chance to create an Omen, dealing {200%} damage to targets. If Omen defeats a target, the special meter fills slightly."
+        - level: 2
+          desc: "Tarot Cards has a {15%} chance to create an Omen, dealing {250%} damage to targets. If Omen defeats a target, the special meter fills slightly."
+        - level: 3
+          desc: "Tarot Cards has a {20%} chance to create an Omen, dealing {300%} damage to targets. If Omen defeats a target, the special meter fills slightly."
+    - name: "Mama"
+      levels:
+        - level: 1
+          desc: "Every 4 seconds, heal 1% for each target within {100px}, up to {10%}."
+        - level: 2
+          desc: "Every 4 seconds, heal 1% for each target within {125px}, up to {20%}."
+        - level: 3
+          desc: "Every 4 seconds, heal 1% for each target within {150px}, up to {30%}."
+    - name: "Cheerful Laugh"
+      levels:
+        - level: 1
+          desc: "The closer a target is within 150px, the more damage they receive, up to {50%}."
+        - level: 2
+          desc: "The closer a target is within 150px, the more damage they receive, up to {100%}."
+        - level: 3
+          desc: "The closer a target is within 150px, the more damage they receive, up to {150%}."
+- name: "Nekomata Okayu"
+  gen: "Gamers"
+  stats:
+    hp: 60
+    atk: 0.9
+    spd: 1.4
+    crt: 0.05
+  special:
+    name: "Mogu Mogu"
+    desc: "For 6 seconds, Okayu is invincible and increases SPD by 50%. Non-boss targets touched will be eater, healing 5% HP."
+  attack:
+    name: "Onigiri"
+    levels:
+      - level: 1
+        desc: "Throw an onigiri at an arc."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Throw 2 onigiri."
+      - level: 4
+        desc: "Increase attack area by 40%."
+      - level: 5
+        desc: "Throw 4 onigiri."
+      - level: 6
+        desc: "Speed of onirigir is increased by 20%."
+      - level: 7
+        desc: "Throw 6 onigiri and slows down targets by 30% for 5 seconds."
+  skills:
+    - name: "Yummy"
+      levels:
+        - level: 1
+          desc: "Increase food drops by {50%}. When eating food, gain {40%} ATK, {15%} SPD, and {5%} Crit for 8 seconds."
+        - level: 2
+          desc: "Increase food drops by {75%}. When eating food, gain {60%} ATK, {25%} SPD, and {10%} Crit for 8 seconds."
+        - level: 3
+          desc: "Increase food drops by {100%}. When eating food, gain {80%} ATK, {35%} SPD, and {15%} Crit for 8 seconds."
+    - name: "Sensitive Voice"
+      levels:
+        - level: 1
+          desc: "Increase Crit by {5%}. Crits have a {10%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {3%} HP."
+        - level: 2
+          desc: "Increase Crit by {10%}. Crits have a {15%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {4%} HP."
+        - level: 3
+          desc: "Increase Crit by {15%}. Crits have a {20%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {5%} HP."
+    - name: "Feast"
+      levels:
+        - level: 1
+          desc: "When a target is defeated, there is a {6%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
+        - level: 2
+          desc: "When a target is defeated, there is a {8%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
+        - level: 3
+          desc: "When a target is defeated, there is a {10%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
+- name: "Inugami Korone"
+  gen: "Gamers"
+  stats:
+    hp: 60
+    atk: 1
+    spd: 1.4
+    crt: 0.01
+  special:
+    name: "Ending Making Time!"
+    desc: "Create waves of giant exploding Yubi's. Targets defeated get their Yubi's taken."
+  attack:
+    name: "Orayo!"
+    levels:
+      - level: 1
+        desc: "Punch towards the front in a random cone."
+      - level: 2
+        desc: "Increase attack area by 25%."
+      - level: 3
+        desc: "Increase damage by 30%."
+      - level: 4
+        desc: "Increase amount of punches by 1."
+      - level: 5
+        desc: "Increases attack area by 25%. Widen Korone's punch range slightly."
+      - level: 6
+        desc: "Increases amount of punches by 1."
+      - level: 7
+        desc: "Reduce delay between combination punches by 50%."
+  skills:
+    - name: "Korone Brainwashing"
+      levels:
+        - level: 1
+          desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {0.5%} for 7 seconds."
+        - level: 2
+          desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {0.75%} for 7 seconds."
+        - level: 3
+          desc: "Every 12s, Korone brainwashes targets. Deafeating brainwashed targets grants 1 Yubi (max 30). Each Yubi increases Haste by {1%} for 7 seconds."
+    - name: "Endurance"
+      levels:
+        - level: 1
+          desc: "Reduce damage taken by {5%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {15%} and further damage reduction temporarily."
+        - level: 2
+          desc: "Reduce damage taken by {10%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {30%} and further damage reduction temporarily."
+        - level: 3
+          desc: "Reduce damage taken by {15%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {60%} and further damage reduction temporarily."
+    - name: "Choco Coronet"
+      levels:
+        - level: 1
+          desc: "Increase all healing by {10%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {10} for 10 seconds."
+        - level: 2
+          desc: "Increase all healing by {20%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {15} for 10 seconds."
+        - level: 3
+          desc: "Increase all healing by {30%}. Targets can drop Choco Coronets. Eating a Choco Corone heals 5 HP and increases Max HP by {20} for 10 seconds."
+
+# Gen 0
+- name: "Tokino Sora"
+  gen: "Gen 0"
+  stats:
+    hp: 65
+    atk: 1
+    spd: 1.4
+    crt: 0.03
+  special:
+    name: "Idol Dream"
+    desc: "Spread idol wings. Increase ATK and healing received by 50% for 10 seconds."
+  attack:
+    name: "Bright Star"
+    levels:
+      - level: 1
+        desc: "Shoot forward a spinning star."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Stars last 1 second longer."
+      - level: 4
+        desc: "Shoot 2 stars."
+      - level: 5
+        desc: "Increase size by 30%."
+      - level: 6
+        desc: "Shoot 3 stars."
+      - level: 7
+        desc: "Stars end with a burst."
+  skills:
+    - name: "Idol Healing"
+      levels:
+        - level: 1
+          desc: "When receiving any healing, enemies within {100px} are also \"healed\", taking {125%} + X% damage where X is 2 times the heal amount."
+        - level: 2
+          desc: "When receiving any healing, enemies within {125px} are also \"healed\", taking {150%} + X% damage where X is 2 times the heal amount."
+        - level: 3
+          desc: "When receiving any healing, enemies within {150px} are also \"healed\", taking {175%} + X% damage where X is 2 times the heal amount."
+    - name: "Ankimo"
+      levels:
+        - level: 1
+          desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {50%} damage. Tagged enemies have a {20%} chance to follow Ankimo for 4 seconds."
+        - level: 2
+          desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {75%} damage. Tagged enemies have a {25%} chance to follow Ankimo for 4 seconds."
+        - level: 3
+          desc: "Summon Ankimo. Ankimo moves around and tags enemies and deals {100%} damage. Tagged enemies have a {30%} chance to follow Ankimo for 4 seconds."
+    - name: "You're The Enemy, Then"
+      levels:
+        - level: 1
+          desc: "Attacks have a {10%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {20%} chance to heal {2} HP when defeated."
+        - level: 2
+          desc: "Attacks have a {15%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {25%} chance to heal {3} HP when defeated."
+        - level: 3
+          desc: "Attacks have a {20%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {30%} chance to heal {4} HP when defeated."
+- name: "AZKi"
+  gen: "Gen 0"
+  stats:
+    hp: 75
+    atk: 1.1
+    spd: 1.35
+    crt: 0.03
+  special:
+    name: "Full Concert"
+    desc: "Shine a circle of brilliant stage lights, damaging all nearby targets for 6 seconds."
+  attack:
+    name: "Diva Song"
+    levels:
+      - level: 1
+        desc: "Send a flying musical note in front."
+      - level: 2
+        desc: "Increase damage by 20%."
+      - level: 3
+        desc: "Reduce time between attacks by 15%."
+      - level: 4
+        desc: "Increase attack area by 20%."
+      - level: 5
+        desc: "Increase damage by 25% and speed by 25%."
+      - level: 6
+        desc: "Reduce time between attacks by 25%."
+      - level: 7
+        desc: "When hitting a target, there is a 30% chance that the music note sends 2 more notes that deal 50% damage."
+  skills:
+    - name: "Encore!"
+      levels:
+        - level: 1
+          desc: "Every 7 seconds, create a burst of song dealing {100%} damage. For every target defeated in the last 7 seconds, +10% song damage."
+        - level: 2
+          desc: "Every 7 seconds, create a burst of song dealing {200%} damage. For every target defeated in the last 7 seconds, +10% song damage."
+        - level: 3
+          desc: "Every 7 seconds, create a burst of song dealing {300%} damage. For every target defeated in the last 7 seconds, +10% song damage."
+    - name: "Performance"
+      levels:
+        - level: 1
+          desc: "For each second while moving, {+2%} SPD (max {20%}) and {+2%} dodge chance (max {20%}). Both buffs loses {3} stacks if receiving damage."
+        - level: 2
+          desc: "For each second while moving, {+4%} SPD (max {40%}) and {+3%} dodge chance (max {30%}). Both buffs loses {2} stacks if receiving damage."
+        - level: 3
+          desc: "For each second while moving, {+6%} SPD (max {60%}) and {+4%} dodge chance (max {40%}). Both buffs loses {2} stacks if receiving damage."
+    - name: "Virtual Diva"
+      levels:
+        - level: 1
+          desc: "For each second AZKi does not receive damage, increase Haste by {1%}, up to {10%}. Buff resets to 0% if AZKi takes damage."
+        - level: 2
+          desc: "For each second AZKi does not receive damage, increase Haste by {2%}, up to {20%}. Buff resets to 0% if AZKi takes damage."
+        - level: 3
+          desc: "For each second AZKi does not receive damage, increase Haste by {3%}, up to {30%}. Buff resets to 0% if AZKi takes damage."
+- name: "Roboco-san"
+  gen: "Gen 0"
+  stats:
+    hp: 75
+    atk: 1
+    spd: 1.4
+    crt: 0.05
+  special:
+    name: "Hi-Spec Mode"
+    desc: "Release a discharge that deals 300% damage. For 8 seconds, Robocco gains 100% AKT, SPD, Pick Up Range, and 50% Crit and Haste."
+  attack:
+    name: "Hi-Spec Pistol"
+    levels:
+      - level: 1
+        desc: "Shoots a few times in aimed direction."
+      - level: 2
+        desc: "Shoot one more bullet."
+      - level: 3
+        desc: "Bullets +1 pierce."
+      - level: 4
+        desc: "Reduce time between attacks by 15%."
+      - level: 5
+        desc: "Increase damage by 20%."
+      - level: 6
+        desc: "Shoot one more bullet."
+      - level: 7
+        desc: "Gun becomes a piercing blast."
+  skills:
+    - name: "Robo-Discharge"
+      levels:
+        - level: 1
+          desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {100%} damage. +1% Discharge damage for each level Roboco has."
+        - level: 2
+          desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {125%} damage. +1% Discharge damage for each level Roboco has."
+        - level: 3
+          desc: "Every level up, create an electric ring around Roboco for 5 seconds, dealing {150%} damage. +1% Discharge damage for each level Roboco has."
+    - name: "Hi-Level"
+      levels:
+        - level: 1
+          desc: "Roboco gains {1%} ATK for each level Roboco has, and {3%} Crit for every 10 levels."
+        - level: 2
+          desc: "Roboco gains {1.1%} ATK for each level Roboco has, and {4%} Crit for every 10 levels."
+        - level: 3
+          desc: "Roboco gains {1.2%} ATK for each level Roboco has, and {5%} Crit for every 10 levels."
+    - name: "Battery Charged"
+      levels:
+        - level: 1
+          desc: "Defeating a target has a {10%} chance to drop a Battery. Batteries gives an additional {50%} EXP and shocks nearby targets for 0.5 seconds."
+        - level: 2
+          desc: "Defeating a target has a {15%} chance to drop a Battery. Batteries gives an additional {75%} EXP and shocks nearby targets for 0.5 seconds."
+        - level: 3
+          desc: "Defeating a target has a {20%} chance to drop a Battery. Batteries gives an additional {100%} EXP and shocks nearby targets for 0.5 seconds."
+- name: "Hoshimashi Suisei"
+  gen: "Gen 0"
+  stats:
+    hp: 70
+    atk: 1.3
+    spd: 1.3
+    crt: 0.1
+  special:
+    name: "Summon Blocks"
+    desc: "Summon a rain of falling blocks that deal 300% damage each for 5 seconds, flattening targets making them unable to move for 5 seconds."
+  attack:
+    name: "Axe Swing"
+    levels:
+      - level: 1
+        desc: "Swing a bloody axe in an arc in front."
+      - level: 2
+        desc: "Increase damage by 30%."
+      - level: 3
+        desc: "Increase attack area by 20%."
+      - level: 4
+        desc: "Reduce time between attacks by 10%."
+      - level: 5
+        desc: "Increase damage by 30%."
+      - level: 6
+        desc: "Increase attack area by 20%."
+      - level: 7
+        desc: "Crit is guaranteed on Axe Swing and crits deal 3x damage."
+  skills:
+    - name: "Stellar"
+      levels:
+        - level: 1
+          desc: "Critical hits have a 25% chance to increase ATK by {2%} for 4 seconds, up to {10%}. If activated, all targets within 75px take that critical hit."
+        - level: 2
+          desc: "Critical hits have a 25% chance to increase ATK by {4%} for 4 seconds, up to {20%}. If activated, all targets within 75px take that critical hit."
+        - level: 3
+          desc: "Critical hits have a 25% chance to increase ATK by {6%} for 4 seconds, up to {30%}. If activated, all targets within 75px take that critical hit."
+    - name: "Suicopath"
+      levels:
+        - level: 1
+          desc: "Defeating targets increases Crit by {4%} for 4 seconds, up to {20%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
+        - level: 2
+          desc: "Defeating targets increases Crit by {6%} for 4 seconds, up to {30%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
+        - level: 3
+          desc: "Defeating targets increases Crit by {8%} for 4 seconds, up to {40%}. Defeating targets with axe-related weapons has a 10% chance to heal 3 HP."
+    - name: "Block Master"
+      levels:
+        - level: 1
+          desc: "Critical hits have a {15%} chance to summon a falling block from above that deals {150%} damage."
+        - level: 2
+          desc: "Critical hits have a {20%} chance to summon a falling block from above that deals {200%} damage."
+        - level: 3
+          desc: "Critical hits have a {25%} chance to summon a falling block from above that deals {250%} damage."
+- name: "Sakura Miko"
+  gen: "Gen 0"
+  stats:
+    hp: 60
+    atk: 0.9
+    spd: 1.4
+    crt: 0.01
+  special:
+    name: "Demon Lord's Domain"
+    desc: "Create a zone around Miko for 8 seconds, summoning hot flames that burn everything. Targets in this zone take 50% more damage."
+  attack:
+    name: "Sakura Gohei"
+    levels:
+      - level: 1
+        desc: "Swing a gohei that creates a burst of Sakura blossoms."
+      - level: 2
+        desc: "Increase attack area by 20%."
+      - level: 3
+        desc: "Increase damage by 30%."
+      - level: 4
+        desc: "Swing twice."
+      - level: 5
+        desc: "Reduce time between attacks by 15%."
+      - level: 6
+        desc: "Increase damage by 30%."
+      - level: 7
+        desc: "On hit, target takes 25% extra damage for one second."
+  skills:
+    - name: "Baby Language?"
+      levels:
+        - level: 1
+          desc: "Attacks have {10%} chance to create a \"Nyeh\", dealing {50%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
+        - level: 2
+          desc: "Attacks have {15%} chance to create a \"Nyeh\", dealing {75%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
+        - level: 3
+          desc: "Attacks have {20%} chance to create a \"Nyeh\", dealing {100%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
+    - name: "Eroge Hero"
+      levels:
+        - level: 1
+          desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {2} HP every 2 seconds. Each conquest resets the timer."
+        - level: 2
+          desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {3} HP every 2 seconds. Each conquest resets the timer."
+        - level: 3
+          desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {4} HP every 2 seconds. Each conquest resets the timer."
+    - name: "Elite"
+      note: "Elite Weapons are \"...(probably lava bucket, anything else?)\"."
+      levels:
+        - level: 1
+          desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {20%}. Any \"Elite\" weapons are 10% larger."
+        - level: 2
+          desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {35%}. Any \"Elite\" weapons are 10% larger."
+        - level: 3
+          desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any \"Elite\" weapons are 10% larger."

@@ -416,11 +416,11 @@
     - name: "Whisperer"
       levels:
         - level: 1
-          desc: "Every 10 second, gain 1 \"Whisper\" (max {3}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
+          desc: 'Every 10 second, gain 1 "Whisper" (max {3}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack.'
         - level: 2
-          desc: "Every 10 second, gain 1 \"Whisper\" (max {4}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
+          desc: 'Every 10 second, gain 1 "Whisper" (max {4}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack.'
         - level: 3
-          desc: "Every 10 second, gain 1 \"Whisper\" (max {5}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack."
+          desc: 'Every 10 second, gain 1 "Whisper" (max {5}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack.'
 - name: "Nanashi Mumei"
   gen: "Council"
   stats:
@@ -724,11 +724,11 @@
     - name: "Sensitive Voice"
       levels:
         - level: 1
-          desc: "Increase Crit by {5%}. Crits have a {10%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {3%} HP."
+          desc: 'Increase Crit by {5%}. Crits have a {10%} chance to "Charm" targets within 120px for 4 seconds, where they can then be eaten to heal {3%} HP.'
         - level: 2
-          desc: "Increase Crit by {10%}. Crits have a {15%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {4%} HP."
+          desc: 'Increase Crit by {10%}. Crits have a {15%} chance to "Charm" targets within 120px for 4 seconds, where they can then be eaten to heal {4%} HP.'
         - level: 3
-          desc: "Increase Crit by {15%}. Crits have a {20%} chance to \"Charm\" targets within 120px for 4 seconds, where they can then be eaten to heal {5%} HP."
+          desc: 'Increase Crit by {15%}. Crits have a {20%} chance to "Charm" targets within 120px for 4 seconds, where they can then be eaten to heal {5%} HP.'
     - name: "Feast"
       levels:
         - level: 1
@@ -776,11 +776,11 @@
     - name: "Endurance"
       levels:
         - level: 1
-          desc: "Reduce damage taken by {5%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {15%} and further damage reduction temporarily."
+          desc: 'Reduce damage taken by {5%}. Every 20 seconds, on taking damage, gain "Retaliation", increasing ATK by {15%} and further damage reduction temporarily.'
         - level: 2
-          desc: "Reduce damage taken by {10%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {30%} and further damage reduction temporarily."
+          desc: 'Reduce damage taken by {10%}. Every 20 seconds, on taking damage, gain "Retaliation", increasing ATK by {30%} and further damage reduction temporarily.'
         - level: 3
-          desc: "Reduce damage taken by {15%}. Every 20 seconds, on taking damage, gain \"Retaliation\", increasing ATK by {60%} and further damage reduction temporarily."
+          desc: 'Reduce damage taken by {15%}. Every 20 seconds, on taking damage, gain "Retaliation", increasing ATK by {60%} and further damage reduction temporarily.'
     - name: "Choco Coronet"
       levels:
         - level: 1
@@ -822,11 +822,11 @@
     - name: "Idol Healing"
       levels:
         - level: 1
-          desc: "When receiving any healing, enemies within {100px} are also \"healed\", taking {125%} + X% damage where X is 2 times the heal amount."
+          desc: 'When receiving any healing, enemies within {100px} are also "healed", taking {125%} + X% damage where X is 2 times the heal amount.'
         - level: 2
-          desc: "When receiving any healing, enemies within {125px} are also \"healed\", taking {150%} + X% damage where X is 2 times the heal amount."
+          desc: 'When receiving any healing, enemies within {125px} are also "healed", taking {150%} + X% damage where X is 2 times the heal amount.'
         - level: 3
-          desc: "When receiving any healing, enemies within {150px} are also \"healed\", taking {175%} + X% damage where X is 2 times the heal amount."
+          desc: 'When receiving any healing, enemies within {150px} are also "healed", taking {175%} + X% damage where X is 2 times the heal amount.'
     - name: "Ankimo"
       levels:
         - level: 1
@@ -1030,25 +1030,48 @@
     - name: "Baby Language?"
       levels:
         - level: 1
-          desc: "Attacks have {10%} chance to create a \"Nyeh\", dealing {50%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
+          desc: 'Attacks have {10%} chance to create a "Nyeh", dealing {50%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds.'
         - level: 2
-          desc: "Attacks have {15%} chance to create a \"Nyeh\", dealing {75%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
+          desc: 'Attacks have {15%} chance to create a "Nyeh", dealing {75%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds.'
         - level: 3
-          desc: "Attacks have {20%} chance to create a \"Nyeh\", dealing {100%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds."
+          desc: 'Attacks have {20%} chance to create a "Nyeh", dealing {100%} damage and confuse targets, reducing ATK and SPD by 30% for 3 seconds.'
     - name: "Eroge Hero"
       levels:
         - level: 1
-          desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {2} HP every 2 seconds. Each conquest resets the timer."
+          desc: 'When Miko conquers a target, Miko gains "Ero" for 4 seconds. With "Ero", heal {2} HP every 2 seconds. Each conquest resets the timer.'
         - level: 2
-          desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {3} HP every 2 seconds. Each conquest resets the timer."
+          desc: 'When Miko conquers a target, Miko gains "Ero" for 4 seconds. With "Ero", heal {3} HP every 2 seconds. Each conquest resets the timer.'
         - level: 3
-          desc: "When Miko conquers a target, Miko gains \"Ero\" for 4 seconds. With \"Ero\", heal {4} HP every 2 seconds. Each conquest resets the timer."
+          desc: 'When Miko conquers a target, Miko gains "Ero" for 4 seconds. With "Ero", heal {4} HP every 2 seconds. Each conquest resets the timer.'
     - name: "Elite"
-      note: "Elite Weapons are \"...(probably lava bucket, anything else?)\"."
+      note: 'Elite Weapons are "...(probably lava bucket, anything else?)".'
       levels:
         - level: 1
-          desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {20%}. Any \"Elite\" weapons are 10% larger."
+          desc: 'From any healing, Miko gains a 4 second buff that increases ATK and SPD by {20%}. Any "Elite" weapons are 10% larger.'
         - level: 2
-          desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {35%}. Any \"Elite\" weapons are 10% larger."
+          desc: 'From any healing, Miko gains a 4 second buff that increases ATK and SPD by {35%}. Any "Elite" weapons are 10% larger.'
         - level: 3
-          desc: "From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any \"Elite\" weapons are 10% larger."
+          desc: 'From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any "Elite" weapons are 10% larger.'
+# # Gen 1
+# - name: "Yozora Mel"
+#   gen: "Gen 1"
+# - name: "Shirakami Fubuki"
+#   gen: "Gen 1"
+# - name: "Natsuiro Matsuri"
+#   gen: "Gen 1"
+# - name: "Akai Haato"
+#   gen: "Gen 1"
+# - name: "Aki Rosenthal"
+#   gen: "Gen 1"
+
+# # Gen 2
+# - name: "Minato Aqua"
+#   gen: "Gen 2"
+# - name: "Murasaki Shion"
+#   gen: "Gen 2"
+# - name: "Nakiri Ayame"
+#   gen: "Gen 2"
+# - name: "Yuzuki Choco"
+#   gen: "Gen 2"
+# - name: "Oozora Subaru"
+#   gen: "Gen 2"

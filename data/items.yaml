@@ -63,7 +63,7 @@
     - "fan-beam"
 - name: "Breathe-In Type Asacoco"
   type: "collab"
-  desc: "A collaboration of PLug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!"
+  desc: "A collaboration of Plug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!"
   requires:
     - "plug-type-asacoco"
     - "holo-bomb"
@@ -73,13 +73,14 @@
   requires:
     - "cutting-board"
     - "holo-bomb"
+
 ###
 ### Weapons
 ###
 - name: "Spider Cooking"
   type: "weapon"
   desc: "Create an area of miasma around, dealing slow damage to enemies inside."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increase area by 15%."
@@ -96,7 +97,7 @@
 - name: "Elite Lava Bucket"
   type: "weapon"
   desc: "Drop lava on the ground, burning targets slowly."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increase lava area by 20%."
@@ -113,7 +114,7 @@
 - name: "Holo Bomb"
   type: "weapon"
   desc: "A bomb that explodes, dealing damage to all nearby targets."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increase explosion size by 15%."
@@ -130,7 +131,7 @@
 - name: "Psycho Axe"
   type: "weapon"
   desc: "Throw an axe that spirals outward from the player."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increase size of axe by 20%. Increase damage by 20%."
@@ -147,7 +148,7 @@
 - name: "BL Book"
   type: "weapon"
   desc: "Repel targets with orbitting BL Books."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Add 1 additional book."
@@ -198,7 +199,7 @@
 - name: "Plug Type Asacoco"
   type: "weapon"
   desc: "Fire a fast piercing tail targeted at a random target."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increase damage by 20%."
@@ -215,7 +216,7 @@
 - name: "Glowstick"
   type: "weapon"
   desc: "Throw a glowstick to a nearby target and then spins back to player."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increase damage by 20%."
@@ -267,7 +268,7 @@
   type: "weapon"
   desc: "Throw a potato that bounces around the screen before exploding into an X."
   requirement: "Survive 10 minutes with Korone."
-  levels: 
+  levels:
     - level: 2
       desc: "Increase the X explosion size by 20%."
     - level: 3
@@ -284,7 +285,7 @@
   type: "weapon"
   desc: "Create a splash of unknown water in front, knocking targets back."
   requirement: "Clear Stage 1 with Sake."
-  levels: 
+  levels:
     - level: 2
       desc: "Increase damage by 20%."
     - level: 3
@@ -303,7 +304,7 @@
 - name: "Sake"
   type: "item"
   desc: "If not taking any damage for 5 seconds, increase crit by {10%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "If not taking any damage for 5 seconds, increase crit by {15%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
@@ -312,7 +313,7 @@
 - name: "Body Pillow"
   type: "item"
   desc: "Gain a shield that absorbs up to {15} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {5%}."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default."
   levels:
     - level: 2
       desc: "Gain a shield that absorbs up to {20} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {10%}."
@@ -322,10 +323,13 @@
       desc: "Gain a shield that absorbs up to {30} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {20%}."
     - level: 5
       desc: "Gain a shield that absorbs up to {35} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {25%}."
+  super:
+    name: "Super Body Pillow"
+    desc: "Gain a shield that absorbs up to 40 damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by 30%. When shield is full, heal 10 HP every 3 seconds."
 - name: "Injection Type Asacoco"
   type: "item"
   desc: "Lose 5% HP every second (until 1 HP remains), but gain {40%} damage."
-  requirement: "Beat Stage Mode with an Asacoco product (only Tail Plug and Breathe-In Type Asacoco works, not Dragon Fire)"
+  requirement: "Beat Stage Mode with Plug Type Asacoco or Breathe-In Type Asacoco equipped."
   levels:
     - level: 2
       desc: "Lose 5% HP every second (until 1 HP remains), but gain {60%} damage."
@@ -347,7 +351,7 @@
 - name: "Knightly Milk"
   type: "item"
   desc: "Increases attack range of area-type weapons by {10%}. Also Increase pick-up radius by {30%}."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Increases attack range of area-type weapons by {15%}. Also Increase pick-up radius by {40%}."
@@ -359,11 +363,11 @@
 - name: "Face Mask"
   type: "item"
   desc: "Increase damage by 50% and haste by 10%. Take 30% more damage."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
 - name: "Plushie"
   type: "item"
   desc: "After taking any damage, gain invulnerability for {0.3} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
-  requirement: "Survive for 10 minutes using Bae in one run."
+  requirement: "Survive for 10 minutes as Hakos Baelz in a single run."
   levels:
     - level: 2
       desc: "After taking any damage, gain invulnerability for {0.4} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
@@ -372,7 +376,7 @@
 - name: "Nurse's Horns"
   type: "item"
   desc: "When a target is defeated, there is a 20% chance to heal for {2} HP."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "When a target is defeated, there is a 20% chance to heal for {4} HP."
@@ -381,11 +385,11 @@
 - name: "Full Meal"
   type: "item"
   desc: "All healing is doubled."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
 - name: "Piki Piki Piman"
   type: "item"
   desc: "After receiving damage, increase the special meter by {2%}. There is a 0.2 second cooldown."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "After receiving damage, increase the special meter by {3%}. There is a 0.2 second cooldown."
@@ -394,7 +398,7 @@
 - name: "Headphones"
   type: "item"
   desc: "{15%} chance to negate 1 hit, and create a shockwave that knocks back all enemies."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "{20%} chance to negate 1 hit, and create a shockwave that knocks back all enemies."
@@ -407,7 +411,7 @@
 - name: "Gorilla's Paw"
   type: "item"
   desc: "Increase normal attack damage by {30%}, but lose 20% critical chance."
-  requirement: "Defeat Smol Ame."
+  requirement: "Defeat the Smol Ame boss."
   levels:
     - level: 2
       desc: "Increase normal attack damage by {40%}, but lose 20% critical chance."
@@ -419,7 +423,7 @@
 - name: "Uber Sheep"
   type: "item"
   desc: "Every {10} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {10%}."
-  requirement: "Unlocked from the start"
+  requirement: "Unlocked by default"
   levels:
     - level: 2
       desc: "Every {9} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {12%}."
@@ -432,7 +436,7 @@
 - name: "Idol Costume"
   type: "item"
   desc: "Reduce Special cooldown by {20%}."
-  requirement: "Use a special move."
+  requirement: "Use any special attack."
   levels:
     - level: 2
       desc: "Reduce Special cooldown by {25%}."
@@ -448,7 +452,7 @@
 - name: "Energy Drink"
   type: "item"
   desc: "Increase Haste by {10%} and SPD by {30%}, but reduce Max HP by 20% as well."
-  requirement: "Survive for 10 minutes using Calli in one run."
+  requirement: "Survive for 10 minutes as Calliope Mori in a single run."
   levels:
     - level: 2
       desc: "Increase Haste by {15%} and SPD by {40%}, but reduce Max HP by 20% as well."
@@ -460,7 +464,7 @@
 - name: "Study Glasses"
   type: "item"
   desc: "Increase EXP gain by {10%}."
-  requirement: "Reach level 50 in one run."
+  requirement: "Reach level 50 in a single run."
   levels:
     - level: 2
       desc: "Increase EXP gain by {15%}."
@@ -470,6 +474,9 @@
       desc: "Increase EXP gain by {25%}."
     - level: 5
       desc: "Increase EXP gain by {30%}."
+  super:
+    name: "Super Study Glasses"
+    desc: "Increase EXP gain by 40% and double the chance of getting a Rainbow EXP drop."
 - name: "Super Chatto Time!"
   type: "item"
   desc: "Targets drop {10%} more Holo Coins."
@@ -489,7 +496,7 @@
 - name: "Membership"
   type: "item"
   desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {30%} and take {10%} less damage."
-  requirement: "Clear Stage 1 with Super Chatto Time!"
+  requirement: "Clear Stage Mode with Super Chatto Time! equipped."
   levels:
     - level: 2
       desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {40%} and take {18%} less damage."
@@ -498,7 +505,7 @@
 - name: "Halu"
   type: "item"
   desc: "Increase regular fan spawns, and fans become {5%} stronger. Gain 1 HoloCoin for every {5} targets defeated since taking this item."
-  requirement: "Clear Stage 1."
+  requirement: "Defeat 5,000 enemies in a run."
   levels:
     - level: 2
       desc: "Increase regular fan spawns more, and fans become {15%} stronger. Gain 1 HoloCoin for every {4} targets defeated since taking this item."
@@ -511,7 +518,7 @@
 - name: "Just Bandage"
   type: "item"
   desc: "Increase Max HP by {10}. After being hit, heal 10% HP every 3 seconds until {80%} of the damage taken is recovered (recovers minimum 1 HP)."
-  requirement: "?Die after 10 minutes?"
+  requirement: "Die after the 10 minutes mark in a run."
   levels:
     - level: 2
       desc: "Increase Max HP by {20}. After being hit, heal 10% HP every 3 seconds until {90%} of the damage taken is recovered (recovers minimum 1 HP)."
@@ -520,7 +527,7 @@
 - name: "GWS Pill"
   type: "item"
   desc: "While the Special meter is still charging, increase crit by {15%}."
-  requirement: "Die with Halu."
+  requirement: "Die with the Halu item equipped."
   levels:
     - level: 2
       desc: "While the Special meter is still charging, increase crit by {20%}."
@@ -529,7 +536,7 @@
 - name: "Limiter"
   type: "item"
   desc: "Gain {100%} Pick Up Range."
-  requirement: "Survive 10 minutes with Sana."
+  requirement: "Survive 10 minutes with Tsukumo Sana in a single run."
   levels:
     - level: 2
       desc: "Gain {200%} Pick Up Range."
@@ -538,7 +545,7 @@
 - name: "Chicken's Feather"
   type: "item"
   desc: "Gain {1} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
-  requirement: "Survive 10 minutes with Kiara."
+  requirement: "Survive for 10 minutes as Takanashi Kiara in a single run."
   levels:
     - level: 2
       desc: "Gain {2} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
@@ -547,4 +554,4 @@
 - name: "Stolen Piggy Bank"
   type: "item"
   desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
-  requirement: "Kill a Golden Yagoo."
+  requirement: "Kill a Golden YAGOO."

@@ -1,15 +1,15 @@
 import { useCallback } from "react";
-import classNames from "classnames";
 
-import { useSpriteSheetsStore, SpriteSheet, SpriteType } from "@/stores";
-
-import "./Sprite.scss"
+import { useSpriteSheetsStore, SpriteType } from "@/stores";
+import { styled } from "@/styles";
+import { getSpriteBackground } from "./getSpriteBackground";
 
 export interface SpriteProps<T = unknown> {
   type: SpriteType;
   name: string;
   selected?: boolean;
   showBackground?: boolean;
+  disabled?: boolean;
   scale?: number;
   className?: string;
   label?: string;
@@ -17,18 +17,61 @@ export interface SpriteProps<T = unknown> {
   onSelected?: (value: T) => void;
 }
 
-const getSpriteBackground = (spriteSheet: SpriteSheet, name: string): string => {
-  const offset = spriteSheet.offsets?.[name];
+const SpriteImage = styled("div", {});
 
-  if (offset) {
-    const x = -(offset[0] || 0) * spriteSheet.width;
-    const y = -(offset[1] || 0) * spriteSheet.height;
+const SpriteContainer = styled("div", {
+  position: "relative",
+  flex: "0 0 auto",
 
-    return `url(${spriteSheet.file}) ${x}px ${y}px`;
-  }
+  variants: {
+    withLabel: {
+      true: {
+        padding: "$sizes$spriteLabelOverflow",
+        paddingBottom: 0,
+      },
+    },
+    clickable: {
+      true: {
+        "&:hover": {
+          cursor: "pointer",
+        },
+      },
+    },
+    selected: {
+      true: {
+        [`& ${SpriteImage}`]: {
+          outline: "5px solid white",
+        },
+      },
+    },
+    disabled: {
+      true: {
+        opacity: 0.3,
+      },
+    },
+  },
+});
 
-  return `url(https://via.placeholder.com/${spriteSheet.width}x${spriteSheet.height}?text=???)`
-}
+const SpriteLabel = styled("div", {
+  display: "flex",
+  flexDirection: "column",
+  justifyContent: "center",
+  alignItems: "center",
+  position: "absolute",
+  top: 0,
+  left: 0,
+  width: "100%",
+  zIndex: 10,
+  fontSize: "11px",
+  color: "white",
+  textAlign: "center",
+  backgroundColor: "rgba(0,0,0,0.4)",
+  borderRadius: "3px",
+  padding: "1px 0",
+  lineHeight: "10px",
+  height: "24px",
+  pointerEvents: "none",
+});
 
 export const Sprite = <T,>({
   type,
@@ -39,44 +82,44 @@ export const Sprite = <T,>({
   className,
   selected = false,
   value,
-  onSelected
+  disabled,
+  onSelected,
 }: SpriteProps<T>) => {
   const spriteSheet = useSpriteSheetsStore(
-    useCallback(state => state.getSpriteSheet(type), [type])
+    useCallback((state) => state.getSpriteSheet(type), [type])
   );
   const showLabel = !!label;
-  const bgStyle = getSpriteBackground(spriteSheet, name);
-  const containerStyle: React.CSSProperties | undefined = showLabel ? {
-    width: `calc(${spriteSheet.width}px + (2 * var(--sprite-label-overflow)))`,
-    height: `calc(${spriteSheet.height}px + var(--sprite-label-overflow))`,
-  } : undefined;
-  const imageStyle: React.CSSProperties = {
-    width: `${spriteSheet.width}px`,
-    height: `${spriteSheet.height}px`,
-    background: `${bgStyle}${showBackground ? ', rgba(0, 0, 0, 0.1)' : ''}`,
-    transform: `scale(${scale})`
-  };
 
   return (
-    <div
-      className={classNames("sprite", className, {
-        selected,
-        clickable: !!onSelected,
-        'show-label': showLabel,
-      })}
-      style={containerStyle}
+    <SpriteContainer
+      className={className}
+      css={
+        // FIXME: calc + token how
+        showLabel
+          ? {
+              width: `calc(${spriteSheet.width}px + (2 * var(--sprite-label-overflow)))`,
+              height: `calc(${spriteSheet.height}px + var(--sprite-label-overflow))`,
+            }
+          : undefined
+      }
+      disabled={disabled}
+      selected={selected}
+      clickable={!!onSelected}
+      withLabel={showLabel}
     >
-      {showLabel && (
-        <div className="label flex-column align-center align-x-center">
-          {label}
-        </div>
-      )}
+      {showLabel && <SpriteLabel>{label}</SpriteLabel>}
 
-      <div
-        className="image"
+      <SpriteImage
         onClick={onSelected ? () => onSelected(value!) : undefined}
-        style={imageStyle}
+        css={{
+          width: `${spriteSheet.width}px`,
+          height: `${spriteSheet.height}px`,
+          transform: `scale(${scale})`,
+          background: `${getSpriteBackground(spriteSheet, name)}${
+            showBackground ? ", rgba(0, 0, 0, 0.1)" : ""
+          }`,
+        }}
       />
-    </div>
+    </SpriteContainer>
   );
-}
+};

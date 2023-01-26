@@ -1,5 +1,4 @@
 import React, { useMemo } from "react";
-import classNames from "classnames";
 
 import { Sprite } from "@/components";
 import { Item } from "@/models";
@@ -24,22 +23,23 @@ export const CollabsList = ({
   onItemClicked,
   onComboItemsChanged,
 }: CollabsListProps) => {
-  const getItemById = useItemsStore(state => state.getItemById);
+  const getItemById = useItemsStore((state) => state.getItemById);
 
   const disabledCollabs = useMemo(() => {
-    return items
-      .filter(item => {
-        // Is a combo item, don't disable
-        if (comboItems.some(ci => item.id === ci.id)) {
-          return false;
-        }
+    return items.filter((item) => {
+      // Is a combo item, don't disable
+      if (comboItems.some((ci) => item.id === ci.id)) {
+        return false;
+      }
 
-        // does this item have parts already picked in current combo items' parts
-        return comboItems.reduce((val, ci) => {
-          const hasSamePart = item.requires!.some(id => ci.requires!.some(cid => id === cid))
-          return val || hasSamePart;
-        }, false);
-      })
+      // does this item have parts already picked in current combo items' parts
+      return comboItems.reduce((val, ci) => {
+        const hasSamePart = item.requires!.some((id) =>
+          ci.requires!.some((cid) => id === cid)
+        );
+        return val || hasSamePart;
+      }, false);
+    });
   }, [items, comboItems]);
 
   const handleCollabItemClicked = (item: Item) => {
@@ -48,23 +48,25 @@ export const CollabsList = ({
 
       const id = comboItems.indexOf(item);
       if (id > -1) {
-        newCombo = comboItems.filter(ci => ci !== item);
+        newCombo = comboItems.filter((ci) => ci !== item);
       } else if (comboItems.length < 4) {
-        newCombo = [...comboItems, item]
+        newCombo = [...comboItems, item];
       }
 
       onComboItemsChanged(newCombo);
-
     } else {
-      onItemClicked(item)
+      onItemClicked(item);
     }
-  }
+  };
 
   return (
     <div className="collabs-list">
-      {items.map(item => {
+      {items.map((item) => {
         if (!item.requires) {
-          console.error(`Collab item "${item.name}" doesn't have any required items`, item);
+          console.error(
+            `Collab item "${item.name}" doesn't have any required items`,
+            item
+          );
           return null;
         }
 
@@ -72,16 +74,23 @@ export const CollabsList = ({
         const secondItem = getItemById(item.requires[1]);
 
         // Don't check all of this if combo mode is not enabled
-        let isInCombo, isFirstItemDisabled, isSecondItemDisabled, isCollabItemDisabled;
+        let isInCombo,
+          isFirstItemDisabled,
+          isSecondItemDisabled,
+          isCollabItemDisabled;
         if (comboMode) {
           isInCombo = comboItems.includes(item);
-          isFirstItemDisabled = firstItem && !!comboItems.find(ci => ci.requires!.includes(firstItem.id));
-          isSecondItemDisabled = secondItem && !!comboItems.find(ci => ci.requires!.includes(secondItem.id));
+          isFirstItemDisabled =
+            firstItem &&
+            !!comboItems.find((ci) => ci.requires!.includes(firstItem.id));
+          isSecondItemDisabled =
+            secondItem &&
+            !!comboItems.find((ci) => ci.requires!.includes(secondItem.id));
           isCollabItemDisabled = disabledCollabs.includes(item);
         }
 
         if (!firstItem || !secondItem || !item) {
-          return null
+          return null;
         }
 
         return (
@@ -92,7 +101,7 @@ export const CollabsList = ({
               value={firstItem}
               label={firstItem.name}
               showBackground
-              className={classNames({ "disabled": isFirstItemDisabled })}
+              className={isFirstItemDisabled ? "disabled" : ""}
               selected={firstItem === selectedItem}
               onSelected={
                 comboMode && isFirstItemDisabled
@@ -109,7 +118,7 @@ export const CollabsList = ({
               value={secondItem}
               label={secondItem.name}
               showBackground
-              className={classNames({ "disabled": isSecondItemDisabled })}
+              className={isSecondItemDisabled ? "disabled" : ""}
               selected={secondItem === selectedItem}
               onSelected={
                 comboMode && isSecondItemDisabled
@@ -126,14 +135,11 @@ export const CollabsList = ({
               value={item}
               label={item.name}
               showBackground
-              className={classNames({
-                "combo": comboMode && isInCombo,
-                "disabled": comboMode && isCollabItemDisabled
-              })}
+              className={`${comboMode && isInCombo ? "combo" : ""} ${
+                comboMode && isCollabItemDisabled ? "disabled" : ""
+              }`}
               selected={
-                comboMode
-                  ? comboItems.includes(item)
-                  : item === selectedItem
+                comboMode ? comboItems.includes(item) : item === selectedItem
               }
               onSelected={
                 comboMode && isCollabItemDisabled
@@ -142,9 +148,8 @@ export const CollabsList = ({
               }
             />
           </React.Fragment>
-        )
-      })
-      }
+        );
+      })}
     </div>
-  )
-}
+  );
+};

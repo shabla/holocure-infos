@@ -1,0 +1,15 @@
+{
+  "typescript.preferences.quoteStyle": "double",
+  "[typescriptreact]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "[typescript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "rome.rome"
+  },
+  "editor.rulers": [100],
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}

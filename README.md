@@ -25,5 +25,4 @@ Some libs I use in this project because I wanted to try them :)
 - stamps picker
 - weapon pickern
 - item picker
-- try [rome](https://rome.tools/) maybe
 - add links to github, youtube, reddit and twitter for the game

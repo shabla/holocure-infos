@@ -8,14 +8,6 @@
       },
       "suspicious": {
         "noArrayIndexKey": "warn"
-      },
-      "nursery": {
-        "noDuplicateJsxProps": "error",
-        "noVar": "error",
-        "noVoidTypeReturn": "error",
-        "noExtraSemicolons": "warn",
-        "noInnerDeclarations": "error",
-        "useConst": "warn"
       }
     }
   },

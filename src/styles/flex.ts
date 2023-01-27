@@ -1,30 +1,30 @@
 import { css } from ".";
 
 export const flexFill = css({
-  flex: "1 1 auto",
+	flex: "1 1 auto",
 });
 
 export const flexWrap = css({
-  flexWrap: "wrap",
+	flexWrap: "wrap",
 });
 
 // Alignment
 export const alignCenter = css({
-  justifyContent: "center",
+	justifyContent: "center",
 });
 
 export const alignSpaceBetween = css({
-  justifyContent: "space-between",
+	justifyContent: "space-between",
 });
 
 export const alignCrossStart = css({
-  alignItems: "flex-start",
+	alignItems: "flex-start",
 });
 
 export const alignCrossCenter = css({
-  alignItems: "center",
+	alignItems: "center",
 });
 
 export const alignCrossBetween = css({
-  alignItems: "space-between",
+	alignItems: "space-between",
 });

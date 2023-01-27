@@ -7,8 +7,7 @@ import { useItemsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
 import { ComboItemsBox } from "./ComboItemsBox/ComboItemsBox";
-
-import "./ItemsPage.scss";
+import { Build } from "./Build/Build";
 
 interface ItemSection {
   type: Item["type"];
@@ -107,102 +106,18 @@ export const ItemsPage = () => {
 
   return (
     <div className="items-page flex-column content-container gap-content">
-      <Box label="Build">
-        <div className="build">
-          <div className="section-name">Idol & Stamps</div>
+      <Build />
 
-          <div className="idol">
-            <Sprite
-              type="idols-icon"
-              name="Amelia Watson"
-              label="Amelia Watson"
-              onSelected={() => {
-                console.log("open selection dialog");
-              }}
-            />
-
-            <Sprite type="skills" name="Pistol Shot" label="Pistol Shot" />
-
-            <div className="stamps">
-              <div className="stamp"></div>
-              <div className="stamp"></div>
-              <div className="stamp"></div>
-            </div>
-          </div>
-
-          <div className="picks">
-            <div className="weapons">
-              <div className="section-name">Weapons</div>
-
-              <div className="weapon-slot">
-                <Sprite type="items" name="Idol Concert" label="Idol Concert" />
-
-                <div className="components">
-                  <Sprite type="items" name="Glowstick" label="Glowstick" />
-                  <Sprite type="items" name="Idol Song" label="Idol Song" />
-                </div>
-              </div>
-
-              <div className="weapon-slot">
-                <Sprite type="items" name="Idol Concert" label="Idol Concert" />
-              </div>
-              <div className="weapon-slot">
-                <Sprite type="items" name="Idol Concert" label="Idol Concert" />
-              </div>
-              <div className="weapon-slot">
-                <Sprite type="items" name="Idol Concert" label="Idol Concert" />
-              </div>
-              <div className="weapon-slot">
-                <Sprite type="items" name="Idol Concert" label="Idol Concert" />
-              </div>
-            </div>
-
-            <div className="items">
-              <div className="section-name">Items</div>
-
-              <Sprite type="items" name="Sake" label="Sake" />
-              <Sprite type="items" name="Sake" label="Sake" />
-              <Sprite type="items" name="Sake" label="Sake" />
-              <Sprite type="items" name="Sake" label="Sake" />
-              <Sprite type="items" name="Sake" label="Sake" />
-              <Sprite type="items" name="Sake" label="Sake" />
-            </div>
-          </div>
-        </div>
-      </Box>
-
-      {comboMode && (
-        <ComboItemsBox
-          items={comboItems}
-          selectedItem={selectedItem}
-          onItemClicked={handleItemClicked}
-          onClear={() => setComboItems([])}
-        />
-      )}
+      <ComboItemsBox
+        items={comboItems}
+        selectedItem={selectedItem}
+        onItemClicked={handleItemClicked}
+        onClear={() => setComboItems([])}
+      />
 
       <div className="flex-row gap-content">
         <div className="item-sections">
-          <Box
-            label={
-              <>
-                <span>Collabs</span>
-
-                <div>
-                  <label className="checkbox flex-row align-x-center">
-                    <input
-                      type="checkbox"
-                      className="mr-10"
-                      checked={comboMode}
-                      onChange={(e) =>
-                        handleComboModeChanged(e.currentTarget.checked)
-                      }
-                    />
-                    Combo mode
-                  </label>
-                </div>
-              </>
-            }
-          >
+          <Box label="Collabs">
             <CollabsList
               selectedItem={selectedItem}
               items={getItemsByType("collab")}

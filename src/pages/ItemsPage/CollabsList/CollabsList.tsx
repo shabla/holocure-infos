@@ -4,8 +4,6 @@ import { Sprite } from "@/components";
 import { Item } from "@/models";
 import { useItemsStore } from "@/stores";
 
-import "./CollabsList.scss";
-
 export interface CollabsListProps {
   items: Item[];
   selectedItem?: Item;
@@ -101,7 +99,7 @@ export const CollabsList = ({
               value={firstItem}
               label={firstItem.name}
               showBackground
-              className={isFirstItemDisabled ? "disabled" : ""}
+              disabled={isFirstItemDisabled}
               selected={firstItem === selectedItem}
               onSelected={
                 comboMode && isFirstItemDisabled
@@ -118,7 +116,7 @@ export const CollabsList = ({
               value={secondItem}
               label={secondItem.name}
               showBackground
-              className={isSecondItemDisabled ? "disabled" : ""}
+              disabled={isSecondItemDisabled}
               selected={secondItem === selectedItem}
               onSelected={
                 comboMode && isSecondItemDisabled
@@ -135,9 +133,8 @@ export const CollabsList = ({
               value={item}
               label={item.name}
               showBackground
-              className={`${comboMode && isInCombo ? "combo" : ""} ${
-                comboMode && isCollabItemDisabled ? "disabled" : ""
-              }`}
+              disabled={comboMode && isCollabItemDisabled}
+              className={`${comboMode && isInCombo ? "combo" : ""}`}
               selected={
                 comboMode ? comboItems.includes(item) : item === selectedItem
               }

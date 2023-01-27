@@ -3,8 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 
 import { styled, globalStyles } from "@/styles";
 import { alignCenter, alignCrossCenter } from "@/styles/flex";
-import { ItemsPage, IdolsPage, UpgradesPage } from "@/pages";
-import { useSpriteSheetsStore } from "@/stores";
+import { ItemsPage, UpgradesPage } from "@/pages";
+import { useIdolsStore, useSpriteSheetsStore } from "@/stores";
 import { ContentContainer, NavbarLink, NavbarLinkStyle } from "@/components";
 import HOLOCURE_LOGO from "./assets/holocure-logo-sm.png";
 
@@ -60,16 +60,21 @@ const PageContent = styled("main", {
 const StyledApp = styled("div", { display: "flex" });
 
 export const App = () => {
-  const [loadSpriteSheets, loaded] = useSpriteSheetsStore((state) => [
-    state.loadSpriteSheets,
+  const [loadSpriteSheets, spriteSheetsLoaded] = useSpriteSheetsStore(
+    (state) => [state.loadSpriteSheets, state.loaded]
+  );
+
+  const [idolsLoaded, loadIdols] = useIdolsStore((state) => [
     state.loaded,
+    state.loadIdols,
   ]);
 
   useEffect(() => {
+    loadIdols();
     loadSpriteSheets();
   }, []);
 
-  if (!loaded) {
+  if (!spriteSheetsLoaded || !idolsLoaded) {
     return null;
   }
 
@@ -83,7 +88,6 @@ export const App = () => {
 
           <NavbarLinks>
             <NavbarLink to="items">Items</NavbarLink>
-            <NavbarLink to="idols">Idols</NavbarLink>
             <NavbarLink to="upgrades">Upgrades</NavbarLink>
           </NavbarLinks>
 
@@ -99,9 +103,6 @@ export const App = () => {
 
       <PageContent>
         <Routes>
-          <Route path="idols" element={<IdolsPage />}>
-            <Route path=":idolId" element={<IdolsPage />} />
-          </Route>
           <Route path="items" element={<ItemsPage />} />
           <Route path="upgrades" element={<UpgradesPage />} />
           <Route path="*" element={<Navigate to="items" />} />

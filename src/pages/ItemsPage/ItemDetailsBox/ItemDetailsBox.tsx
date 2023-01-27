@@ -5,8 +5,6 @@ import { useItemsStore } from "@/stores";
 import { Item } from "@/models";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
 
-import "./ItemDetailsBox.scss"
-
 export interface ItemDetailsBoxProps {
   item?: Item;
   onItemSelected: (item: Item) => void;
@@ -14,16 +12,19 @@ export interface ItemDetailsBoxProps {
 
 export const ItemDetailsBox = ({
   item,
-  onItemSelected
+  onItemSelected,
 }: ItemDetailsBoxProps) => {
-  const [getItemById, getItemsUsedBy] = useItemsStore(state => [state.getItemById, state.getItemsUsedBy]);
+  const [getItemById, getItemsUsedBy] = useItemsStore((state) => [
+    state.getItemById,
+    state.getItemsUsedBy,
+  ]);
 
   const usedIn: Item[] = useMemo(() => {
     if (item) {
       return getItemsUsedBy(item.id);
     }
     return [];
-  }, [item])
+  }, [item]);
 
   return (
     <Box
@@ -43,7 +44,11 @@ export const ItemDetailsBox = ({
             </div>
             <span className="item-type">{item?.type}</span>
           </>
-        ) : <div><div className="item-name">-</div></div>
+        ) : (
+          <div>
+            <div className="item-name">-</div>
+          </div>
+        )
       }
     >
       {item ? (
@@ -57,11 +62,15 @@ export const ItemDetailsBox = ({
             )}
 
             <tr>
-              <td className="name">{item?.levels ? 'Level 1' : 'Description'}</td>
-              <td className="value">{item && getHighlightedElements(item.desc)}</td>
+              <td className="name">
+                {item?.levels ? "Level 1" : "Description"}
+              </td>
+              <td className="value">
+                {item && getHighlightedElements(item.desc)}
+              </td>
             </tr>
 
-            {item?.levels?.map(level => (
+            {item?.levels?.map((level) => (
               <tr key={level.level}>
                 <td className="name">Level {level.level}</td>
                 <td className="value">{getHighlightedElements(level.desc)}</td>
@@ -73,20 +82,18 @@ export const ItemDetailsBox = ({
                 <td className="name">Requires</td>
                 <td className="value">
                   <SpriteList
-                    sprites={
-                      item.requires.map(itemId => {
-                        const item = getItemById(itemId);
-                        return {
-                          type: "items",
-                          name: item?.name,
-                          value: item,
-                          label: item?.name,
-                          showBackground: true,
-                          onSelected: onItemSelected,
-                          key: itemId,
-                        } as SpriteProps;
-                      })
-                    }
+                    sprites={item.requires.map((itemId) => {
+                      const item = getItemById(itemId);
+                      return {
+                        type: "items",
+                        name: item?.name,
+                        value: item,
+                        label: item?.name,
+                        showBackground: true,
+                        onSelected: onItemSelected,
+                        key: itemId,
+                      } as SpriteProps;
+                    })}
                   />
                 </td>
               </tr>
@@ -97,24 +104,29 @@ export const ItemDetailsBox = ({
                 <td className="name">Used In</td>
                 <td className="value">
                   <SpriteList
-                    sprites={
-                      usedIn.map(item => ({
-                        type: "items",
-                        name: item?.name,
-                        value: item,
-                        label: item.name,
-                        showBackground: true,
-                        onSelected: onItemSelected,
-                        key: item.name,
-                      } as SpriteProps))
-                    }
+                    sprites={usedIn.map(
+                      (item) =>
+                        ({
+                          type: "items",
+                          name: item?.name,
+                          value: item,
+                          label: item.name,
+                          showBackground: true,
+                          onSelected: onItemSelected,
+                          key: item.name,
+                        } as SpriteProps)
+                    )}
                   />
                 </td>
               </tr>
             )}
           </tbody>
         </table>
-      ) : <div className="flex-column align-center align-x-center flex-fill p-20">Select an item to see more details</div>}
+      ) : (
+        <div className="flex-column align-center align-x-center flex-fill p-20">
+          Select an item to see more details
+        </div>
+      )}
     </Box>
-  )
-}
+  );
+};

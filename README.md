@@ -27,4 +27,3 @@ Some libs I use in this project because I wanted to try them :)
 - item picker
 - try [rome](https://rome.tools/) maybe
 - add links to github, youtube, reddit and twitter for the game
-- upgrade dependencies just because

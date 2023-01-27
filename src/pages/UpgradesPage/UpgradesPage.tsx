@@ -1,44 +1,21 @@
-import { useEffect } from "react";
-
 import { Box, ContentContainer, Sprite } from "@/components";
 import { Upgrade } from "@/models";
 import { useUpgradesStore } from "@/stores";
-import { styled, alignCrossCenter, tableCellMinContent } from "@/styles";
-
-const Table = styled("table", {
-  borderCollapse: "collapse",
-  "td,th": {
-    verticalAlign: "middle",
-  },
-});
-const NameCol = styled("td", { paddingLeft: "$2", textAlign: "left" });
-const DescCol = styled("td", { minWidth: "300px" });
-const RanksCol = styled("td", tableCellMinContent);
-const TotalCol = styled("td", { textAlign: "right" }, tableCellMinContent);
-const RanksContainer = styled(
-  "div",
-  { display: "flex", flexDirection: "row" },
-  alignCrossCenter
-);
+import {
+  Table,
+  NameCol,
+  DescCol,
+  RanksCol,
+  TotalCol,
+  RanksContainer,
+} from "./UpgradesPageStyled";
 
 export const UpgradesPage = () => {
-  const [loaded, upgrades, loadUpgrades] = useUpgradesStore((state) => [
-    state.loaded,
-    state.upgrades,
-    state.loadUpgrades,
-  ]);
-
-  useEffect(() => {
-    loadUpgrades();
-  }, []);
+  const [upgrades] = useUpgradesStore((state) => [state.upgrades]);
 
   const getUpgradeTotalCost = (upgrade: Upgrade): number => {
     return upgrade.costs.reduce((acc, cost) => acc + cost, 0);
   };
-
-  if (!loaded) {
-    return null;
-  }
 
   return (
     <ContentContainer

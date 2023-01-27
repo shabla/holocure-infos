@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 import itemsSpriteSheet from "@/assets/items.png";
 import skillsSpriteSheet from "@/assets/skills.png";

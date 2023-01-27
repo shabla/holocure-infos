@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 import { Upgrade } from "@/models";
 
@@ -17,7 +17,7 @@ export const useUpgradesStore = create<UpgradesStore>((set, get) => ({
     }
 
     try {
-      const data = await fetch('upgrades.json');
+      const data = await fetch("upgrades.json");
       const upgrades: Upgrade[] = await data.json();
 
       set({ loaded: true, upgrades });
@@ -26,7 +26,7 @@ export const useUpgradesStore = create<UpgradesStore>((set, get) => ({
     } catch (e) {
       set({ loaded: false, upgrades: [] });
 
-      return []
+      return [];
     }
-  }
+  },
 }));

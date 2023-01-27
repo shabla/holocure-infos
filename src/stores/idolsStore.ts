@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 
 import { nameToId } from "@/utils/nameToId";
 import { Idol } from "@/models";
@@ -15,10 +15,10 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
   loaded: false,
   idols: [],
   getIdolById: (id: string): Idol | undefined => {
-    return get().idols.filter(idol => idol.id === id)[0];
+    return get().idols.filter((idol) => idol.id === id)[0];
   },
   getIdolsByGen: (gen: string): Idol[] => {
-    return get().idols.filter(i => i.gen === gen);
+    return get().idols.filter((i) => i.gen === gen);
   },
   loadIdols: async (force?: boolean) => {
     if (get().loaded && !force) {
@@ -26,18 +26,18 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
     }
 
     try {
-      const data = await fetch('idols.json');
+      const data = await fetch("idols.json");
       const idols: Idol[] = await data.json();
 
       set({
         loaded: true,
-        idols: idols.map(idol => ({
+        idols: idols.map((idol) => ({
           ...idol,
-          id: nameToId(idol.name)
-        }))
+          id: nameToId(idol.name),
+        })),
       });
     } catch (e) {
       set({ loaded: false, idols: [] });
     }
-  }
+  },
 }));

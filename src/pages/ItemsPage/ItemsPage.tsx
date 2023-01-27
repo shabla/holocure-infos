@@ -24,36 +24,31 @@ export const ItemsPage = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [comboMode, setComboMode] = useState<boolean>(false);
   const [comboItems, setComboItems] = useState<Item[]>([]);
-  const [loaded, loadItems, getItemById, getItemsByType] = useItemsStore(
-    (state) => [
-      state.loaded,
-      state.loadItems,
-      state.getItemById,
-      state.getItemsByType,
-    ]
-  );
+
+  const [getItemById, getItemsByType] = useItemsStore((state) => [
+    state.getItemById,
+    state.getItemsByType,
+  ]);
 
   useEffect(() => {
-    loadItems().then(() => {
-      const itemId = searchParams.get("i");
-      const selectedItem = itemId ? getItemById(itemId) : undefined;
-      setSelectedItem(selectedItem);
+    const itemId = searchParams.get("i");
+    const selectedItem = itemId ? getItemById(itemId) : undefined;
+    setSelectedItem(selectedItem);
 
-      const comboItemIds = searchParams.get("c");
-      if (comboItemIds !== null) {
-        setComboMode(true);
+    const comboItemIds = searchParams.get("c");
+    if (comboItemIds !== null) {
+      setComboMode(true);
 
-        const validItems = comboItemIds
-          .split(",")
-          .map((id) => getItemById(id))
-          .filter((i) => i !== undefined && i.type === "collab") as Item[];
+      const validItems = comboItemIds
+        .split(",")
+        .map((id) => getItemById(id))
+        .filter((i) => i !== undefined && i.type === "collab") as Item[];
 
-        setComboItems(validItems);
-      } else {
-        setComboMode(false);
-        setComboItems([]);
-      }
-    });
+      setComboItems(validItems);
+    } else {
+      setComboMode(false);
+      setComboItems([]);
+    }
   }, [searchParams, getItemById]);
 
   const updateUrlParams = (selectedItem?: Item, comboItems?: Item[]) => {
@@ -99,10 +94,6 @@ export const ItemsPage = () => {
       updateUrlParams(selectedItem);
     }
   };
-
-  if (!loaded) {
-    return null;
-  }
 
   return (
     <div className="items-page flex-column content-container gap-content">

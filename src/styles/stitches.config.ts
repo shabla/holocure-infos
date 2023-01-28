@@ -16,8 +16,10 @@ export const {
 	theme: {
 		colors: {
 			blue: "#4abef9",
+			blueHalfOpacity: "#4abef980",
 			pink: "#ff9ec6",
 			darkBlue: "#21546f",
+			darkBlueHalfOpacity: "#21546f80",
 		},
 		sizes: {
 			spriteLabelOverflow: "12px",

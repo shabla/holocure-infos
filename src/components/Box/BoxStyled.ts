@@ -6,7 +6,7 @@ export const BoxContainer = styled("div", {
 	width: "100%",
 	border: "1px solid white",
 	borderTop: 0,
-	backgroundColor: "rgba(0, 0, 0, 0.13)",
+	backgroundColor: "rgba(0, 0, 0, 0.15)",
 });
 
 export const BoxHeader = styled("header", {

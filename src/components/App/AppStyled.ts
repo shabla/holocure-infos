@@ -84,6 +84,20 @@ export const PageContent = styled("main", {
 	marginTop: "$sizes$navbarHeight",
 	flex: "1 1 auto",
 	zIndex: 0,
+	background: `
+    linear-gradient(
+      to bottom,
+      $blue 15%,
+      $blueHalfOpacity
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 10px,
+      $darkBlueHalfOpacity 10px,
+      $darkBlueHalfOpacity 30px
+    )
+  `,
 });
 
 export const StyledApp = styled("div", { minHeight: "100vh", display: "flex" });

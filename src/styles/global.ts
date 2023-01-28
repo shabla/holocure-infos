@@ -1,14 +1,13 @@
 import { globalCss, css } from "@/styles";
 
 export const globalStyles = globalCss({
-	html: {
+	"html, #root, body": {
 		fontSize: "10px",
 		minHeight: "100vh",
 		backgroundColor: "$blue",
 	},
 	body: {
 		fontSize: "1.6rem",
-		minHeight: "100vh",
 	},
 	"*": {
 		boxSizing: "border-box",

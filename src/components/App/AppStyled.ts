@@ -50,4 +50,4 @@ export const PageContent = styled("main", {
 	zIndex: 0,
 });
 
-export const StyledApp = styled("div", { display: "flex" });
+export const StyledApp = styled("div", { minHeight: "100vh", display: "flex" });

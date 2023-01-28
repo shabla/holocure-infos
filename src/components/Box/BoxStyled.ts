@@ -1,19 +1,15 @@
-import React from "react";
 import { styled } from "@/styles";
 
-export interface BoxProps extends React.HTMLAttributes<HTMLDivElement> {
-	label?: React.ReactNode;
-}
-
-const BoxContainer = styled("div", {
+export const BoxContainer = styled("div", {
 	display: "flex",
 	flexDirection: "column",
+	width: "100%",
 	border: "1px solid white",
 	borderTop: 0,
 	backgroundColor: "rgba(0, 0, 0, 0.13)",
 });
 
-const BoxHeader = styled("header", {
+export const BoxHeader = styled("header", {
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "center",
@@ -27,7 +23,7 @@ const BoxHeader = styled("header", {
 	padding: "0 10px",
 });
 
-const BoxContent = styled("main", {
+export const BoxContent = styled("main", {
 	display: "flex",
 	flexDirection: "column",
 	flex: "1 1 auto",
@@ -36,12 +32,3 @@ const BoxContent = styled("main", {
 	fontSize: "16px",
 	overflowY: "auto",
 });
-
-export const Box = ({ label, className, children, ...props }: BoxProps) => {
-	return (
-		<BoxContainer {...props}>
-			<BoxHeader>{label}</BoxHeader>
-			<BoxContent>{children}</BoxContent>
-		</BoxContainer>
-	);
-};

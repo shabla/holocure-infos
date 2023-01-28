@@ -1,4 +1,4 @@
-export * from "./Box";
+export * from "./Box/Box";
 export * from "./Sprite/Sprite";
 export * from "./SpriteList";
 export * from "./NavbarLink";

@@ -1,54 +1,46 @@
 import { Box, Sprite, IdolPickerDialog, Collab } from "@/components";
-import { Idol, Item } from "@/models";
-import { styled } from "@/styles";
+import { Idol, Item, Stamp, StampsList } from "@/models";
 import React, { useState } from "react";
 import {
 	BuildContainer,
+	StampContainer,
 	IdolContainer,
-	ItemsContainer,
-	SectionName,
-	Stamp,
-	IdolSpriteContainer,
 	StampsContainer,
-	WeaponsContainer,
+	SectionsContainer,
+	Section,
+	ClearButton,
 } from "./BuildStyled";
 
 export interface BuildProps {
 	idol?: Idol;
+	stamps?: StampsList;
 	weapons?: string[];
 	items?: Item[];
 	onIdolChange: (idol?: Idol) => void;
+	onStampsChange: (stamps: StampsList) => void;
 }
-
-const ClearButton = styled("button", {
-	all: "unset",
-	position: "absolute",
-	top: 0,
-	right: 0,
-	transform: "translate(25%, -25%)",
-	width: 20,
-	height: 20,
-	lineHeight: "20px",
-	backgroundColor: "black",
-	color: "white",
-	zIndex: 20,
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-	borderRadius: 5,
-});
 
 export const Build = ({
 	idol,
+	stamps = [undefined, undefined, undefined],
 	weapons,
 	items,
 	onIdolChange,
+	onStampsChange,
 }: BuildProps): React.ReactElement => {
 	const [open, setOpen] = useState(false);
 
 	const handleIdolChange = (idol: Idol) => {
 		onIdolChange(idol);
 		setOpen(false);
+	};
+
+	const handleStampChange = (newStamp: Stamp, index: number) => {};
+
+	const handleStampCleared = (index: number) => {
+		const newStamps: StampsList = [...stamps];
+		newStamps[index] = undefined;
+		onStampsChange(newStamps);
 	};
 
 	return (
@@ -61,64 +53,72 @@ export const Build = ({
 			/>
 
 			<BuildContainer>
-				<SectionName>Idol & Stamps</SectionName>
+				<SectionsContainer>
+					<Section title="Idol" css={{ flex: "1 1 auto" }}>
+						<IdolContainer onClick={() => setOpen(true)}>
+							{idol && (
+								<ClearButton
+									onClick={() => {
+										onIdolChange(undefined);
+									}}
+								/>
+							)}
+							<Sprite
+								type="idols-icon"
+								name={idol?.name}
+								label={idol ? idol.name : ""}
+								showLabel
+							/>
+						</IdolContainer>
+					</Section>
 
-				<IdolContainer>
-					<IdolSpriteContainer onClick={() => setOpen(true)}>
-						{idol && (
-							<ClearButton
-								onClick={(e) => {
-									e.stopPropagation();
-									onIdolChange(undefined);
-								}}
-							>
-								x
-							</ClearButton>
-						)}
-						<Sprite
-							type="idols-icon"
-							name={idol?.name}
-							label={idol ? idol.name : ""}
-							showLabel
-						/>
-					</IdolSpriteContainer>
+					<Section title="Stamps">
+						<Sprite type="skills" name={idol?.attack.name} showLabel />
+						<StampsContainer>
+							{stamps?.map((stamp, index) => (
+								<StampContainer key={stamp?.name || index}>
+									{stamp && (
+										<ClearButton onClick={() => handleStampCleared(index)} />
+									)}
+									<Sprite
+										type="stamp"
+										name={stamp?.name}
+										label={stamp?.name}
+										showLabel
+										onSelected={() => {
+											console.log("open stamp dialog");
+										}}
+									/>
+								</StampContainer>
+							))}
+						</StampsContainer>
+					</Section>
+				</SectionsContainer>
 
-					<Sprite type="skills" name={idol?.attack.name} showLabel />
-
-					{/* <StampsContainer>
-						<Sprite
-							type="none"
-							onSelected={() => {
-								console.log("open stamp dialog");
-							}}
-						/>
-						<Sprite
-							type="none"
-							onSelected={() => {
-								console.log("open stamp dialog");
-							}}
-						/>
-						<Sprite
-							type="none"
-							onSelected={() => {
-								console.log("open stamp dialog");
-							}}
-						/>
-					</StampsContainer> */}
-				</IdolContainer>
-
-				<div>
-					<WeaponsContainer>
-						<SectionName>Weapons</SectionName>
-
+				<SectionsContainer css={{ flex: "1 1 auto" }}>
+					<Section
+						title="Weapons"
+						contentCss={{ flexDirection: "row", gap: "$4" }}
+					>
 						{weapons?.map((weaponId) => (
-							<Collab itemId={weaponId} key={weaponId} />
+							<Collab itemId={weaponId} key={weaponId}>
+								<ClearButton
+									onClick={() => {
+										console.log("clear weapon", weaponId);
+									}}
+								/>
+							</Collab>
 						))}
-					</WeaponsContainer>
+					</Section>
 
-					<ItemsContainer>
-						<SectionName>Items</SectionName>
-
+					<Section
+						title="Items"
+						contentCss={{
+							flexDirection: "row",
+							gap: "$4",
+							paddingTop: "$sizes$spriteLabelOverflow",
+						}}
+					>
 						{items?.map((item) => (
 							<Sprite
 								type="items"
@@ -129,8 +129,8 @@ export const Build = ({
 								key={item.id}
 							/>
 						))}
-					</ItemsContainer>
-				</div>
+					</Section>
+				</SectionsContainer>
 			</BuildContainer>
 		</Box>
 	);

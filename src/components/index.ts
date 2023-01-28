@@ -8,3 +8,4 @@ export * from "./IdolGenerations/IdolGenerations";
 export * from "./Dialog/Dialog";
 export * from "./IdolPickerDialog/IdolPickerDialog";
 export * from "./IdolSkillBox/IdolSkillBox";
+export * from "./Collab/Collab";

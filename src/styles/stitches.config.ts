@@ -21,6 +21,7 @@ export const {
 		},
 		sizes: {
 			spriteLabelOverflow: "12px",
+			spriteLabelHeight: "24px",
 			navbarHeight: "50px",
 		},
 		space: {

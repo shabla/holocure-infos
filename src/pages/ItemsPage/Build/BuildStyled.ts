@@ -66,21 +66,6 @@ export const WeaponsContainer = styled("div", {
 	marginBottom: "$4",
 });
 
-export const WeaponContainer = styled("div", {
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "center",
-	width: 180,
-	backgroundColor: "rgba(255,255,255,0.1)",
-	padding: "$2",
-});
-
-export const WeaponComponentsContainer = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	gap: "$2",
-});
-
 export const ItemsContainer = styled("div", {
 	display: "flex",
 	flexDirection: "row",

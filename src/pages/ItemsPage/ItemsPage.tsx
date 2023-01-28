@@ -12,7 +12,6 @@ import {
 import { useItemsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
-import { ComboItemsBox } from "./ComboItemsBox/ComboItemsBox";
 import { Build } from "./Build/Build";
 import { css } from "@/styles";
 
@@ -103,7 +102,12 @@ export const ItemsPage = () => {
 	};
 
 	const [idol, setIdol] = useState<Idol>();
-	const [weapons, setWeapons] = useState<Item[]>([]);
+	const [weapons, setWeapons] = useState<string[]>([
+		"micomet",
+		"frozen-sea",
+		"rap-dog",
+		"idol-concert",
+	]);
 	const [items, setItems] = useState<Item[]>([
 		getItemById("stolen-piggy-bank")!,
 		getItemById("limiter")!,
@@ -127,13 +131,6 @@ export const ItemsPage = () => {
 				weapons={weapons}
 				onIdolChange={setIdol}
 			/>
-
-			{/* <ComboItemsBox
-				items={comboItems}
-				selectedItem={selectedItem}
-				onItemClicked={handleItemClicked}
-				onClear={() => setComboItems([])}
-			/> */}
 
 			{/* <div className="flex-row gap-content">
 				<div className="item-sections">

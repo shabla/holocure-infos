@@ -1,4 +1,4 @@
-import { Box, Sprite, IdolGenerations, IdolPickerDialog } from "@/components";
+import { Box, Sprite, IdolPickerDialog, Collab } from "@/components";
 import { Idol, Item } from "@/models";
 import { styled } from "@/styles";
 import React, { useState } from "react";
@@ -10,14 +10,12 @@ import {
 	Stamp,
 	IdolSpriteContainer,
 	StampsContainer,
-	WeaponComponentsContainer,
-	WeaponContainer,
 	WeaponsContainer,
 } from "./BuildStyled";
 
 export interface BuildProps {
 	idol?: Idol;
-	weapons?: Item[];
+	weapons?: string[];
 	items?: Item[];
 	onIdolChange: (idol?: Idol) => void;
 }
@@ -110,26 +108,13 @@ export const Build = ({
 				</IdolContainer>
 
 				<div>
-					{/* <WeaponsContainer>
+					<WeaponsContainer>
 						<SectionName>Weapons</SectionName>
 
-						{weapons?.map((weapon) => (
-							<WeaponContainer key={weapon.name}>
-								<Sprite type="items" name={weapon.name} label={weapon.name} />
-
-								<WeaponComponentsContainer>
-									{weapon.components?.map((component) => (
-										<Sprite
-											type="items"
-											name={component.name}
-											label={component.name}
-											key={component.name}
-										/>
-									))}
-								</WeaponComponentsContainer>
-							</WeaponContainer>
+						{weapons?.map((weaponId) => (
+							<Collab itemId={weaponId} key={weaponId} />
 						))}
-					</WeaponsContainer> */}
+					</WeaponsContainer>
 
 					{/* <ItemsContainer>
 						<SectionName>Items</SectionName>

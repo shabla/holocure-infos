@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import { RouterProvider, createHashRouter } from "react-router-dom";
+import { RouterProvider, createHashRouter, redirect } from "react-router-dom";
 
 import { App } from "@/components";
 import { ItemsPage, UpgradesPage } from "@/pages";
@@ -34,6 +34,10 @@ const router = createHashRouter([
 				},
 			},
 		],
+	},
+	{
+		path: "*",
+		loader: () => redirect("items"),
 	},
 ]);
 

@@ -1,13 +1,12 @@
 import { useItemsStore } from "@/stores";
 import { Sprite } from "@/components";
-import { Bars, CollabContainer, ComponentsContainer } from "./CollabStyled";
+import { Bars, ComponentsContainer, CollabContainer } from "./CollabTreeStyled";
 
-export interface CollabProps {
+export interface CollabTreeProps {
 	itemId: string;
-	children?: React.ReactNode;
 }
 
-export const Collab = ({ itemId, children }: CollabProps) => {
+export const CollabTree = ({ itemId }: CollabTreeProps) => {
 	const getItemById = useItemsStore((state) => state.getItemById);
 	const item = getItemById(itemId);
 
@@ -19,8 +18,6 @@ export const Collab = ({ itemId, children }: CollabProps) => {
 
 	return (
 		<CollabContainer>
-			{children}
-
 			<Sprite
 				type="items"
 				name={item.name}

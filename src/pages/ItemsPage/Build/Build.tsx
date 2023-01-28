@@ -1,4 +1,10 @@
-import { Box, Sprite, IdolPickerDialog, Collab } from "@/components";
+import {
+	Box,
+	Sprite,
+	IdolPickerDialog,
+	CollabTree,
+	ClickableContainer,
+} from "@/components";
 import { Idol, Item, Stamp, StampsList } from "@/models";
 import React, { useState } from "react";
 import {
@@ -35,11 +41,9 @@ export const Build = ({
 		setOpen(false);
 	};
 
-	const handleStampChange = (newStamp: Stamp, index: number) => {};
-
-	const handleStampCleared = (index: number) => {
+	const handleStampChange = (newStamp: Stamp | undefined, index: number) => {
 		const newStamps: StampsList = [...stamps];
-		newStamps[index] = undefined;
+		newStamps[index] = newStamp;
 		onStampsChange(newStamps);
 	};
 
@@ -54,7 +58,7 @@ export const Build = ({
 
 			<BuildContainer>
 				<SectionsContainer>
-					<Section title="Idol" css={{ flex: "1 1 auto" }}>
+					<Section title="Idol">
 						<IdolContainer onClick={() => setOpen(true)}>
 							{idol && (
 								<ClearButton
@@ -78,7 +82,9 @@ export const Build = ({
 							{stamps?.map((stamp, index) => (
 								<StampContainer key={stamp?.name || index}>
 									{stamp && (
-										<ClearButton onClick={() => handleStampCleared(index)} />
+										<ClearButton
+											onClick={() => handleStampChange(undefined, index)}
+										/>
 									)}
 									<Sprite
 										type="stamp"
@@ -101,13 +107,19 @@ export const Build = ({
 						contentCss={{ flexDirection: "row", gap: "$4" }}
 					>
 						{weapons?.map((weaponId) => (
-							<Collab itemId={weaponId} key={weaponId}>
+							<ClickableContainer
+								key={weaponId}
+								onClick={() => {
+									console.log("collab clicked ", weaponId);
+								}}
+							>
 								<ClearButton
 									onClick={() => {
 										console.log("clear weapon", weaponId);
 									}}
 								/>
-							</Collab>
+								<CollabTree itemId={weaponId} />
+							</ClickableContainer>
 						))}
 					</Section>
 

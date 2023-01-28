@@ -5,11 +5,8 @@ export const CollabContainer = styled("div", {
 	flexDirection: "column",
 	alignItems: "center",
 	width: 180,
-	backgroundColor: "rgba(255,255,255,0.1)",
 	padding: "$2",
 	paddingBottom: 0,
-	borderRadius: "3px",
-	position: "relative",
 });
 
 export const ComponentsContainer = styled("div", {

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 
-import { Sprite, SpriteProps, SpriteList, Box } from "@/components";
+import { Sprite, SpriteProps, Box } from "@/components";
 import { useItemsStore } from "@/stores";
 import { Item } from "@/models";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
@@ -10,7 +10,10 @@ export interface ItemDetailsBoxProps {
 	onItemSelected: (item: Item) => void;
 }
 
-export const ItemDetailsBox = ({ item, onItemSelected }: ItemDetailsBoxProps) => {
+export const ItemDetailsBox = ({
+	item,
+	onItemSelected,
+}: ItemDetailsBoxProps) => {
 	const [getItemById, getItemsUsedBy] = useItemsStore((state) => [
 		state.getItemById,
 		state.getItemsUsedBy,
@@ -59,8 +62,12 @@ export const ItemDetailsBox = ({ item, onItemSelected }: ItemDetailsBoxProps) =>
 						)}
 
 						<tr>
-							<td className="name">{item?.levels ? "Level 1" : "Description"}</td>
-							<td className="value">{item && getHighlightedElements(item.desc)}</td>
+							<td className="name">
+								{item?.levels ? "Level 1" : "Description"}
+							</td>
+							<td className="value">
+								{item && getHighlightedElements(item.desc)}
+							</td>
 						</tr>
 
 						{item?.levels?.map((level) => (
@@ -74,7 +81,8 @@ export const ItemDetailsBox = ({ item, onItemSelected }: ItemDetailsBoxProps) =>
 							<tr>
 								<td className="name">Requires</td>
 								<td className="value">
-									<SpriteList
+									{/* FIXME: replace with same thing as SpriteListContainer in IdolGenerations */}
+									{/* <SpriteList
 										sprites={item.requires.map((itemId) => {
 											const item = getItemById(itemId);
 											return {
@@ -87,7 +95,7 @@ export const ItemDetailsBox = ({ item, onItemSelected }: ItemDetailsBoxProps) =>
 												key: itemId,
 											} as SpriteProps;
 										})}
-									/>
+									/> */}
 								</td>
 							</tr>
 						)}

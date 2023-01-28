@@ -1,12 +1,14 @@
-import { Box, Sprite, IdolGenerations } from "@/components";
+import { Box, Sprite, IdolGenerations, IdolPickerDialog } from "@/components";
 import { Idol, Item } from "@/models";
-import React from "react";
+import { styled } from "@/styles";
+import React, { useState } from "react";
 import {
 	BuildContainer,
 	IdolContainer,
 	ItemsContainer,
 	SectionName,
 	Stamp,
+	IdolSpriteContainer,
 	StampsContainer,
 	WeaponComponentsContainer,
 	WeaponContainer,
@@ -15,50 +17,77 @@ import {
 
 export interface BuildProps {
 	idol?: Idol;
-	weapons?: (Pick<Item, "name"> & { components: Pick<Item, "name">[] })[];
+	weapons?: Item[];
 	items?: Item[];
+	onIdolChange: (idol?: Idol) => void;
 }
+
+const ClearButton = styled("button", {
+	all: "unset",
+	position: "absolute",
+	top: 0,
+	right: 0,
+	transform: "translate(25%, -25%)",
+	width: 20,
+	height: 20,
+	lineHeight: "20px",
+	backgroundColor: "black",
+	color: "white",
+	zIndex: 20,
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+	borderRadius: 5,
+});
 
 export const Build = ({
 	idol,
-	weapons = [
-		{
-			name: "Frozen Sea",
-			components: [{ name: "BL Book" }, { name: "Wamy Water" }],
-		},
-		{
-			name: "BL Fujoshi",
-			components: [{ name: "BL Book" }, { name: "Psycho Axe" }],
-		},
-		{
-			name: "MiComet",
-			components: [{ name: "Elite Lava Bucket" }, { name: "Psycho Axe" }],
-		},
-		{
-			name: "Idol Concert",
-			components: [{ name: "Glowstick" }, { name: "Idol Song" }],
-		},
-	],
+	weapons,
 	items,
+	onIdolChange,
 }: BuildProps): React.ReactElement => {
+	const [open, setOpen] = useState(false);
+
+	const handleIdolChange = (idol: Idol) => {
+		onIdolChange(idol);
+		setOpen(false);
+	};
+
 	return (
 		<Box label="Build">
+			<IdolPickerDialog
+				idol={idol}
+				open={open}
+				setOpen={setOpen}
+				onChange={handleIdolChange}
+			/>
+
 			<BuildContainer>
 				<SectionName>Idol & Stamps</SectionName>
 
 				<IdolContainer>
-					<Sprite
-						type="idols-icon"
-						name="Amelia Watson"
-						label="Amelia Watson"
-						onSelected={() => {
-							console.log("open selection dialog");
-						}}
-					/>
+					<IdolSpriteContainer onClick={() => setOpen(true)}>
+						{idol && (
+							<ClearButton
+								onClick={(e) => {
+									e.stopPropagation();
+									onIdolChange(undefined);
+								}}
+							>
+								x
+							</ClearButton>
+						)}
+						<Sprite
+							type="idols-icon"
+							name={idol?.name}
+							label={idol ? idol.name : ""}
+							showLabel
+						/>
+					</IdolSpriteContainer>
 
-					<Sprite type="skills" name="Pistol Shot" label="Pistol Shot" />
+					<Sprite type="skills" name={idol?.attack.name} showLabel />
 
-					<StampsContainer>
+					{/* <StampsContainer>
 						<Sprite
 							type="none"
 							onSelected={() => {
@@ -77,14 +106,14 @@ export const Build = ({
 								console.log("open stamp dialog");
 							}}
 						/>
-					</StampsContainer>
+					</StampsContainer> */}
 				</IdolContainer>
 
 				<div>
-					<WeaponsContainer>
+					{/* <WeaponsContainer>
 						<SectionName>Weapons</SectionName>
 
-						{weapons.map((weapon) => (
+						{weapons?.map((weapon) => (
 							<WeaponContainer key={weapon.name}>
 								<Sprite type="items" name={weapon.name} label={weapon.name} />
 
@@ -100,18 +129,20 @@ export const Build = ({
 								</WeaponComponentsContainer>
 							</WeaponContainer>
 						))}
-					</WeaponsContainer>
+					</WeaponsContainer> */}
 
-					<ItemsContainer>
+					{/* <ItemsContainer>
 						<SectionName>Items</SectionName>
 
-						<Sprite type="items" name="Stolen Piggy Bank" label="Stolen Piggy Bank" />
-						<Sprite type="items" name="Limiter" label="Limiter" />
-						<Sprite type="items" name="GWS Pill" label="GWS Pill" />
-						<Sprite type="items" name="Just Bandage" label="Just Bandage" />
-						<Sprite type="items" name="Halu" label="Halu" />
-						<Sprite type="items" name="Sake" label="Sake" />
-					</ItemsContainer>
+						{items?.map((item) => (
+							<Sprite
+								type="items"
+								name={item.name}
+								label={item.name}
+								key={item.id}
+							/>
+						))}
+					</ItemsContainer> */}
 				</div>
 			</BuildContainer>
 		</Box>

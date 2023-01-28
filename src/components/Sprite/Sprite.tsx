@@ -1,5 +1,6 @@
 import { useCallback } from "react";
 
+import { StyledCSS } from "@/styles";
 import { useSpriteSheetsStore, SpriteType } from "@/stores";
 import { getSpriteBackground } from "./getSpriteBackground";
 import { SpriteContainer, SpriteLabel, SpriteImage } from "./SpriteStyled";
@@ -11,65 +12,72 @@ export interface SpriteProps<T = unknown> {
 	showBackground?: boolean;
 	disabled?: boolean;
 	scale?: number;
+	showLabel?: boolean;
 	label?: string;
 	value?: T;
 	onSelected?: (value: T) => void;
+	onMouseOver?: React.MouseEventHandler<HTMLDivElement>;
+	onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export const Sprite = <T,>({
 	type,
 	name,
-	label,
+	showLabel = false,
+	label = name,
 	showBackground = false,
 	scale = 1,
 	selected = false,
 	value,
 	disabled,
 	onSelected,
+	onMouseOver,
+	onMouseLeave,
 }: SpriteProps<T>) => {
 	const spriteSheet = useSpriteSheetsStore(
 		useCallback((state) => state.getSpriteSheet(type), [type]),
 	);
-	const showLabel = !!label;
+
+	if (!spriteSheet) {
+		return null;
+	}
+
+	const containerStyle: StyledCSS = {
+		...(showLabel
+			? {
+					width: `calc(${spriteSheet.width}px + (2 * $sizes$spriteLabelOverflow))`,
+					height: `calc(${spriteSheet.height}px + (2 * $sizes$spriteLabelOverflow))`,
+			  }
+			: {
+					width: `${spriteSheet.width}px`,
+					height: `${spriteSheet.height}px`,
+			  }),
+	};
+	const spriteStyle: StyledCSS = {
+		width: `${spriteSheet.width}px`,
+		height: `${spriteSheet.height}px`,
+		transform: `scale(${scale})`,
+		background: `${getSpriteBackground(spriteSheet, name)}${
+			showBackground ? ", rgba(0, 0, 0, 0.1)" : ""
+		}`,
+	};
 
 	return (
 		<SpriteContainer
-			css={{
-				// FIXME: calc + token how
-				...(showLabel
-					? {
-							width: `calc(${spriteSheet.width}px + (2 * var(--sprite-label-overflow)))`,
-							height: `calc(${spriteSheet.height}px + var(--sprite-label-overflow))`,
-					  }
-					: undefined),
-				...(type === "none"
-					? {
-							backgroundColor: "rgba(100,100,100,0.5)",
-							height: 80,
-							width: 80,
-					  }
-					: undefined),
-			}}
+			css={containerStyle}
 			disabled={disabled}
 			selected={selected}
-			clickable={!!onSelected}
 			withLabel={showLabel}
+			clickable={!!onSelected}
+			onMouseOver={onMouseOver}
+			onMouseLeave={onMouseLeave}
 		>
-			{showLabel && <SpriteLabel>{label}</SpriteLabel>}
+			{showLabel && !!label && <SpriteLabel>{label}</SpriteLabel>}
 
-			{type !== "none" && name && (
-				<SpriteImage
-					onClick={onSelected ? () => onSelected(value!) : undefined}
-					css={{
-						width: `${spriteSheet.width}px`,
-						height: `${spriteSheet.height}px`,
-						transform: `scale(${scale})`,
-						background: `${getSpriteBackground(spriteSheet, name)}${
-							showBackground ? ", rgba(0, 0, 0, 0.1)" : ""
-						}`,
-					}}
-				/>
-			)}
+			<SpriteImage
+				css={spriteStyle}
+				onClick={onSelected ? () => onSelected(value!) : undefined}
+			/>
 		</SpriteContainer>
 	);
 };

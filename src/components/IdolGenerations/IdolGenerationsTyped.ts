@@ -10,10 +10,10 @@ export const IdolGenerationsContainer = styled("div", {
 });
 
 export const IdolGenerationName = styled("div", {
-	color: "white",
-	borderBottom: "1px solid white",
+	borderBottom: "1px solid",
 	fontSize: "20px",
 	lineHeight: "20px",
 	marginBottom: "$1",
 	textTransform: "uppercase",
+	color: "white",
 });

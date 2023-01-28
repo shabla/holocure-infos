@@ -12,27 +12,4 @@
       align-items: center;
     }
   }
-
-  .item-details-box {
-    flex: 1 1 50%;
-    min-width: 390px;
-  }
-}
-
-@media only screen and (min-width: 700px) {
-  .items-page {
-    --items-per-row: 4;
-  }
-}
-
-@media only screen and (min-width: 900px) {
-  .items-page {
-    --items-per-row: 5;
-  }
-}
-
-@media only screen and (min-width: 1100px) {
-  .items-page {
-    --items-per-row: 6;
-  }
 }

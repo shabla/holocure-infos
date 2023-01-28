@@ -1,6 +1,8 @@
 import { styled } from "@/styles";
 
 export const InfoTable = styled("table", {
+	$$lineHeight: "16px",
+
 	width: "100%",
 	borderSpacing: 0,
 
@@ -13,12 +15,14 @@ export const InfoTable = styled("table", {
 	},
 
 	td: {
-		padding: "$2",
+		padding: "$1",
+		height: "calc($$lineHeight * 4 + 2 * $space$1)",
+		lineHeight: "$$lineHeight",
 	},
 
 	"td.name": {
 		fontWeight: "bold",
 		whiteSpace: "nowrap",
-		width: "120px",
+		width: "100px",
 	},
 });

@@ -1,28 +1,47 @@
 import React from "react";
 
-import { Box, Sprite } from "@/components";
+import { Box, Sprite, InfoTable } from "@/components";
 import { Skill } from "@/models";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
+import { styled } from "@/styles";
 
 export interface IdolSkillBoxProps {
 	title: string;
-	skills: Skill[];
+	skills?: Skill[];
 }
+
+const IdolSkillBoxStyled = styled(Box, {
+	width: "500px",
+	"& > main": {
+		padding: 0,
+	},
+});
+
+const SkillName = styled("div", {
+	padding: "$2",
+	fontSize: "20px",
+	display: "flex",
+	alignItems: "center",
+});
+
+const DescOnly = styled("div", {
+	padding: "0 $2 $2 $2",
+});
 
 export const IdolSkillBox = ({ title, skills }: IdolSkillBoxProps) => {
 	return (
-		<Box label={title} className="idol-skill-box">
-			{skills.map((skill) => (
+		<IdolSkillBoxStyled label={title} css={{ width: 420 }}>
+			{skills?.map((skill) => (
 				<React.Fragment key={skill.name}>
-					<div className="skill-name flex-row align-x-center">
+					<SkillName>
 						<Sprite type="skills" name={skill.name} showBackground={false} />
 						{skill.name}
-					</div>
+					</SkillName>
 
-					{skill?.levels?.length === 1 ? (
-						<div className="desc-only">{skill.levels[0].desc}</div>
+					{skill.levels?.length === 1 ? (
+						<DescOnly>{skill.levels[0].desc}</DescOnly>
 					) : (
-						<table className="info-table">
+						<InfoTable>
 							<tbody>
 								{skill.levels.map((level) => (
 									<tr key={level.level}>
@@ -31,10 +50,10 @@ export const IdolSkillBox = ({ title, skills }: IdolSkillBoxProps) => {
 									</tr>
 								))}
 							</tbody>
-						</table>
+						</InfoTable>
 					)}
 				</React.Fragment>
 			))}
-		</Box>
+		</IdolSkillBoxStyled>
 	);
 };

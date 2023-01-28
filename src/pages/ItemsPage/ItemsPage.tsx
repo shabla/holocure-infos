@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { Item } from "@/models";
-import { Sprite, Box, IdolGenerations } from "@/components";
+import { Idol, Item } from "@/models";
+import {
+	Sprite,
+	Box,
+	IdolGenerations,
+	Dialog,
+	ContentContainer,
+} from "@/components";
 import { useItemsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
 import { ComboItemsBox } from "./ComboItemsBox/ComboItemsBox";
 import { Build } from "./Build/Build";
+import { css } from "@/styles";
 
 interface ItemSection {
 	type: Item["type"];
@@ -95,11 +102,31 @@ export const ItemsPage = () => {
 		}
 	};
 
-	return (
-		<div className="items-page flex-column content-container gap-content">
-			<Build />
+	const [idol, setIdol] = useState<Idol>();
+	const [weapons, setWeapons] = useState<Item[]>([]);
+	const [items, setItems] = useState<Item[]>([
+		getItemById("stolen-piggy-bank")!,
+		getItemById("limiter")!,
+		getItemById("gws-pill")!,
+		getItemById("just-bandage")!,
+		getItemById("halu")!,
+		getItemById("sake")!,
+	]);
 
-			<IdolGenerations onSelected={(idol) => console.log(idol)} />
+	return (
+		<ContentContainer
+			css={{
+				flexDirection: "column",
+				gap: "$content",
+				width: "1200px",
+			}}
+		>
+			<Build
+				idol={idol}
+				items={items}
+				weapons={weapons}
+				onIdolChange={setIdol}
+			/>
 
 			{/* <ComboItemsBox
 				items={comboItems}
@@ -143,6 +170,6 @@ export const ItemsPage = () => {
 
 				<ItemDetailsBox item={selectedItem} onItemSelected={handleItemClicked} />
 			</div> */}
-		</div>
+		</ContentContainer>
 	);
 };

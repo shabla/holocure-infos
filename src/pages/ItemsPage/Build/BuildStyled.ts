@@ -20,6 +20,17 @@ export const IdolContainer = styled("div", {
 	gap: 10,
 });
 
+export const IdolSpriteContainer = styled("div", {
+	display: "flex",
+	flexDirection: "column",
+	alignItems: "center",
+	cursor: "pointer",
+	padding: "5px 5px 3px",
+	backgroundColor: "rgba(0, 100, 50, 0.5)",
+	position: "relative",
+	border: "2px dashed green",
+});
+
 export const StampsContainer = styled("div", {
 	display: "flex",
 	flexDirection: "row",

@@ -37,11 +37,7 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
 	getIdolsByGen: (gen: string): Idol[] => {
 		return get().idols.filter((i) => i.gen === gen);
 	},
-	loadIdols: async (force?: boolean) => {
-		if (get().loaded && !force) {
-			return;
-		}
-
+	loadIdols: async () => {
 		try {
 			const data = await fetch("idols.json");
 			const idols: Idol[] = await data.json();

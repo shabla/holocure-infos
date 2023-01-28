@@ -1,8 +1,8 @@
 import { styled } from "@/styles";
 import { Sprite, SpriteProps } from "./Sprite/Sprite";
 
-export interface SpriteListProps {
-	sprites: SpriteProps[];
+export interface SpriteListProps<T = unknown> {
+	sprites: SpriteProps<T>[];
 	direction?: "row" | "column";
 }
 
@@ -21,7 +21,7 @@ const SpriteListContainer = styled("div", {
 	},
 });
 
-export const SpriteList = ({ sprites, direction = "row" }: SpriteListProps) => {
+export const SpriteList = <T,>({ sprites, direction = "row" }: SpriteListProps<T>) => {
 	return (
 		<SpriteListContainer direction={direction}>
 			{sprites.map((spriteProps, index) => (

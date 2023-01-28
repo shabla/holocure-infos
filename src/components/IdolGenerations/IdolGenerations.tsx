@@ -1,40 +1,38 @@
 import { useIdolsStore } from "@/stores";
 import { Idol } from "@/models";
 import { SpriteProps, SpriteList } from "@/components";
+import { IdolGenerationsContainer, IdolGenerationName } from "./IdolGenerationsTyped";
 
 export interface IdolGenerationsProps {
 	selectedIdol?: Idol;
 	onSelected: (idol: Idol) => void;
 }
 
-const gensOrder = ["Myth", "Council", "Hope", "Gamers", "Gen 0"];
-
 export const IdolGenerations = ({ selectedIdol, onSelected }: IdolGenerationsProps) => {
-	const getIdolsByGen = useIdolsStore((state) => state.getIdolsByGen);
+	const generations = useIdolsStore((state) => state.getGenerations());
 
 	return (
-		<div className="idol-generations flex-row flex-wrap">
-			{gensOrder.map((genName) => {
-				return (
-					<section key={genName}>
-						<div className="gen-name">{genName}</div>
+		<IdolGenerationsContainer>
+			{generations.map((generation) => {
+				const sprites: SpriteProps<Idol>[] = generation.idols.map(
+					(idol) =>
+						({
+							key: idol.id,
+							type: "idols-icon",
+							name: idol.name,
+							value: idol,
+							selected: idol.name === selectedIdol?.name,
+							onSelected,
+						}) as SpriteProps<Idol>,
+				);
 
-						<SpriteList
-							sprites={getIdolsByGen(genName).map(
-								(idol) =>
-									({
-										type: "idols-icon",
-										name: idol.name,
-										value: idol,
-										selected: idol === selectedIdol,
-										onSelected: onSelected,
-										key: idol.id,
-									}) as SpriteProps,
-							)}
-						/>
+				return (
+					<section key={generation.name}>
+						<IdolGenerationName>{generation.name}</IdolGenerationName>
+						<SpriteList sprites={sprites} />
 					</section>
 				);
 			})}
-		</div>
+		</IdolGenerationsContainer>
 	);
 };

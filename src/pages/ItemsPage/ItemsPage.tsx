@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Item } from "@/models";
-import { Sprite, Box } from "@/components";
+import { Sprite, Box, IdolGenerations } from "@/components";
 import { useItemsStore } from "@/stores";
 import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
@@ -99,14 +99,16 @@ export const ItemsPage = () => {
 		<div className="items-page flex-column content-container gap-content">
 			<Build />
 
-			<ComboItemsBox
+			<IdolGenerations onSelected={(idol) => console.log(idol)} />
+
+			{/* <ComboItemsBox
 				items={comboItems}
 				selectedItem={selectedItem}
 				onItemClicked={handleItemClicked}
 				onClear={() => setComboItems([])}
-			/>
+			/> */}
 
-			<div className="flex-row gap-content">
+			{/* <div className="flex-row gap-content">
 				<div className="item-sections">
 					<Box label="Collabs">
 						<CollabsList
@@ -140,7 +142,7 @@ export const ItemsPage = () => {
 				</div>
 
 				<ItemDetailsBox item={selectedItem} onItemSelected={handleItemClicked} />
-			</div>
+			</div> */}
 		</div>
 	);
 };

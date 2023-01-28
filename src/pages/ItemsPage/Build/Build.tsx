@@ -1,4 +1,4 @@
-import { Box, Sprite } from "@/components";
+import { Box, Sprite, IdolGenerations } from "@/components";
 import { Idol, Item } from "@/models";
 import React from "react";
 import {
@@ -23,20 +23,20 @@ export const Build = ({
 	idol,
 	weapons = [
 		{
-			name: "Idol Concert",
-			components: [{ name: "Idol Concert" }, { name: "Idol Concert" }],
+			name: "Frozen Sea",
+			components: [{ name: "BL Book" }, { name: "Wamy Water" }],
+		},
+		{
+			name: "BL Fujoshi",
+			components: [{ name: "BL Book" }, { name: "Psycho Axe" }],
+		},
+		{
+			name: "MiComet",
+			components: [{ name: "Elite Lava Bucket" }, { name: "Psycho Axe" }],
 		},
 		{
 			name: "Idol Concert",
-			components: [{ name: "Idol Concert" }, { name: "Idol Concert" }],
-		},
-		{
-			name: "Idol Concert",
-			components: [{ name: "Idol Concert" }, { name: "Idol Concert" }],
-		},
-		{
-			name: "Idol Concert",
-			components: [{ name: "Idol Concert" }, { name: "Idol Concert" }],
+			components: [{ name: "Glowstick" }, { name: "Idol Song" }],
 		},
 	],
 	items,
@@ -105,11 +105,11 @@ export const Build = ({
 					<ItemsContainer>
 						<SectionName>Items</SectionName>
 
-						<Sprite type="items" name="Sake" label="Sake" />
-						<Sprite type="items" name="Sake" label="Sake" />
-						<Sprite type="items" name="Sake" label="Sake" />
-						<Sprite type="items" name="Sake" label="Sake" />
-						<Sprite type="items" name="Sake" label="Sake" />
+						<Sprite type="items" name="Stolen Piggy Bank" label="Stolen Piggy Bank" />
+						<Sprite type="items" name="Limiter" label="Limiter" />
+						<Sprite type="items" name="GWS Pill" label="GWS Pill" />
+						<Sprite type="items" name="Just Bandage" label="Just Bandage" />
+						<Sprite type="items" name="Halu" label="Halu" />
 						<Sprite type="items" name="Sake" label="Sake" />
 					</ItemsContainer>
 				</div>

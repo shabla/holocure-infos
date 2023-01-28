@@ -1,7 +1,13 @@
 import { Box, ContentContainer, Sprite } from "@/components";
 import { Upgrade } from "@/models";
 import { useUpgradesStore } from "@/stores";
-import { Table, NameCol, DescCol, RanksCol, TotalCol, RanksContainer } from "./UpgradesPageStyled";
+import {
+	Table,
+	NameCol,
+	DescCol,
+	TotalCol,
+	RanksContainer,
+} from "./UpgradesPageStyled";
 
 export const UpgradesPage = () => {
 	const [upgrades] = useUpgradesStore((state) => [state.upgrades]);
@@ -11,7 +17,9 @@ export const UpgradesPage = () => {
 	};
 
 	return (
-		<ContentContainer css={{ gap: "$2", display: "flex", flexDirection: "row" }}>
+		<ContentContainer
+			css={{ gap: "$2", display: "flex", flexDirection: "row" }}
+		>
 			<Box label="Upgrades">
 				<Table>
 					<thead>
@@ -19,7 +27,7 @@ export const UpgradesPage = () => {
 							<th />
 							<NameCol as="th">Name</NameCol>
 							<DescCol as="th">Description</DescCol>
-							<RanksCol as="th">Ranks</RanksCol>
+							<th>Ranks</th>
 							<TotalCol as="th">Total Cost</TotalCol>
 						</tr>
 					</thead>
@@ -36,19 +44,29 @@ export const UpgradesPage = () => {
 										return (
 											<tr key={upgrade.name}>
 												<td>
-													<Sprite type="upgrades" name={upgrade.name} showBackground={false} />
+													<Sprite
+														type="upgrades"
+														name={upgrade.name}
+														showBackground={false}
+													/>
 												</td>
 
 												<NameCol>{upgrade.name}</NameCol>
 
 												<DescCol>{upgrade.desc}</DescCol>
 
-												<RanksCol>
+												<td>
 													<RanksContainer>
-														<Sprite type="upgrades" name="Money Gain Up" scale={0.5} />
-														{upgrade.costs.map((cost) => cost.toLocaleString()).join(" / ")}
+														<Sprite
+															type="upgrades"
+															name="Money Gain Up"
+															scale={0.5}
+														/>
+														{upgrade.costs
+															.map((cost) => cost.toLocaleString())
+															.join(" / ")}
 													</RanksContainer>
-												</RanksCol>
+												</td>
 
 												<TotalCol>{upgradeTotal.toLocaleString()}</TotalCol>
 											</tr>

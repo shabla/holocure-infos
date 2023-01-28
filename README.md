@@ -20,8 +20,6 @@ Some libs I use in this project because I wanted to try them :)
 
 # TODO
 
-- idol picker
 - stamps picker
 - weapon pickern
 - item picker
-- add links to github, youtube, reddit and twitter for the game

@@ -34,17 +34,53 @@ export const NavbarLinks = styled(
 	alignCrossCenter,
 );
 
-export const DownloadLink = styled(
-	"a",
-	{
-		backgroundColor: "$pink",
-		flexShrink: 0,
+export const DownloadLink = styled("a", {
+	backgroundColor: "$pink",
+	flexShrink: 0,
+	color: "white",
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+	height: "calc($navbarHeight * 0.7)",
+	fontSize: "16px",
+	textDecoration: "none",
+	borderRadius: 12,
+	padding: "0 $4",
+	fontWeight: "700",
+	"&:hover": {
+		backgroundColor: "white",
+		color: "$darkBlue",
 	},
-	NavbarLinkStyle,
-);
+});
+
+export const IconLink = styled("a", {
+	color: "white",
+	flexShrink: 0,
+	display: "flex",
+	alignItems: "center",
+	justifyContent: "center",
+	height: "$navbarHeight",
+	width: "$navbarHeight",
+
+	"&:hover": {
+		backgroundColor: "white",
+		color: "$darkBlue",
+		cursor: "pointer",
+
+		"& svg": {
+			fill: "$darkBlue",
+		},
+	},
+
+	"& svg": {
+		height: "24px",
+		width: "24px",
+		fill: "white",
+	},
+});
 
 export const PageContent = styled("main", {
-	padding: "$1",
+	padding: "$2",
 	marginTop: "$sizes$navbarHeight",
 	flex: "1 1 auto",
 	zIndex: 0,

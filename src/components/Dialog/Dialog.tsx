@@ -1,4 +1,5 @@
 import * as RadixDialog from "@radix-ui/react-dialog";
+import { Cross2Icon } from "@radix-ui/react-icons";
 import React from "react";
 import {
 	DialogCloseButton,
@@ -28,7 +29,9 @@ export const Dialog = ({
 						<DialogTitle>{title}</DialogTitle>
 						{children}
 						<RadixDialog.Close asChild>
-							<DialogCloseButton aria-label="Close">✖</DialogCloseButton>
+							<DialogCloseButton aria-label="Close">
+								<Cross2Icon />
+							</DialogCloseButton>
 						</RadixDialog.Close>
 					</DialogContent>
 				</DialogOverlay>

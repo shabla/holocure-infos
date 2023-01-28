@@ -18,7 +18,7 @@ const types = [
 ];
 
 // Load sprites offsets
-const sprites = loadYAMLFile(path.resolve(__dirname, `../data/sprites.yaml`));
+const sprites = loadYAMLFile(path.resolve(__dirname, '../data/sprites.yaml'));
 
 // Convert yaml data files to json files
 for (const type of types) {
@@ -29,7 +29,7 @@ for (const type of types) {
 }
 
 // Save sprites offsets
-const outputPath = path.resolve(__dirname, `../public/sprites.json`);
+const outputPath = path.resolve(__dirname, '../public/sprites.json');
 saveJSONFile(outputPath, sprites);
 
 
@@ -52,8 +52,8 @@ function saveJSONFile(outputPath, data, callback = err => err && console.log(err
 function validateIdols(idols, sprites) {
   for (const idol of idols) {
     const idolName = idol.name;
-    const specialName = idol.special.name;
-    const attackName = idol.attack.name;
+    const specialName = idol.special?.name;
+    const attackName = idol.attack?.name;
     const skillNames = idol.skills?.map(skill => skill.name) || [];
 
     // Idol offset

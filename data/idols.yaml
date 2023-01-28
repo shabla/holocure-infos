@@ -1052,26 +1052,70 @@
           desc: 'From any healing, Miko gains a 4 second buff that increases ATK and SPD by {35%}. Any "Elite" weapons are 10% larger.'
         - level: 3
           desc: 'From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any "Elite" weapons are 10% larger.'
-# # Gen 1
-# - name: "Yozora Mel"
-#   gen: "Gen 1"
-# - name: "Shirakami Fubuki"
-#   gen: "Gen 1"
-# - name: "Natsuiro Matsuri"
-#   gen: "Gen 1"
-# - name: "Akai Haato"
-#   gen: "Gen 1"
-# - name: "Aki Rosenthal"
-#   gen: "Gen 1"
 
-# # Gen 2
-# - name: "Minato Aqua"
-#   gen: "Gen 2"
-# - name: "Murasaki Shion"
-#   gen: "Gen 2"
-# - name: "Nakiri Ayame"
-#   gen: "Gen 2"
-# - name: "Yuzuki Choco"
-#   gen: "Gen 2"
-# - name: "Oozora Subaru"
-#   gen: "Gen 2"
+# Gen 1
+- name: "Yozora Mel"
+  gen: "Gen 1"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Natsuiro Matsuri"
+  gen: "Gen 1"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Akai Haato"
+  gen: "Gen 1"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Aki Rosenthal"
+  gen: "Gen 1"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+
+# Gen 2
+- name: "Minato Aqua"
+  gen: "Gen 2"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Murasaki Shion"
+  gen: "Gen 2"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Nakiri Ayame"
+  gen: "Gen 2"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Yuzuki Choco"
+  gen: "Gen 2"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+- name: "Oozora Subaru"
+  gen: "Gen 2"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""

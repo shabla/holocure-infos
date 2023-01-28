@@ -14,7 +14,8 @@ const DialogContent = styled("div", {
 	display: "flex",
 	flexDirection: "row",
 	alignItems: "start",
-	gap: 20,
+	gap: "$2",
+	minHeight: "700px",
 });
 
 export const IdolPickerDialog = ({
@@ -32,7 +33,6 @@ export const IdolPickerDialog = ({
 					selectedIdol={idol}
 					onSelected={onChange}
 					onIdolOver={setVisibleIdol}
-					// onIdolOut={() => setVisibleIdol(undefined)}
 				/>
 				<IdolSkillBox
 					title={visibleIdol?.name || ""}

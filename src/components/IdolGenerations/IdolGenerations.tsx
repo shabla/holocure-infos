@@ -4,27 +4,19 @@ import { Sprite } from "@/components";
 import {
 	IdolGenerationsContainer,
 	IdolGenerationName,
+	SpriteListContainer,
 } from "./IdolGenerationsTyped";
-import { styled } from "@/styles";
 
 export interface IdolGenerationsProps {
 	selectedIdol?: Idol;
 	onSelected: (idol: Idol) => void;
 	onIdolOver?: (idol: Idol) => void;
-	onIdolOut?: (idol: Idol) => void;
 }
-
-const SpriteListContainer = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	gap: "$2",
-});
 
 export const IdolGenerations = ({
 	selectedIdol,
 	onSelected,
 	onIdolOver,
-	onIdolOut,
 }: IdolGenerationsProps) => {
 	const generations = useIdolsStore((state) => state.getGenerations());
 
@@ -45,7 +37,6 @@ export const IdolGenerations = ({
 									selected={idol.name === selectedIdol?.name}
 									onSelected={onSelected}
 									onMouseOver={onIdolOver ? () => onIdolOver(idol) : undefined}
-									onMouseLeave={onIdolOut ? () => onIdolOut(idol) : undefined}
 								/>
 							))}
 						</SpriteListContainer>

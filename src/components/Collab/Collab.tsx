@@ -14,6 +14,7 @@ const CollabContainer = styled("div", {
 	backgroundColor: "rgba(255,255,255,0.1)",
 	padding: "$2",
 	paddingBottom: 0,
+	borderRadius: "3px",
 });
 
 const ComponentsContainer = styled("div", {
@@ -49,6 +50,8 @@ const Bars = styled("div", {
 		position: "absolute",
 		border: "3px solid $$lineColor",
 		borderBottom: 0,
+		borderTopLeftRadius: "3px",
+		borderTopRightRadius: "3px",
 		height: "calc($$height - 3px )",
 		top: 0,
 		left: "$$distanceFromSide",

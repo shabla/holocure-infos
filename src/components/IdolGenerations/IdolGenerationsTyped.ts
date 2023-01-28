@@ -1,5 +1,11 @@
 import { styled } from "@/styles";
 
+export const SpriteListContainer = styled("div", {
+	display: "flex",
+	flexDirection: "row",
+	gap: "$2",
+});
+
 export const IdolGenerationsContainer = styled("div", {
 	display: "flex",
 	flexDirection: "row",

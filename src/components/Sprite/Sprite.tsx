@@ -17,7 +17,6 @@ export interface SpriteProps<T = unknown> {
 	value?: T;
 	onSelected?: (value: T) => void;
 	onMouseOver?: React.MouseEventHandler<HTMLDivElement>;
-	onMouseLeave?: React.MouseEventHandler<HTMLDivElement>;
 }
 
 export const Sprite = <T,>({
@@ -32,7 +31,6 @@ export const Sprite = <T,>({
 	disabled,
 	onSelected,
 	onMouseOver,
-	onMouseLeave,
 }: SpriteProps<T>) => {
 	const spriteSheet = useSpriteSheetsStore(
 		useCallback((state) => state.getSpriteSheet(type), [type]),
@@ -60,6 +58,7 @@ export const Sprite = <T,>({
 		background: `${getSpriteBackground(spriteSheet, name)}${
 			showBackground ? ", rgba(0, 0, 0, 0.1)" : ""
 		}`,
+		borderRadius: "3px",
 	};
 
 	return (
@@ -70,7 +69,6 @@ export const Sprite = <T,>({
 			withLabel={showLabel}
 			clickable={!!onSelected}
 			onMouseOver={onMouseOver}
-			onMouseLeave={onMouseLeave}
 		>
 			{showLabel && !!label && <SpriteLabel>{label}</SpriteLabel>}
 

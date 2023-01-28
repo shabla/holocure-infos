@@ -6,7 +6,14 @@ import upgradeSpriteSheet from "@/assets/upgrades.png";
 import idolIconsSpriteSheet from "@/assets/idol-icons.png";
 import idolModelsSpriteSheet from "@/assets/idol-models.png";
 
-export type SpriteType = "idols" | "idols-icon" | "items" | "upgrades" | "skills" | "none";
+export type SpriteType =
+	| "idols"
+	| "idols-icon"
+	| "items"
+	| "upgrades"
+	| "skills"
+	| "stamp"
+	| "enchant";
 
 export type SpriteSheet = {
 	width: number;
@@ -41,11 +48,7 @@ export const useSpriteSheetsStore = create<SpriteOffsetsStore>((set, get) => ({
 	getSpriteSheet: (type: SpriteType): SpriteSheet => {
 		return get().byType[type];
 	},
-	loadSpriteSheets: async (force?: boolean): Promise<Record<string, SpriteSheet>> => {
-		if (get().loaded && !force) {
-			return get().byType;
-		}
-
+	loadSpriteSheets: async (): Promise<Record<string, SpriteSheet>> => {
 		try {
 			const res = await fetch("sprites.json");
 			const byType: Record<string, SpriteSheet> = await res.json();

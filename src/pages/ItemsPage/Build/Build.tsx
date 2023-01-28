@@ -116,7 +116,7 @@ export const Build = ({
 						))}
 					</WeaponsContainer>
 
-					{/* <ItemsContainer>
+					<ItemsContainer>
 						<SectionName>Items</SectionName>
 
 						{items?.map((item) => (
@@ -124,10 +124,12 @@ export const Build = ({
 								type="items"
 								name={item.name}
 								label={item.name}
+								showLabel
+								showBackground
 								key={item.id}
 							/>
 						))}
-					</ItemsContainer> */}
+					</ItemsContainer>
 				</div>
 			</BuildContainer>
 		</Box>

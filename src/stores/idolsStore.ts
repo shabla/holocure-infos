@@ -20,6 +20,8 @@ const gens: IdolGeneration[] = [
 	{ name: "Hope" },
 	{ name: "Gamers" },
 	{ name: "Gen 0" },
+	{ name: "Gen 1" },
+	{ name: "Gen 2" },
 ];
 
 export const useIdolsStore = create<IdolsStore>((set, get) => ({

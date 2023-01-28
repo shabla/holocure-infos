@@ -20,7 +20,6 @@ Some libs I use in this project because I wanted to try them :)
 
 # TODO
 
-- create dialog component with [radix dialog](https://www.radix-ui.com/docs/primitives/components/dialog)
 - idol picker
 - stamps picker
 - weapon pickern

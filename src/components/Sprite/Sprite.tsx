@@ -12,8 +12,8 @@ export interface SpriteProps<T = unknown> {
 	showBackground?: boolean;
 	disabled?: boolean;
 	scale?: number;
-	showLabel?: boolean;
 	label?: string;
+	alwaysIncludeLabelPadding?: boolean;
 	value?: T;
 	onSelected?: (value: T) => void;
 	onMouseOver?: React.MouseEventHandler<HTMLDivElement>;
@@ -22,11 +22,11 @@ export interface SpriteProps<T = unknown> {
 export const Sprite = <T,>({
 	type,
 	name,
-	showLabel = false,
-	label = name,
+	label,
 	showBackground = false,
 	scale = 1,
 	selected = false,
+	alwaysIncludeLabelPadding = false,
 	value,
 	disabled,
 	onSelected,
@@ -41,15 +41,16 @@ export const Sprite = <T,>({
 	}
 
 	const containerStyle: StyledCSS = {
-		...(showLabel
-			? {
-					width: `calc(${spriteSheet.width}px + (2 * $sizes$spriteLabelOverflow))`,
-					height: `calc(${spriteSheet.height}px + (2 * $sizes$spriteLabelOverflow))`,
-			  }
-			: {
-					width: `${spriteSheet.width}px`,
-					height: `${spriteSheet.height}px`,
-			  }),
+		width:
+			label != null || alwaysIncludeLabelPadding
+				? `calc(${spriteSheet.width}px + (2 * $sizes$spriteLabelOverflow))`
+				: `${spriteSheet.width}px`,
+		height:
+			label != null || alwaysIncludeLabelPadding
+				? `calc(${spriteSheet.height}px + (${
+						alwaysIncludeLabelPadding ? 2 : 1
+				  } * $sizes$spriteLabelOverflow))`
+				: `${spriteSheet.height}px`,
 	};
 	const spriteStyle: StyledCSS = {
 		width: `${spriteSheet.width}px`,
@@ -58,7 +59,6 @@ export const Sprite = <T,>({
 		background: `${getSpriteBackground(spriteSheet, name)}${
 			showBackground ? ", rgba(0, 0, 0, 0.1)" : ""
 		}`,
-		borderRadius: "3px",
 	};
 
 	return (
@@ -66,11 +66,11 @@ export const Sprite = <T,>({
 			css={containerStyle}
 			disabled={disabled}
 			selected={selected}
-			withLabel={showLabel}
+			withLabel={label != null || alwaysIncludeLabelPadding}
 			clickable={!!onSelected}
 			onMouseOver={onMouseOver}
 		>
-			{showLabel && !!label && <SpriteLabel>{label}</SpriteLabel>}
+			{label != null && <SpriteLabel>{label || ""}</SpriteLabel>}
 
 			<SpriteImage
 				css={spriteStyle}

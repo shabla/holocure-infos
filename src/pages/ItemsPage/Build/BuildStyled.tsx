@@ -97,18 +97,6 @@ export function ClearButton({ onClick }: { onClick: () => void }) {
 	);
 }
 
-/* Idol */
-export const IdolContainer = styled("div", {
-	display: "flex",
-	flexDirection: "column",
-	alignItems: "center",
-	cursor: "pointer",
-	padding: "5px 5px 3px",
-	backgroundColor: "rgba(0, 100, 50, 0.5)",
-	border: "2px dashed green",
-	position: "relative",
-});
-
 /* Stamps */
 export const StampsContainer = styled("div", {
 	display: "flex",

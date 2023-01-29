@@ -18,13 +18,7 @@ export const CollabTree = ({ itemId }: CollabTreeProps) => {
 
 	return (
 		<CollabContainer>
-			<Sprite
-				type="items"
-				name={item.name}
-				label={item.name}
-				showLabel
-				showBackground
-			/>
+			<Sprite type="items" name={item.name} label={item.name} showBackground />
 
 			<Bars />
 
@@ -34,9 +28,8 @@ export const CollabTree = ({ itemId }: CollabTreeProps) => {
 						key={item?.id || index}
 						type="items"
 						name={item?.name}
-						showBackground
-						showLabel
 						label={item?.name}
+						showBackground
 					/>
 				))}
 			</ComponentsContainer>

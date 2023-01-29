@@ -1,6 +1,8 @@
 import { styled } from "@/styles";
 
-export const SpriteImage = styled("div", {});
+export const SpriteImage = styled("div", {
+	borderRadius: "3px",
+});
 
 export const SpriteContainer = styled("div", {
 	position: "relative",

@@ -11,7 +11,6 @@ export const Container = styled("div", {
 	flexDirection: "column",
 	backgroundColor: "rgba(255,255,255,0.1)",
 	padding: "$2",
-	paddingBottom: 0,
 	borderRadius: "3px",
 	position: "relative",
 	"&:hover": {

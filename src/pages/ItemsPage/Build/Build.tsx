@@ -10,7 +10,6 @@ import React, { useState } from "react";
 import {
 	BuildContainer,
 	StampContainer,
-	IdolContainer,
 	StampsContainer,
 	SectionsContainer,
 	Section,
@@ -59,7 +58,7 @@ export const Build = ({
 			<BuildContainer>
 				<SectionsContainer>
 					<Section title="Idol">
-						<IdolContainer onClick={() => setOpen(true)}>
+						<ClickableContainer onClick={() => setOpen(true)}>
 							{idol && (
 								<ClearButton
 									onClick={() => {
@@ -70,14 +69,20 @@ export const Build = ({
 							<Sprite
 								type="idols-icon"
 								name={idol?.name}
-								label={idol ? idol.name : ""}
-								showLabel
+								label={idol?.name ?? "Pick an idol"}
+								alwaysIncludeLabelPadding
 							/>
-						</IdolContainer>
+						</ClickableContainer>
 					</Section>
 
-					<Section title="Stamps">
-						<Sprite type="skills" name={idol?.attack.name} showLabel />
+					<Section title="Stamps" contentCss={{ gap: "$3" }}>
+						<Sprite
+							type="skills"
+							name={idol?.attack.name}
+							label={idol?.attack?.name}
+							alwaysIncludeLabelPadding
+						/>
+
 						<StampsContainer>
 							{stamps?.map((stamp, index) => (
 								<StampContainer key={stamp?.name || index}>
@@ -90,7 +95,6 @@ export const Build = ({
 										type="stamp"
 										name={stamp?.name}
 										label={stamp?.name}
-										showLabel
 										onSelected={() => {
 											console.log("open stamp dialog");
 										}}
@@ -136,7 +140,6 @@ export const Build = ({
 								type="items"
 								name={item.name}
 								label={item.name}
-								showLabel
 								showBackground
 								key={item.id}
 							/>

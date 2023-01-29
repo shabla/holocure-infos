@@ -2,18 +2,10 @@ import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
 import { Idol, Item, ItemsList, StampsList, WeaponsList } from "@/models";
-import {
-	Sprite,
-	Box,
-	IdolGenerations,
-	Dialog,
-	ContentContainer,
-} from "@/components";
+import { ContentContainer } from "@/components";
 import { useItemsStore } from "@/stores";
-import { CollabsList } from "./CollabsList/CollabsList";
 import { ItemDetailsBox } from "./ItemDetailsBox/ItemDetailsBox";
 import { Build } from "./Build/Build";
-import { css } from "@/styles";
 
 interface ItemSection {
 	type: Item["type"];
@@ -112,7 +104,7 @@ export const ItemsPage = () => {
 		getItemById("frozen-sea"),
 		getItemById("rap-dog"),
 		getItemById("idol-concert"),
-		undefined,
+		getItemById("spider-cooking"),
 	]);
 	const [items, setItems] = useState<ItemsList>([
 		getItemById("stolen-piggy-bank")!,
@@ -143,35 +135,8 @@ export const ItemsPage = () => {
 
 			{/* <div className="flex-row gap-content">
 				<div className="item-sections">
-					<Box label="Collabs">
-						<CollabsList
-							selectedItem={selectedItem}
-							items={getItemsByType("collab")}
-							comboMode={comboMode}
-							comboItems={comboItems}
-							onItemClicked={handleItemClicked}
-							onComboItemsChanged={handleComboItemsChanged}
-						/>
-					</Box>
+					
 
-					{sections.map((section) => (
-						<Box label={section.title} key={section.type}>
-							<div className="items-list gap-10">
-								{getItemsByType(section.type).map((item) => (
-									<Sprite
-										type="items"
-										name={item.name}
-										selected={item === selectedItem}
-										showBackground
-										label={item.name}
-										value={item}
-										onSelected={handleItemClicked}
-										key={item.id}
-									/>
-								))}
-							</div>
-						</Box>
-					))}
 				</div>
 
 				<ItemDetailsBox item={selectedItem} onItemSelected={handleItemClicked} />

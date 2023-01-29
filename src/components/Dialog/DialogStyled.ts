@@ -2,10 +2,17 @@ import * as RadixDialog from "@radix-ui/react-dialog";
 import { contentShow, fadeIn, styled } from "@/styles";
 
 export const DialogOverlay = styled(RadixDialog.Overlay, {
-	backgroundColor: "hsl(0 0% 0% / 0.439)",
 	position: "fixed",
-	inset: 0,
+	backgroundColor: "hsl(0 0% 0% / 0.439)",
 	animation: `${fadeIn} 300ms cubic-bezier(0.16, 1, 0.3, 1)`,
+	top: 0,
+	left: 0,
+	right: 0,
+	bottom: 0,
+	display: "grid",
+	placeItems: "center",
+	overflowY: "auto",
+	zIndex: 100,
 });
 
 export const DialogContent = styled(RadixDialog.Content, {
@@ -18,7 +25,6 @@ export const DialogContent = styled(RadixDialog.Content, {
 	left: "50%",
 	transform: "translate(-50%, -50%)",
 	maxWidth: "90vw",
-	maxHeight: "85vh",
 	padding: "35px",
 	animation: `${contentShow} 300ms cubic-bezier(0.16, 1, 0.3, 1)`,
 

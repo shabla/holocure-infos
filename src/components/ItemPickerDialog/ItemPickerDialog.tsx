@@ -32,18 +32,17 @@ export const ItemPickerDialog = ({
 			<Box label="Items">
 				<ItemsGrid>
 					{items.map((item) => {
-						const isSelected = selectedItems.includes(item);
+						const isDisabled = selectedItems.includes(item);
 
 						return (
 							<Sprite
 								type="items"
 								name={item.name}
-								selected={isSelected}
-								disabled={isSelected}
+								disabled={isDisabled}
 								showBackground
 								label={item.name}
 								value={item}
-								onSelected={isSelected ? undefined : (item) => onChange(item)}
+								onSelected={isDisabled ? undefined : (item) => onChange(item)}
 								key={item.id}
 							/>
 						);

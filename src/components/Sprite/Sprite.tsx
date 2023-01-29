@@ -19,7 +19,7 @@ export interface SpriteProps<T = unknown> {
 	onMouseOver?: React.MouseEventHandler<HTMLDivElement>;
 }
 
-export const Sprite = <T,>({
+export const Sprite = <T extends unknown>({
 	type,
 	name,
 	label,
@@ -40,21 +40,22 @@ export const Sprite = <T,>({
 		return null;
 	}
 
+	const { height, width } = spriteSheet;
 	const containerStyle: StyledCSS = {
 		width:
 			label != null || alwaysIncludeLabelPadding
-				? `calc(${spriteSheet.width}px + (2 * $sizes$spriteLabelOverflow))`
-				: `${spriteSheet.width}px`,
+				? `calc(${width}px + (2 * $sizes$spriteLabelOverflow))`
+				: `${width}px`,
 		height:
 			label != null || alwaysIncludeLabelPadding
-				? `calc(${spriteSheet.height}px + (${
+				? `calc(${height}px + (${
 						alwaysIncludeLabelPadding ? 2 : 1
 				  } * $sizes$spriteLabelOverflow))`
-				: `${spriteSheet.height}px`,
+				: `${height}px`,
 	};
 	const spriteStyle: StyledCSS = {
-		width: `${spriteSheet.width}px`,
-		height: `${spriteSheet.height}px`,
+		width: `${width}px`,
+		height: `${height}px`,
 		transform: `scale(${scale})`,
 		background: `${getSpriteBackground(spriteSheet, name)}${
 			showBackground ? ", rgba(0, 0, 0, 0.1)" : ""

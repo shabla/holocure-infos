@@ -1,6 +1,9 @@
 import { SpriteSheet } from "@/stores";
 
-export const getSpriteBackground = (spriteSheet: SpriteSheet, name?: string): string => {
+export const getSpriteBackground = (
+	spriteSheet: SpriteSheet,
+	name?: string,
+): string => {
 	if (name) {
 		const offset = spriteSheet.offsets?.[name];
 
@@ -12,5 +15,5 @@ export const getSpriteBackground = (spriteSheet: SpriteSheet, name?: string): st
 		}
 	}
 
-	return `url(https://via.placeholder.com/${spriteSheet.width}x${spriteSheet.height}?text=???)`;
+	return `url(https://via.placeholder.com/${spriteSheet.width}x${spriteSheet.height}.png?text=???)`;
 };

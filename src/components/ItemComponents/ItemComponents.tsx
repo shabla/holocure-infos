@@ -5,43 +5,41 @@ import {
 	ComponentsContainer,
 	CollabContainer,
 } from "./ItemComponentsStyled";
+import { Item } from "@/models";
 
 export interface ItemComponentsProps {
-	itemId?: string;
+	item: Item;
 }
 
-export const ItemComponents = ({ itemId }: ItemComponentsProps) => {
+export const ItemComponents = ({ item }: ItemComponentsProps) => {
 	const getItemById = useItemsStore((state) => state.getItemById);
 
-	if (!itemId) {
-		return null;
-	}
-
-	const item = getItemById(itemId);
-
-	if (!item) {
-		return null;
-	}
-
-	const components = item.requires?.map((itemId) => getItemById(itemId)) || [];
+	const components =
+		(item.requires
+			?.map((itemId) => getItemById(itemId))
+			.filter((item) => !!item) as Item[]) || [];
 
 	return (
 		<CollabContainer>
 			<Sprite type="items" name={item.name} label={item.name} showBackground />
 
-			<Bars />
+			{components.length > 0 && (
+				<>
+					<Bars />
 
-			<ComponentsContainer>
-				{components.map((item, index) => (
-					<Sprite
-						key={item?.id || index}
-						type="items"
-						name={item?.name}
-						label={item?.name}
-						showBackground
-					/>
-				))}
-			</ComponentsContainer>
+					<ComponentsContainer>
+						{components.map((item) => (
+							<Sprite
+								key={item.id}
+								type="items"
+								name={item.name}
+								label={item.name}
+								showBackground
+							/>
+						))}
+					</ComponentsContainer>
+				</>
+			)}
 		</CollabContainer>
 	);
 };

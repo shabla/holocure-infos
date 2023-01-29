@@ -68,6 +68,11 @@ export const SectionContent = styled("div", {
 	justifyContent: "center",
 });
 
+export const EmptyMessage = styled("div", {
+	fontSize: "12px",
+	textAlign: "center",
+});
+
 /* Stamps */
 export const StampsContainer = styled("div", {
 	display: "flex",

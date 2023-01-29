@@ -23,6 +23,7 @@ import {
 	SectionsContainer,
 	ResetButton,
 	Section,
+	EmptyMessage,
 } from "./BuildStyled";
 
 export interface BuildProps {
@@ -56,14 +57,12 @@ export const Build = ({
 	};
 
 	const handleStampChange = (newStamp: Stamp | undefined, index: number) => {
-		console.log(`changing stamp index ${index} to`, newStamp?.name);
 		const newStamps: StampsList = [...stamps];
 		newStamps[index] = newStamp;
 		onStampsChange(newStamps);
 	};
 
 	const handleWeaponChange = (newWeapon: Item | undefined, index: number) => {
-		console.log(`changing collab index ${index} to`, newWeapon?.id);
 		const newCollabs: WeaponsList = [...weapons];
 		newCollabs[index] = newWeapon;
 		onWeaponsChanged(newCollabs);
@@ -71,7 +70,6 @@ export const Build = ({
 	};
 
 	const handleItemChange = (newItem: Item | undefined, index: number) => {
-		console.log(`changing item index ${index} to`, newItem?.id);
 		const newItems: ItemsList = [...items];
 		newItems[index] = newItem;
 		onItemsChanged(newItems);
@@ -128,16 +126,22 @@ export const Build = ({
 					{/* Idol */}
 					<Section title="Idol">
 						<Selectable
+							width={150}
+							height={120}
 							onClick={idolDialog.open}
 							onClear={() => handleIdolChange(undefined)}
 							clearable={!!idol}
 						>
-							<Sprite
-								type="idols-icon"
-								name={idol?.name}
-								label={idol?.name ?? "Pick an idol"}
-								alwaysIncludeLabelPadding
-							/>
+							{idol ? (
+								<Sprite
+									type="idols-icon"
+									name={idol.name}
+									label={idol.name}
+									alwaysIncludeLabelPadding
+								/>
+							) : (
+								<EmptyMessage>Pick an idol</EmptyMessage>
+							)}
 						</Selectable>
 					</Section>
 
@@ -154,17 +158,23 @@ export const Build = ({
 							{stamps?.map((stamp, index) => (
 								<Selectable
 									key={stamp?.name || index}
+									height={70}
+									width={70}
 									onClick={() => console.log("open stamp dialog")}
 									onClear={() => handleStampChange(undefined, index)}
 									clearable={!!stamp}
 								>
-									<StampContainer>
-										<Sprite
-											type="stamp"
-											name={stamp?.name}
-											label={stamp?.name}
-										/>
-									</StampContainer>
+									{stamp ? (
+										<StampContainer>
+											<Sprite
+												type="stamp"
+												name={stamp.name}
+												label={stamp.name}
+											/>
+										</StampContainer>
+									) : (
+										<EmptyMessage>Pick a stamp</EmptyMessage>
+									)}
 								</Selectable>
 							))}
 						</StampsContainer>
@@ -177,7 +187,7 @@ export const Build = ({
 						title="Weapons"
 						contentCss={{ flexDirection: "row", gap: "$4" }}
 					>
-						{weapons?.map((weapon, index) => (
+						{weapons.map((weapon, index) => (
 							<Selectable
 								key={weapon?.id || index}
 								width={170}
@@ -186,8 +196,11 @@ export const Build = ({
 								onClear={() => handleWeaponChange(undefined, index)}
 								clearable={!!weapon}
 							>
-								{!weapon?.id && <div>Pick a weapon</div>}
-								<ItemComponents itemId={weapon?.id} />
+								{weapon ? (
+									<ItemComponents item={weapon} />
+								) : (
+									<EmptyMessage>Pick a weapon</EmptyMessage>
+								)}
 							</Selectable>
 						))}
 					</Section>
@@ -204,19 +217,23 @@ export const Build = ({
 						{items?.map((item, index) => (
 							<Selectable
 								key={item?.id || index}
-								height={90}
+								height={100}
 								width={100}
 								onClick={() => itemDialog.open(index)}
 								onClear={() => handleItemChange(undefined, index)}
 								clearable={!!item}
 							>
-								<Sprite
-									type="items"
-									name={item?.name}
-									label={item?.name}
-									showBackground
-									alwaysIncludeLabelPadding
-								/>
+								{item ? (
+									<Sprite
+										type="items"
+										name={item?.name}
+										label={item?.name}
+										showBackground
+										alwaysIncludeLabelPadding
+									/>
+								) : (
+									<EmptyMessage>Pick an item</EmptyMessage>
+								)}
 							</Selectable>
 						))}
 					</Section>

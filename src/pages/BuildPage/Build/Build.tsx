@@ -226,8 +226,8 @@ export const Build = ({
 								{item ? (
 									<Sprite
 										type="items"
-										name={item?.name}
-										label={item?.name}
+										name={item.name}
+										label={item.name}
 										showBackground
 										alwaysIncludeLabelPadding
 									/>

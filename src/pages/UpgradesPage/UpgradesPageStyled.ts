@@ -1,4 +1,4 @@
-import { alignCrossCenter, styled, tableCellMinContent } from "@/styles";
+import { styled, tableCellMinContent } from "@/styles";
 
 export const Table = styled("table", {
 	borderCollapse: "collapse",

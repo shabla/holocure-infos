@@ -11,7 +11,7 @@ export * from "./IdolSkillBox/IdolSkillBox";
 export * from "./CollabTree/CollabTree";
 export * from "./YoutubeIcon";
 export * from "./RedditIcon";
-export * from "./ClickableContainer/ClickableContainer";
+export * from "./Selectable/Selectable";
 export * from "./ItemPickerDialog/ItemPickerDialog";
 export * from "./WeaponPickerDialog/WeaponPickerDialog";
 export * from "./CollabRow/CollabRow";

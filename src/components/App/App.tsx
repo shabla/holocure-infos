@@ -1,6 +1,5 @@
 import { Navigate, Outlet, useMatch } from "react-router-dom";
 import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
-
 import { globalStyles } from "@/styles";
 import {
 	ContentContainer,
@@ -17,15 +16,16 @@ import {
 	PageContent,
 	IconLink,
 } from "./AppStyled";
+import { defaultRoute } from "@/config";
 
 export const App = () => {
+	// Redirect to the default route when landing on the root path
 	const match = useMatch("/");
+	if (match) {
+		return <Navigate to={defaultRoute} />;
+	}
 
 	globalStyles();
-
-	if (match) {
-		return <Navigate to="items" />;
-	}
 
 	return (
 		<StyledApp>
@@ -34,7 +34,7 @@ export const App = () => {
 					<img src={HOLOCURE_LOGO} alt="HoloCure Logo" />
 
 					<NavbarLinks>
-						<NavbarLink to="items">Items</NavbarLink>
+						<NavbarLink to="build">Build</NavbarLink>
 						<NavbarLink to="upgrades">Upgrades</NavbarLink>
 					</NavbarLinks>
 

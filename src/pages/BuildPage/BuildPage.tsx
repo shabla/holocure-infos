@@ -17,7 +17,7 @@ const sections: ItemSection[] = [
 	{ type: "item", title: "Items" },
 ];
 
-export const ItemsPage = () => {
+export const BuildPage = () => {
 	const [selectedItem, setSelectedItem] = useState<Item | undefined>();
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [comboMode, setComboMode] = useState<boolean>(false);

@@ -1,4 +1,3 @@
-import { Cross2Icon } from "@radix-ui/react-icons";
 import { styled, StyledCSS } from "@/styles";
 
 export const BuildContainer = styled("div", {
@@ -68,49 +67,6 @@ export const SectionContent = styled("div", {
 	alignItems: "center",
 	justifyContent: "center",
 });
-
-const ClearButtonStyled = styled("button", {
-	all: "unset",
-	position: "absolute",
-	top: 0,
-	right: 0,
-	transform: "translate(33%, -33%)",
-	width: 25,
-	height: 25,
-	lineHeight: "20px",
-	backgroundColor: "$pink",
-	color: "white",
-	zIndex: 20,
-	display: "flex",
-	alignItems: "center",
-	justifyContent: "center",
-	borderRadius: "100%",
-	boxShadow: "rgba(0,0,0,0.2) 1px 1px 1px",
-
-	"&:hover": {
-		backgroundColor: "White",
-		color: "$darkBlue",
-		cursor: "pointer",
-	},
-
-	"& svg": {
-		transform: "translateY(-1px)",
-	},
-});
-
-export function ClearButton({ onClick }: { onClick: () => void }) {
-	return (
-		<ClearButtonStyled
-			className="ClearButton"
-			onClick={(e) => {
-				e.stopPropagation();
-				onClick();
-			}}
-		>
-			<Cross2Icon />
-		</ClearButtonStyled>
-	);
-}
 
 /* Stamps */
 export const StampsContainer = styled("div", {

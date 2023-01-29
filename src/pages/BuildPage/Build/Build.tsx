@@ -3,7 +3,7 @@ import {
 	Sprite,
 	IdolPickerDialog,
 	CollabTree,
-	ClickableContainer,
+	Selectable,
 	ItemPickerDialog,
 	WeaponPickerDialog,
 } from "@/components";
@@ -16,7 +16,6 @@ import {
 	StampsList,
 	WeaponsList,
 } from "@/models";
-import React, { useState } from "react";
 import {
 	BuildContainer,
 	StampContainer,
@@ -24,7 +23,6 @@ import {
 	SectionsContainer,
 	ResetButton,
 	Section,
-	ClearButton,
 } from "./BuildStyled";
 
 export interface BuildProps {
@@ -49,7 +47,6 @@ export const Build = ({
 	onItemsChanged,
 }: BuildProps): React.ReactElement => {
 	const idolDialog = useDialogState();
-	// remember the index of the item we clicked on
 	const itemDialog = useDialogState<number>();
 	const weaponDialog = useDialogState<number>();
 
@@ -130,15 +127,18 @@ export const Build = ({
 				<SectionsContainer>
 					{/* Idol */}
 					<Section title="Idol">
-						<ClickableContainer onClick={idolDialog.open}>
-							{idol && <ClearButton onClick={() => onIdolChange(undefined)} />}
+						<Selectable
+							onClick={idolDialog.open}
+							onClear={() => handleIdolChange(undefined)}
+							clearable={!!idol}
+						>
 							<Sprite
 								type="idols-icon"
 								name={idol?.name}
 								label={idol?.name ?? "Pick an idol"}
 								alwaysIncludeLabelPadding
 							/>
-						</ClickableContainer>
+						</Selectable>
 					</Section>
 
 					{/* Attack & Stamps */}
@@ -152,17 +152,12 @@ export const Build = ({
 
 						<StampsContainer>
 							{stamps?.map((stamp, index) => (
-								<ClickableContainer
+								<Selectable
 									key={stamp?.name || index}
-									onClick={() => {
-										console.log("open stamp dialog");
-									}}
+									onClick={() => console.log("open stamp dialog")}
+									onClear={() => handleStampChange(undefined, index)}
+									clearable={!!stamp}
 								>
-									{stamp && (
-										<ClearButton
-											onClick={() => handleStampChange(undefined, index)}
-										/>
-									)}
 									<StampContainer>
 										<Sprite
 											type="stamp"
@@ -170,7 +165,7 @@ export const Build = ({
 											label={stamp?.name}
 										/>
 									</StampContainer>
-								</ClickableContainer>
+								</Selectable>
 							))}
 						</StampsContainer>
 					</Section>
@@ -183,20 +178,17 @@ export const Build = ({
 						contentCss={{ flexDirection: "row", gap: "$4" }}
 					>
 						{weapons?.map((weapon, index) => (
-							<ClickableContainer
+							<Selectable
 								key={weapon?.id || index}
 								width={170}
 								height={190}
 								onClick={() => weaponDialog.open(index)}
+								onClear={() => handleWeaponChange(undefined, index)}
+								clearable={!!weapon}
 							>
-								{weapon && (
-									<ClearButton
-										onClick={() => handleWeaponChange(undefined, index)}
-									/>
-								)}
 								{!weapon?.id && <div>Pick a weapon</div>}
 								<CollabTree itemId={weapon?.id} />
-							</ClickableContainer>
+							</Selectable>
 						))}
 					</Section>
 
@@ -210,17 +202,14 @@ export const Build = ({
 						}}
 					>
 						{items?.map((item, index) => (
-							<ClickableContainer
+							<Selectable
 								key={item?.id || index}
 								height={90}
 								width={100}
 								onClick={() => itemDialog.open(index)}
+								onClear={() => handleItemChange(undefined, index)}
+								clearable={!!item}
 							>
-								{item && (
-									<ClearButton
-										onClick={() => handleItemChange(undefined, index)}
-									/>
-								)}
 								<Sprite
 									type="items"
 									name={item?.name}
@@ -228,7 +217,7 @@ export const Build = ({
 									showBackground
 									alwaysIncludeLabelPadding
 								/>
-							</ClickableContainer>
+							</Selectable>
 						))}
 					</Section>
 				</SectionsContainer>

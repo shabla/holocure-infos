@@ -1,2 +1,2 @@
-export * from "./ItemsPage/ItemsPage";
+export * from "./BuildPage/BuildPage";
 export * from "./UpgradesPage/UpgradesPage";

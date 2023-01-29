@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, ClickableContainer, CollabRow, Dialog } from "@/components";
+import { Box, Selectable, CollabRow, Dialog } from "@/components";
 import { Item, WeaponsList } from "@/models";
 import { useItemsStore } from "@/stores";
 import { styled } from "@/styles";
@@ -59,12 +59,9 @@ export const WeaponPickerDialog = ({
 							return row;
 						} else {
 							return (
-								<ClickableContainer
-									key={item.id}
-									onClick={() => onChange(item)}
-								>
+								<Selectable key={item.id} onClick={() => onChange(item)}>
 									{row}
-								</ClickableContainer>
+								</Selectable>
 							);
 						}
 					})}

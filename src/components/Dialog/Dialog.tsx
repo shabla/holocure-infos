@@ -26,8 +26,10 @@ export const Dialog = ({
 			<RadixDialog.Portal>
 				<DialogOverlay>
 					<DialogContent>
-						<DialogTitle>{title}</DialogTitle>
+						{title && <DialogTitle>{title}</DialogTitle>}
+
 						{children}
+
 						<RadixDialog.Close asChild>
 							<DialogCloseButton aria-label="Close">
 								<Cross2Icon />

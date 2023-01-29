@@ -19,7 +19,7 @@ export const DialogContent = styled(RadixDialog.Content, {
 	transform: "translate(-50%, -50%)",
 	maxWidth: "90vw",
 	maxHeight: "85vh",
-	padding: "25px",
+	padding: "35px",
 	animation: `${contentShow} 300ms cubic-bezier(0.16, 1, 0.3, 1)`,
 
 	"&:focus": {

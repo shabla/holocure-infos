@@ -12,3 +12,4 @@ export * from "./CollabTree/CollabTree";
 export * from "./YoutubeIcon";
 export * from "./RedditIcon";
 export * from "./ClickableContainer/ClickableContainer";
+export * from "./ItemPickerDialog/ItemPickerDialog";

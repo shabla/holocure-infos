@@ -4,7 +4,9 @@ import {
 	IdolPickerDialog,
 	CollabTree,
 	ClickableContainer,
+	ItemPickerDialog,
 } from "@/components";
+import { useDialogState } from "@/hooks/useDialogState";
 import {
 	Idol,
 	Item,
@@ -44,11 +46,13 @@ export const Build = ({
 	onWeaponsChanged,
 	onItemsChanged,
 }: BuildProps): React.ReactElement => {
-	const [open, setOpen] = useState(false);
+	const idolDialog = useDialogState();
+	// remember the index of the item we clicked on
+	const itemDialog = useDialogState<number>();
 
 	const handleIdolChange = (idol?: Idol) => {
 		onIdolChange(idol);
-		setOpen(false);
+		idolDialog.close();
 	};
 
 	const handleStampChange = (newStamp: Stamp | undefined, index: number) => {
@@ -70,6 +74,21 @@ export const Build = ({
 		const newItems: ItemsList = [...items];
 		newItems[index] = newItem;
 		onItemsChanged(newItems);
+		itemDialog.close();
+	};
+
+	const handleReset = () => {
+		handleIdolChange(undefined);
+		onStampsChange([undefined, undefined, undefined]);
+		onWeaponsChanged([undefined, undefined, undefined, undefined, undefined]);
+		onItemsChanged([
+			undefined,
+			undefined,
+			undefined,
+			undefined,
+			undefined,
+			undefined,
+		]);
 	};
 
 	return (
@@ -78,28 +97,7 @@ export const Build = ({
 				<>
 					<span>Build</span>
 
-					<button
-						type="button"
-						onClick={() => {
-							handleIdolChange(undefined);
-							onStampsChange([undefined, undefined, undefined]);
-							onWeaponsChanged([
-								undefined,
-								undefined,
-								undefined,
-								undefined,
-								undefined,
-							]);
-							onItemsChanged([
-								undefined,
-								undefined,
-								undefined,
-								undefined,
-								undefined,
-								undefined,
-							]);
-						}}
-					>
+					<button type="button" onClick={handleReset}>
 						Reset
 					</button>
 				</>
@@ -107,16 +105,24 @@ export const Build = ({
 		>
 			<IdolPickerDialog
 				idol={idol}
-				open={open}
-				setOpen={setOpen}
+				open={idolDialog.isOpen}
+				setOpen={idolDialog.setIsOpen}
 				onChange={handleIdolChange}
+			/>
+			<ItemPickerDialog
+				selectedItems={items}
+				open={itemDialog.isOpen}
+				setOpen={itemDialog.setIsOpen}
+				onChange={(item) => {
+					handleItemChange(item, itemDialog.data!);
+				}}
 			/>
 
 			<BuildContainer>
 				<SectionsContainer>
 					{/* Idol */}
 					<Section title="Idol">
-						<ClickableContainer onClick={() => setOpen(true)}>
+						<ClickableContainer onClick={idolDialog.open}>
 							{idol && <ClearButton onClick={() => onIdolChange(undefined)} />}
 							<Sprite
 								type="idols-icon"
@@ -202,9 +208,7 @@ export const Build = ({
 								key={item?.id || index}
 								height={90}
 								width={100}
-								onClick={() => {
-									console.log("clicked item", item?.id);
-								}}
+								onClick={() => itemDialog.open(index)}
 							>
 								{item && (
 									<ClearButton

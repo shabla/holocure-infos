@@ -127,7 +127,6 @@ export const ItemsPage = () => {
 			css={{
 				flexDirection: "column",
 				gap: "$content",
-				width: "1200px",
 			}}
 		>
 			<Build

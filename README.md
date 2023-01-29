@@ -23,3 +23,5 @@ Some libs I use in this project because I wanted to try them :)
 - stamps picker
 - weapon pickern
 - item picker
+- add simple weapon slot to the collabs list (can have 5 weapons, but not enough room for 5 collabs so last remaining spot is a weapon)
+- maybe add input for filtering in dialog pickers?

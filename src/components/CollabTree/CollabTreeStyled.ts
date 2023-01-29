@@ -4,9 +4,7 @@ export const CollabContainer = styled("div", {
 	display: "flex",
 	flexDirection: "column",
 	alignItems: "center",
-	width: 180,
-	padding: "$2",
-	paddingBottom: 0,
+	width: 165,
 });
 
 export const ComponentsContainer = styled("div", {

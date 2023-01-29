@@ -71,7 +71,7 @@ const ClearButtonStyled = styled("button", {
 	alignItems: "center",
 	justifyContent: "center",
 	borderRadius: "100%",
-	boxShadow: "rgba(0,0,0,0.2) 1px 1px 2px",
+	boxShadow: "rgba(0,0,0,0.2) 1px 1px 1px",
 
 	"&:hover": {
 		backgroundColor: "White",

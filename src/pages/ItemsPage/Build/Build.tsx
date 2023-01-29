@@ -57,6 +57,7 @@ export const Build = ({
 
 			<BuildContainer>
 				<SectionsContainer>
+					{/* Idol */}
 					<Section title="Idol">
 						<ClickableContainer onClick={() => setOpen(true)}>
 							{idol && (
@@ -75,6 +76,7 @@ export const Build = ({
 						</ClickableContainer>
 					</Section>
 
+					{/* Attack & Stamps */}
 					<Section title="Stamps" contentCss={{ gap: "$3" }}>
 						<Sprite
 							type="skills"
@@ -85,27 +87,32 @@ export const Build = ({
 
 						<StampsContainer>
 							{stamps?.map((stamp, index) => (
-								<StampContainer key={stamp?.name || index}>
+								<ClickableContainer
+									key={stamp?.name || index}
+									onClick={() => {
+										console.log("open stamp dialog");
+									}}
+								>
 									{stamp && (
 										<ClearButton
 											onClick={() => handleStampChange(undefined, index)}
 										/>
 									)}
-									<Sprite
-										type="stamp"
-										name={stamp?.name}
-										label={stamp?.name}
-										onSelected={() => {
-											console.log("open stamp dialog");
-										}}
-									/>
-								</StampContainer>
+									<StampContainer>
+										<Sprite
+											type="stamp"
+											name={stamp?.name}
+											label={stamp?.name}
+										/>
+									</StampContainer>
+								</ClickableContainer>
 							))}
 						</StampsContainer>
 					</Section>
 				</SectionsContainer>
 
 				<SectionsContainer css={{ flex: "1 1 auto" }}>
+					{/* Collabs & Weapons */}
 					<Section
 						title="Weapons"
 						contentCss={{ flexDirection: "row", gap: "$4" }}
@@ -127,6 +134,7 @@ export const Build = ({
 						))}
 					</Section>
 
+					{/* Items */}
 					<Section
 						title="Items"
 						contentCss={{
@@ -135,14 +143,25 @@ export const Build = ({
 							paddingTop: "$sizes$spriteLabelOverflow",
 						}}
 					>
-						{items?.map((item) => (
-							<Sprite
-								type="items"
-								name={item.name}
-								label={item.name}
-								showBackground
-								key={item.id}
-							/>
+						{items?.map((item, index) => (
+							<ClickableContainer
+								key={item.id || index}
+								onClick={() => {
+									console.log("clicked item", item.id);
+								}}
+							>
+								<ClearButton
+									onClick={() => {
+										console.log("clear item", item.id);
+									}}
+								/>
+								<Sprite
+									type="items"
+									name={item.name}
+									label={item.name}
+									showBackground
+								/>
+							</ClickableContainer>
 						))}
 					</Section>
 				</SectionsContainer>

@@ -61,8 +61,8 @@ const ClearButtonStyled = styled("button", {
 	top: 0,
 	right: 0,
 	transform: "translate(33%, -33%)",
-	width: 20,
-	height: 20,
+	width: 25,
+	height: 25,
 	lineHeight: "20px",
 	backgroundColor: "$pink",
 	color: "white",
@@ -87,6 +87,7 @@ const ClearButtonStyled = styled("button", {
 export function ClearButton({ onClick }: { onClick: () => void }) {
 	return (
 		<ClearButtonStyled
+			className="ClearButton"
 			onClick={(e) => {
 				e.stopPropagation();
 				onClick();
@@ -106,26 +107,8 @@ export const StampsContainer = styled("div", {
 });
 
 export const StampContainer = styled("div", {
-	border: "2px solid rgba(50,50,50,0.2)",
-	backgroundColor: "rgba(100,100,100,0.5)",
-	height: 60,
-	width: 60,
-	position: "relative",
-
-	"&::before": {
-		position: "absolute",
-		top: 0,
-		left: 0,
-		bottom: 0,
-		right: 0,
-		display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		content: "'+'",
-		color: "rgb(255,255,255,0.2)",
-		fontSize: "60px",
-		textAlign: "center",
-	},
+	height: 40,
+	width: 40,
 });
 
 /* Weapons */

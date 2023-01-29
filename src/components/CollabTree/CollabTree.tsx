@@ -3,11 +3,16 @@ import { Sprite } from "@/components";
 import { Bars, ComponentsContainer, CollabContainer } from "./CollabTreeStyled";
 
 export interface CollabTreeProps {
-	itemId: string;
+	itemId?: string;
 }
 
 export const CollabTree = ({ itemId }: CollabTreeProps) => {
 	const getItemById = useItemsStore((state) => state.getItemById);
+
+	if (!itemId) {
+		return null;
+	}
+
 	const item = getItemById(itemId);
 
 	if (!item) {

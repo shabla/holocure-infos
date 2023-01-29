@@ -5,7 +5,14 @@ import {
 	CollabTree,
 	ClickableContainer,
 } from "@/components";
-import { Idol, Item, Stamp, StampsList } from "@/models";
+import {
+	Idol,
+	Item,
+	ItemsList,
+	Stamp,
+	StampsList,
+	WeaponsList,
+} from "@/models";
 import React, { useState } from "react";
 import {
 	BuildContainer,
@@ -19,19 +26,23 @@ import {
 export interface BuildProps {
 	idol?: Idol;
 	stamps?: StampsList;
-	weapons?: string[];
-	items?: Item[];
+	weapons?: WeaponsList;
+	items?: ItemsList;
 	onIdolChange: (idol?: Idol) => void;
 	onStampsChange: (stamps: StampsList) => void;
+	onWeaponsChanged: (weapons: WeaponsList) => void;
+	onItemsChanged: (items: ItemsList) => void;
 }
 
 export const Build = ({
 	idol,
 	stamps = [undefined, undefined, undefined],
-	weapons,
-	items,
+	weapons = [undefined, undefined, undefined, undefined, undefined],
+	items = [undefined, undefined, undefined, undefined, undefined, undefined],
 	onIdolChange,
 	onStampsChange,
+	onWeaponsChanged,
+	onItemsChanged,
 }: BuildProps): React.ReactElement => {
 	const [open, setOpen] = useState(false);
 
@@ -41,9 +52,24 @@ export const Build = ({
 	};
 
 	const handleStampChange = (newStamp: Stamp | undefined, index: number) => {
+		console.log(`changing stamp index ${index} to`, newStamp?.name);
 		const newStamps: StampsList = [...stamps];
 		newStamps[index] = newStamp;
 		onStampsChange(newStamps);
+	};
+
+	const handleWeaponChange = (newWeapon: Item | undefined, index: number) => {
+		console.log(`changing collab index ${index} to`, newWeapon?.id);
+		const newCollabs: WeaponsList = [...weapons];
+		newCollabs[index] = newWeapon;
+		onWeaponsChanged(newCollabs);
+	};
+
+	const handleItemChange = (newItem: Item | undefined, index: number) => {
+		console.log(`changing item index ${index} to`, newItem?.id);
+		const newItems: ItemsList = [...items];
+		newItems[index] = newItem;
+		onItemsChanged(newItems);
 	};
 
 	return (
@@ -117,19 +143,22 @@ export const Build = ({
 						title="Weapons"
 						contentCss={{ flexDirection: "row", gap: "$4" }}
 					>
-						{weapons?.map((weaponId) => (
+						{weapons?.map((weapon, index) => (
 							<ClickableContainer
-								key={weaponId}
+								key={weapon?.id || index}
+								width={170}
+								height={190}
 								onClick={() => {
-									console.log("collab clicked ", weaponId);
+									console.log("collab clicked ", weapon?.id);
 								}}
 							>
-								<ClearButton
-									onClick={() => {
-										console.log("clear weapon", weaponId);
-									}}
-								/>
-								<CollabTree itemId={weaponId} />
+								{weapon && (
+									<ClearButton
+										onClick={() => handleWeaponChange(undefined, index)}
+									/>
+								)}
+								{!weapon?.id && <div>Pick a weapon</div>}
+								<CollabTree itemId={weapon?.id} />
 							</ClickableContainer>
 						))}
 					</Section>
@@ -145,21 +174,24 @@ export const Build = ({
 					>
 						{items?.map((item, index) => (
 							<ClickableContainer
-								key={item.id || index}
+								key={item?.id || index}
+								height={90}
+								width={100}
 								onClick={() => {
-									console.log("clicked item", item.id);
+									console.log("clicked item", item?.id);
 								}}
 							>
-								<ClearButton
-									onClick={() => {
-										console.log("clear item", item.id);
-									}}
-								/>
+								{item && (
+									<ClearButton
+										onClick={() => handleItemChange(undefined, index)}
+									/>
+								)}
 								<Sprite
 									type="items"
-									name={item.name}
-									label={item.name}
+									name={item?.name}
+									label={item?.name}
 									showBackground
+									alwaysIncludeLabelPadding
 								/>
 							</ClickableContainer>
 						))}

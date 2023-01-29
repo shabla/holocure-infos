@@ -1,14 +1,18 @@
-import { styled } from "@/styles";
+import { styled, StyledCSS } from "@/styles";
 import React from "react";
 
 export interface ClickableContainerProps {
 	children: React.ReactNode;
+	width?: StyledCSS["width"];
+	height?: StyledCSS["height"];
 	onClick: () => void;
 }
 
 export const Container = styled("div", {
 	display: "flex",
 	flexDirection: "column",
+	justifyContent: "center",
+	alignItems: "center",
 	backgroundColor: "rgba(255,255,255,0.1)",
 	padding: "$2",
 	borderRadius: "3px",
@@ -30,7 +34,13 @@ export const Container = styled("div", {
 
 export const ClickableContainer = ({
 	children,
+	width,
+	height,
 	onClick,
 }: ClickableContainerProps): React.ReactElement => {
-	return <Container onClick={onClick}>{children}</Container>;
+	return (
+		<Container onClick={onClick} css={{ width, height }}>
+			{children}
+		</Container>
+	);
 };

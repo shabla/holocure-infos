@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 
-import { Idol, Item, StampsList } from "@/models";
+import { Idol, Item, ItemsList, StampsList, WeaponsList } from "@/models";
 import {
 	Sprite,
 	Box,
@@ -107,13 +107,14 @@ export const ItemsPage = () => {
 		{ name: "BOB" },
 		undefined,
 	]);
-	const [weapons, setWeapons] = useState<string[]>([
-		"micomet",
-		"frozen-sea",
-		"rap-dog",
-		"idol-concert",
+	const [weapons, setWeapons] = useState<WeaponsList>([
+		getItemById("micomet"),
+		getItemById("frozen-sea"),
+		getItemById("rap-dog"),
+		getItemById("idol-concert"),
+		undefined,
 	]);
-	const [items, setItems] = useState<Item[]>([
+	const [items, setItems] = useState<ItemsList>([
 		getItemById("stolen-piggy-bank")!,
 		getItemById("limiter")!,
 		getItemById("gws-pill")!,
@@ -132,10 +133,12 @@ export const ItemsPage = () => {
 			<Build
 				idol={idol}
 				stamps={stamps}
-				items={items}
 				weapons={weapons}
+				items={items}
 				onIdolChange={setIdol}
 				onStampsChange={setStamps}
+				onWeaponsChanged={setWeapons}
+				onItemsChanged={setItems}
 			/>
 
 			{/* <div className="flex-row gap-content">

@@ -4,6 +4,7 @@ import hpIcon from "@/assets/stat-hp.png";
 import crtIcon from "@/assets/stat-crt.png";
 import atkIcon from "@/assets/stat-atk.png";
 import spdIcon from "@/assets/stat-spd.png";
+import { styled } from "@/styles";
 
 export interface IdolProfileBoxProps {
 	idol?: Idol;
@@ -38,28 +39,72 @@ const stats: IdolStat[] = [
 	},
 ];
 
-export const IdolProfileBox = ({ idol }: IdolProfileBoxProps) => {
-	return (
-		<Box label={idol?.name} className="idol-profile-box">
-			<div className="model flex-column align-center align-x-center">
-				{idol && <Sprite type="idols" name={idol.name} showBackground={false} />}
-			</div>
+const IdolProfileBoxContainer = styled(Box, {
+	main: {
+		alignSelf: "center",
+		overflowY: "inherit",
+	},
+});
 
-			<div className="stats">
+const ModelContainer = styled("div", {
+	display: "flex",
+	justifyContent: "center",
+	alignItems: "center",
+	height: 190,
+});
+
+const StatsContainer = styled("div", {
+	marginTop: "20px",
+	minWidth: "250px",
+	maxWidth: "300px",
+	padding: "20px",
+});
+
+const StatContainer = styled("div", {
+	marginBottom: "10px",
+	display: "flex",
+	alignItems: "center",
+
+	img: {
+		height: "32px",
+		width: "32px",
+		display: "block",
+		marginRight: "10px",
+	},
+
+	".text": {
+		display: "flex",
+		justifyContent: "space-between",
+		flex: "1 1 auto",
+		fontSize: "22px",
+		borderBottom: "1px solid white",
+	},
+});
+
+export function IdolProfileBox({ idol }: IdolProfileBoxProps) {
+	return (
+		<IdolProfileBoxContainer label={idol?.name}>
+			<ModelContainer>
+				{idol && (
+					<Sprite type="idols" name={idol.name} showBackground={false} />
+				)}
+			</ModelContainer>
+
+			<StatsContainer>
 				{stats.map((stat) => {
 					const value = idol?.stats?.[stat.key];
 
 					return (
-						<div className="stat flex-row align-x-center" key={stat.key}>
+						<StatContainer key={stat.key}>
 							<img src={stat.image} alt={stat.name} />
-							<div className="text flex-row align-space-between flex-fill">
-								<div className="name">{stat.name}</div>
-								<div className="value">{stat.format && value ? stat.format(value) : value}</div>
+							<div className="text">
+								<div>{stat.name}</div>
+								<div>{stat.format && value ? stat.format(value) : value}</div>
 							</div>
-						</div>
+						</StatContainer>
 					);
 				})}
-			</div>
-		</Box>
+			</StatsContainer>
+		</IdolProfileBoxContainer>
 	);
-};
+}

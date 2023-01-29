@@ -25,4 +25,19 @@ export const InfoTable = styled("table", {
 		whiteSpace: "nowrap",
 		width: "100px",
 	},
+
+	"td.value.row": {
+		display: "flex",
+		gap: "10px",
+	},
+
+	variants: {
+		small: {
+			true: {
+				td: {
+					height: "auto",
+				},
+			},
+		},
+	},
 });

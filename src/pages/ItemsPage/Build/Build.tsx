@@ -46,7 +46,7 @@ export const Build = ({
 }: BuildProps): React.ReactElement => {
 	const [open, setOpen] = useState(false);
 
-	const handleIdolChange = (idol: Idol) => {
+	const handleIdolChange = (idol?: Idol) => {
 		onIdolChange(idol);
 		setOpen(false);
 	};
@@ -73,7 +73,38 @@ export const Build = ({
 	};
 
 	return (
-		<Box label="Build">
+		<Box
+			label={
+				<>
+					<span>Build</span>
+
+					<button
+						type="button"
+						onClick={() => {
+							handleIdolChange(undefined);
+							onStampsChange([undefined, undefined, undefined]);
+							onWeaponsChanged([
+								undefined,
+								undefined,
+								undefined,
+								undefined,
+								undefined,
+							]);
+							onItemsChanged([
+								undefined,
+								undefined,
+								undefined,
+								undefined,
+								undefined,
+								undefined,
+							]);
+						}}
+					>
+						Reset
+					</button>
+				</>
+			}
+		>
 			<IdolPickerDialog
 				idol={idol}
 				open={open}
@@ -86,13 +117,7 @@ export const Build = ({
 					{/* Idol */}
 					<Section title="Idol">
 						<ClickableContainer onClick={() => setOpen(true)}>
-							{idol && (
-								<ClearButton
-									onClick={() => {
-										onIdolChange(undefined);
-									}}
-								/>
-							)}
+							{idol && <ClearButton onClick={() => onIdolChange(undefined)} />}
 							<Sprite
 								type="idols-icon"
 								name={idol?.name}

@@ -8,7 +8,7 @@ export * from "./IdolGenerations/IdolGenerations";
 export * from "./Dialog/Dialog";
 export * from "./IdolPickerDialog/IdolPickerDialog";
 export * from "./IdolSkillBox/IdolSkillBox";
-export * from "./CollabTree/CollabTree";
+export * from "./ItemComponents/ItemComponents";
 export * from "./YoutubeIcon";
 export * from "./RedditIcon";
 export * from "./Selectable/Selectable";

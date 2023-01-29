@@ -2,7 +2,7 @@ import {
 	Box,
 	Sprite,
 	IdolPickerDialog,
-	CollabTree,
+	ItemComponents,
 	Selectable,
 	ItemPickerDialog,
 	WeaponPickerDialog,
@@ -187,7 +187,7 @@ export const Build = ({
 								clearable={!!weapon}
 							>
 								{!weapon?.id && <div>Pick a weapon</div>}
-								<CollabTree itemId={weapon?.id} />
+								<ItemComponents itemId={weapon?.id} />
 							</Selectable>
 						))}
 					</Section>

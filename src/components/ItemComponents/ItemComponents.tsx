@@ -1,12 +1,16 @@
 import { useItemsStore } from "@/stores";
 import { Sprite } from "@/components";
-import { Bars, ComponentsContainer, CollabContainer } from "./CollabTreeStyled";
+import {
+	Bars,
+	ComponentsContainer,
+	CollabContainer,
+} from "./ItemComponentsStyled";
 
-export interface CollabTreeProps {
+export interface ItemComponentsProps {
 	itemId?: string;
 }
 
-export const CollabTree = ({ itemId }: CollabTreeProps) => {
+export const ItemComponents = ({ itemId }: ItemComponentsProps) => {
 	const getItemById = useItemsStore((state) => state.getItemById);
 
 	if (!itemId) {

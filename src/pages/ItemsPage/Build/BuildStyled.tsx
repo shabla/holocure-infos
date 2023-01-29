@@ -7,6 +7,20 @@ export const BuildContainer = styled("div", {
 	gap: "$4",
 });
 
+export const ResetButton = styled("button", {
+	unset: "all",
+	padding: "$2 $4",
+	fontSize: "16px",
+	backgroundColor: "$darkBlue",
+	color: "white",
+	border: 0,
+	borderRadius: "5px",
+	"&:hover": {
+		backgroundColor: "$blue",
+		cursor: "pointer",
+	},
+});
+
 export const SectionsContainer = styled("div", {
 	display: "flex",
 	flexDirection: "column",

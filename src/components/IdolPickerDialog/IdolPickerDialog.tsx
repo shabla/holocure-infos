@@ -27,7 +27,7 @@ export const IdolPickerDialog = ({
 	const [visibleIdol, setVisibleIdol] = useState<Idol | undefined>(idol);
 
 	return (
-		<Dialog title="Pick an idol" open={open} setOpen={setOpen}>
+		<Dialog open={open} setOpen={setOpen}>
 			<DialogContent>
 				<IdolGenerations
 					selectedIdol={idol}

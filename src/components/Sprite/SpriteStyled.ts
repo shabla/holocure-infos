@@ -49,7 +49,7 @@ export const SpriteLabel = styled("div", {
 	zIndex: 10,
 	fontSize: "11px",
 	textAlign: "center",
-	backgroundColor: "rgba(0,0,0,0.5)",
+	backgroundColor: "rgba(0,0,0,0.4)",
 	color: "white",
 	borderRadius: "3px",
 	padding: "1px 0",

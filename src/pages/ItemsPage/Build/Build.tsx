@@ -5,6 +5,7 @@ import {
 	CollabTree,
 	ClickableContainer,
 	ItemPickerDialog,
+	WeaponPickerDialog,
 } from "@/components";
 import { useDialogState } from "@/hooks/useDialogState";
 import {
@@ -21,6 +22,7 @@ import {
 	StampContainer,
 	StampsContainer,
 	SectionsContainer,
+	ResetButton,
 	Section,
 	ClearButton,
 } from "./BuildStyled";
@@ -49,6 +51,7 @@ export const Build = ({
 	const idolDialog = useDialogState();
 	// remember the index of the item we clicked on
 	const itemDialog = useDialogState<number>();
+	const weaponDialog = useDialogState<number>();
 
 	const handleIdolChange = (idol?: Idol) => {
 		onIdolChange(idol);
@@ -67,6 +70,7 @@ export const Build = ({
 		const newCollabs: WeaponsList = [...weapons];
 		newCollabs[index] = newWeapon;
 		onWeaponsChanged(newCollabs);
+		weaponDialog.close();
 	};
 
 	const handleItemChange = (newItem: Item | undefined, index: number) => {
@@ -97,9 +101,9 @@ export const Build = ({
 				<>
 					<span>Build</span>
 
-					<button type="button" onClick={handleReset}>
+					<ResetButton type="button" onClick={handleReset}>
 						Reset
-					</button>
+					</ResetButton>
 				</>
 			}
 		>
@@ -113,9 +117,13 @@ export const Build = ({
 				selectedItems={items}
 				open={itemDialog.isOpen}
 				setOpen={itemDialog.setIsOpen}
-				onChange={(item) => {
-					handleItemChange(item, itemDialog.data!);
-				}}
+				onChange={(item) => handleItemChange(item, itemDialog.data!)}
+			/>
+			<WeaponPickerDialog
+				selectedItems={weapons}
+				open={weaponDialog.isOpen}
+				setOpen={weaponDialog.setIsOpen}
+				onChange={(weapon) => handleWeaponChange(weapon, weaponDialog.data!)}
 			/>
 
 			<BuildContainer>
@@ -179,9 +187,7 @@ export const Build = ({
 								key={weapon?.id || index}
 								width={170}
 								height={190}
-								onClick={() => {
-									console.log("collab clicked ", weapon?.id);
-								}}
+								onClick={() => weaponDialog.open(index)}
 							>
 								{weapon && (
 									<ClearButton

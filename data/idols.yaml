@@ -1,5 +1,6 @@
 # Myth
 - name: "Amelia Watson"
+  id: 1
   gen: "Myth"
   stats:
     hp: 75
@@ -52,6 +53,7 @@
         - level: 3
           desc: "Increase critical hit chance by {30%} with a {2% chance to defeat a target in 1 hit}."
 - name: "Gawr Gura"
+  id: 2
   gen: "Myth"
   stats:
     hp: 65
@@ -106,6 +108,7 @@
         - level: 3
           desc: "Every 10 seconds, create a whirlpool that draws in targets and takes {50%} more damage, lasting 6 seconds and {deal 50% damage every 0.5 seconds}."
 - name: "Ninomae Inanis"
+  id: 3
   gen: "Myth"
   stats:
     hp: 75
@@ -160,6 +163,7 @@
         - level: 3
           desc: "Targets within {125px} of Ina move slower by {30%} and also {take 75% damage ever 2 second}."
 - name: "Takanashi Kiara"
+  id: 4
   gen: "Myth"
   stats:
     hp: 90
@@ -212,6 +216,7 @@
         - level: 3
           desc: "Every 10 seconds gain {3 stacks} of Phoenix Shield. The {next 3 hits taken} are halved and become invulnerable for 0.25 seconds."
 - name: "Mori Calliope"
+  id: 5
   gen: "Myth"
   stats:
     hp: 70
@@ -266,6 +271,7 @@
 
 # Council
 - name: "Hakos Baelz"
+  id: 6
   gen: "Council"
   stats:
     hp: 60
@@ -318,6 +324,7 @@
         - level: 3
           desc: "Increase Critical Chance by 30%."
 - name: "Ouro Kronii"
+  id: 7
   gen: "Council"
   stats:
     hp: 70
@@ -370,6 +377,7 @@
         - level: 3
           desc: "While HP is full, increase ATK, SPD, Pickup Range by {50%}. Increase Haste and Critical Chance by {20%}."
 - name: "Ceres Fauna"
+  id: 8
   gen: "Council"
   stats:
     hp: 65
@@ -422,6 +430,7 @@
         - level: 3
           desc: 'Every 10 second, gain 1 "Whisper" (max {5}). Each stack heals 2% HP every second. On taking the next hit, consume 1 Whisper to negate the attack.'
 - name: "Nanashi Mumei"
+  id: 9
   gen: "Council"
   stats:
     hp: 60
@@ -474,6 +483,7 @@
         - level: 3
           desc: "Increase ATK by {3%} for every target currently on the screen, up to {150%}."
 - name: "Tsukumo Sana"
+  id: 10
   gen: "Council"
   stats:
     hp: 80
@@ -528,6 +538,7 @@
 
 # Hope
 - name: "Irys"
+  id: 11
   gen: "Hope"
   stats:
     hp: 50
@@ -582,6 +593,7 @@
 
 # Gamers
 - name: "Shirakami Fubuki"
+  id: 12
   gen: "Gamers"
   stats:
     hp: 55
@@ -634,6 +646,7 @@
         - level: 3
           desc: "Increase SPD by {20%}. While moving, all attack damage is increased by 10% for each 10% bonus SPD Fubuki currently has, up to {150%}."
 - name: "Ookami Mio"
+  id: 13
   gen: "Gamers"
   stats:
     hp: 70
@@ -686,6 +699,7 @@
         - level: 3
           desc: "The closer a target is within 150px, the more damage they receive, up to {150%}."
 - name: "Nekomata Okayu"
+  id: 14
   gen: "Gamers"
   stats:
     hp: 60
@@ -738,6 +752,7 @@
         - level: 3
           desc: "When a target is defeated, there is a {10%} chance to drop other types of food that heal for 1, 3, 5, or 20 HP."
 - name: "Inugami Korone"
+  id: 15
   gen: "Gamers"
   stats:
     hp: 60
@@ -792,6 +807,7 @@
 
 # Gen 0
 - name: "Tokino Sora"
+  id: 16
   gen: "Gen 0"
   stats:
     hp: 65
@@ -844,6 +860,7 @@
         - level: 3
           desc: "Attacks have a {20%} chance to mark a target (max 13). Marked targets receive 20% more damage, and a {30%} chance to heal {4} HP when defeated."
 - name: "AZKi"
+  id: 17
   gen: "Gen 0"
   stats:
     hp: 75
@@ -896,6 +913,7 @@
         - level: 3
           desc: "For each second AZKi does not receive damage, increase Haste by {3%}, up to {30%}. Buff resets to 0% if AZKi takes damage."
 - name: "Roboco-san"
+  id: 18
   gen: "Gen 0"
   stats:
     hp: 75
@@ -948,6 +966,7 @@
         - level: 3
           desc: "Defeating a target has a {20%} chance to drop a Battery. Batteries gives an additional {100%} EXP and shocks nearby targets for 0.5 seconds."
 - name: "Hoshimashi Suisei"
+  id: 19
   gen: "Gen 0"
   stats:
     hp: 70
@@ -1000,6 +1019,7 @@
         - level: 3
           desc: "Critical hits have a {25%} chance to summon a falling block from above that deals {250%} damage."
 - name: "Sakura Miko"
+  id: 20
   gen: "Gen 0"
   stats:
     hp: 60
@@ -1055,6 +1075,7 @@
 
 # Gen 1
 - name: "Yozora Mel"
+  id: 21
   gen: "Gen 1"
   attack:
     name: ""
@@ -1062,6 +1083,7 @@
       - level: 1
         desc: ""
 - name: "Natsuiro Matsuri"
+  id: 22
   gen: "Gen 1"
   attack:
     name: ""
@@ -1069,6 +1091,7 @@
       - level: 1
         desc: ""
 - name: "Akai Haato"
+  id: 23
   gen: "Gen 1"
   attack:
     name: ""
@@ -1076,6 +1099,7 @@
       - level: 1
         desc: ""
 - name: "Aki Rosenthal"
+  id: 24
   gen: "Gen 1"
   attack:
     name: ""
@@ -1085,6 +1109,7 @@
 
 # Gen 2
 - name: "Minato Aqua"
+  id: 25
   gen: "Gen 2"
   attack:
     name: ""
@@ -1092,6 +1117,7 @@
       - level: 1
         desc: ""
 - name: "Murasaki Shion"
+  id: 26
   gen: "Gen 2"
   attack:
     name: ""
@@ -1099,6 +1125,7 @@
       - level: 1
         desc: ""
 - name: "Nakiri Ayame"
+  id: 27
   gen: "Gen 2"
   attack:
     name: ""
@@ -1106,6 +1133,7 @@
       - level: 1
         desc: ""
 - name: "Yuzuki Choco"
+  id: 28
   gen: "Gen 2"
   attack:
     name: ""
@@ -1113,6 +1141,7 @@
       - level: 1
         desc: ""
 - name: "Oozora Subaru"
+  id: 29
   gen: "Gen 2"
   attack:
     name: ""

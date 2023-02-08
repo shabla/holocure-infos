@@ -1,6 +1,4 @@
 import { create } from "zustand";
-
-import { nameToId } from "@/utils/nameToId";
 import { Idol, IdolGeneration } from "@/models";
 
 type GenerationWithIdols = IdolGeneration & { idols: Idol[] };
@@ -9,9 +7,9 @@ interface IdolsStore {
 	loaded: boolean;
 	idols: Idol[];
 	getGenerations: () => GenerationWithIdols[];
-	getIdolById: (id: string) => Idol | undefined;
+	getIdolById: (id?: number) => Idol | undefined;
 	getIdolsByGen: (gen: string) => Idol[];
-	loadIdols: (force?: boolean) => Promise<void>;
+	loadIdols: () => Promise<void>;
 }
 
 const gens: IdolGeneration[] = [
@@ -27,18 +25,15 @@ const gens: IdolGeneration[] = [
 export const useIdolsStore = create<IdolsStore>((set, get) => ({
 	loaded: false,
 	idols: [],
-	getGenerations: (): GenerationWithIdols[] => {
-		return gens.map((gen) => ({
+	getGenerations: (): GenerationWithIdols[] =>
+		gens.map((gen) => ({
 			name: gen.name,
 			idols: get().getIdolsByGen(gen.name),
-		}));
-	},
-	getIdolById: (id: string): Idol | undefined => {
-		return get().idols.filter((idol) => idol.id === id)[0];
-	},
-	getIdolsByGen: (gen: string): Idol[] => {
-		return get().idols.filter((i) => i.gen === gen);
-	},
+		})),
+	getIdolById: (id?: number): Idol | undefined =>
+		id ? get().idols.filter((idol) => idol.id === id)[0] : undefined,
+	getIdolsByGen: (gen: string): Idol[] =>
+		get().idols.filter((i) => i.gen === gen),
 	loadIdols: async () => {
 		try {
 			const data = await fetch("idols.json");
@@ -46,10 +41,7 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
 
 			set({
 				loaded: true,
-				idols: idols.map((idol) => ({
-					...idol,
-					id: nameToId(idol.name),
-				})),
+				idols: idols,
 			});
 		} catch (e) {
 			set({ loaded: false, idols: [] });

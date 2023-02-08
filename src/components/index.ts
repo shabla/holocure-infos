@@ -17,3 +17,4 @@ export * from "./WeaponPickerDialog/WeaponPickerDialog";
 export * from "./CollabRow/CollabRow";
 export * from "./ItemDetailsBox/ItemDetailsBox";
 export * from "./IdolProfileBox/IdolProfileBox";
+export * from "./Builder/Builder";

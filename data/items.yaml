@@ -2,82 +2,95 @@
 ### Collabs
 ###
 - name: "Frozen Sea"
+  id: 1
   type: "collab"
   desc: "A collaboration of BL Book and Wamy Water. Endless waves of ice that slows targets."
   requires:
-    - "bl-book"
-    - "wamy-water"
+    - 17
+    - 25
 - name: "BL Fujoshi"
+  id: 2
   type: "collab"
   desc: "A collaboration of BL Book and Psycho Axe. Endless BL, how shameless!"
   requires:
-    - "bl-book"
-    - "psycho-axe"
+    - 17
+    - 16
 - name: "MiComet"
+  id: 3
   type: "collab"
   desc: "A collaboration of Elite Lava Bucket and Psycho Axe. Real business partners."
   requires:
-    - "elite-lava-bucket"
-    - "psycho-axe"
+    - 14
+    - 16
 - name: "Elite Cooking"
+  id: 4
   type: "collab"
   desc: "A collaboration of Elite Lava Bucket and Spider Cooking. May have severe unknown side effects if consumed."
   requires:
-    - "elite-lava-bucket"
-    - "spider-cooking"
+    - 14
+    - 13
 - name: "Broken Dreams"
+  id: 5
   type: "collab"
   desc: "A collaboration of Spider Cooking and CEO's Tears."
   requires:
-    - "ceos-tears"
-    - "spider-cooking"
+    - 23
+    - 13
 - name: "Stream of Tears"
+  id: 6
   type: "collab"
   desc: "A collaboration of Fan Beam and CEO's Tears. Nothing can stop the stream of tears."
   requires:
-    - "ceos-tears"
-    - "fan-beam"
+    - 23
+    - 19
 - name: "Rap Dog"
+  id: 7
   type: "collab"
   desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS where targets hit take 15% more damage."
   requires:
-    - "x-potato"
-    - "idol-song"
+    - 24
+    - 22
 - name: "Idol Concert"
+  id: 8
   type: "collab"
   desc: "A collaboration of Idol Song and Glowstick. Throw glowstick in all directions that esxplode into song!"
   requires:
-    - "glowstick"
-    - "idol-song"
+    - 21
+    - 22
 - name: "Light Beam"
+  id: 9
   type: "collab"
   desc: "A collaboration of Glowstick and Fan Beam. Throw glowsticks that explode into targeted beams!"
   requires:
-    - "glowstick"
-    - "fan-beam"
+    - 21
+    - 19
 - name: "Dragon Fire"
+  id: 10
   type: "collab"
   desc: "A collaboration of Fan Beam and Plug In Type Asacoco. The power of a once LEGENDARY Dragon. The OG."
   requires:
-    - "plug-type-asacoco"
-    - "fan-beam"
+    - 20
+    - 19
 - name: "Breathe-In Type Asacoco"
+  id: 11
   type: "collab"
   desc: "A collaboration of Plug Type Asacoco and Holo Bomb. Limited time only for 5000 yen!!!"
   requires:
-    - "plug-type-asacoco"
-    - "holo-bomb"
+    - 20
+    - 15
 - name: "Flattening Board"
+  id: 12
   type: "collab"
   desc: "A collaboration of Cutting Board and Holo Bomb. Feel the wrath of cutting boards...!?."
   requires:
-    - "cutting-board"
-    - "holo-bomb"
+    - 18
+    - 15
 
 ###
 ### Weapons
 ###
 - name: "Spider Cooking"
+  id: 13
   type: "weapon"
   desc: "Create an area of miasma around, dealing slow damage to enemies inside."
   requirement: "Unlocked by default"
@@ -95,6 +108,7 @@
     - level: 7
       desc: "Adds small knockback on hit."
 - name: "Elite Lava Bucket"
+  id: 14
   type: "weapon"
   desc: "Drop lava on the ground, burning targets slowly."
   requirement: "Unlocked by default"
@@ -112,6 +126,7 @@
     - level: 7
       desc: "Throw 4 lava buckets and increase lava size by 20%."
 - name: "Holo Bomb"
+  id: 15
   type: "weapon"
   desc: "A bomb that explodes, dealing damage to all nearby targets."
   requirement: "Unlocked by default"
@@ -129,6 +144,7 @@
     - level: 7
       desc: "Throw 3 bombs."
 - name: "Psycho Axe"
+  id: 16
   type: "weapon"
   desc: "Throw an axe that spirals outward from the player."
   requirement: "Unlocked by default"
@@ -146,6 +162,7 @@
     - level: 7
       desc: "Increase damage by 50%."
 - name: "BL Book"
+  id: 17
   type: "weapon"
   desc: "Repel targets with orbitting BL Books."
   requirement: "Unlocked by default"
@@ -163,6 +180,7 @@
     - level: 7
       desc: "Increase damage by 40%."
 - name: "Cutting Board"
+  id: 18
   type: "weapon"
   desc: "Create a defensive wall that damages targets behind you. Effectiveness is increased on certain characters."
   requirement: "Survive for 10 minutes using Ina in one run."
@@ -180,6 +198,7 @@
     - level: 7
       desc: "Shoot additional walls from sides."
 - name: "Fan Beam"
+  id: 19
   type: "weapon"
   desc: "Shoot a powerful laser beam from the microphone. Horizontal Only."
   requirement: "Defeat Fubuzilla."
@@ -197,6 +216,7 @@
     - level: 7
       desc: "Fire an additional beam behind."
 - name: "Plug Type Asacoco"
+  id: 20
   type: "weapon"
   desc: "Fire a fast piercing tail targeted at a random target."
   requirement: "Unlocked by default"
@@ -214,6 +234,7 @@
     - level: 7
       desc: "Fire an additional Asacoco."
 - name: "Glowstick"
+  id: 21
   type: "weapon"
   desc: "Throw a glowstick to a nearby target and then spins back to player."
   requirement: "Unlocked by default"
@@ -231,6 +252,7 @@
     - level: 7
       desc: "Throw one additional glowstick."
 - name: "Idol Song"
+  id: 22
   type: "weapon"
   desc: "Magical music notes that float vertically in both directions."
   requirement: "Survive for 10 minutes using Irys in one run."
@@ -248,6 +270,7 @@
     - level: 7
       desc: "Increase damage by 50%."
 - name: "CEO's Tears"
+  id: 23
   type: "weapon"
   desc: "Fires rapid tears at random targets."
   requirement: "Clear Stage 2 in stage mode."
@@ -265,6 +288,7 @@
     - level: 7
       desc: "Shoot 4 tears."
 - name: "X-Potato"
+  id: 24
   type: "weapon"
   desc: "Throw a potato that bounces around the screen before exploding into an X."
   requirement: "Survive 10 minutes with Korone."
@@ -282,6 +306,7 @@
     - level: 7
       desc: "Throw 4 potatoes."
 - name: "Wamy Water"
+  id: 25
   type: "weapon"
   desc: "Create a splash of unknown water in front, knocking targets back."
   requirement: "Clear Stage 1 with Sake."
@@ -302,6 +327,7 @@
 ### Items
 ###
 - name: "Sake"
+  id: 26
   type: "item"
   desc: "If not taking any damage for 5 seconds, increase crit by {10%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
   requirement: "Unlocked by default"
@@ -311,6 +337,7 @@
     - level: 3
       desc: "If not taking any damage for 5 seconds, increase crit by {20%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
 - name: "Body Pillow"
+  id: 27
   type: "item"
   desc: "Gain a shield that absorbs up to {15} damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by {5%}."
   requirement: "Unlocked by default."
@@ -327,6 +354,7 @@
     name: "Super Body Pillow"
     desc: "Gain a shield that absorbs up to 40 damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by 30%. When shield is full, heal 10 HP every 3 seconds."
 - name: "Injection Type Asacoco"
+  id: 28
   type: "item"
   desc: "Lose 5% HP every second (until 1 HP remains), but gain {40%} damage."
   requirement: "Beat Stage Mode with Plug Type Asacoco or Breathe-In Type Asacoco equipped."
@@ -336,6 +364,7 @@
     - level: 3
       desc: "Lose 5% HP every second (until 1 HP remains), but gain {80%} damage."
 - name: "Credit Card"
+  id: 29
   type: "item"
   desc: "Cost of enhancing is reduced by {20%} and anvils appear {20%} more often."
   requirement: "Find and Anvil."
@@ -349,6 +378,7 @@
     - level: 5
       desc: "Cost of enhancing is reduced by {40%} and anvils appear {100%} more often."
 - name: "Knightly Milk"
+  id: 30
   type: "item"
   desc: "Increases attack range of area-type weapons by {10%}. Also Increase pick-up radius by {30%}."
   requirement: "Unlocked by default"
@@ -361,19 +391,12 @@
     name: "Super Knightly Milk"
     desc: "Increases attack size of weapons by 30%. Also increase Pick Up Range by 100% and increase Max HP by 20."
 - name: "Face Mask"
+  id: 31
   type: "item"
   desc: "Increase damage by 50% and haste by 10%. Take 30% more damage."
   requirement: "Unlocked by default"
-- name: "Plushie"
-  type: "item"
-  desc: "After taking any damage, gain invulnerability for {0.3} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
-  requirement: "Survive for 10 minutes as Hakos Baelz in a single run."
-  levels:
-    - level: 2
-      desc: "After taking any damage, gain invulnerability for {0.4} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
-    - level: 3
-      desc: "After taking any damage, gain invulnerability for {0.5} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
 - name: "Nurse's Horns"
+  id: 32
   type: "item"
   desc: "When a target is defeated, there is a 20% chance to heal for {2} HP."
   requirement: "Unlocked by default"
@@ -383,19 +406,12 @@
     - level: 3
       desc: "When a target is defeated, there is a 20% chance to heal for {6} HP."
 - name: "Full Meal"
+  id: 33
   type: "item"
   desc: "All healing is doubled."
   requirement: "Unlocked by default"
-- name: "Piki Piki Piman"
-  type: "item"
-  desc: "After receiving damage, increase the special meter by {2%}. There is a 0.2 second cooldown."
-  requirement: "Unlocked by default"
-  levels:
-    - level: 2
-      desc: "After receiving damage, increase the special meter by {3%}. There is a 0.2 second cooldown."
-    - level: 3
-      desc: "After receiving damage, increase the special meter by {4%}. There is a 0.2 second cooldown."
 - name: "Headphones"
+  id: 34
   type: "item"
   desc: "{15%} chance to negate 1 hit, and create a shockwave that knocks back all enemies."
   requirement: "Unlocked by default"
@@ -409,6 +425,7 @@
     - level: 5
       desc: "{35%} chance to negate 1 hit, and create a shockwave that knocks back all enemies."
 - name: "Gorilla's Paw"
+  id: 35
   type: "item"
   desc: "Increase normal attack damage by {30%}, but lose 20% critical chance."
   requirement: "Defeat the Smol Ame boss."
@@ -421,6 +438,7 @@
     name: "Super Gorilla's Paw"
     desc: "Increase attack damage by 50% and critical hits do 50 more damage."
 - name: "Uber Sheep"
+  id: 36
   type: "item"
   desc: "Every {10} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {10%}."
   requirement: "Unlocked by default"
@@ -434,6 +452,7 @@
     - level: 5
       desc: "Every {6} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {20%}."
 - name: "Idol Costume"
+  id: 37
   type: "item"
   desc: "Reduce Special cooldown by {20%}."
   requirement: "Use any special attack."
@@ -450,6 +469,7 @@
     name: "Super Idol Costume"
     desc: "Reduce Special cooldown by 45%. Allows the use of Special once more immediately per charge."
 - name: "Energy Drink"
+  id: 38
   type: "item"
   desc: "Increase Haste by {10%} and SPD by {30%}, but reduce Max HP by 20% as well."
   requirement: "Survive for 10 minutes as Calliope Mori in a single run."
@@ -462,6 +482,7 @@
     name: "Super Energy Drink"
     desc: "Increase Haste by 30% and SPD by 60%."
 - name: "Study Glasses"
+  id: 39
   type: "item"
   desc: "Increase EXP gain by {10%}."
   requirement: "Reach level 50 in a single run."
@@ -478,6 +499,7 @@
     name: "Super Study Glasses"
     desc: "Increase EXP gain by 40% and double the chance of getting a Rainbow EXP drop."
 - name: "Super Chatto Time!"
+  id: 40
   type: "item"
   desc: "Targets drop {10%} more Holo Coins."
   requirement: "Obtain 5000 coins total. (you only need to have 5000 total at the end of a run, not from a single run)"
@@ -494,6 +516,7 @@
     name: "Super Super Chatto Time!"
     desc: "Targets drop 100% more Holo Coins. Picking up coins also heal 3 HP."
 - name: "Membership"
+  id: 41
   type: "item"
   desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {30%} and take {10%} less damage."
   requirement: "Clear Stage Mode with Super Chatto Time! equipped."
@@ -503,6 +526,7 @@
     - level: 3
       desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {50%} and take {25%} less damage."
 - name: "Halu"
+  id: 42
   type: "item"
   desc: "Increase regular fan spawns, and fans become {5%} stronger. Gain 1 HoloCoin for every {5} targets defeated since taking this item."
   requirement: "Defeat 5,000 enemies in a run."
@@ -516,6 +540,7 @@
     - level: 5
       desc: "Don't do it."
 - name: "Just Bandage"
+  id: 43
   type: "item"
   desc: "Increase Max HP by {10}. After being hit, heal 10% HP every 3 seconds until {80%} of the damage taken is recovered (recovers minimum 1 HP)."
   requirement: "Die after the 10 minutes mark in a run."
@@ -525,6 +550,7 @@
     - level: 3
       desc: "Increase Max HP by {30}. After being hit, heal 10% HP every 3 seconds until {100%} of the damage taken is recovered (recovers minimum 1 HP)."
 - name: "GWS Pill"
+  id: 44
   type: "item"
   desc: "While the Special meter is still charging, increase crit by {15%}."
   requirement: "Die with the Halu item equipped."
@@ -534,6 +560,7 @@
     - level: 3
       desc: "While the Special meter is still charging, increase crit by {25%}."
 - name: "Limiter"
+  id: 45
   type: "item"
   desc: "Gain {100%} Pick Up Range."
   requirement: "Survive 10 minutes with Tsukumo Sana in a single run."
@@ -543,6 +570,7 @@
     - level: 3
       desc: "Gain {300%} Pick Up Range."
 - name: "Chicken's Feather"
+  id: 46
   type: "item"
   desc: "Gain {1} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
   requirement: "Survive for 10 minutes as Takanashi Kiara in a single run."
@@ -552,6 +580,27 @@
     - level: 3
       desc: "Gain {3} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
 - name: "Stolen Piggy Bank"
+  id: 47
   type: "item"
   desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
   requirement: "Kill a Golden YAGOO."
+- name: "Plushie"
+  id: 48
+  type: "item"
+  desc: "After taking any damage, gain invulnerability for {0.3} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
+  requirement: "Survive for 10 minutes as Hakos Baelz in a single run."
+  levels:
+    - level: 2
+      desc: "After taking any damage, gain invulnerability for {0.4} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
+    - level: 3
+      desc: "After taking any damage, gain invulnerability for {0.5} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
+- name: "Piki Piki Piman"
+  id: 49
+  type: "item"
+  desc: "After receiving damage, increase the special meter by {2%}. There is a 0.2 second cooldown."
+  requirement: "Unlocked by default"
+  levels:
+    - level: 2
+      desc: "After receiving damage, increase the special meter by {3%}. There is a 0.2 second cooldown."
+    - level: 3
+      desc: "After receiving damage, increase the special meter by {4%}. There is a 0.2 second cooldown."

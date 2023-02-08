@@ -28,11 +28,6 @@ const ItemDetailsBoxContainer = styled(Box, {
 	},
 });
 
-const BoxTitle = styled("div", {
-	display: "flex",
-	alignItems: "center",
-});
-
 export const ItemDetailsBox = ({
 	item,
 	onItemSelected,
@@ -50,7 +45,7 @@ export const ItemDetailsBox = ({
 	return (
 		<ItemDetailsBoxContainer
 			label={
-				<BoxTitle>
+				<>
 					{item ? (
 						<>
 							<Sprite
@@ -65,7 +60,7 @@ export const ItemDetailsBox = ({
 					) : (
 						<div className="item-name">-</div>
 					)}
-				</BoxTitle>
+				</>
 			}
 		>
 			<InfoTable small>

@@ -5,7 +5,7 @@ import { useItemsStore } from "@/stores";
 import { PlusIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 
 export interface CollabRowProps {
-	disabledWeapons?: string[];
+	disabledWeapons?: number[];
 	disabled?: boolean;
 	item: Item;
 }

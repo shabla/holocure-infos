@@ -1,93 +1,35 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Idol, Item, ItemsList, StampsList, WeaponsList } from "@/models";
-import { ContentContainer, ItemDetailsBox } from "@/components";
-import { useItemsStore, useIdolsStore } from "@/stores";
-import { Build } from "./Build/Build";
-import { styled } from "@/styles";
-import { IdolProfileBox } from "@/components/IdolProfileBox/IdolProfileBox";
+import { ItemIdsList, StampIdsList, WeaponIdsList } from "@/models";
+import { ContentContainer, Builder } from "@/components";
+import { Build } from "@/utils/Build";
 
-const PageSections = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	width: "100%",
-	gap: "15px",
-});
-
-const PageSection = styled("div", {});
-
-export function BuildPage() {
-	const [selectedItem, setSelectedItem] = useState<Item | undefined>();
+export const BuildPage = () => {
 	const [searchParams, setSearchParams] = useSearchParams();
-	const [comboMode, setComboMode] = useState<boolean>(false);
-	const [comboItems, setComboItems] = useState<Item[]>([]);
-
-	const getIdolById = useIdolsStore((state) => state.getIdolById);
-	const [getItemById, getItemsByType] = useItemsStore((state) => [
-		state.getItemById,
-		state.getItemsByType,
-	]);
+	const [idolId, setIdolId] = useState<number | undefined>(undefined);
+	const [stampIds, setStampIds] = useState<StampIdsList>(Build.getStampIds());
+	const [weaponIds, setWeaponIds] = useState<WeaponIdsList>(
+		Build.getWeaponIds(),
+	);
+	const [itemIds, setItemIds] = useState<ItemIdsList>(Build.getItemIds());
 
 	useEffect(() => {
-		const itemId = searchParams.get("i");
-		const selectedItem = itemId ? getItemById(itemId) : undefined;
-		setSelectedItem(selectedItem);
+		const buildIds = Build.parse(searchParams.get("b") || "");
 
-		const comboItemIds = searchParams.get("c");
-		if (comboItemIds !== null) {
-			setComboMode(true);
+		setIdolId(buildIds.idolId);
+		setStampIds(buildIds.stampIds);
+		setWeaponIds(buildIds.weaponIds);
+		setItemIds(buildIds.itemIds);
+	}, []);
 
-			const validItems = comboItemIds
-				.split(",")
-				.map((id) => getItemById(id))
-				.filter((i) => i !== undefined && i.type === "collab") as Item[];
-
-			setComboItems(validItems);
-		} else {
-			setComboMode(false);
-			setComboItems([]);
-		}
-	}, [searchParams, getItemById]);
-
-	const updateUrlParams = (selectedItem?: Item, comboItems?: Item[]) => {
+	useEffect(() => {
 		const params = new URLSearchParams(searchParams);
+		const buildIds = Build.generate(idolId, stampIds, weaponIds, itemIds);
 
-		if (selectedItem === undefined) {
-			params.delete("i");
-		} else {
-			params.set("i", selectedItem.id);
-		}
-
-		if (comboItems === undefined) {
-			params.delete("c");
-		} else {
-			params.set("c", comboItems.map((i) => i.id).join(","));
-		}
+		params.set("b", buildIds);
 
 		setSearchParams(params);
-	};
-
-	const [idol, setIdol] = useState<Idol | undefined>(getIdolById("gawr-gura")!);
-	const [stamps, setStamps] = useState<StampsList>([
-		undefined,
-		{ name: "BOB" },
-		undefined,
-	]);
-	const [weapons, setWeapons] = useState<WeaponsList>([
-		getItemById("micomet"),
-		getItemById("frozen-sea"),
-		getItemById("rap-dog"),
-		getItemById("idol-concert"),
-		getItemById("spider-cooking"),
-	]);
-	const [items, setItems] = useState<ItemsList>([
-		getItemById("halu")!,
-		getItemById("limiter")!,
-		getItemById("gws-pill")!,
-		getItemById("just-bandage")!,
-		getItemById("uber-sheep")!,
-		getItemById("sake")!,
-	]);
+	}, [idolId, stampIds, weaponIds, itemIds]);
 
 	return (
 		<ContentContainer
@@ -96,29 +38,32 @@ export function BuildPage() {
 				gap: "15px",
 			}}
 		>
-			<Build
-				idol={idol}
-				stamps={stamps}
-				weapons={weapons}
-				items={items}
-				onIdolChange={setIdol}
-				onStampsChange={setStamps}
-				onWeaponsChanged={setWeapons}
-				onItemsChanged={setItems}
+			<Builder
+				idolId={idolId}
+				stampIds={stampIds}
+				weaponIds={weaponIds}
+				itemIds={itemIds}
+				onIdolChange={setIdolId}
+				onStampsChange={setStampIds}
+				onWeaponsChanged={setWeaponIds}
+				onItemsChanged={setItemIds}
 			/>
 
+			{/* TODO: find a way to make this nicer */}
+			{/* 
 			<PageSections>
 				<PageSection css={{ flex: "1 1 40%" }}>
-					<IdolProfileBox idol={idol} />
+					<IdolProfileBox idolId={idolId} />
 				</PageSection>
 
-				<PageSection css={{ flex: "1 1 60%" }}>
+        <PageSection css={{ flex: "1 1 60%" }}>
 					<ItemDetailsBox
-						item={getItemById("frozen-sea")}
-						onItemSelected={(item) => console.log(item)}
+						item={selectedItem}
+						onItemSelected={setSelectedItem}
 					/>
-				</PageSection>
+				</PageSection> 
 			</PageSections>
+        */}
 		</ContentContainer>
 	);
-}
+};

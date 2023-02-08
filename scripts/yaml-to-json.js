@@ -50,11 +50,22 @@ function saveJSONFile(outputPath, data, callback = err => err && console.log(err
 }
 
 function validateIdols(idols, sprites) {
+  const idolById = {};
   for (const idol of idols) {
     const idolName = idol.name;
     const specialName = idol.special?.name;
     const attackName = idol.attack?.name;
     const skillNames = idol.skills?.map(skill => skill.name) || [];
+
+    if(idol.id) {
+      if(idolById[idol.id]) {
+        console.log(`  [${idol.name}] duplicate idol id: ${idol.id}`);
+      } else {
+        idolById[idol.id] = idol;
+      }
+    } else {
+      console.log(`  [${idolName}] id missing`);
+    }
 
     // Idol offset
     if (!sprites['idols'].offsets[idolName]) {
@@ -86,9 +97,20 @@ function validateIdols(idols, sprites) {
 }
 
 function validateItems(items, sprites) {
+  const itemById = {};
   for (const item of items) {
     if (!sprites['items'].offsets[item.name]) {
       console.log(`  [${item.name}] Sprite offset missing`);
+    }
+    
+    if(item.id) {
+      if(itemById[item.id]) {
+        console.log(`  [${item.name}] duplicate item id: ${item.id}`);
+      } else {
+        itemById[item.id] = item;
+      }
+    } else {
+      console.log(`  [${item.name}] id missing`);
     }
   }
 }

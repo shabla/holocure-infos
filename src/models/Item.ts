@@ -4,13 +4,13 @@ export interface ItemLevel {
 }
 
 export interface Item {
-	id: string; // set at runtime
+	id: number;
 	type: "weapon" | "item" | "collab";
 	spritePos: [number, number];
 	name: string;
 	desc: string;
 	levels: ItemLevel[];
-	requires?: string[];
+	requires?: number[];
 	requirement?: string;
 }
 
@@ -22,6 +22,14 @@ export type WeaponsList = [
 	Item | undefined,
 ];
 
+export type WeaponIdsList = [
+	number | undefined,
+	number | undefined,
+	number | undefined,
+	number | undefined,
+	number | undefined,
+];
+
 export type ItemsList = [
 	Item | undefined,
 	Item | undefined,
@@ -29,4 +37,13 @@ export type ItemsList = [
 	Item | undefined,
 	Item | undefined,
 	Item | undefined,
+];
+
+export type ItemIdsList = [
+	number | undefined,
+	number | undefined,
+	number | undefined,
+	number | undefined,
+	number | undefined,
+	number | undefined,
 ];

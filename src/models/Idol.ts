@@ -17,7 +17,7 @@ export interface Special {
 export type Stats = Record<"hp" | "atk" | "spd" | "crt", number>;
 
 export interface Idol {
-	id: string; // generated at runtime
+	id: number;
 	name: string;
 	gen: string;
 	stats: Stats;

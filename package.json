@@ -7,6 +7,7 @@
     "dev": "npm run data && vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "netlify": "npm run data && npm run build",
     "data": "node ./scripts/yaml-to-json.js",
     "deploy": "npm run data && npm run build && node ./scripts/publish"
   },

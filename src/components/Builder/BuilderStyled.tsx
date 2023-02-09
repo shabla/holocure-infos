@@ -2,7 +2,7 @@ import { styled, StyledCSS } from "@/styles";
 
 export const BuildContainer = styled("div", {
 	display: "flex",
-	flexDirection: "row",
+	flexDirection: "column",
 	gap: "$4",
 });
 
@@ -28,10 +28,14 @@ export const SectionsContainer = styled("div", {
 
 export const SectionContainer = styled("div", {
 	display: "flex",
-	flexDirection: "row",
+	flexDirection: "column",
 	alignContent: "center",
 	justifyContent: "center",
 	gap: "$2",
+
+	"@bp1": {
+		flexDirection: "row",
+	},
 });
 
 export function Section({
@@ -54,10 +58,16 @@ export function Section({
 }
 
 export const SectionName = styled("div", {
-	writingMode: "vertical-rl",
-	textOrientation: "upright",
-	borderLeft: "5px solid white",
 	textAlign: "center",
+	border: 0,
+	borderBottom: "5px solid white",
+
+	"@bp1": {
+		writingMode: "vertical-rl",
+		textOrientation: "upright",
+		border: 0,
+		borderLeft: "5px solid white",
+	},
 });
 
 export const SectionContent = styled("div", {
@@ -66,6 +76,7 @@ export const SectionContent = styled("div", {
 	flex: "1 1 auto",
 	alignItems: "center",
 	justifyContent: "center",
+	gap: "$4",
 });
 
 export const EmptyMessage = styled("div", {
@@ -84,20 +95,4 @@ export const StampsContainer = styled("div", {
 export const StampContainer = styled("div", {
 	height: 40,
 	width: 40,
-});
-
-/* Weapons */
-export const WeaponsContainer = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	gap: "$4",
-	marginBottom: "$4",
-});
-
-/* Items */
-export const ItemsContainer = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	alignItems: "center",
-	gap: "$4",
 });

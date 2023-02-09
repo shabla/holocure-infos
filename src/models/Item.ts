@@ -1,7 +1,4 @@
-export interface ItemLevel {
-	level: number;
-	desc: string;
-}
+import { Level } from "./Level";
 
 export interface Item {
 	id: number;
@@ -9,7 +6,7 @@ export interface Item {
 	spritePos: [number, number];
 	name: string;
 	desc: string;
-	levels: ItemLevel[];
+	levels: Level[];
 	requires?: number[];
 	requirement?: string;
 }

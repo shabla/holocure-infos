@@ -6,6 +6,16 @@ export const fadeIn = keyframes({
 });
 
 export const contentShow = keyframes({
-	"0%": { opacity: 0, transform: "translate(-50%, -48%) scale(0.96)" },
-	"100%": { opacity: 1, transform: "translate(-50%, -50%) scale(1)" },
+	"0%": { opacity: 0, transform: "translate(-50%, -45%)" },
+	"100%": { opacity: 1, transform: "translate(-50%, -50%)" },
+});
+
+export const slideFromLeft = keyframes({
+	"0%": { opacity: 0, transform: "translateX(-80%)" },
+	"100%": { opacity: 1, transform: "translateX(0)" },
+});
+
+export const height = keyframes({
+	"0%": { height: 0 },
+	"100%": { height: "initial" },
 });

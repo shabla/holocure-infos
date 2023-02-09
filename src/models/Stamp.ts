@@ -1,6 +1,9 @@
+import { Level } from "./Level";
+
 export interface Stamp {
 	id: number;
 	name: string;
+	levels: Level[];
 }
 
 export type StampsList = [

@@ -4,23 +4,27 @@ import { ClearButton, SelectableContainer } from "./SelectableStyled";
 
 export interface SelectableProps {
 	children: React.ReactNode;
-	width?: StyledCSS["width"];
-	height?: StyledCSS["height"];
 	clearable?: boolean;
-	onClick: () => void;
+	disabled?: boolean;
+	css?: StyledCSS;
+	onClick?: () => void;
 	onClear?: () => void;
 }
 
 export const Selectable = ({
 	children,
-	width,
-	height,
 	clearable = false,
+	disabled = false,
+	css,
 	onClick,
 	onClear,
 }: SelectableProps): React.ReactElement => {
 	return (
-		<SelectableContainer onClick={onClick} css={{ width, height }}>
+		<SelectableContainer
+			onClick={disabled ? undefined : onClick}
+			disabled={disabled}
+			css={css}
+		>
 			{clearable && <ClearButton onClick={onClear} />}
 			{children}
 		</SelectableContainer>

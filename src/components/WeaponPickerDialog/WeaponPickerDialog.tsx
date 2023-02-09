@@ -1,8 +1,7 @@
 import React from "react";
-import { Box, Selectable, CollabRow, Dialog } from "@/components";
+import { Selectable, CollabRow, Dialog } from "@/components";
 import { Item, WeaponsList } from "@/models";
 import { useItemsStore } from "@/stores";
-import { styled } from "@/styles";
 
 export interface WeaponPickerDialogProps {
 	selectedItems: WeaponsList;
@@ -10,13 +9,6 @@ export interface WeaponPickerDialogProps {
 	setOpen: (value: boolean) => void;
 	onChange: (item: Item) => void;
 }
-
-const CollabsContainer = styled("div", {
-	display: "grid",
-	gridTemplateColumns: "1fr",
-	rowGap: "10px",
-	columnGap: "30px",
-});
 
 // TODO: add simple weapons
 export const WeaponPickerDialog = ({
@@ -36,37 +28,42 @@ export const WeaponPickerDialog = ({
 		.filter((value, index, array) => array.indexOf(value) === index);
 
 	return (
-		<Dialog open={open} setOpen={setOpen}>
-			<Box label="Collabs">
-				<CollabsContainer>
-					{collabs.map((item) => {
-						const disabledWeapons =
-							item.requires?.filter((itemId) => usedWeapons.includes(itemId)) ||
-							[];
-						const isDisabled =
-							usedWeapons.includes(item.id) || disabledWeapons.length > 0;
+		<Dialog
+			open={open}
+			setOpen={setOpen}
+			title="Collabs"
+			contentCss={{
+				display: "grid",
+				gridTemplateColumns: "1fr",
+				rowGap: "$1",
+				columnGap: "30px",
 
-						const row = (
-							<CollabRow
-								key={item.id}
-								item={item}
-								disabledWeapons={disabledWeapons}
-								disabled={isDisabled}
-							/>
-						);
+				"@desktop": {
+					gridTemplateColumns: "1fr 1fr",
+				},
+			}}
+		>
+			{collabs.map((item) => {
+				const disabledWeapons =
+					item.requires?.filter((itemId) => usedWeapons.includes(itemId)) || [];
+				const isDisabled =
+					usedWeapons.includes(item.id) || disabledWeapons.length > 0;
 
-						if (isDisabled) {
-							return row;
-						} else {
-							return (
-								<Selectable key={item.id} onClick={() => onChange(item)}>
-									{row}
-								</Selectable>
-							);
-						}
-					})}
-				</CollabsContainer>
-			</Box>
+				return (
+					<Selectable
+						key={item.id}
+						disabled={isDisabled}
+						onClick={() => onChange(item)}
+					>
+						<CollabRow
+							key={item.id}
+							item={item}
+							disabledWeapons={disabledWeapons}
+							disabled={isDisabled}
+						/>
+					</Selectable>
+				);
+			})}
 		</Dialog>
 	);
 };

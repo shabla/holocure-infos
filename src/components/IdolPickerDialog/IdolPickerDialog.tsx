@@ -27,16 +27,17 @@ export const IdolPickerDialog = ({
 	const [visibleIdol, setVisibleIdol] = useState<Idol | undefined>(idol);
 
 	return (
-		<Dialog open={open} setOpen={setOpen}>
+		<Dialog open={open} setOpen={setOpen} title="Idol">
 			<DialogContent>
+				{/* TODO: find a nice way to display this */}
+				{/* <IdolSkillBox
+					title={visibleIdol?.name || ""}
+					skills={visibleIdol ? [visibleIdol.attack] : undefined}
+				/> */}
 				<IdolGenerations
 					selectedIdol={idol}
 					onSelected={onChange}
 					onIdolOver={setVisibleIdol}
-				/>
-				<IdolSkillBox
-					title={visibleIdol?.name || ""}
-					skills={visibleIdol ? [visibleIdol.attack] : undefined}
 				/>
 			</DialogContent>
 		</Dialog>

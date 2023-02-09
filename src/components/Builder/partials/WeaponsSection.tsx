@@ -33,7 +33,17 @@ export const WeaponsSection = ({
 	};
 
 	return (
-		<Section title="Weapons" contentCss={{ flexDirection: "row", gap: "$4" }}>
+		<Section
+			title="Weapons"
+			contentCss={{
+				flexDirection: "row",
+				flexWrap: "wrap",
+
+				"@desktop": {
+					flexWrap: "nowrap",
+				},
+			}}
+		>
 			<WeaponPickerDialog
 				selectedItems={weapons}
 				open={weaponDialog.isOpen}
@@ -44,8 +54,12 @@ export const WeaponsSection = ({
 			{weapons.map((weapon, index) => (
 				<Selectable
 					key={`weapon-slot-${index}`}
-					width={170}
-					height={190}
+					css={{
+						flex: "1 1 30%", // for max 3 per row
+						minWidth: 170,
+						width: 170,
+						height: 190,
+					}}
 					onClick={() => weaponDialog.open(index)}
 					onClear={() => handleWeaponChange(undefined, index)}
 					clearable={!!weapon}

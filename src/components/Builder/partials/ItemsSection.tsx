@@ -33,13 +33,21 @@ export const ItemsSection = ({
 		<Section
 			title="Items"
 			contentCss={{
-				flexDirection: "row",
-				gap: "$4",
-				paddingTop: "$sizes$spriteLabelOverflow",
+				display: "grid",
+				gridTemplateColumns: "1fr 1fr",
+				placeItems: "center",
+
+				"@bp1": {
+					gridTemplateColumns: "1fr 1fr 1fr",
+				},
+				"@bp3": {
+					display: "flex",
+					flexDirection: "row",
+				},
 			}}
 		>
 			<ItemPickerDialog
-				selectedItems={items}
+				selectedItemIds={itemIds}
 				open={itemDialog.isOpen}
 				setOpen={itemDialog.setIsOpen}
 				onChange={(item) => handleItemChange(item, itemDialog.data!)}
@@ -48,8 +56,7 @@ export const ItemsSection = ({
 			{items?.map((item, index) => (
 				<Selectable
 					key={`item-${index}`}
-					height={100}
-					width={100}
+					css={{ height: 100, minWidth: 100, width: "100%" }}
 					onClick={() => itemDialog.open(index)}
 					onClear={() => handleItemChange(undefined, index)}
 					clearable={!!item}

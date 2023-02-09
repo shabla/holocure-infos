@@ -39,7 +39,20 @@ export const AttackAndStampsSection = ({
 	};
 
 	return (
-		<Section title="Stamps" contentCss={{ gap: "$3" }}>
+		<Section
+			title="Stamps"
+			css={{
+				"@bp1": {
+					flex: "1 1 auto",
+				},
+				"@desktop": {
+					flex: "inherit",
+				},
+			}}
+			contentCss={{
+				gap: "$3",
+			}}
+		>
 			<Sprite
 				type="skills"
 				name={attack?.name}
@@ -51,8 +64,7 @@ export const AttackAndStampsSection = ({
 				{stamps.map((stamp, index) => (
 					<Selectable
 						key={`stamp-${index}`}
-						height={70}
-						width={70}
+						css={{ height: 70, width: 70 }}
 						onClick={() => console.log("open stamp dialog")}
 						onClear={() => handleStampChange(undefined, index)}
 						clearable={!!stamp}

@@ -13,6 +13,12 @@ export const {
 	createTheme,
 	config,
 } = createStitches({
+	media: {
+		bp1: "(min-width: 620px)",
+		bp2: "(min-width: 800px)",
+		bp3: "(min-width: 1100px)",
+		desktop: "(min-width: 1300px)",
+	},
 	theme: {
 		colors: {
 			blue: "#4abef9",

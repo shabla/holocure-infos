@@ -31,8 +31,7 @@ export const IdolSection = ({
 			/>
 
 			<Selectable
-				width={150}
-				height={120}
+				css={{ width: 150, height: 120 }}
 				onClick={idolDialog.open}
 				onClear={() => handleIdolChange(undefined)}
 				clearable={!!idol}

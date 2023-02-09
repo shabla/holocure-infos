@@ -62,12 +62,18 @@ export const SelectableContainer = styled("div", {
 		display: "none",
 	},
 
-	"&:hover": {
-		backgroundColor: "rgba(255,255,255,0.3)",
-		cursor: "pointer",
+	variants: {
+		disabled: {
+			false: {
+				"&:hover": {
+					backgroundColor: "rgba(255,255,255,0.3)",
+					cursor: "pointer",
 
-		[`${ClearButtonStyled}`]: {
-			display: "flex",
+					[`${ClearButtonStyled}`]: {
+						display: "flex",
+					},
+				},
+			},
 		},
 	},
 });

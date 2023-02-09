@@ -1,6 +1,14 @@
-export interface Level {
-	level: number;
-	desc: string;
+import { Level } from "./Level";
+
+export interface Idol {
+	id: number;
+	name: string;
+	gen: string;
+	stats: Stats;
+	notes?: string[];
+	attack: Skill;
+	special: Special;
+	skills: Skill[];
 }
 
 export interface Skill {
@@ -15,14 +23,3 @@ export interface Special {
 }
 
 export type Stats = Record<"hp" | "atk" | "spd" | "crt", number>;
-
-export interface Idol {
-	id: number;
-	name: string;
-	gen: string;
-	stats: Stats;
-	notes?: string[];
-	attack: Skill;
-	special: Special;
-	skills: Skill[];
-}

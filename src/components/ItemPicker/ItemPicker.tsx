@@ -1,5 +1,5 @@
 import { Item } from "@/models";
-import { styled } from "@/styles";
+import { styled, StyledCSS } from "@/styles";
 import React from "react";
 import { Selectable } from "../Selectable/Selectable";
 import { Sprite } from "../Sprite/Sprite";
@@ -7,16 +7,18 @@ import { Sprite } from "../Sprite/Sprite";
 export interface ItemPickerProps {
 	disabledItemIds: number[];
 	items: Item[];
+	css?: StyledCSS;
 	onSelect: (item: Item) => void;
 }
 
 export const ItemPicker = ({
 	disabledItemIds,
 	items,
+	css,
 	onSelect,
 }: ItemPickerProps): React.ReactElement => {
 	return (
-		<ItemPickerContainer>
+		<ItemPickerContainer css={css}>
 			{items.map((item) => {
 				const isDisabled = disabledItemIds.includes(item.id);
 

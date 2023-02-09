@@ -10,12 +10,12 @@ export const contentShow = keyframes({
 	"100%": { opacity: 1, transform: "translate(-50%, -50%)" },
 });
 
-export const slideFromLeft = keyframes({
-	"0%": { opacity: 0, transform: "translateX(-80%)" },
-	"100%": { opacity: 1, transform: "translateX(0)" },
+export const slideDown = keyframes({
+	"0%": { height: 0 },
+	"100%": { height: "var(--radix-collapsible-content-height)" },
 });
 
-export const height = keyframes({
-	"0%": { height: 0 },
-	"100%": { height: "initial" },
+export const slideUp = keyframes({
+	"0%": { height: "var(--radix-collapsible-content-height)" },
+	"100%": { height: 0 },
 });

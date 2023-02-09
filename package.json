@@ -11,6 +11,7 @@
     "deploy": "npm run data && npm run build && node ./scripts/publish"
   },
   "dependencies": {
+    "@radix-ui/react-collapsible": "^1.0.1",
     "@radix-ui/react-dialog": "~1.0.2",
     "@radix-ui/react-icons": "^1.1.1",
     "@stitches/react": "~1.2.8",

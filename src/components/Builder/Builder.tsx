@@ -69,17 +69,11 @@ export const Builder = ({
 					}}
 				>
 					<IdolSection idol={idol} onChange={onIdolChange} />
-
-					<StampsSection
-						attack={idol?.attack}
-						stampIds={stampIds}
-						onChange={onStampsChange}
-					/>
+					<StampsSection stampIds={stampIds} onChange={onStampsChange} />
 				</SectionsContainer>
 
 				<SectionsContainer css={{ flex: "1 1 auto" }}>
 					<WeaponsSection weaponIds={weaponIds} onChange={onWeaponsChanged} />
-
 					<ItemsSection itemIds={itemIds} onChange={onItemsChanged} />
 				</SectionsContainer>
 			</BuildContainer>

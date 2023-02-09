@@ -23,6 +23,7 @@ export const ItemPickerDialog = ({
 			<ItemPicker
 				items={items}
 				disabledItemIds={selectedItemIds as number[]}
+				css={{ placeContent: "center" }}
 				onSelect={onChange}
 			/>
 		</Dialog>

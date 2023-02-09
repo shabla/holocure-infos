@@ -8,7 +8,7 @@
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "rome.rome"
   },
-  "editor.rulers": [100],
+  "editor.rulers": [80],
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   }

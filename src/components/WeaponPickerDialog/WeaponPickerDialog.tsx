@@ -24,8 +24,7 @@ export const WeaponPickerDialog = ({
 
 	const usedWeapons = (selectedItems.filter((item) => !!item) as Item[])
 		.flatMap((item) => (item?.requires ? item?.requires : item.id))
-		// remove duplicates
-		.filter((value, index, array) => array.indexOf(value) === index);
+		.filter((value, index, array) => array.indexOf(value) === index); // remove duplicates
 
 	return (
 		<Dialog

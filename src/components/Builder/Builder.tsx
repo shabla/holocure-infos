@@ -57,8 +57,23 @@ export const Builder = ({
 				</>
 			}
 		>
-			<BuildContainer>
-				<SectionsContainer>
+			<BuildContainer
+				css={{
+					"@bp3": {
+						flexDirection: "row",
+					},
+				}}
+			>
+				<SectionsContainer
+					css={{
+						"@bp1": {
+							flexDirection: "row",
+						},
+						"@bp3": {
+							flexDirection: "column",
+						},
+					}}
+				>
 					<IdolSection idol={idol} onChange={onIdolChange} />
 
 					<AttackAndStampsSection

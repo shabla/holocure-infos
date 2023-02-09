@@ -6,6 +6,7 @@ export interface SelectableProps {
 	children: React.ReactNode;
 	clearable?: boolean;
 	disabled?: boolean;
+	selected?: boolean;
 	css?: StyledCSS;
 	onClick?: () => void;
 	onClear?: () => void;
@@ -15,6 +16,7 @@ export const Selectable = ({
 	children,
 	clearable = false,
 	disabled = false,
+	selected = false,
 	css,
 	onClick,
 	onClear,
@@ -23,6 +25,7 @@ export const Selectable = ({
 		<SelectableContainer
 			onClick={disabled ? undefined : onClick}
 			disabled={disabled}
+			selected={selected}
 			css={css}
 		>
 			{clearable && <ClearButton onClick={onClear} />}

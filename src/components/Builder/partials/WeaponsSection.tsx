@@ -1,4 +1,4 @@
-import { ItemComponents, Selectable, WeaponPickerDialog } from "@/components";
+import { ItemComponents, Selectable, WeaponPicker } from "@/components";
 import { useDialogState } from "@/hooks/useDialogState";
 import { Item, WeaponIdsList, WeaponsList } from "@/models";
 import { useItemsStore } from "@/stores";
@@ -14,8 +14,9 @@ export const WeaponsSection = ({
 	weaponIds,
 	onChange,
 }: WeaponsSectionProps): React.ReactElement => {
-	const weaponDialog = useDialogState<number>();
-	const weapons = useItemsStore((state) =>
+	const weaponPicker = useDialogState<number>();
+
+	const [slottedWeapons, usedWeaponIds] = useItemsStore((state) => [
 		useMemo(
 			() =>
 				weaponIds.map((id) =>
@@ -23,54 +24,66 @@ export const WeaponsSection = ({
 				) as WeaponsList,
 			[weaponIds],
 		),
-	);
+		state.getBaseItemIds(weaponIds as number[]),
+	]);
+
+	const handleSlotClicked = (index: number) => {
+		if (weaponPicker.data === index) {
+			weaponPicker.close();
+		} else {
+			weaponPicker.open(index);
+		}
+	};
 
 	const handleWeaponChange = (newWeapon: Item | undefined, index: number) => {
 		const newCollabs: WeaponIdsList = [...weaponIds];
 		newCollabs[index] = newWeapon?.id;
-		weaponDialog.close();
+		weaponPicker.close();
 		onChange(newCollabs);
 	};
 
 	return (
-		<Section
-			title="Weapons"
-			contentCss={{
-				flexDirection: "row",
-				flexWrap: "wrap",
+		<>
+			<Section
+				title="Weapons"
+				contentCss={{
+					flexDirection: "row",
+					flexWrap: "wrap",
 
-				"@desktop": {
-					flexWrap: "nowrap",
-				},
-			}}
-		>
-			<WeaponPickerDialog
-				selectedItems={weapons}
-				open={weaponDialog.isOpen}
-				setOpen={weaponDialog.setIsOpen}
-				onChange={(weapon) => handleWeaponChange(weapon, weaponDialog.data!)}
+					"@desktop": {
+						flexWrap: "nowrap",
+					},
+				}}
+			>
+				{slottedWeapons.map((weapon, index) => (
+					<Selectable
+						key={`weapon-slot-${index}`}
+						css={{
+							flex: "1 1 30%", // for max 3 per row
+							minWidth: 170,
+							width: 170,
+							height: 190,
+						}}
+						selected={weaponPicker.isOpen && weaponPicker.data === index}
+						onClick={() => handleSlotClicked(index)}
+						onClear={() => handleWeaponChange(undefined, index)}
+						clearable={!!weapon}
+					>
+						{weapon ? (
+							<ItemComponents item={weapon} />
+						) : (
+							<EmptyMessage>Pick a weapon</EmptyMessage>
+						)}
+					</Selectable>
+				))}
+			</Section>
+
+			<WeaponPicker
+				open={weaponPicker.isOpen}
+				usedWeaponIds={usedWeaponIds}
+				onSelect={(item) => handleWeaponChange(item, weaponPicker.data!)}
+				onClose={weaponPicker.close}
 			/>
-
-			{weapons.map((weapon, index) => (
-				<Selectable
-					key={`weapon-slot-${index}`}
-					css={{
-						flex: "1 1 30%", // for max 3 per row
-						minWidth: 170,
-						width: 170,
-						height: 190,
-					}}
-					onClick={() => weaponDialog.open(index)}
-					onClear={() => handleWeaponChange(undefined, index)}
-					clearable={!!weapon}
-				>
-					{weapon ? (
-						<ItemComponents item={weapon} />
-					) : (
-						<EmptyMessage>Pick a weapon</EmptyMessage>
-					)}
-				</Selectable>
-			))}
-		</Section>
+		</>
 	);
 };

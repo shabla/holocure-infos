@@ -47,6 +47,13 @@ export const IdolSection = ({
 					<EmptyMessage>Pick an idol</EmptyMessage>
 				)}
 			</Selectable>
+
+			<Sprite
+				type="skills"
+				name={idol?.attack?.name}
+				label={idol?.attack?.name}
+				alwaysIncludeLabelPadding
+			/>
 		</Section>
 	);
 };

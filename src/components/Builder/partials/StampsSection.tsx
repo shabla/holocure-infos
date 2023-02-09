@@ -1,25 +1,19 @@
 import { Selectable, Sprite } from "@/components";
-import { Skill, StampIdsList } from "@/models";
+import { StampIdsList } from "@/models";
 import { useStampsStore } from "@/stores";
+import { styled } from "@/styles";
 import React, { useMemo } from "react";
-import {
-	EmptyMessage,
-	Section,
-	StampContainer,
-	StampsContainer,
-} from "../BuilderStyled";
+import { EmptyMessage, Section } from "../BuilderStyled";
 
-export interface AttackAndStampsSectionProps {
-	attack?: Skill;
+export interface StampsSectionProps {
 	stampIds: StampIdsList;
 	onChange: (stampIds: StampIdsList) => void;
 }
 
-export const AttackAndStampsSection = ({
-	attack,
+export const StampsSection = ({
 	stampIds,
 	onChange,
-}: AttackAndStampsSectionProps): React.ReactElement => {
+}: StampsSectionProps): React.ReactElement => {
 	const stamps = useStampsStore((state) =>
 		useMemo(
 			() =>
@@ -41,26 +35,11 @@ export const AttackAndStampsSection = ({
 	return (
 		<Section
 			title="Stamps"
-			css={{
-				"@bp1": {
-					flex: "1 1 auto",
-				},
-				"@desktop": {
-					flex: "inherit",
-				},
-			}}
 			contentCss={{
 				gap: "$3",
 			}}
 		>
-			<Sprite
-				type="skills"
-				name={attack?.name}
-				label={attack?.name}
-				alwaysIncludeLabelPadding
-			/>
-
-			<StampsContainer>
+			<StampSlots>
 				{stamps.map((stamp, index) => (
 					<Selectable
 						key={`stamp-${index}`}
@@ -78,7 +57,19 @@ export const AttackAndStampsSection = ({
 						)}
 					</Selectable>
 				))}
-			</StampsContainer>
+			</StampSlots>
 		</Section>
 	);
 };
+
+const StampSlots = styled("div", {
+	display: "flex",
+	flexDirection: "row",
+	alignItems: "center",
+	gap: 10,
+});
+
+const StampContainer = styled("div", {
+	height: 40,
+	width: 40,
+});

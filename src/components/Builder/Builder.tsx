@@ -8,7 +8,7 @@ import {
 	SectionsContainer,
 	ResetButton,
 } from "./BuilderStyled";
-import { AttackAndStampsSection } from "./partials/AttackAndStampsSection";
+import { StampsSection } from "./partials/StampsSection";
 import { IdolSection } from "./partials/IdolSection";
 import { ItemsSection } from "./partials/ItemsSection";
 import { WeaponsSection } from "./partials/WeaponsSection";
@@ -59,24 +59,18 @@ export const Builder = ({
 		>
 			<BuildContainer
 				css={{
-					"@bp3": {
-						flexDirection: "row",
-					},
+					"@bp3": { flexDirection: "row" },
 				}}
 			>
 				<SectionsContainer
 					css={{
-						"@bp1": {
-							flexDirection: "row",
-						},
-						"@bp3": {
-							flexDirection: "column",
-						},
+						"@bp1": { flexDirection: "row" },
+						"@bp3": { flexDirection: "column" },
 					}}
 				>
 					<IdolSection idol={idol} onChange={onIdolChange} />
 
-					<AttackAndStampsSection
+					<StampsSection
 						attack={idol?.attack}
 						stampIds={stampIds}
 						onChange={onStampsChange}

@@ -83,16 +83,3 @@ export const EmptyMessage = styled("div", {
 	fontSize: "12px",
 	textAlign: "center",
 });
-
-/* Stamps */
-export const StampsContainer = styled("div", {
-	display: "flex",
-	flexDirection: "row",
-	alignItems: "center",
-	gap: 10,
-});
-
-export const StampContainer = styled("div", {
-	height: 40,
-	width: 40,
-});

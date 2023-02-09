@@ -8,6 +8,7 @@ interface ItemsStore {
 	getItemById: (id?: number) => Item | undefined;
 	getItemsUsedBy: (id: number) => Item[];
 	getItemsByType: (type: Item["type"]) => Item[];
+	getBaseItemIds: (ids: number[]) => number[];
 }
 
 export const useItemsStore = create<ItemsStore>((set, get) => ({
@@ -41,5 +42,21 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
 
 			return [];
 		}
+	},
+	getBaseItemIds: (ids: number[]): number[] => {
+		return ids
+			.flatMap((id) => {
+				const item = get().getItemById(id);
+
+				if (item?.requires) {
+					return item?.requires;
+				}
+
+				return id;
+			})
+			.filter(
+				(value, index, array) =>
+					value != null && array.indexOf(value) === index,
+			); // remove duplicates and undefined
 	},
 }));

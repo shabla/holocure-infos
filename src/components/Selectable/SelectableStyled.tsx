@@ -75,5 +75,10 @@ export const SelectableContainer = styled("div", {
 				},
 			},
 		},
+		selected: {
+			true: {
+				outline: "3px solid white",
+			},
+		},
 	},
 });

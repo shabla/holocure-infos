@@ -21,7 +21,4 @@ dist-ssr
 *.sln
 *.sw?
 
-public/idols.json
-public/items.json
-public/upgrades.json
-public/sprites.json
+public/*

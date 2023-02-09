@@ -582,7 +582,7 @@
 - name: "Stolen Piggy Bank"
   id: 47
   type: "item"
-  desc: "Gain 1 coin every second and increase SPD by 15%. However, reduce Pick Up Range by 50%."
+  desc: "Gain 1 coin every {100px} traveled and increase SPD by {20%}. However, reduce Pick Up Range by {{{30%}}}."
   requirement: "Kill a Golden YAGOO."
 - name: "Plushie"
   id: 48

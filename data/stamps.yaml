@@ -1,0 +1,81 @@
+- name: "Bomb Stamp"
+  id: 1
+  levels:
+    - level: 1
+      desc: "Attacks have a {10%} chance to cause an explosion that hits nearby targets for 30% of the weapon's damage."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "ATK Up Stamp"
+  id: 2
+  levels:
+    - level: 1
+      desc: "Increase damage of weapon by {15%}"
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "Reverse Stamp"
+  id: 3
+  levels:
+    - level: 1
+      desc: "Weapon will fire backwards. There is no other effect."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "Knockback Stamp"
+  id: 4
+  levels:
+    - level: 1
+      desc: "Weapon causes small {{knockback}}. Increase knockback strength by {30%} if effect already exists."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "Size Up Stamp"
+  id: 5
+  levels:
+    - level: 1
+      desc: "Increase attack size by {15%}."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "RGB Stamp"
+  id: 6
+  levels:
+    - level: 1
+      desc: "Weapon attacks will look pretty. There is no other effect."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "Solo Stamp"
+  id: 7
+  levels:
+    - level: 1
+      desc: "Increase damage by {20%} for each empty weapon slot."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""
+- name: "Slow Stamp"
+  id: 8
+  levels:
+    - level: 1
+      desc: "Attacks have a {20%} chance to slow targets by {15%} and deal {30%} weapon damage for 5 seconds."
+    - level: 2
+      desc: "Attacks have a {25%} chance to slow targets by {20%} and deal {40%} weapon damage for 5 seconds."
+    - level: 3
+      desc: "Attacks have a {30%} chance to slow targets by {25%} and deal {50%} weapon damage for 5 seconds."
+- name: "Weaken Stamp"
+  id: 9
+  levels:
+    - level: 1
+      desc: "Attacks have a {20%} chance to reduce ATK and DEF of targets by {20%} and {5%} temporarily. Flower."
+    - level: 2
+      desc: ""
+    - level: 3
+      desc: ""

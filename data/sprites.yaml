@@ -251,3 +251,8 @@ upgrades:
     "Growth": [1, 2]
     "Enhancement Rate Up": [2, 2]
     "Defense Up": [3, 2]
+
+stamps:
+  height: 0
+  width: 0
+  offsets: {}

@@ -1120,10 +1120,10 @@
   id: 26
   gen: "Gen 2"
   attack:
-    name: ""
+    name: "Murasaki Bolt"
     levels:
       - level: 1
-        desc: ""
+        desc: "Fires a quick magic bolt in front."
 - name: "Nakiri Ayame"
   id: 27
   gen: "Gen 2"

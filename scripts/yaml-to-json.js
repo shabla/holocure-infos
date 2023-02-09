@@ -140,6 +140,7 @@ function loadYAMLFile(inputPath) {
 }
 
 function saveJSONFile(outputPath, data, callback = err => err && console.log(err)) {
+  console.log(`Saving file to ${outputPath}`)
   try {
     fs.writeFile(outputPath, JSON.stringify(data), null, callback);
   } catch (e) {

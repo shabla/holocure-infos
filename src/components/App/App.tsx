@@ -31,7 +31,12 @@ export const App = () => {
 		<StyledApp>
 			<Navbar>
 				<ContentContainer>
-					<img src={HOLOCURE_LOGO} alt="HoloCure Logo" />
+					<img
+						src={HOLOCURE_LOGO}
+						alt="HoloCure Logo"
+						height="50"
+						width="119"
+					/>
 
 					<NavbarLinks>
 						<NavbarLink to="build">Build</NavbarLink>

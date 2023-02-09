@@ -46,12 +46,7 @@ export const CollabPicker = ({
 
 const CollabPickerContainer = styled("div", {
 	display: "grid",
-	gridTemplateColumns: "1fr",
+	gridTemplateColumns: "1fr 1fr",
 	rowGap: "$1",
 	columnGap: "30px",
-
-	"@desktop": {
-		gridTemplateColumns: "1fr 1fr",
-		backgroundColor: "red",
-	},
 });

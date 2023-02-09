@@ -2,7 +2,7 @@ import { ItemComponents, Selectable, WeaponPicker } from "@/components";
 import { useDialogState } from "@/hooks/useDialogState";
 import { Item, WeaponIdsList, WeaponsList } from "@/models";
 import { useItemsStore } from "@/stores";
-import React, { useMemo } from "react";
+import React, { useEffect, useMemo } from "react";
 import { EmptyMessage, Section } from "../BuilderStyled";
 
 export interface WeaponsSectionProps {
@@ -10,11 +10,16 @@ export interface WeaponsSectionProps {
 	onChange: (weapons: WeaponIdsList) => void;
 }
 
+type WeaponPickerDataType = {
+	slotIndex: number;
+	disabledItemIds: number[];
+};
+
 export const WeaponsSection = ({
 	weaponIds,
 	onChange,
 }: WeaponsSectionProps): React.ReactElement => {
-	const weaponPicker = useDialogState<number>();
+	const weaponPicker = useDialogState<WeaponPickerDataType>();
 
 	const [slottedWeapons, usedWeaponIds] = useItemsStore((state) => [
 		useMemo(
@@ -24,14 +29,30 @@ export const WeaponsSection = ({
 				) as WeaponsList,
 			[weaponIds],
 		),
-		state.getBaseItemIds(weaponIds as number[]),
+		useMemo(() => state.getBaseItemIds(weaponIds as number[]), [weaponIds]),
 	]);
 
-	const handleSlotClicked = (index: number) => {
-		if (weaponPicker.data === index) {
+	useEffect(() => {
+		weaponPicker.close();
+	}, [weaponIds]);
+
+	const handleSlotClicked = (weapon: Item | undefined, index: number) => {
+		if (weaponPicker.data?.slotIndex === index) {
 			weaponPicker.close();
 		} else {
-			weaponPicker.open(index);
+			const data: WeaponPickerDataType = {
+				slotIndex: index,
+				disabledItemIds:
+					weapon?.type === "weapon"
+						? usedWeaponIds.filter((id) =>
+								weapon?.requires
+									? !weapon?.requires.includes(id)
+									: weapon?.id !== id,
+						  )
+						: usedWeaponIds,
+			};
+
+			weaponPicker.open(data);
 		}
 	};
 
@@ -64,10 +85,12 @@ export const WeaponsSection = ({
 							width: 170,
 							height: 190,
 						}}
-						selected={weaponPicker.isOpen && weaponPicker.data === index}
-						onClick={() => handleSlotClicked(index)}
-						onClear={() => handleWeaponChange(undefined, index)}
+						selected={
+							weaponPicker.isOpen && weaponPicker.data?.slotIndex === index
+						}
 						clearable={!!weapon}
+						onClick={() => handleSlotClicked(weapon, index)}
+						onClear={() => handleWeaponChange(undefined, index)}
 					>
 						{weapon ? (
 							<ItemComponents item={weapon} />
@@ -80,8 +103,10 @@ export const WeaponsSection = ({
 
 			<WeaponPicker
 				open={weaponPicker.isOpen}
-				usedWeaponIds={usedWeaponIds}
-				onSelect={(item) => handleWeaponChange(item, weaponPicker.data!)}
+				usedWeaponIds={weaponPicker.data?.disabledItemIds || usedWeaponIds}
+				onSelect={(item) =>
+					handleWeaponChange(item, weaponPicker.data?.slotIndex!)
+				}
 				onClose={weaponPicker.close}
 			/>
 		</>

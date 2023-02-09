@@ -5,6 +5,7 @@ import {
 	useIdolsStore,
 	useItemsStore,
 	useSpriteSheetsStore,
+	useStampsStore,
 	useUpgradesStore,
 } from "@/stores";
 import { defaultRoute } from "@/config";
@@ -24,6 +25,7 @@ export const routes: RouteObject[] = [
 					return await Promise.all([
 						useIdolsStore.getState().loadIdols(),
 						useItemsStore.getState().loadItems(),
+						useStampsStore.getState().loadStamps(),
 					]);
 				},
 			},

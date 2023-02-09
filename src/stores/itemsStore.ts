@@ -28,7 +28,7 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
 	// Fetch items file
 	loadItems: async () => {
 		try {
-			const data = await fetch("items.json");
+			const data = await fetch("/items.json");
 			const items: Item[] = await data.json();
 
 			set({

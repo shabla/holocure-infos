@@ -50,7 +50,7 @@ export const useSpriteSheetsStore = create<SpriteOffsetsStore>((set, get) => ({
 	},
 	loadSpriteSheets: async (): Promise<Record<string, SpriteSheet>> => {
 		try {
-			const res = await fetch("sprites.json");
+			const res = await fetch("/sprites.json");
 			const byType: Record<string, SpriteSheet> = await res.json();
 
 			byType["items"].file = itemsSpriteSheet;

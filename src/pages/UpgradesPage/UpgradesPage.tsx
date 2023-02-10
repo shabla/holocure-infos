@@ -7,6 +7,7 @@ import {
 	DescCol,
 	TotalCol,
 	RanksContainer,
+	RanksCol,
 } from "./UpgradesPageStyled";
 
 export default function UpgradesPage() {
@@ -27,7 +28,7 @@ export default function UpgradesPage() {
 							<th />
 							<NameCol as="th">Name</NameCol>
 							<DescCol as="th">Description</DescCol>
-							<th>Ranks</th>
+							<RanksCol as="th">Ranks</RanksCol>
 							<TotalCol as="th">Total Cost</TotalCol>
 						</tr>
 					</thead>

@@ -20,6 +20,4 @@ Some libs I use in this project because I wanted to try them :)
 
 # TODO
 
-- lazyloading
-- import json instead of fetch
 - try better router

@@ -54,11 +54,11 @@ export const useSpriteSheetsStore = create<SpriteOffsetsStore>((set, get) => ({
 			idolModelsSpriteSheet,
 		] = await Promise.all([
 			import("@/assets/data/sprites.json"),
-			import("@/assets/items.png"),
-			import("@/assets/skills.png"),
-			import("@/assets/upgrades.png"),
-			import("@/assets/idol-icons.png"),
-			import("@/assets/idol-models.png"),
+			import("@/assets/sprites/items.png"),
+			import("@/assets/sprites/skills.png"),
+			import("@/assets/sprites/upgrades.png"),
+			import("@/assets/sprites/idol-icons.png"),
+			import("@/assets/sprites/idol-models.png"),
 		]);
 
 		const spriteSheets = json.default as unknown as Record<string, SpriteSheet>;

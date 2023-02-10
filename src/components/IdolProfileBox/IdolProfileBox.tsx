@@ -1,9 +1,9 @@
 import { Box, Sprite } from "@/components";
 import { Idol } from "@/models";
-import hpIcon from "@/assets/stat-hp.png";
-import crtIcon from "@/assets/stat-crt.png";
-import atkIcon from "@/assets/stat-atk.png";
-import spdIcon from "@/assets/stat-spd.png";
+import hpIcon from "@/assets/sprites/stat-hp.png";
+import crtIcon from "@/assets/sprites/stat-crt.png";
+import atkIcon from "@/assets/sprites/stat-atk.png";
+import spdIcon from "@/assets/sprites/stat-spd.png";
 import { styled } from "@/styles";
 
 export interface IdolProfileBoxProps {

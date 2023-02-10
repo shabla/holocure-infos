@@ -67,6 +67,23 @@ const StampSlots = styled("div", {
 	flexDirection: "row",
 	alignItems: "center",
 	gap: 10,
+	position: "relative",
+	"&:after": {
+		position: "absolute",
+		top: 0,
+		left: 0,
+		width: "100%",
+		height: "100%",
+		backgroundColor: "rgba(0,0,0,0.5)",
+		content: "Coming Soon™",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		color: "white",
+		// color: "$darkBlue",
+		fontWeight: 700,
+		fontSize: "22px",
+	},
 });
 
 const StampContainer = styled("div", {

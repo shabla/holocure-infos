@@ -23,6 +23,19 @@ idols:
     "Hoshimashi Suisei": [3, 3]
     "Sakura Miko": [4, 3]
 
+    # Gen 1
+    "Akai Haato": [0, 4]
+    "Yozora Mel": [1, 4]
+    "Natsuiro Matsuri": [2, 4]
+    "Aki Rosenthal": [3, 4]
+
+    # Gen 2
+    "Yuzuki Choco": [0, 5]
+    "Murasaki Shion": [1, 5]
+    "Nakiri Ayame": [2, 5]
+    "Minato Aqua": [3, 5]
+    "Oozora Subaru": [4, 5]
+
 idols-icon:
   width: 86
   height: 76

@@ -15,5 +15,6 @@ Simple app to easily browse and visualize items and their possible combinations 
 Some libs I use in this project because I wanted to try them :)
 
 - [Zustand](https://github.com/pmndrs/zustand) - State management
-- [Stitches](https://stitches.dev/) - CSS-in-JS
+- [Stitches](https://stitches.dev) - CSS-in-JS
 - [Radix](https://www.radix-ui.com) - Components primitives
+- [Photopea](https://www.photopea.com) - for the sprites

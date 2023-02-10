@@ -9,7 +9,7 @@ import {
 	RanksContainer,
 } from "./UpgradesPageStyled";
 
-export const UpgradesPage = () => {
+export default function UpgradesPage() {
 	const [upgrades] = useUpgradesStore((state) => [state.upgrades]);
 
 	const getUpgradeTotalCost = (upgrade: Upgrade): number => {
@@ -87,4 +87,4 @@ export const UpgradesPage = () => {
 			</Box>
 		</ContentContainer>
 	);
-};
+}

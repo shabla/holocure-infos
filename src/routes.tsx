@@ -1,6 +1,6 @@
+import { lazy } from "react";
 import { redirect, RouteObject } from "react-router-dom";
 import { App } from "@/components";
-import { BuildPage, UpgradesPage } from "@/pages";
 import {
 	useIdolsStore,
 	useItemsStore,
@@ -9,6 +9,9 @@ import {
 	useUpgradesStore,
 } from "@/stores";
 import { defaultRoute } from "@/config";
+
+const BuildPage = lazy(() => import("@/pages/BuildPage/BuildPage"));
+const UpgradesPage = lazy(() => import("@/pages/UpgradesPage/UpgradesPage"));
 
 export const routes: RouteObject[] = [
 	{

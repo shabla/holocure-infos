@@ -17,6 +17,7 @@ import {
 	IconLink,
 } from "./AppStyled";
 import { defaultRoute } from "@/config";
+import { Suspense } from "react";
 
 export const App = () => {
 	// Redirect to the default route when landing on the root path
@@ -91,7 +92,9 @@ export const App = () => {
 			</Navbar>
 
 			<PageContent>
-				<Outlet />
+				<Suspense fallback={<>loading...</>}>
+					<Outlet />
+				</Suspense>
 			</PageContent>
 		</StyledApp>
 	);

@@ -4,7 +4,7 @@ import { ItemIdsList, StampIdsList, WeaponIdsList } from "@/models";
 import { ContentContainer, Builder } from "@/components";
 import { Build } from "@/utils/Build";
 
-export const BuildPage = () => {
+export default function BuildPage() {
 	const [searchParams, setSearchParams] = useSearchParams();
 	const [idolId, setIdolId] = useState<number | undefined>(undefined);
 	const [stampIds, setStampIds] = useState<StampIdsList>(Build.getStampIds());
@@ -66,4 +66,4 @@ export const BuildPage = () => {
         */}
 		</ContentContainer>
 	);
-};
+}

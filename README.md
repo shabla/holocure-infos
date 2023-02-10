@@ -17,7 +17,3 @@ Some libs I use in this project because I wanted to try them :)
 - [Zustand](https://github.com/pmndrs/zustand) - State management
 - [Stitches](https://stitches.dev/) - CSS-in-JS
 - [Radix](https://www.radix-ui.com) - Components primitives
-
-# TODO
-
-- try better router

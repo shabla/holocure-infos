@@ -1,11 +1,5 @@
 import { create } from "zustand";
 
-import itemsSpriteSheet from "@/assets/items.png";
-import skillsSpriteSheet from "@/assets/skills.png";
-import upgradeSpriteSheet from "@/assets/upgrades.png";
-import idolIconsSpriteSheet from "@/assets/idol-icons.png";
-import idolModelsSpriteSheet from "@/assets/idol-models.png";
-
 export type SpriteType =
 	| "idols"
 	| "idols-icon"
@@ -19,14 +13,14 @@ export type SpriteSheet = {
 	width: number;
 	height: number;
 	offsets: Record<string, [number, number]>;
-	file: string; // set at runtime
+	file: string;
 };
 
 interface SpriteOffsetsStore {
 	loaded: boolean;
 	byType: Record<string, SpriteSheet>;
-	loadSpriteSheets: (force?: boolean) => Promise<Record<string, SpriteSheet>>;
 	getSpriteSheet: (type: SpriteType) => SpriteSheet;
+	loadSpriteSheets: () => Promise<Record<string, SpriteSheet>>;
 }
 
 const emptyType: SpriteSheet = {
@@ -45,36 +39,41 @@ export const useSpriteSheetsStore = create<SpriteOffsetsStore>((set, get) => ({
 		skills: { ...emptyType },
 		upgrades: { ...emptyType },
 	},
-	getSpriteSheet: (type: SpriteType): SpriteSheet => {
-		return get().byType[type];
-	},
+	getSpriteSheet: (type: SpriteType): SpriteSheet => get().byType[type],
 	loadSpriteSheets: async (): Promise<Record<string, SpriteSheet>> => {
-		try {
-			const res = await fetch("/sprites.json");
-			const byType: Record<string, SpriteSheet> = await res.json();
-
-			byType["items"].file = itemsSpriteSheet;
-			byType["upgrades"].file = upgradeSpriteSheet;
-			byType["skills"].file = skillsSpriteSheet;
-			byType["idols"].file = idolModelsSpriteSheet;
-			byType["idols-icon"].file = idolIconsSpriteSheet;
-
-			// idols and idols icons use the space offsets (sketchy)
-			byType["idols-icon"].offsets = byType["idols"].offsets;
-
-			set({
-				loaded: true,
-				byType,
-			});
-
-			return byType;
-		} catch (e) {
-			set({
-				loaded: false,
-				byType: {},
-			});
-
-			return {};
+		if (get().loaded) {
+			return get().byType;
 		}
+
+		const [
+			json,
+			itemsSpriteSheet,
+			skillsSpriteSheet,
+			upgradeSpriteSheet,
+			idolIconsSpriteSheet,
+			idolModelsSpriteSheet,
+		] = await Promise.all([
+			import("@/assets/data/sprites.json"),
+			import("@/assets/items.png"),
+			import("@/assets/skills.png"),
+			import("@/assets/upgrades.png"),
+			import("@/assets/idol-icons.png"),
+			import("@/assets/idol-models.png"),
+		]);
+
+		const spriteSheets = json.default as unknown as Record<string, SpriteSheet>;
+
+		spriteSheets["items"].file = itemsSpriteSheet.default;
+		spriteSheets["upgrades"].file = upgradeSpriteSheet.default;
+		spriteSheets["skills"].file = skillsSpriteSheet.default;
+		spriteSheets["idols"].file = idolModelsSpriteSheet.default;
+		spriteSheets["idols-icon"].file = idolIconsSpriteSheet.default;
+
+		// idols and idols icons use the space offsets (sketchy)
+		spriteSheets["idols-icon"].offsets = spriteSheets["idols"].offsets;
+
+		set({ byType: spriteSheets, loaded: true });
+
+		return spriteSheets;
 	},
 }));

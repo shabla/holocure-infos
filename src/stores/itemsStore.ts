@@ -4,11 +4,11 @@ import { Item } from "@/models";
 interface ItemsStore {
 	loaded: boolean;
 	items: Item[];
-	loadItems: () => Promise<Item[]>;
 	getItemById: (id?: number) => Item | undefined;
 	getItemsUsedBy: (id: number) => Item[];
 	getItemsByType: (type: Item["type"]) => Item[];
 	getBaseItemIds: (ids: number[]) => number[];
+	loadItems: () => Promise<Item[]>;
 }
 
 export const useItemsStore = create<ItemsStore>((set, get) => ({
@@ -25,24 +25,6 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
 	getItemsByType: (type: string): Item[] => {
 		return get().items.filter((i) => i.type === type);
 	},
-	// Fetch items file
-	loadItems: async () => {
-		try {
-			const data = await fetch("/items.json");
-			const items: Item[] = await data.json();
-
-			set({
-				loaded: true,
-				items,
-			});
-
-			return items;
-		} catch (e) {
-			set({ loaded: false, items: [] });
-
-			return [];
-		}
-	},
 	getBaseItemIds: (ids: number[]): number[] => {
 		return ids
 			.flatMap((id) => {
@@ -58,5 +40,18 @@ export const useItemsStore = create<ItemsStore>((set, get) => ({
 				(value, index, array) =>
 					value != null && array.indexOf(value) === index,
 			); // remove duplicates and undefined
+	},
+	// Fetch items file
+	loadItems: async () => {
+		if (get().loaded) {
+			return get().items;
+		}
+
+		const json = await import("@/assets/data/items.json");
+		const items = json.default as unknown as Item[];
+
+		set({ loaded: true, items });
+
+		return items;
 	},
 }));

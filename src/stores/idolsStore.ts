@@ -8,8 +8,7 @@ interface IdolsStore {
 	idols: Idol[];
 	getGenerations: () => GenerationWithIdols[];
 	getIdolById: (id?: number) => Idol | undefined;
-	getIdolsByGen: (gen: string) => Idol[];
-	loadIdols: () => Promise<void>;
+	loadIdols: () => Promise<Idol[]>;
 }
 
 const gens: IdolGeneration[] = [
@@ -28,23 +27,20 @@ export const useIdolsStore = create<IdolsStore>((set, get) => ({
 	getGenerations: (): GenerationWithIdols[] =>
 		gens.map((gen) => ({
 			name: gen.name,
-			idols: get().getIdolsByGen(gen.name),
+			idols: get().idols.filter((i) => i.gen === gen.name),
 		})),
 	getIdolById: (id?: number): Idol | undefined =>
 		id ? get().idols.filter((idol) => idol.id === id)[0] : undefined,
-	getIdolsByGen: (gen: string): Idol[] =>
-		get().idols.filter((i) => i.gen === gen),
 	loadIdols: async () => {
-		try {
-			const data = await fetch("/idols.json");
-			const idols: Idol[] = await data.json();
-
-			set({
-				loaded: true,
-				idols: idols,
-			});
-		} catch (e) {
-			set({ loaded: false, idols: [] });
+		if (get().loaded) {
+			return get().idols;
 		}
+
+		const json = await import("@/assets/data/idols.json");
+		const idols = json.default as unknown as Idol[];
+
+		set({ loaded: true, idols });
+
+		return idols;
 	},
 }));

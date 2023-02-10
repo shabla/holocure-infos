@@ -22,26 +22,33 @@ const types = [
 ];
 
 // Load sprites offsets
-const sprites = loadYAMLFile(path.resolve(__dirname, '../data/sprites.yaml'));
+const inputBasePath = path.resolve(__dirname, '../data');
+const outputBasePath = path.resolve(__dirname, '../src/assets/data');
+const sprites = loadYAMLFile(path.resolve(inputBasePath, 'sprites.yaml'));
+const logs = [];
 
 // Convert yaml data files to json files
 for (const type of types) {
-  console.log(`[${type.name}] Converting ${type.name}.yaml to ${type.name}.json`);
-  const data = loadYAMLFile(path.resolve(__dirname, `../data/${type.name}.yaml`));
-  const output = type.validate(data, sprites).filter(line => !!line);
-  if(output.length) {
-    output.forEach(line => console.log(`  ${line}`));
-  } else {
-    console.log('  Done, everything looks good!');
-  }
-  console.log('');
+  const typeLogs = [`[${type.name}] Converting ${type.name}.yaml to ${type.name}.json`];
+  const data = loadYAMLFile(path.resolve(inputBasePath, `${type.name}.yaml`));
+  const validationLogs = type.validate(data, sprites).filter(line => !!line);
 
-  saveJSONFile(path.resolve(__dirname, `../public/${type.name}.json`), data);
+  if (validationLogs.length) {
+    typeLogs.push(...validationLogs.map(line => `\t${line}`));
+  } else {
+    typeLogs.push('\tDone, everything looks good!');
+  }
+
+  const saveLog = saveJSONFile(path.resolve(outputBasePath, `${type.name}.json`), data);
+
+  logs.push(...typeLogs, `\t${saveLog}\n`);
 }
 
 // Save sprites offsets
-const outputPath = path.resolve(__dirname, '../public/sprites.json');
-saveJSONFile(outputPath, sprites);
+const outputPath = path.resolve(outputBasePath, 'sprites.json');
+const saveSpriteLog = saveJSONFile(outputPath, sprites);
+
+[...logs, '[sprites]', `\t${saveSpriteLog}`].forEach(line => console.log(line));
 
 
 /**
@@ -140,9 +147,10 @@ function loadYAMLFile(inputPath) {
 }
 
 function saveJSONFile(outputPath, data, callback = err => err && console.log(err)) {
-  console.log(`Saving file to ${outputPath}`)
   try {
     fs.writeFile(outputPath, JSON.stringify(data), null, callback);
+    return `Saved file to ${outputPath}`;
+
   } catch (e) {
     console.log(e);
   }

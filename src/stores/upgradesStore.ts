@@ -1,32 +1,25 @@
 import { create } from "zustand";
-
 import { Upgrade } from "@/models";
 
 interface UpgradesStore {
 	loaded: boolean;
 	upgrades: Upgrade[];
-	loadUpgrades: (force?: boolean) => Promise<Upgrade[]>;
+	loadUpgrades: () => Promise<Upgrade[]>;
 }
 
 export const useUpgradesStore = create<UpgradesStore>((set, get) => ({
 	loaded: false,
 	upgrades: [],
-	loadUpgrades: async (force?: boolean): Promise<Upgrade[]> => {
-		if (get().loaded && !force) {
+	loadUpgrades: async (): Promise<Upgrade[]> => {
+		if (get().loaded) {
 			return get().upgrades;
 		}
 
-		try {
-			const data = await fetch("/upgrades.json");
-			const upgrades: Upgrade[] = await data.json();
+		const json = await import("@/assets/data/upgrades.json");
+		const upgrades = json.default as unknown as Upgrade[];
 
-			set({ loaded: true, upgrades });
+		set({ loaded: true, upgrades });
 
-			return upgrades;
-		} catch (e) {
-			set({ loaded: false, upgrades: [] });
-
-			return [];
-		}
+		return upgrades;
 	},
 }));

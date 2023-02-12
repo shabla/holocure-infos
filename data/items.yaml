@@ -8,6 +8,7 @@
   requires:
     - 17
     - 25
+
 - name: "BL Fujoshi"
   id: 2
   type: "collab"
@@ -15,6 +16,7 @@
   requires:
     - 17
     - 16
+
 - name: "MiComet"
   id: 3
   type: "collab"
@@ -22,6 +24,7 @@
   requires:
     - 14
     - 16
+
 - name: "Elite Cooking"
   id: 4
   type: "collab"
@@ -29,6 +32,7 @@
   requires:
     - 14
     - 13
+
 - name: "Broken Dreams"
   id: 5
   type: "collab"
@@ -36,6 +40,7 @@
   requires:
     - 23
     - 13
+
 - name: "Stream of Tears"
   id: 6
   type: "collab"
@@ -43,13 +48,15 @@
   requires:
     - 23
     - 19
+
 - name: "Rap Dog"
   id: 7
   type: "collab"
-  desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS where targets hit take 15% more damage."
+  desc: "A collaboration of X-Potato and Idol Song. Drop some HOT BEATS where targets hit take 20% more damage."
   requires:
     - 24
     - 22
+
 - name: "Idol Concert"
   id: 8
   type: "collab"
@@ -57,6 +64,7 @@
   requires:
     - 21
     - 22
+
 - name: "Light Beam"
   id: 9
   type: "collab"
@@ -64,6 +72,7 @@
   requires:
     - 21
     - 19
+
 - name: "Dragon Fire"
   id: 10
   type: "collab"
@@ -71,6 +80,7 @@
   requires:
     - 20
     - 19
+
 - name: "Breathe-In Type Asacoco"
   id: 11
   type: "collab"
@@ -78,6 +88,7 @@
   requires:
     - 20
     - 15
+
 - name: "Flattening Board"
   id: 12
   type: "collab"
@@ -85,6 +96,46 @@
   requires:
     - 18
     - 15
+
+- name: "Eldritch Horror"
+  id: 54
+  type: "collab"
+  desc: "A collaboration of EN's Curse and Spider Cooking. Summons unknown horrors. May Life-steal up to 5% HP from targets defeated in the whirlpool."
+  requires:
+    - 51
+    - 13
+
+- name: "MiKorone"
+  id: 55
+  type: "collab"
+  desc: "A collaboration of X-Potato and Elite Lava Bucket. Burning hot potatos fall, and targets hit by it leave lava pools as they move."
+  requires:
+    - 24
+    - 14
+
+- name: "Bone Bros"
+  id: 56
+  type: "collab"
+  desc: "A collaboration of Cutting Board and EN's Curse. Don't bite the hand that feeds you if it's holding a knife."
+  requires:
+    - 18
+    - 51
+
+- name: "I'm Die, Thank You Forever"
+  id: 57
+  type: "collab"
+  desc: "A collaboration of X-Potato and Holo Bomb. Throw a Bomb that attaches to a target. When target is defeated, the bomb explodes."
+  requires:
+    - 24
+    - 15
+
+- name: "Ring of Fitness"
+  id: 58
+  type: "collab"
+  desc: "A collaboration of Bounce Ball and CEO's Tears. Continuously throw a ring of fitness balls. Hope nobody walks in."
+  requires:
+    - 52
+    - 23
 
 ###
 ### Weapons
@@ -107,6 +158,7 @@
       desc: "Increase damage by 30%."
     - level: 7
       desc: "Adds small knockback on hit."
+
 - name: "Elite Lava Bucket"
   id: 14
   type: "weapon"
@@ -125,6 +177,7 @@
       desc: "Throw 3 lava buckets."
     - level: 7
       desc: "Throw 4 lava buckets and increase lava size by 20%."
+
 - name: "Holo Bomb"
   id: 15
   type: "weapon"
@@ -143,6 +196,7 @@
       desc: "Increase explosion size by 20%."
     - level: 7
       desc: "Throw 3 bombs."
+
 - name: "Psycho Axe"
   id: 16
   type: "weapon"
@@ -161,6 +215,7 @@
       desc: "Increase attack size by 50%."
     - level: 7
       desc: "Increase damage by 50%."
+
 - name: "BL Book"
   id: 17
   type: "weapon"
@@ -179,6 +234,7 @@
       desc: "Add 1 additional book."
     - level: 7
       desc: "Increase damage by 40%."
+
 - name: "Cutting Board"
   id: 18
   type: "weapon"
@@ -197,6 +253,7 @@
       desc: "Reduce the time between attacks by 0.5 seconds."
     - level: 7
       desc: "Shoot additional walls from sides."
+
 - name: "Fan Beam"
   id: 19
   type: "weapon"
@@ -215,6 +272,7 @@
       desc: "Increase beam size by 50%."
     - level: 7
       desc: "Fire an additional beam behind."
+
 - name: "Plug Type Asacoco"
   id: 20
   type: "weapon"
@@ -233,6 +291,7 @@
       desc: "Adds knockback on hit."
     - level: 7
       desc: "Fire an additional Asacoco."
+
 - name: "Glowstick"
   id: 21
   type: "weapon"
@@ -251,6 +310,7 @@
       desc: "Increase damage by 33%."
     - level: 7
       desc: "Throw one additional glowstick."
+
 - name: "Idol Song"
   id: 22
   type: "weapon"
@@ -269,6 +329,7 @@
       desc: "Increase music note size by 25%."
     - level: 7
       desc: "Increase damage by 50%."
+
 - name: "CEO's Tears"
   id: 23
   type: "weapon"
@@ -287,6 +348,7 @@
       desc: "Reduce the time between attacks by 50%."
     - level: 7
       desc: "Shoot 4 tears."
+
 - name: "X-Potato"
   id: 24
   type: "weapon"
@@ -305,6 +367,7 @@
       desc: "Increase the size of potatoes and the X explosion size by 30%."
     - level: 7
       desc: "Throw 4 potatoes."
+
 - name: "Wamy Water"
   id: 25
   type: "weapon"
@@ -323,6 +386,19 @@
       desc: "Increase damage by 30%."
     - level: 7
       desc: "Increase attack area by 30% and stops enemies for a short moment after knockback."
+
+- name: "EN's Curse"
+  id: 51
+  type: "weapon"
+  desc: "Fires cursed energy in front. On hit, there is a chance to spread another Curse towards another nearby target."
+  requirement: "Defaut the boss of stage 3."
+
+- name: "Bounce Ball"
+  id: 52
+  type: "weapon"
+  desc: "Drops a falling bounce ball on a random target. Size of ball varies between characters."
+  requirement: "Survive as a flat character and equip Cutting Board for 10 minutes in a single run."
+
 ###
 ### Items
 ###
@@ -336,6 +412,7 @@
       desc: "If not taking any damage for 5 seconds, increase crit by {15%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
     - level: 3
       desc: "If not taking any damage for 5 seconds, increase crit by {20%}. Buff ends upon receiving damage. If eating food, +5% crit for 10 seconds."
+
 - name: "Body Pillow"
   id: 27
   type: "item"
@@ -353,6 +430,7 @@
   super:
     name: "Super Body Pillow"
     desc: "Gain a shield that absorbs up to 40 damage. Every 15 seconds, this shield refreshes. Also reduces damage taken by 30%. When shield is full, heal 10 HP every 3 seconds."
+
 - name: "Injection Type Asacoco"
   id: 28
   type: "item"
@@ -363,6 +441,7 @@
       desc: "Lose 5% HP every second (until 1 HP remains), but gain {60%} damage."
     - level: 3
       desc: "Lose 5% HP every second (until 1 HP remains), but gain {80%} damage."
+
 - name: "Credit Card"
   id: 29
   type: "item"
@@ -377,6 +456,7 @@
       desc: "Cost of enhancing is reduced by {35%} and anvils appear {80%} more often."
     - level: 5
       desc: "Cost of enhancing is reduced by {40%} and anvils appear {100%} more often."
+
 - name: "Knightly Milk"
   id: 30
   type: "item"
@@ -390,11 +470,13 @@
   super:
     name: "Super Knightly Milk"
     desc: "Increases attack size of weapons by 30%. Also increase Pick Up Range by 100% and increase Max HP by 20."
+
 - name: "Face Mask"
   id: 31
   type: "item"
   desc: "Increase damage by 50% and haste by 10%. Take 30% more damage."
   requirement: "Unlocked by default"
+
 - name: "Nurse's Horns"
   id: 32
   type: "item"
@@ -405,11 +487,13 @@
       desc: "When a target is defeated, there is a 20% chance to heal for {4} HP."
     - level: 3
       desc: "When a target is defeated, there is a 20% chance to heal for {6} HP."
+
 - name: "Full Meal"
   id: 33
   type: "item"
   desc: "All healing is doubled."
   requirement: "Unlocked by default"
+
 - name: "Headphones"
   id: 34
   type: "item"
@@ -424,6 +508,7 @@
       desc: "{30%} chance to negate 1 hit, and create a shockwave that knocks back all enemies."
     - level: 5
       desc: "{35%} chance to negate 1 hit, and create a shockwave that knocks back all enemies."
+
 - name: "Gorilla's Paw"
   id: 35
   type: "item"
@@ -436,7 +521,8 @@
       desc: "Increase normal attack damage by {50%}, but lose 20% critical chance."
   super:
     name: "Super Gorilla's Paw"
-    desc: "Increase attack damage by 50% and critical hits do 50 more damage."
+    desc: "Attack damage is multiplied by 1.5 times."
+
 - name: "Uber Sheep"
   id: 36
   type: "item"
@@ -451,6 +537,7 @@
       desc: "Every {7} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {18%}."
     - level: 5
       desc: "Every {6} seconds, food will drop closeby. Also increase food drop chance from defeated targets by {20%}."
+
 - name: "Idol Costume"
   id: 37
   type: "item"
@@ -468,6 +555,7 @@
   super:
     name: "Super Idol Costume"
     desc: "Reduce Special cooldown by 45%. Allows the use of Special once more immediately per charge."
+
 - name: "Energy Drink"
   id: 38
   type: "item"
@@ -481,6 +569,7 @@
   super:
     name: "Super Energy Drink"
     desc: "Increase Haste by 30% and SPD by 60%."
+
 - name: "Study Glasses"
   id: 39
   type: "item"
@@ -498,6 +587,7 @@
   super:
     name: "Super Study Glasses"
     desc: "Increase EXP gain by 40% and double the chance of getting a Rainbow EXP drop."
+
 - name: "Super Chatto Time!"
   id: 40
   type: "item"
@@ -515,6 +605,7 @@
   super:
     name: "Super Super Chatto Time!"
     desc: "Targets drop 100% more Holo Coins. Picking up coins also heal 3 HP."
+
 - name: "Membership"
   id: 41
   type: "item"
@@ -525,6 +616,7 @@
       desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {40%} and take {18%} less damage."
     - level: 3
       desc: "Lose 3 Holocoin every second. If Holocoins is more than 0, increase damage by {50%} and take {25%} less damage."
+
 - name: "Halu"
   id: 42
   type: "item"
@@ -539,6 +631,7 @@
       desc: "Increase regular fan spawns even further beyond, and fans become {33%} stronger. Are you sure about this?"
     - level: 5
       desc: "Don't do it."
+
 - name: "Just Bandage"
   id: 43
   type: "item"
@@ -549,6 +642,7 @@
       desc: "Increase Max HP by {20}. After being hit, heal 10% HP every 3 seconds until {90%} of the damage taken is recovered (recovers minimum 1 HP)."
     - level: 3
       desc: "Increase Max HP by {30}. After being hit, heal 10% HP every 3 seconds until {100%} of the damage taken is recovered (recovers minimum 1 HP)."
+
 - name: "GWS Pill"
   id: 44
   type: "item"
@@ -559,6 +653,7 @@
       desc: "While the Special meter is still charging, increase crit by {20%}."
     - level: 3
       desc: "While the Special meter is still charging, increase crit by {25%}."
+
 - name: "Limiter"
   id: 45
   type: "item"
@@ -569,6 +664,7 @@
       desc: "Gain {200%} Pick Up Range."
     - level: 3
       desc: "Gain {300%} Pick Up Range."
+
 - name: "Chicken's Feather"
   id: 46
   type: "item"
@@ -579,11 +675,13 @@
       desc: "Gain {2} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
     - level: 3
       desc: "Gain {3} revive. When HP reaches 0, instantly refill back to 50% HP and all current targets except Bosses will be defeated."
+
 - name: "Stolen Piggy Bank"
   id: 47
   type: "item"
   desc: "Gain 1 coin every {100px} traveled and increase SPD by {20%}. However, reduce Pick Up Range by {{{30%}}}."
   requirement: "Kill a Golden YAGOO."
+
 - name: "Plushie"
   id: 48
   type: "item"
@@ -594,6 +692,7 @@
       desc: "After taking any damage, gain invulnerability for {0.4} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
     - level: 3
       desc: "After taking any damage, gain invulnerability for {0.5} seconds. However, you also lose 20% ATK and SPD for 5 seconds."
+
 - name: "Piki Piki Piman"
   id: 49
   type: "item"
@@ -604,3 +703,50 @@
       desc: "After receiving damage, increase the special meter by {3%}. There is a 0.2 second cooldown."
     - level: 3
       desc: "After receiving damage, increase the special meter by {4%}. There is a 0.2 second cooldown."
+
+- name: "Breastplate"
+  id: 50
+  type: "item"
+  desc: "Reduce damage taken by {10%} and SPD by {{{20%}}}. When attacked, there is a {50%} chance the attacker also takes {200%} damage."
+  requirement: ""
+
+- name: "Kusogaki Shackles"
+  id: 53
+  type: "item"
+  desc: "Reduce the negative effects of any items placed on the player by 33%."
+  requirement: ""
+
+- name: "Breastplate"
+  id: 59
+  type: "item"
+  desc: "Reduce damage taken by {10%} and SPD by {{{20%}}}. When attacked there is a {50%} chance the attacker also takes {200%} damage."
+  requirement: "Take 500 damage in a single run."
+  levels:
+  - level: 2
+    desc: "Reduce damage taken by {15%} and SPD by {{{20%}}}. When attacked there is a {60%} chance the attacker also takes {250%} damage."
+  - level: 3
+    desc: "Reduce damage taken by {20%} and SPD by {{{20%}}}. When attacked there is a {70%} chance the attacker also takes {300%} damage."
+
+- name: "Hope Soda"
+  id: 60
+  type: "item"
+  desc: "Increase critical hit damage {15%} and increase Special cooldown by {{{25%}}}."
+  requirement: "Clear the Stage with IRyS."
+
+- name: "Kusogaki Shackles"
+  id: 61
+  type: "item"
+  desc: ""
+  requirement: "Survive for 10 minutes as Murasaki Shion in a single run."
+
+- name: "Devil Hat"
+  id: 62
+  type: "item"
+  desc: ""
+  requirement: "Give 1000 Damage in a single attack."
+
+- name: "Blacksmith's Gear"
+  id: 63
+  type: "item"
+  desc: "Normal anvils can be used twice."
+  requirement: "Enhance a fully-leveled Weapon with an anvil."

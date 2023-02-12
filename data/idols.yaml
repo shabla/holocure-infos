@@ -1074,22 +1074,6 @@
           desc: 'From any healing, Miko gains a 4 second buff that increases ATK and SPD by {50%}. Any "Elite" weapons are 10% larger.'
 
 # Gen 1
-- name: "Yozora Mel"
-  id: 21
-  gen: "Gen 1"
-  attack:
-    name: ""
-    levels:
-      - level: 1
-        desc: ""
-- name: "Natsuiro Matsuri"
-  id: 22
-  gen: "Gen 1"
-  attack:
-    name: ""
-    levels:
-      - level: 1
-        desc: ""
 - name: "Akai Haato"
   id: 23
   gen: "Gen 1"
@@ -1098,6 +1082,25 @@
     levels:
       - level: 1
         desc: ""
+
+- name: "Yozora Mel"
+  id: 21
+  gen: "Gen 1"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+
+- name: "Natsuiro Matsuri"
+  id: 22
+  gen: "Gen 1"
+  attack:
+    name: ""
+    levels:
+      - level: 1
+        desc: ""
+        
 - name: "Aki Rosenthal"
   id: 24
   gen: "Gen 1"

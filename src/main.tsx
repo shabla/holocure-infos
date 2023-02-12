@@ -7,7 +7,7 @@ import "normalize.css";
 
 const router = createBrowserRouter(routes);
 
-createRoot(document.getElementById("root")!).render(
+createRoot(document.getElementById("root") as HTMLElement).render(
 	<StrictMode>
 		<RouterProvider router={router} />
 	</StrictMode>,

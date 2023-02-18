@@ -26,10 +26,10 @@ export const DialogContainer = styled(RadixDialog.Content, {
 	left: "50%",
 	transform: "translate(-50%, -50%)",
 	maxWidth: "90vw",
+	maxHeight: "95vh",
+	overflowY: "auto",
 	display: "flex",
 	flexDirection: "column",
-	justifyContent: "center",
-	alignItems: "center",
 	animation: `${contentShow} 350ms cubic-bezier(0.16, 1, 0.3, 1)`,
 	border: "1px solid white",
 
@@ -54,6 +54,7 @@ export const DialogContent = styled("div", {
 	width: "100%",
 	padding: "$4",
 	color: "white",
+	overflowY: "auto",
 });
 
 export const DialogCloseButton = styled(RadixDialog.Description, {

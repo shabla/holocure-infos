@@ -137,6 +137,22 @@
     - 52
     - 23
 
+- name: "Snow Flower Sake"
+  id: 64
+  type: "collab"
+  desc: "A collaboration of Wamy Water and Glowstick. Throw a bottle that shatters into Snowflake. Has a 30% chance to cause Frozen."
+  requires:
+    - 25
+    - 21
+
+- name: "Absolute Wall"
+  id: 65
+  type: "collab"
+  desc: "A collaboration of Cutting Board and Bounce Ball. Summon forth the Great Wall of Hololive."
+  requires:
+    - 18
+    - 52
+
 ###
 ### Weapons
 ###

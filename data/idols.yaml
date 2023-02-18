@@ -1078,47 +1078,48 @@
   id: 23
   gen: "Gen 1"
   attack:
-    name: ""
+    name: "Red Heart"
     levels:
       - level: 1
-        desc: ""
+        desc: "Create big red hearts. In Haato form, hearts knocks enemies back. In Haachama form, damage is increased by 50%."
 
 - name: "Yozora Mel"
   id: 21
   gen: "Gen 1"
   attack:
-    name: ""
+    name: "Kapu Kapu"
     levels:
       - level: 1
-        desc: ""
+        desc: "Bite targets in front."
 
 - name: "Natsuiro Matsuri"
   id: 22
   gen: "Gen 1"
   attack:
-    name: ""
+    name: "Ebifrion"
     levels:
       - level: 1
-        desc: ""
+        desc: "Swings a large Ebifrion following aimed direction."
         
 - name: "Aki Rosenthal"
   id: 24
   gen: "Gen 1"
   attack:
-    name: ""
+    name: "Aik"
     levels:
       - level: 1
-        desc: ""
+        desc: "Sends Aik to the closest as well as random targets and fires a beam."
 
 # Gen 2
 - name: "Minato Aqua"
   id: 25
   gen: "Gen 2"
   attack:
-    name: ""
+    name: "Cleaning Broom"
     levels:
       - level: 1
-        desc: ""
+        desc: "Throws a large spinning broom."
+
 - name: "Murasaki Shion"
   id: 26
   gen: "Gen 2"
@@ -1127,27 +1128,30 @@
     levels:
       - level: 1
         desc: "Fires a quick magic bolt in front."
+
 - name: "Nakiri Ayame"
   id: 27
   gen: "Gen 2"
   attack:
-    name: ""
+    name: "Dual Katana"
     levels:
       - level: 1
-        desc: ""
+        desc: "Slashes twice in front."
+
 - name: "Yuzuki Choco"
   id: 28
   gen: "Gen 2"
   attack:
-    name: ""
+    name: "Love Needle"
     levels:
       - level: 1
-        desc: ""
+        desc: "Thrust a giant needle in front."
+
 - name: "Oozora Subaru"
   id: 29
   gen: "Gen 2"
   attack:
-    name: ""
+    name: "Baseball Pitch"
     levels:
       - level: 1
-        desc: ""
+        desc: "Throws a very fast baseball in front."

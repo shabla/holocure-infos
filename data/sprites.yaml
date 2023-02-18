@@ -250,6 +250,11 @@ items:
     "Bone Bros": [2, 7]
     "I'm Die, Thank You Forever": [6, 7]
     "Ring of Fitness": [1, 8]
+    "Absolute Wall": [0, 8]
+    "Eldritch Horror": [3, 8]
+    "MiKorone": [2, 8]
+    "Snow Flower Sake": [4, 8]
+
 
     # Items
     "Sake": [3, 1]
@@ -279,6 +284,8 @@ items:
     "Breastplate": [3, 7]
     "Kusogaki Shackles": [4, 7]
     "Blacksmith's Gear": [5, 7]
+    "Hope Soda": [6, 8]
+    "Devil Hat": [5, 8]
 
 upgrades:
   height: 50

@@ -138,7 +138,7 @@
     - 23
 
 - name: "Snow Flower Sake"
-  id: 64
+  id: 50
   type: "collab"
   desc: "A collaboration of Wamy Water and Glowstick. Throw a bottle that shatters into Snowflake. Has a 30% chance to cause Frozen."
   requires:
@@ -146,7 +146,7 @@
     - 21
 
 - name: "Absolute Wall"
-  id: 65
+  id: 61
   type: "collab"
   desc: "A collaboration of Cutting Board and Bounce Ball. Summon forth the Great Wall of Hololive."
   requires:
@@ -720,17 +720,11 @@
     - level: 3
       desc: "After receiving damage, increase the special meter by {4%}. There is a 0.2 second cooldown."
 
-- name: "Breastplate"
-  id: 50
-  type: "item"
-  desc: "Reduce damage taken by {10%} and SPD by {{{20%}}}. When attacked, there is a {50%} chance the attacker also takes {200%} damage."
-  requirement: ""
-
 - name: "Kusogaki Shackles"
   id: 53
   type: "item"
   desc: "Reduce the negative effects of any items placed on the player by 33%."
-  requirement: ""
+  requirement: "Survive for 10 minutes as Murasaki Shion in a single run."
 
 - name: "Breastplate"
   id: 59
@@ -748,12 +742,6 @@
   type: "item"
   desc: "Increase critical hit damage {15%} and increase Special cooldown by {{{25%}}}."
   requirement: "Clear the Stage with IRyS."
-
-- name: "Kusogaki Shackles"
-  id: 61
-  type: "item"
-  desc: ""
-  requirement: "Survive for 10 minutes as Murasaki Shion in a single run."
 
 - name: "Devil Hat"
   id: 62

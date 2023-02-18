@@ -1,5 +1,9 @@
 import { Navigate, Outlet, useMatch } from "react-router-dom";
-import { GitHubLogoIcon, TwitterLogoIcon } from "@radix-ui/react-icons";
+import {
+	GitHubLogoIcon,
+	TwitterLogoIcon,
+	GlobeIcon,
+} from "@radix-ui/react-icons";
 import { globalStyles } from "@/styles";
 import {
 	ContentContainer,
@@ -51,6 +55,15 @@ export const App = () => {
 						title="This website's Github page"
 					>
 						<GitHubLogoIcon />
+					</IconLink>
+
+					<IconLink
+						href="https://holocure.fandom.com/wiki/HoloCure_Wiki"
+						target="_blank"
+						rel="noopener noreferrer"
+						title="Fan Wiki"
+					>
+						<GlobeIcon />
 					</IconLink>
 
 					<IconLink

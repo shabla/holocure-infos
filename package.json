@@ -1,39 +1,38 @@
 {
   "name": "holocure-infos",
+  "version": "1.0.0",
+  "description": "Simple app to easily browse and visualize items and their possible combinations for [HoloCure](https://kay-yu.itch.io/holocure) (try it, it's free!)",
   "private": true,
-  "version": "0.0.0",
+  "workspaces": [
+    "packages/admin-api",
+    "packages/admin-web",
+    "packages/web",
+    "packages/common"
+  ],
   "scripts": {
-    "start": "npm run dev",
-    "dev": "npm run data && vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "netlify": "npm run data && npm run build",
     "data": "node ./scripts/yaml-to-json.js",
-    "deploy": "npm run data && npm run build && node ./scripts/publish"
+    "start": "npm run dev",
+    "dev": "concurrently \"npm:dev:*\"",
+    "dev:web": "npm run dev -w ./packages/web",
+    "dev:admin-api": "npm run dev -w ./packages/admin-api",
+    "dev:admin-web": "npm run dev -w ./packages/admin-web",
+    "netlify": "npm run deploy -w ./packages/web"
   },
-  "dependencies": {
-    "@radix-ui/react-collapsible": "^1.0.1",
-    "@radix-ui/react-dialog": "~1.0.2",
-    "@radix-ui/react-icons": "^1.1.1",
-    "@stitches/react": "~1.2.8",
-    "normalize.css": "~8.0.1",
-    "react": "~18.2.0",
-    "react-dom": "~18.2.0",
-    "react-router-dom": "~6.8.0",
-    "zustand": "~4.3.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shabla/holocure-infos.git"
   },
-  "devDependencies": {
-    "@types/node": "~18.13.0",
-    "@types/react": "~18.0.18",
-    "@types/react-dom": "~18.0.6",
-    "@vitejs/plugin-react-swc": "~3.1.0",
-    "gh-pages": "~5.0.0",
-    "js-yaml": "~4.1.0",
-    "rome": "~11.0.0",
-    "typescript": "~4.9.4",
-    "vite": "~4.1.1"
+  "author": "Shabla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shabla/holocure-infos/issues"
   },
+  "homepage": "https://github.com/shabla/holocure-infos#readme",
   "volta": {
     "node": "18.14.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "js-yaml": "~4.1.0"
   }
 }

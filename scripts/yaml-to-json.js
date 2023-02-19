@@ -23,7 +23,7 @@ const types = [
 
 // Load sprites offsets
 const inputBasePath = path.resolve(__dirname, '../data');
-const outputBasePath = path.resolve(__dirname, '../src/assets/data');
+const outputBasePath = path.resolve(__dirname, '../packages/web/src/assets/data');
 const sprites = loadYAMLFile(path.resolve(inputBasePath, 'sprites.yaml'));
 const logs = [];
 

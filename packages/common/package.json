@@ -1,0 +1,20 @@
+{
+  "name": "@holocure-builds/common",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {},
+  "main": "./src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shabla/holocure-infos.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shabla/holocure-infos/issues"
+  },
+  "homepage": "https://github.com/shabla/holocure-infos#readme"
+}

@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 
-import { StyledCSS } from "@/styles";
+import { StyledCSS } from "@holocure-builds/common";
 import { useSpriteSheetsStore, SpriteType } from "@/stores";
 import { getSpriteBackground } from "./getSpriteBackground";
 import { SpriteContainer, SpriteLabel, SpriteImage } from "./SpriteStyled";

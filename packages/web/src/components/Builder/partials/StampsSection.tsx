@@ -1,7 +1,7 @@
 import { Selectable, Sprite } from "@/components";
 import { StampIdsList } from "@holocure-builds/common";
 import { useStampsStore } from "@/stores";
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 import React, { useMemo } from "react";
 import { EmptyMessage, Section } from "../BuilderStyled";
 

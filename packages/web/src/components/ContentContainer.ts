@@ -1,4 +1,4 @@
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 
 export const ContentContainer = styled("div", {
 	maxWidth: "1300px",

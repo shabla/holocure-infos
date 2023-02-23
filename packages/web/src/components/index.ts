@@ -5,7 +5,6 @@ export * from "./ContentContainer";
 export * from "./InfoTable";
 export * from "./App/App";
 export * from "./IdolGenerations/IdolGenerations";
-export * from "./Dialog/Dialog";
 export * from "./IdolPickerDialog/IdolPickerDialog";
 export * from "./IdolSkillBox/IdolSkillBox";
 export * from "./ItemComponents/ItemComponents";

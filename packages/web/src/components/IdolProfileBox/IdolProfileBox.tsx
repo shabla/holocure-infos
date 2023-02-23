@@ -4,7 +4,7 @@ import hpIcon from "@/assets/sprites/stat-hp.png";
 import crtIcon from "@/assets/sprites/stat-crt.png";
 import atkIcon from "@/assets/sprites/stat-atk.png";
 import spdIcon from "@/assets/sprites/stat-spd.png";
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 
 export interface IdolProfileBoxProps {
 	idol?: Idol;

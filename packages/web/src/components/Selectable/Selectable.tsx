@@ -1,4 +1,4 @@
-import { StyledCSS } from "@/styles";
+import { StyledCSS } from "@holocure-builds/common";
 import React from "react";
 import { ClearButton, SelectableContainer } from "./SelectableStyled";
 

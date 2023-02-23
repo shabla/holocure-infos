@@ -1,5 +1,5 @@
 import * as RadixDialog from "@radix-ui/react-dialog";
-import { contentShow, fadeIn, styled } from "@/styles";
+import { contentShow, fadeIn, styled } from "@holocure-builds/common";
 
 export const DialogOverlay = styled(RadixDialog.Overlay, {
 	position: "fixed",

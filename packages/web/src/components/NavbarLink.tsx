@@ -1,4 +1,4 @@
-import { css } from "@/styles";
+import { css } from "@holocure-builds/common";
 import { NavLink, NavLinkProps } from "react-router-dom";
 
 export const NavbarLinkStyle = css({

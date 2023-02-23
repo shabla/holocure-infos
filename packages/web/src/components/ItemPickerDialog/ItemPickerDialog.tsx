@@ -1,6 +1,6 @@
 import React from "react";
-import { Dialog, ItemPicker } from "@/components";
-import { Item, ItemIdsList } from "@holocure-builds/common";
+import { ItemPicker } from "@/components";
+import { Dialog, Item, ItemIdsList } from "@holocure-builds/common";
 import { useItemsStore } from "@/stores";
 
 export interface ItemPickerDialogProps {

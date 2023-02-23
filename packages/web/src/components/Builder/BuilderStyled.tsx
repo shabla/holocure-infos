@@ -1,4 +1,4 @@
-import { styled, StyledCSS } from "@/styles";
+import { styled, StyledCSS } from "@holocure-builds/common";
 
 export const BuildContainer = styled("div", {
 	display: "flex",

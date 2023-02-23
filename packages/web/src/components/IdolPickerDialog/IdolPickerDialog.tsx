@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { Dialog, IdolGenerations, IdolSkillBox } from "@/components";
-import { Idol } from "@holocure-builds/common";
-import { styled } from "@/styles";
+import { IdolGenerations, IdolSkillBox } from "@/components";
+import { Dialog, Idol, styled } from "@holocure-builds/common";
 
 export interface IdolPickerDialogProps {
 	idol?: Idol;

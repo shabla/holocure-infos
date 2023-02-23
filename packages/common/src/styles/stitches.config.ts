@@ -1,4 +1,3 @@
-// stitches.config.ts
 import { createStitches, CSS as StyledCSS } from "@stitches/react";
 
 export type { StyledCSS };

@@ -3,7 +3,7 @@ import React from "react";
 import { Box, Sprite, InfoTable } from "@/components";
 import { Skill } from "@holocure-builds/common";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 
 export interface IdolSkillBoxProps {
 	title: string;

@@ -3,7 +3,7 @@ import { Sprite, Box, InfoTable } from "@/components";
 import { useItemsStore } from "@/stores";
 import { Item } from "@holocure-builds/common";
 import { getHighlightedElements } from "@/utils/getHighlightedElements";
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 
 export interface ItemDetailsBoxProps {
 	item?: Item;

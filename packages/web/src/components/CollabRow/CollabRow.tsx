@@ -1,5 +1,5 @@
 import { Item } from "@holocure-builds/common";
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 import { Sprite } from "@/components";
 import { useItemsStore } from "@/stores";
 import { PlusIcon, ArrowRightIcon } from "@radix-ui/react-icons";

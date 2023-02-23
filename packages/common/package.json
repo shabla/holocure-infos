@@ -2,19 +2,10 @@
   "name": "@holocure-builds/common",
   "version": "1.0.0",
   "private": true,
-  "devDependencies": {},
-  "main": "./src/index.ts",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "devDependencies": {
+    "@radix-ui/react-dialog": "~1.0.2",
+    "@radix-ui/react-icons": "~1.1.1",
+    "@stitches/react": "~1.2.8"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shabla/holocure-infos.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shabla/holocure-infos/issues"
-  },
-  "homepage": "https://github.com/shabla/holocure-infos#readme"
+  "main": "./src/index.ts"
 }

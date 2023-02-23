@@ -1,4 +1,4 @@
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 
 export const SpriteImage = styled("div", {
 	borderRadius: "3px",

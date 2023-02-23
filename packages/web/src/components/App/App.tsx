@@ -4,7 +4,7 @@ import {
 	TwitterLogoIcon,
 	GlobeIcon,
 } from "@radix-ui/react-icons";
-import { globalStyles } from "@/styles";
+import { globalStyles } from "@holocure-builds/common";
 import {
 	ContentContainer,
 	NavbarLink,

@@ -1,5 +1,5 @@
 import { Item } from "@holocure-builds/common";
-import { styled, StyledCSS } from "@/styles";
+import { styled, StyledCSS } from "@holocure-builds/common";
 import React from "react";
 import { Selectable } from "../Selectable/Selectable";
 import { Sprite } from "../Sprite/Sprite";

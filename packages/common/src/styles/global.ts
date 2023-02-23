@@ -1,4 +1,4 @@
-import { globalCss, css } from "@/styles";
+import { globalCss, css } from ".";
 
 export const globalStyles = globalCss({
 	"html, #root, body": {
@@ -18,12 +18,6 @@ export const globalStyles = globalCss({
 	},
 });
 
-// --content-padding: 5px; space.content
-
-// .sticky {
-//   position: sticky;
-//   top: calc(var(--navbar-height) + var(--content-padding));
-// }
 export const sticky = css({
 	position: "sticky",
 	top: "calc(var(--navbarHeight) + var(--contentPadding))",

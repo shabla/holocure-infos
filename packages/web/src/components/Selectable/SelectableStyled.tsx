@@ -1,4 +1,4 @@
-import { styled } from "@/styles";
+import { styled } from "@holocure-builds/common";
 import { Cross2Icon } from "@radix-ui/react-icons";
 
 const ClearButtonStyled = styled("button", {

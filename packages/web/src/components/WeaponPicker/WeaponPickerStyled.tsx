@@ -1,4 +1,4 @@
-import { slideDown, slideUp, styled } from "@/styles";
+import { slideDown, slideUp, styled } from "@holocure-builds/common";
 import * as Collapsible from "@radix-ui/react-collapsible";
 import { ChevronUpIcon } from "@radix-ui/react-icons";
 

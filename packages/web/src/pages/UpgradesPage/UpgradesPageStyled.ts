@@ -1,4 +1,4 @@
-import { styled, tableCellMinContent } from "@/styles";
+import { styled, tableCellMinContent } from "@holocure-builds/common";
 
 export const Table = styled("table", {
 	borderCollapse: "collapse",

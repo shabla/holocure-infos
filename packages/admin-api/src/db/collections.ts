@@ -1,13 +1,8 @@
 import loki from "lokijs";
-
-export type UpgradeDocument = {
-	name: string;
-	desc: string;
-	costs: number[];
-};
+import { Upgrade } from "@holocure-infos/common";
 
 export type Collections = {
-	upgrades: Collection<UpgradeDocument>;
+	upgrades: Collection<Upgrade>;
 };
 
 export function initCollection<DocumentType extends object>(

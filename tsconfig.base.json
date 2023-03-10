@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
-      "@holocure-infos/*": [
+      "@holocure-builds/*": [
         "./packages/*"
       ]
     },

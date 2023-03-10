@@ -1,5 +1,5 @@
 import loki from "lokijs";
-import { Upgrade } from "@holocure-infos/common";
+import { Upgrade } from "@holocure-builds/common";
 
 export type Collections = {
 	upgrades: Collection<Upgrade>;

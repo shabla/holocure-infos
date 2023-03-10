@@ -1,21 +1,24 @@
+import * as trpcExpress from "@trpc/server/adapters/express";
 import express from "express";
-import cors from "cors";
 import { initDb } from "./db/init";
-import { logMiddleware } from "./middleware/logMiddleware";
-import { createUpgradesRouter } from "./routes/upgrades";
+import { createContext } from "./trpc";
+import { appRouter } from "./routers/app";
+import cors from "cors";
 
-const app = express();
 const port = 5000;
+const app = express();
 app.use(cors());
-app.use(express.json());
-app.use(logMiddleware);
 
-initDb((db, collections) => {
-	app.set("collections", collections);
+app.use(
+	"/trpc",
+	trpcExpress.createExpressMiddleware({
+		router: appRouter,
+		createContext,
+	}),
+);
 
-	app.use(createUpgradesRouter());
+app.listen(port, async () => {
+	console.log(`Server running on port ${port}`);
 
-	app.listen(port, () => {
-		console.log(`Server running on port ${port}`);
-	});
+	await initDb();
 });

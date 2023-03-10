@@ -1,7 +1,10 @@
 {
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "lib": ["ESNext"], /* Specify a set of bundled library declaration files that describe the target runtime environment. */
+    /* Specify a set of bundled library declaration files that describe the target runtime environment. 
+     * dom is there just to get console.log :)
+     */
+    "lib": ["ESNext", "DOM"],
     "target": "ES2016",
     "module": "CommonJS",
     "esModuleInterop": true,

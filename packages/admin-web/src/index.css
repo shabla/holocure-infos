@@ -10,30 +10,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
+html, body {
   min-height: 100vh;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  transition: border-color 0.25s;
+body {
+  margin: 0;
+  padding: 20px;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+
 
 .Upgrades {
   display: flex;
@@ -42,15 +27,19 @@ button:focus-visible {
 }
 
 .TextInput {
-  
+  width: 100%;
 }
 
 .TextInput.dirty {
-  outline: 2px solid yellow;
+  outline: 2px solid lime;
 }
 
 .UpgradeEditor {
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+.form-field {
+  
 }

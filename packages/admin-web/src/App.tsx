@@ -2,7 +2,7 @@ import { useState } from "react";
 import { trpc } from "./utils/trpc";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
-import { UpgradesPage } from "./pages/UpgradesPage";
+import { UpgradesPage } from "@/pages";
 
 export function App() {
 	const [queryClient] = useState(() => new QueryClient());

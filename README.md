@@ -12,12 +12,12 @@ Simple app to easily browse and visualize items and their possible combinations 
 
 # Tech
 
-Some libs I use in this project because I wanted to try them :)
-
-- [Zustand](https://github.com/pmndrs/zustand) - State management
-- [Stitches](https://stitches.dev) - CSS-in-JS
-- [Radix](https://www.radix-ui.com) - Components primitives
-- [Rome](https://rome.tools) - formatter & linter
-- [Express](https://expressjs.com) - backend for admin
-- [tRPC](https://trpc.io) - typesafe API
-- [Photopea](https://www.photopea.com) - for the sprites
+- 🐻 [Zustand](https://github.com/pmndrs/zustand) - State management
+- 🎨 [Stitches](https://stitches.dev) - CSS-in-JS
+- 📦 [Radix](https://www.radix-ui.com) - Components primitives
+- 🧹 [Rome](https://rome.tools) - Formatter & Linter
+- 🔗 [Express](https://expressjs.com) - Web Server for admin app
+- 🚙 [tRPC](https://trpc.io) - Typesafe API
+- 📋 [react-hook-form](https://react-hook-form.com) - Form management
+- 💎 [zod](https://zod.dev) - Input & Form data validation
+- 🌾 [Photopea](https://www.photopea.com) - Image Editting (sprites)

@@ -10,3 +10,4 @@
 
 # admin app
 - pretty much everything
+- try json-server https://github.com/typicode/json-server (probably easier/faster than trpc + lokijs) or keep trpc and use lowdb directly https://github.com/typicode/lowdb
